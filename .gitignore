@@ -1,0 +1,58 @@
+# ============================================================
+# Diffusion MoE research repo — strict ignore.
+# Only research CODE + plan docs are tracked. NEVER `git add -A`.
+# ============================================================
+
+# --- Secrets (NEVER commit) ---
+.env
+.env.*
+*.key
+*.pem
+credentials*.json
+*_secret*
+*_token*
+.claude/
+
+# --- Model weights / large binaries ---
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+*.ckpt
+*.onnx
+*.npz
+
+# --- Large workspace dirs (top-level only; anchored with leading /) ---
+/models/
+/data/
+/repos/
+/distill_audit/
+/mindset/
+/unsloth_compiled_cache/
+
+# --- Nested git projects (versioned separately) ---
+/cot-distillation-fidelity-audit/
+/Jackrong-llm-finetuning-guide/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# --- Tooling working dirs ---
+/.playwright-mcp/
+
+# --- Run artifacts / Arbor session state ---
+/.arbor/
+outputs/
+checkpoints/
+wandb/
+runs/
+*.log
+*.output
+nohup.out

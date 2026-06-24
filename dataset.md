@@ -1,0 +1,10 @@
+https://huggingface.co/datasets/angrygiraffe/claude-opus-4.6-4.7-reasoning-8.7k
+https://huggingface.co/datasets/nohurry/Opus-4.6-Reasoning-3000x-filtered
+https://huggingface.co/datasets/Roman1111111/claude-opus-4.6-10000x
+https://huggingface.co/datasets/Roman1111111/gemini-3.1-pro-hard-high-reasoning
+https://huggingface.co/datasets/Jackrong/Claude-opus-4.7-TraceInversion-5000x
+https://huggingface.co/datasets/Jackrong/Claude-opus-4.6-TraceInversion-9000x
+https://huggingface.co/datasets/Jackrong/DeepSeek-V4-Distill-8000x
+https://huggingface.co/datasets/Jackrong/GLM-5.1-Reasoning-1M-Cleaned
+https://huggingface.co/datasets/Jackrong/Kimi-K2.5-Reasoning-1M-Cleaned
+https://huggingface.co/datasets/Jackrong/Qwen3.5-reasoning-700x
