@@ -46,6 +46,10 @@ venv/
 
 # --- Tooling working dirs ---
 /.playwright-mcp/
+# Browser scratch captures saved to repo root
+/*.png
+/page-*.yml
+/console-*.log
 
 # --- Run artifacts / Arbor session state ---
 /.arbor/
