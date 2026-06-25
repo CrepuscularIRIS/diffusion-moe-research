@@ -82,6 +82,32 @@ def set_seed(seed: int) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
+def _build_balanced_device_map(num_layers: int = 30, split: int = 16) -> dict:
+    """Explicit 2-GPU module device_map for DiffusionGemma (see load-path note in main).
+
+    encoder.layers[i] and decoder.layers[i] share storage (tied), so each pair MUST go to
+    the same device. The three tied embeddings (encoder/decoder embed_tokens + lm_head) are
+    co-located on cuda:0. Layers [0, split) -> cuda:0, [split, num_layers) -> cuda:1.
+    """
+    device_map = {
+        "model.encoder.language_model.embed_tokens": 0,
+        "model.encoder.language_model.norm": 1,
+        "model.encoder.language_model.rotary_emb": 0,
+        "model.encoder.vision_tower": 0,
+        "model.encoder.embed_vision": 0,
+        "model.decoder.embed_tokens": 0,
+        "model.decoder.norm": 1,
+        "model.decoder.rotary_emb": 0,
+        "model.decoder.self_conditioning": 1,
+        "lm_head": 0,
+    }
+    for i in range(num_layers):
+        dev = 0 if i < split else 1
+        device_map[f"model.encoder.language_model.layers.{i}"] = dev
+        device_map[f"model.decoder.layers.{i}"] = dev
+    return device_map
+
+
 def _self_conditioning_coin(batch_size: int, p: float, seed: int, step: int, mb_idx: int) -> torch.Tensor:
     """Per-example self-conditioning coin [B] bool (seed matches the corruption stream offset 0)."""
     gen = torch.Generator().manual_seed(seed + 7919 * step + mb_idx)
@@ -89,16 +115,23 @@ def _self_conditioning_coin(batch_size: int, p: float, seed: int, step: int, mb_
 
 
 def gpu_mem_report(tag: str, warn_gib: float = 44.0) -> None:
-    """Print per-GPU peak allocated memory; warn if any card nears the 48GB ceiling."""
-    if not torch.cuda.is_available():
-        return
-    parts = []
-    for i in range(torch.cuda.device_count()):
-        peak = torch.cuda.max_memory_allocated(i) / 1024**3
-        reserved = torch.cuda.memory_reserved(i) / 1024**3
-        flag = "  <-- NEAR LIMIT" if reserved > warn_gib else ""
-        parts.append(f"GPU{i} peak={peak:.1f}G reserved={reserved:.1f}G{flag}")
-    print(f"[mem:{tag}] " + " | ".join(parts))
+    """Print per-GPU memory via nvidia-smi (ground truth; torch stats miss device_map loads)."""
+    import subprocess
+
+    try:
+        out = subprocess.check_output(
+            ["nvidia-smi", "--query-gpu=index,memory.used", "--format=csv,noheader,nounits"],
+            text=True,
+        )
+        parts = []
+        for line in out.strip().splitlines():
+            idx, used = (x.strip() for x in line.split(","))
+            used_gib = float(used) / 1024
+            flag = "  <-- NEAR LIMIT" if used_gib > warn_gib else ""
+            parts.append(f"GPU{idx} used={used_gib:.1f}G{flag}")
+        print(f"[mem:{tag}] " + " | ".join(parts))
+    except Exception as e:  # noqa: BLE001
+        print(f"[mem:{tag}] nvidia-smi failed: {e}")
 
 
 def main() -> None:
@@ -120,29 +153,51 @@ def main() -> None:
     )
     set_seed(cfg.seed)
 
-    # 1. Load model + tokenizer. FastModel auto-routes diffusion_gemma -> FastDiffusionModel.
-    import unsloth  # noqa: F401  (patches transformers; must import before FastModel use)
-    from unsloth import FastModel
-
+    # 1. Load model + tokenizer.
+    #    FIRST-RUN FIX (unsloth device_map broken): unsloth's FastDiffusionModel "slow /
+    #    transformers-only path" left ALL weights on the META device (device_map="balanced"
+    #    ignored -> 0GB on both GPUs -> meta-device crash). transformers' own
+    #    `from_pretrained(device_map="balanced"/"auto")` ALSO silently leaves everything on
+    #    meta for this arch (5.12.1 + accelerate 1.13.0). Root cause: heavy weight tying
+    #    (encoder.layers[i] <-> decoder.layers[i], and lm_head <-> decoder.embed <->
+    #    encoder.embed) defeats accelerate's auto device-map / tied-param dispatch.
+    #    Fix: an EXPLICIT module-level device_map that (a) keeps encoder.layers[i] and the
+    #    tied decoder.layers[i] on the SAME device (so the shared storage is allocated once),
+    #    and (b) co-locates the three tied embeddings + lm_head on cuda:0. This actually
+    #    materializes + splits the ~52GB checkpoint (~38GB GPU0 / ~28GB GPU1 at peak).
     dtype = torch.bfloat16
-    model, tokenizer = FastModel.from_pretrained(
-        model_name=cfg.model_name,
-        load_in_4bit=cfg.load_in_4bit,
-        dtype=dtype,
-        # "balanced" splits weights evenly across both cards (~26GB each), leaving ~22GB
-        # per card for activations + the V=262144 logit peak. "auto" can sequentially
-        # fill GPU0 first and leave no headroom -> OOM. VERIFY@load via gpu_mem_report.
-        device_map="balanced",
-    )
+    from transformers import AutoTokenizer
+    from transformers.models.diffusion_gemma import DiffusionGemmaForBlockDiffusion
 
-    # 2. Freeze router, then attach LoRA (FastDiffusionModel targets attn q/k/v/o + dense MLP;
-    #    experts are fused 3D params and cannot take PEFT LoRA).
+    device_map = _build_balanced_device_map(num_layers=30, split=16)
+    model = DiffusionGemmaForBlockDiffusion.from_pretrained(
+        cfg.model_name, dtype=dtype, device_map=device_map, attn_implementation="eager",
+    )
+    tokenizer = AutoTokenizer.from_pretrained(cfg.model_name)
+
+    # 2. Freeze router, then attach LoRA via plain PEFT.
     gpu_mem_report("after-load")  # VERIFY@load: weights should split ~balanced across both cards
     n_frozen = freeze_router(model)
     print(f"[lora] froze {n_frozen} router params")  # VERIFY@load: expect >0, and NOT dense-MLP
-    model = FastModel.get_peft_model(
-        model, r=cfg.lora_r, lora_alpha=cfg.lora_alpha, use_gradient_checkpointing=True,
+    from peft import LoraConfig, get_peft_model
+
+    # FIRST-RUN FIX (LoRA targets): a bare suffix list (["q_proj", ...]) matched the vision
+    # tower's `Gemma4ClippableLinear` (a non-nn.Linear wrapper PEFT rejects) AND the frozen
+    # `router.proj`. Anchor to the TEXT encoder/decoder layer projections (all plain
+    # nn.Linear) with a path regex, so LoRA lands on attn q/k/v/o + dense MLP gate/up/down
+    # only -- never the fused 3D experts, never the router, never the vision tower.
+    lora_targets = (
+        r".*(encoder\.language_model|decoder)\.layers\.\d+\."
+        r"(self_attn|mlp)\.(q_proj|k_proj|v_proj|o_proj|gate_proj|up_proj|down_proj)$"
     )
+    model = get_peft_model(
+        model,
+        LoraConfig(
+            r=cfg.lora_r, lora_alpha=cfg.lora_alpha, target_modules=lora_targets,
+            lora_dropout=0.0, bias="none", task_type=None,
+        ),
+    )
+    model.print_trainable_parameters()
 
     # 3. Data.
     ds = ChatJsonlDataset(cfg.data_path, tokenizer, cfg.max_seq_len)
@@ -160,12 +215,16 @@ def main() -> None:
     # 4. Optimizer + cosine schedule over trainable (LoRA) params only.
     trainable = [p for p in model.parameters() if p.requires_grad]
     optim = torch.optim.AdamW(trainable, lr=cfg.lr, betas=(0.95, 0.99), weight_decay=cfg.weight_decay)
+    # Clamp warmup fraction to (0, 0.3] so tiny smoke runs (max_steps < warmup) don't break OneCycleLR.
+    pct_start = min(0.3, max(cfg.warmup_steps / max(cfg.max_steps, 1), 0.05))
     sched = torch.optim.lr_scheduler.OneCycleLR(
         optim, max_lr=cfg.lr, total_steps=cfg.max_steps,
-        pct_start=cfg.warmup_steps / max(cfg.max_steps, 1), anneal_strategy="cos",
+        pct_start=pct_start, anneal_strategy="cos",
     )
 
-    device = next(model.parameters()).device
+    # Inputs go to the device holding encoder.embed_tokens (cuda:0 in the device_map).
+    # With the split load `next(model.parameters()).device` is unreliable; pin to cuda:0.
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     corruption_cfg = CorruptionConfig(vocab_size=cfg.vocab_size, eps=cfg.eps)
 
     # 5. Training loop.

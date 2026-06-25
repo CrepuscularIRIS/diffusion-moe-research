@@ -43,6 +43,17 @@ _ROUTER_PARAM_PATTERNS = (
 )
 
 
+def _base_model(model):
+    """Return the underlying DiffusionGemmaForBlockDiffusion, unwrapping PEFT.
+
+    A PEFT-wrapped model exposes ``get_base_model()`` -> the base transformers
+    model (whose ``.model`` is the ``DiffusionGemmaModel`` with ``.encoder`` /
+    ``.decoder``). For a bare model this is a no-op.
+    """
+    get_base = getattr(model, "get_base_model", None)
+    return get_base() if callable(get_base) else model
+
+
 def _model_softcap(model) -> float | None:
     """Resolve final_logit_softcapping from the model (falls back to text_config)."""
     cap = getattr(model, "final_logit_softcapping", None)
@@ -74,11 +85,17 @@ def two_pass_forward(
         encoder_logits: ``[B, S, V]`` fp32 softcapped logits over the clean sequence (grad),
             for the co-trained encoder AR loss.
     """
-    cap = _model_softcap(model)
-    lm_head = model.lm_head
+    # Resolve the underlying DiffusionGemmaForBlockDiffusion. Under a PEFT wrapper
+    # the module tree is PeftModel -> LoraModel(.model) -> base(.model.encoder/.decoder),
+    # so `model.model.encoder` resolves to the wrong level and raises. `_base_model`
+    # unwraps PEFT (and is a no-op for a bare model), giving the real `.model.encoder`,
+    # `.model.decoder`, and `.lm_head`.
+    base = _base_model(model)
+    cap = _model_softcap(base)
+    lm_head = base.lm_head
 
     # 1. Encoder once (grad): encode the clean sequence as context, fill the KV cache.
-    encoder_outputs = model.model.encoder(
+    encoder_outputs = base.model.encoder(
         input_ids=clean_ids,
         attention_mask=encoder_attention_mask,
     )
@@ -92,7 +109,7 @@ def two_pass_forward(
     # 2. Decoder pass-1 (no grad, no self-conditioning): produce the self-cond signal.
     #    Decoder does not write the cache, so pass-2 reuses the same `cache`.
     with torch.no_grad():
-        h1 = model.model.decoder(
+        h1 = base.model.decoder(
             decoder_input_ids=canvas_ids,
             past_key_values=cache,
             self_conditioning_logits=None,
@@ -103,7 +120,7 @@ def two_pass_forward(
         sc_logits = softcap_logits(lm_head(h1.last_hidden_state).float(), cap).detach()
 
     # 3. Decoder pass-2 (grad): self-conditioning gated per-example by the coin.
-    h2 = model.model.decoder(
+    h2 = base.model.decoder(
         decoder_input_ids=canvas_ids,
         past_key_values=cache,
         self_conditioning_logits=sc_logits,
