@@ -90,12 +90,11 @@ Arbor offers two layers; we use only the first.
 | `plan/operating-manual.md` (this) | how-we-work reference (engines, Arbor, conventions, lessons, science kernel, §5.1 gates) | when process changes |
 | `plan/goal-directive.md` | the exact `/goal` input | when goal/workflow changes |
 | `plan/research-operating-system.md` | BACK-half (filter) DESIGN — 7 gates, the asymmetry, the enforceable-contract pattern | when a gate changes |
-| `plan/mos-front-architecture.md` | FRONT-half (generator) DESIGN — MOS-Front: 3 gates, the DPC keystone, the Lakatos programme | when the front-half changes |
+| `plan/dspark-deep-analysis-2026-07-01.md` | DSpark technical breakdown + occupancy scan | when occupancy changes |
+| `DSpark-analysis.md` | DSpark core ideas + transferable concepts | reference |
+| `enrich.md` | the Modeling-Object-Shift methodology | reference |
 | **Arbor MCP tree** (`tree_view`) | **canonical STRUCTURE** — branches / status / result / insight / prune | **EVERY 验收, FIRST** |
-| `.arbor/sessions/diffusion-moe/RUNLOG.md` | chronological NARRATIVE — journey, evidence, commands+exit codes | every cycle |
-| `HekaiMing.md` | prior-art landscape for the active track (He-line / gradient-field) | when new papers found |
-| `plan/paper-draft.md` | Track 1 paper draft (wall-clock frontier, completed/parked) | at paper revision |
-| `plan/archive/` | superseded / one-off / already-distilled docs (reversible) | — |
+| `plan/archive/` | CLOSED dLLM campaign + all prior experiment docs (do NOT load for DSpark work) | — |
 > **The #1 process bug to never repeat:** updating the RUNLOG but not the tree → the tree goes stale and the
 > research looks linear. Tree first, every cycle.
 

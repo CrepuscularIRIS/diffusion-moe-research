@@ -1,40 +1,48 @@
-# DSpark — DiffusionGemma Relevance Analysis (2026-06-28, backup)
+# DSpark — Core Architecture & Open Directions (2026-07-01)
 
-> Verdict: DSpark's system-level compute scheduling has reference value but does NOT change the generation
-> mechanism. The compute-allocator direction was already KILLED in the wall-clock frontier work (tree node
-> 5.8.1: oracle beats always-deepen@2048 by only ~1% ΔAUC). DSpark faces the same structural issue:
-> DiffusionGemma's verifier feedback is sparse/delayed (task-level), not token-level like speculative
-> decoding's rejection sampling. The gradient-field / embedding-flow direction (HekaiMing line) attacks a
-> higher-ceiling target (training objective / loss function revolution).
+> DSpark (arxiv:2606.19348, DeepSeek) = Confidence-Scheduled Speculative Decoding with Semi-Autoregressive
+> Generation. Open-sourced 2026-06-27 as part of DeepSeek-V4. Training framework: **DeepSpec** (MIT,
+> github.com/deepseek-ai/DeepSpec).
 
-## DSpark ↔ DiffusionGemma Mapping
+## Three-component architecture
 
-| DSpark Component | DiffusionGemma Analog | Transferability |
+| Component | What it does | Key detail |
 |---|---|---|
-| Parallel draft + sequential head (semi-AR) | Block-level parallel denoising (256-token canvas) + block-by-block commitment | Conceptually similar |
-| Confidence head + temperature calibration | "Which tokens are stable, don't need more denoising" | Direct inspiration |
-| Hardware-aware prefix scheduler (dynamic truncation) | Dynamic denoising budget based on problem difficulty / verifier feedback | Strongest inspiration |
-| Load-adaptive + ZOS | Batch strategy and wall-clock optimization | Different scenario (online vs offline) |
+| **Parallel backbone (DFlash)** | Generates base logits for all k draft positions simultaneously | Position-independent; fast but suffers suffix decay |
+| **Sequential Markov head** | Adds prefix-dependent bias before sampling each token | 1st-order only (conditions on immediately preceding token); rank-256 low-rank factorization; near-zero overhead (+0.2-1.3% latency for 4→16 draft length) |
+| **Confidence-scheduled verification** | Per-position acceptance probability → hardware-aware scheduler adjusts verification length by GPU load | Lossless (preserves target model's exact output distribution) |
 
-## Three Transferable Ideas
+## Performance
+- Offline: accepted length **+26-31% vs EAGLE-3**, +16-18% vs DFlash
+- Production (V4): per-user generation speed **+60-85%** (Flash), +57-78% (Pro) vs MTP-1
 
-### 1. Confidence head → token-level stability prediction during denoising
-Predict "probability current token is already final answer" per position per step. If `\boxed{}` content
-stable (prob > threshold), early-commit that block, free canvas for remaining tokens. More direct than
-trace-dynamics approach (E method) — predicts LOCAL stability not GLOBAL budget need.
+## The core insight: suffix decay
+Parallel draft's acceptance drops for later positions because they're predicted without knowing earlier
+tokens' actual sampled values. The Markov head fixes this by looking at the previous token and adjusting —
+but only one step back (1st-order). DSpark acknowledged an **RNN variant tracking full prefix** showed
+"marginal improvement" but shipped the Markov head for speed.
 
-### 2. Hardware-aware prefix scheduler → dynamic canvas allocation
-Use first-few-step entropy/acceptance to dynamically truncate. Async to hide scheduling latency.
-"Lossless" = don't lower verifier pass rate while saving compute.
+## Three transferable ideas (general, not model-specific)
 
-### 3. Suffix decay avoidance → intra-block dependency modeling
-DSpark's "parallel draft suffix acceptance decays fast" = DiffusionGemma's factorization barrier (block-
-internal parallel denoising assumes position independence, but true posterior is joint). Lightweight
-sequential head (single Transformer layer / Markov head) injects intra-block position dependency at
-inference time without retraining.
+### 1. Confidence head → selective verification
+Predict acceptance probability per position → verify more tokens when spare compute exists; skip
+low-confidence tails early. Hardware-aware: adapt to live GPU load.
 
-## Why NOT the lead direction
-- Compute-allocator already killed (always-deepen@2048 ≈ oracle, ~1% ΔAUC)
-- Verifier is non-differentiable, sparse, delayed (task-level not token-level) → can't do DSpark-style
-  per-token rejection sampling
-- DSpark = engineering on a fixed generator; HekaiMing line = changing what the generator learns (higher ceiling)
+### 2. Sequential correction beyond 1st-order Markov
+The Markov head only conditions on the immediately preceding token — it is **under-modeled**. Higher-order
+conditioning (2nd/3rd-order, attention-based, gated RNN) could capture longer-range intra-draft dependencies
+and push accepted length further. **This is the primary open direction** (see `plan/dspark-deep-analysis-2026-07-01.md`).
+
+### 3. Suffix decay → structural intra-draft dependency
+The deeper question: what dependency structure WITHIN a draft span matters most for acceptance? The answer
+informs whether a Markov head, attention head, or structured prediction model is the right correction.
+
+## Training (DeepSpec framework)
+- Freezes target model, reuses embedding + output head
+- Loss = **total-variation distance** (directly maximizes draft acceptance rate)
+- Configs specify algorithm + target model; ~38 TB target cache for Qwen3-4B on 8 GPUs
+- Supports training custom draft heads on any target model
+
+## Open research direction (current goal)
+**Beyond-first-order Markov sequential head for speculative decoding.** See `plan/goal-directive.md` and
+`plan/dspark-deep-analysis-2026-07-01.md` for the occupancy scan and candidate designs.
