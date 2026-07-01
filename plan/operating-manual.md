@@ -215,7 +215,7 @@ spinning ("thinking hard, not advancing") → force a lateral jump or bank the n
   structurally omits novelty/significance; openreviewer "complements, not replaces" human review.
 
 ### 5.2 MOS-Front — the front-half GENERATOR gates (the enrich layer)
-> Full design: `plan/mos-front-architecture.md`. The §5.1 gates are the **filter** (is the result real?);
+> Full design: `plan/archive/mos-front-architecture.md`. The §5.1 gates are the **filter** (is the result real?);
 > MOS-Front is the **generator** (is this the right modeling OBJECT?), firing at IDEATE→SELECT, BEFORE the
 > filter. **Role split (efficiency + the "near-original" engine):** Opus ASSEMBLES context + PACKAGES;
 > **GPT-5.5 Pro DESIGNS the generative leap** (the new object — a different model + independent context reaches
@@ -241,7 +241,7 @@ substrate-fail → `LATERAL_JUMP`, re-IDEATE on a new region — do NOT design) 
 under a programme → `/mos-front`(LITE). Tactical variant → `/mos-front`(SKIP_TACTICAL waiver) → straight to the
 back-half. **DSpark-flavored systems lead (measured lever, no new object) → skip object-shift machinery →
 `/baseline-champion` + measured Δ (co-equal lane).** Every cycle on an active programme → `/programme-audit`.
-The §5.1 filter gates fire unchanged after. (Cheat-sheet: `mos-front-architecture.md` §11.)
+The §5.1 filter gates fire unchanged after. (Cheat-sheet: `plan/archive/mos-front-architecture.md` §11.)
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json
 > **Arbor MCP is the canonical store and the execution substrate; it is more reliable than hand-written

@@ -64,7 +64,7 @@ broadening scope, or declaring a contribution** — those terminate off the prop
 
 ## The gates (the "optimizations") — one line each
 
-**Front-half — MOS-Front GENERATOR** (is this the right modeling object? — fires at IDEATE→SELECT; design: `mos-front-architecture.md`):
+**Front-half — MOS-Front GENERATOR** (is this the right modeling object? — fires at IDEATE→SELECT; design: `plan/archive/mos-front-architecture.md`):
 | Gate (command) | Fires at | Strong verdict is… |
 |---|---|---|
 | **/mos-front** | IDEATE (object-shift direction) | Opus GENERATES (SKIP_TACTICAL / MOC_LITE / MOC_FULL + DPC); never self-certifies |
