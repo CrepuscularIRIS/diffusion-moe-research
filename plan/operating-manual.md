@@ -41,7 +41,7 @@ Arbor offers two layers; we use only the first.
    Do not run it. The init scaffolding it left (`QUEUE.md`, `cycle-state.json`, `BLOCKED.md`, `review_debt.md`)
    is **vestigial** — ignore/archive.
 - **Policy:** GOAL mode is the driver. The **Arbor MCP idea tree is the canonical research STRUCTURE**
-  (`.arbor/sessions/diffusion-moe/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
+  (`.arbor/sessions/<run>/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
   then RUNLOG)**. Use `worktree_create`/`eval_run`/`git_merge_branch`/`generate_report` opportunistically.
 - **★ GOAL = a CONTINUOUS loop, not one stage.** OBSERVE → IDEATE → SELECT → DISPATCH+verify → DECIDE →
   (experiment pass: bank EVIDENCE & advance · FAIL **or decisive NEGATIVE**: BANK it, then **AUTO-PIVOT** —
