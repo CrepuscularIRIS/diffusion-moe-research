@@ -12,6 +12,7 @@ credentials*.json
 *_secret*
 *_token*
 .claude/
+.antigravitycli/
 
 # --- Model weights / large binaries ---
 *.safetensors

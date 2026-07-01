@@ -1,0 +1,68 @@
+{
+  "schema_version": "osa.v1",
+  "front_mode": "MOC_FULL",
+  "ran_by_proposer": false,
+  "audit_target": "plan/gpt55pro-parallel-frontier-certificate-2026-07-01.md",
+  "arbor_node": "5.13",
+  "verdict": "ELIGIBLE_FOR_BACK_HALF",
+  "dpc_check": "NOT_RUN",
+
+  "tests": {
+    "T1": {
+      "verdict": "PASS",
+      "reason": "O0 (generate a serialized solver transcript where useful context for token t_i is the textual prefix t_{<i}) and O1 (generate a compact dependency-layered certificate where useful context is problem + declared ancestors, with same-depth cells independently denoisable) are clearly specified and structurally distinct modeling objects; the shift is from 'predict a narrative' to 'predict a dependency DAG of locally checkable atoms'."
+    },
+    "T2": {
+      "verdict": "PASS",
+      "reason": "O1 differs from O0 on four axes simultaneously: (1) training data format (DAG-structured canvas vs serial text), (2) mask distribution (cell/layer/ancestor-only masks vs i.i.d. token masks), (3) auxiliary loss (dependency-selective invariance enforcing peer-independence and ancestor-dependence), (4) the target object the model learns to emit (a proof/computation memo with typed cells and declared deps vs a left-to-right thought trace). This is far beyond a hyperparameter change."
+    },
+    "T3": {
+      "verdict": "PASS",
+      "reason": "Section 5 lists 6 concrete pre-training falsifiers (parallelizable mass <25-30%, ancestor-only recoverability bad, stabilization = text order, result tokens not earlier than filler, certificate compiler fails >5-10%, brevity baseline ties) AND Section 4 provides a 5-step DPC with numeric GO thresholds (PMASS >=0.30-0.40, ARNESS_resid low, overlapping stabilization windows, Dprefix <=0.2-0.3 nats/token). All are checkable before any training GPU-hour."
+    },
+    "T4": {
+      "verdict": "PASS",
+      "reason": "NAP (arXiv:2602.23225) is explicitly named as the closest rival with a stated distinction: NAP = K full independent reasoning paths + summary with standard masked CE (internal self-ensemble); PFC = one non-redundant dependency DAG with locally checkable atoms + dependency-selective invariance loss that explicitly separates ancestor-dependence from peer-invariance. The distinction is structural (redundant ensemble vs non-redundant certificate; standard loss vs conditional-independence loss). Secondary rivals Diffusion of Thoughts (2402.07754) and ThreadWeaver (2504.15466) are also named and distinguished. Caveat: the NAP distinction narrows if in practice DAGs have wide layers with near-full independent sub-solutions (converging toward an ensemble)."
+    },
+    "T5": {
+      "verdict": "PASS",
+      "reason": "PFC is training-based SFT on LLaDA-8B (not a frozen post-hoc head); uses standard discrete masked diffusion (not He-line continuous-flow); explicitly matches compute budget (not a compute-allocator/always-deepen); measures verified accuracy under same budget (not wall-clock EVALUATION framing); trains the model (not a frozen-only intervention on DiffusionGemma). All five FORBIDDEN items are avoided."
+    },
+    "T6": {
+      "verdict": "PASS",
+      "reason": "Section 4 provides the Parallel Frontier Recoverability Contract — a 5-step pre-training DPC (parse atoms, infer dependency graph, compute stabilization times from logs, forward-pass counterfactual, compression estimate) with concrete numeric GO conditions (PMASS, ARNESS_resid, overlapping stabilization, Dprefix/Dpeer thresholds). This is runnable on existing LLaDA-8B logs before any training."
+    }
+  },
+
+  "overall_verdict": "ELIGIBLE_FOR_BACK_HALF",
+
+  "honesty_gaps": [
+    "The certificate compiler (Section 2, data construction steps 1-7) is described as 'partly heuristic' and its quality is critical to the entire approach — if it cannot produce locally-checkable, answer-preserving certificates at >90-95% pass rate, PFC degrades to formatted terse CoT with extra markup. The compiler is itself an unvalidated dependency and should be tested on a sample of 20-30 problems BEFORE the DPC probe runs.",
+    "The claim 'this helps dLLMs more than AR models' (Section 3) is asserted as intuition ('a masked dLLM can denoise cell A, B, C, and D together') but is not falsifiable from the DPC and is not part of the pre-training contract — it should be stated as a hypothesis, not a fact.",
+    "DPC Step D (forward-pass counterfactual) is marked 'optional' but is the STRONGEST pre-training signal — it directly tests whether the base model can already predict sub-results from the true dependency set rather than the serialized prefix. Making it optional weakens the DPC; if Step D is skipped, Steps A-C alone could give false GO signals because they measure log-derived properties (stabilization times, graph structure) rather than the model's actual conditional distributions.",
+    "The mask distribution percentages (40/25/20/10/5) and role/noise weighting scheme are presented as the design but are actually tunable hyperparameters whose values are unjustified. A sensitivity analysis or ablation plan should be pre-registered, otherwise the design has a hidden search space that could mask whether the object-shift matters vs the hyperparameter tuning.",
+    "The design targets LLaDA-8B but the goal directive's primary substrate is DiffusionGemma-26B-A4B MoE. The transferability of DPC findings from LLaDA-8B logs to the eventual DiffusionGemma deployment is assumed but not discussed. If the parallel frontier signal is present in LLaDA-8B but absent in DiffusionGemma (different architecture, different denoising dynamics), training results may not transfer.",
+    "The 'intended effect is not faster inference' caveat (Section 3) contradicts the project's stated goal of making diffusion-LM reasoning 'more token-efficient per step' — the design should clarify whether the claim is about tokens-per-step efficiency, verified-accuracy-at-matched-budget, or both, and pre-commit to one primary metric."
+  ],
+
+  "nap_distinction_assessment": {
+    "genuine": true,
+    "strength": "moderate",
+    "detail": "The distinction is structurally genuine on two axes: (1) PFC uses one non-redundant dependency DAG vs NAP's K redundant full paths (non-ensemble vs ensemble), and (2) PFC adds dependency-selective invariance loss vs NAP's standard masked CE. However, the distinction NARROWS under two scenarios: (a) if MATH/AIME dependency DAGs are mostly chains (low parallelizable mass), PFC degrades toward serialized certificate — which IS a preregistered baseline in the doc (Serialized Certificate SFT), so this is correctly handled; (b) if the dependency-selective invariance loss contributes nothing over standard masked CE on the same certificate format, PFC's novelty over NAP collapses to 'data format + terse compression', which is much closer to occupied territory. The design does preregister baseline B (Serialized Certificate SFT with standard masked CE) which would catch scenario (b). Overall: the distinction holds as designed but depends critically on the dependency-selective invariance loss being the active ingredient."
+  },
+
+  "dependency_selective_invariance_overlap": {
+    "occupied": false,
+    "detail": "The specific formulation — P(v | problem + ancestors) should be approximately invariant to same-layer peer visibility, while P(v | problem + ancestors including u) should improve over P(v | problem + ancestors without u) — is a conditional-independence enforcement loss applied at the reasoning-atom level within masked diffusion LM training. Prior work on conditional independence in generative models (contrastive/disentanglement objectives, copula-based token dependencies in discrete diffusion, structural causal model losses) operates at different granularity (token-level or representation-level, not reasoning-atom-level) or in different settings (VAEs, GANs, not masked diffusion). The closest occupied methods are (1) CoDD/ADJUST energy-based dependency modeling in discrete diffusion (token-level, not atom-level), (2) NAP's parallel-path forcing (enforces path-level independence, not cell-level conditional independence given ancestors). No direct occupant found. However, the PRINCIPLE (teach a model that certain outputs are conditionally independent given certain inputs) is well-established — the novelty is in the application to masked-diffusion reasoning certificates, not in the loss concept itself."
+  },
+
+  "claim_language_restrictions": [
+    "Do NOT claim 'novel loss function' for dependency-selective invariance — the conditional-independence principle is well-known; the novelty is its application to reasoning-atom-level structure in masked diffusion LM training. Claim at most 'a new application of conditional-independence enforcement to dependency-structured reasoning certificates in discrete diffusion LMs'.",
+    "Do NOT claim PFC is 'fundamentally different from NAP' — the distinction is structural but moderate; claim 'PFC differs from NAP in using a non-redundant dependency DAG with a dependency-selective auxiliary loss, rather than redundant parallel paths with standard training'.",
+    "Do NOT claim parallel speedup or wall-clock gains — the design explicitly states 'the intended effect is not faster inference as the primary metric'; claim only 'higher verified accuracy under the same token/step budget'.",
+    "Do NOT describe the certificate compiler as 'automated' or 'reliable' until it is validated at >90-95% fidelity on a held-out problem set — describe it as 'a partly heuristic compiler whose fidelity is a pre-training prerequisite (falsifier #5)'.",
+    "DPC Step D MUST be run (not optional) before any GO decision — downgrade it from 'optional' to 'required for GO' in the pre-registration, because Steps A-C alone cannot distinguish 'the logs show graph structure' from 'the model can actually use graph structure for prediction'.",
+    "Before any training, run the Serialized Certificate SFT baseline (baseline B in the doc) as the FIRST training experiment — if PFC does not beat serialized certificate, the parallel structure claim is dead regardless of whether it beats standard CoT.",
+    "The mask distribution (40/25/20/10/5) and role weighting must be pre-registered as fixed before training, or an explicit ablation schedule must be declared — do NOT tune these post-hoc and then claim the object-shift, rather than the hyperparameters, caused the gain."
+  ]
+}
