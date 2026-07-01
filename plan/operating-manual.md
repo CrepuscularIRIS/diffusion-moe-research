@@ -236,13 +236,21 @@ spinning ("thinking hard, not advancing") → force a lateral jump or bank the n
 | SELECT (object-shift claim — **both MOC_LITE & MOC_FULL**) | **`/object-shift-audit`** (Codex, kill-only) | T1–T6 (distinct-object · observable-S · pre-training differential-prediction · rival-baseline · neg-control · kill-action) + the DPC check (LITE = lightweight). Verdict `KILL_COSMETIC_RESHIFT` / `DOWNGRADE_TO_TACTICAL_VARIANT` / `ELIGIBLE_FOR_BACK_HALF` (NOT a contribution — only "may enter the kill-filter"). **Machine-enforced** by `validate_object_shift.py`. | proposer self-assigns only KILL/DOWNGRADE; **`ELIGIBLE_FOR_BACK_HALF` = Codex (independent), machine-enforced** |
 | BACKPROP (active programme) | **`/programme-audit`** (Codex, tree) | Lakatos progressive-vs-degenerating BUDGET signal: deterministic `programme_progress_score` from immutable ledgers → `PROGRESSIVE` / `STABLE_BUT_UNPROVEN` / `DEGENERATING_WATCH` / `DEGENERATED_RETIRE_OR_FORK`. Hard-core-edit-after-failure = −4. **Machine-enforced** by `validate_programme.py`. | self-claim ≤ canonical; **`PROGRESSIVE` = independent, machine-enforced** |
 
-**Orchestration (when /goal calls what):** new direction → `/mos-front`: **occupancy-scan FIRST** (occupied/
-substrate-fail → `LATERAL_JUMP`, re-IDEATE on a new region — do NOT design) → else FULL (Pro designs the leap)
-→ `/object-shift-audit`(must be ELIGIBLE_FOR_BACK_HALF) → preregister → DISPATCH. Object-shift-flavored lead
-under a programme → `/mos-front`(LITE). Tactical variant → `/mos-front`(SKIP_TACTICAL waiver) → straight to the
-back-half. **DSpark-flavored systems lead (measured lever, no new object) → skip object-shift machinery →
-`/baseline-champion` + measured Δ (co-equal lane).** Every cycle on an active programme → `/programme-audit`.
-The §5.1 filter gates fire unchanged after. (Cheat-sheet: `plan/archive/mos-front-architecture.md` §11.)
+**Orchestration (when /goal calls what) — LANE-AWARE (match the §5.0 lane):**
+- **IMPROVEMENT lane** (engineering improvement, measured Δ is the contribution) → design a candidate → train
+  (DeepSpec / executor worktree) → measure → `/exp-verify` → `/baseline-champion` (vs SOTA baseline, PAIRED
+  stats) + `/reward-hack-audit` at claim boundary. **NO `/mos-front`, NO `/object-shift-audit`** — those are for
+  novelty; the IMPROVEMENT lane's occupancy check is "has this EXACT improvement been done and measured on this
+  target" not "does anyone work in this area." No Δ → bank negative → AUTO-PIVOT to next candidate.
+- **NEW_DIRECTION lane** (genuinely new modeling object) → `/mos-front`: **occupancy-scan FIRST** (occupied/
+  substrate-fail → `LATERAL_JUMP`) → else FULL (Pro designs the leap) → `/object-shift-audit`(must be
+  ELIGIBLE_FOR_BACK_HALF) → preregister → DISPATCH.
+- **DSPARK_SYSTEMS lane** (measured lever, no new object, no new head) → skip ALL ceremony →
+  `/baseline-champion` + measured Δ.
+- Object-shift-flavored lead under a programme → `/mos-front`(LITE). Tactical variant → SKIP_TACTICAL waiver →
+  straight to the back-half.
+- Every cycle on an active programme → `/programme-audit`.
+The §5.1 filter gates fire unchanged after DISPATCH for ALL lanes.
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json
 > **Arbor MCP is the canonical store and the execution substrate; it is more reliable than hand-written
