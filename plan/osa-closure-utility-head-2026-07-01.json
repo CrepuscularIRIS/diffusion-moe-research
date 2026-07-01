@@ -1,0 +1,90 @@
+{
+  "schema_version": "osa.v1",
+  "front_mode": "MOC_FULL",
+  "ran_by_proposer": false,
+  "verdict": "DOWNGRADE_TO_TACTICAL_VARIANT",
+  "dpc_check": "NOT_RUN",
+  "moc": {
+    "old_object": {
+      "name": "O0 -- frozen DiffusionGemma factorized denoiser p0(x0|xt) = prod_{i in Mt} p0(x^i|h^i) + EntropyBoundSampler (EBS) commit ranking",
+      "equivalence_relation": "Two masked states are commit-decision-equivalent iff they have identical per-position local confidence/entropy score vectors s^(0); any difference in global answer-readiness / closure status that does not change s^(0) is invisible to O0.",
+      "what_it_collapses": [
+        "a state where a correct final answer is already extractable from committed scratchwork with tight remaining budget (closure-stranded, high S)",
+        "an otherwise-identical state (same local per-position score vector) where reasoning is still incomplete and no candidate answer exists (low S) -- O0 commits both in the same order"
+      ]
+    },
+    "omitted_structure": {
+      "name": "closure-strandedness S (bins S0 none / S1 candidate-only / S2 candidate+tight-budget / S3 candidate+tight-budget+terminal-rank-discordance)",
+      "type": "coverage_or_failure_taxonomy",
+      "observable_proxy": "Computable on FROZEN O0 via re-instrumented forward passes, no training required: (a) math_verify / boxed-answer-presence parse of committed text (existing verifier infra reused from node 5.9.2 / wallclock harness); (b) heuristic candidate-answer extraction from committed scratchwork / stable high-confidence residual tokens; (c) remaining-slot count vs required length of the canonical terminal template T(a), arithmetic from the known step schedule; (d) per-step local probability O0 assigns to terminal tokens (\\boxed{, }, eos) vs their actual EBS commit rank at that step (requires per-position logit access at each denoising step -- a NEW but frozen-model-only instrumentation cost, no training and no O1 needed to compute it)."
+    },
+    "proposed_object": {
+      "name": "O1 -- Closure-Utility Head g_theta(Ht, xt, Mt) -> (zt, ui, ri): re-ranks O0's per-position commit score by a global closure-utility bias, s_i^(1) = s_i^(0) + lambda * zt * ui, same commit quota per step as O0.",
+      "equivalence_relation": "Two masked states are commit-decision-equivalent under O1 iff they share BOTH the same s^(0) vector AND the same (zt, ui) closure-utility profile -- a strictly finer partition than O0's.",
+      "relation_to_O0": "refinement"
+    },
+    "examples_o0_same_o1_separates": [
+      "Case 1 (global closure vs O0-blind local score): State A has a correct final answer extractable from committed scratchwork with tight remaining budget (S3), and local score vector s^(0). State B has the SAME s^(0) profile but reasoning is still incomplete and no candidate answer exists (S0). O0 commits identically in A and B (same s^(0) => same rank order); O1 separates them because zt=1 only in A, up-weighting the terminal span there.",
+      "Case 2 (identical low terminal-token score, different budget tightness): Two states share an identical LOW local confidence score at the \\boxed{ position. In one, remaining commit capacity is nearly exhausted (tight budget, high S); in the other, capacity is abundant (low S). O0 ranks the terminal position identically low in both (same s^(0)); O1's ui boosts the terminal token only under the tight-budget/high-S condition, separating the two states."
+    ],
+    "pre_existing_failure_refs": [
+      "diffusionmoe-technical-report-2026-06-27.md, node 5.6 (profiling, done): 'the fixed model is near ceiling; real headroom sits at AIME 73% / MATH-L5 ~83%; the dominant failure mode is truncation/budget -- the model reasons correctly but never commits a \\boxed{} answer before the canvas runs out.'",
+      "plan/archive/frozen-pareto-negative-synthesis.md, node 5.9.2 (anti-truncation OUTPUT-PRESENCE observer, CLEAN NEGATIVE, sealed-confirmed L5-holdout n=94): a budget/STOPPING-based anti-truncation lever (bank-on-answer-present / spend-and-extend-on-no-answer) ties with always-deepen-to-matched-mean (0.7872 == 0.7872); its force-box disambiguator control shows -42pp (forced answers are confidently WRONG, i.e. naive forcing without a readiness signal is actively harmful). This motivates O1 as a WITHIN-BUDGET commit re-ranking object rather than a repeat of the killed stopping/allocation object, and explains why a readiness-gated (not naive) force-fill rival (DeadlineBox) is the correct bar to beat."
+    ]
+  },
+  "dpc": {
+    "sealed_before_dispatch": true,
+    "o0_matched_control": "O0-matched closure oracle: same frozen O0 forward pass + same candidate-answer extractor as O1, but reports ONLY the oracle upper bound (does inserting T(a) into currently-masked tail slots, without changing committed reasoning or adding steps, make the verifier pass) -- isolates the ceiling on closure headroom from any benefit a TRAINED head could add.",
+    "predicted_split_by_S": "Verifier-rescue rate from the O0-matched closure oracle is monotone increasing across S0 < S1 < S2 < S3 and concentrated in S3. GO thresholds (all required): S3 contains >=40% of truncation-labeled failures; the oracle rescues >=20% of S3 failures; overall verified-gain upper bound >= +3pp on AIME-2024/MATH-L5 OR >=25% relative reduction in truncation failures; median first-valid-final-answer step in rescued logs moves earlier by >=25% at identical step count and commit quota.",
+    "negative_controls": ["shuffled_S", "generic_difficulty"],
+    "rival_baseline": "DeadlineBox: deterministic, capacity-tightness-gated force-fill of the extracted candidate answer \\boxed{a} into tail masks (fill iff no valid final answer is committed AND remaining commit capacity <= L(T(a)) + epsilon), no hidden-state head, no training.",
+    "kill_condition": "Kill the OBJECT-SHIFT CLAIM (closure-as-a-trained-signal), not merely one head architecture, if ANY of: (1) oracle upper bound < +3pp and < 25% relative truncation reduction; (2) real-S rescue curve does not exceed the shuffled-S curve (S predicts rescue no better than a randomized S permuted within task x difficulty x step-decile x output-length bins); (3) adding S on top of a generic-difficulty regression (entropy, confidence, mask count, step fraction, lengths, item pass-rate, task fixed effects) does not improve AUC by >=0.05 and odds-ratio >=2.0 for S3; (4) DeadlineBox alone captures >=70% of the closure-oracle's rescues (closure reduces to deterministic terminalization, not a modeling object requiring a trained signal); (5) O0's own top-k/top-p does not contain the needed terminal tokens in most high-S states (the fix is not representable within O0's exposed vocabulary at commit time). On failure, do NOT retry the same object on the same substrate -- route to the named lateral jump (tool-call / JSON-schema / code-repair structural terminalization).",
+    "preregister_hash": "sha256:774579fee26d18470e9dfd7dc20fc05fb88fad3daaf0c7c14cf8571f0afad03d (plan/gpt55pro-closure-utility-head-2026-07-01.md, as read at audit time)"
+  },
+  "school_route": {
+    "primary": "O1 Closure-Utility Head -- trained re-ranking of O0's commit score by a global closure-utility signal (zt, ui), labels from logged truncation states + a verifier, no diffusion loss / no teacher forcing.",
+    "secondary": "AG-GRPO (answer-guided full-policy post-training, ACL 2026) -- flagged in the design as the honest closest LITERATURE rival, but NOT preregistered as an empirical DPC control; should be added as an explicit empirical rival before any strong claim.",
+    "rival": "DeadlineBox (deterministic, remaining-capacity-tightness-gated force-fill of the extracted candidate answer; no trained hidden-state head).",
+    "rival_attack_question": "Does DeadlineBox alone capture >=70% of the closure-oracle's verifier-rescues -- i.e. is deterministic, tightness-gated terminalization sufficient without any trained closure signal? If yes, O1 is deterministic terminalization dressed as a modeling object, not a genuine closure-utility state variable."
+  },
+  "tests": [
+    {
+      "id": "T1",
+      "result": "PASS",
+      "evidence": "O1 induces a strictly finer commit-decision partition than O0 (refinement, per relation_to_O0): two states with identical O0 local score vectors s^(0) but different global closure status (candidate-answer extractable + tight budget vs not) are O0-equivalent but O1-separated via zt*ui (Case 1/2 above). This is not a renamed loss/metric -- O0's model class has NO representation of global closure at all (pure per-position factorization); O1 introduces a state variable outside O0's model class. Caveat: any additive score term trivially refines a partition, so distinctness rests on zt/ui being a function of genuinely NEW global structure (closure), not an arbitrary added feature -- accepted here because closure/answer-readiness is provably inexpressible in O0's factorized per-position score."
+    },
+    {
+      "id": "T2",
+      "result": "PASS",
+      "evidence": "S (S0-S3) is extractable pre-training from frozen-O0 logs via (a) existing verifier/boxed-presence parsing already used in nodes 5.9.2/5.8 wallclock, (b) a candidate-answer extraction heuristic (same class of tool used for DeadlineBox and the 5.9.2 force-box control), (c) arithmetic remaining-capacity accounting, and (d) per-step logit access to a frozen, fully inspectable model. Caveat: item (d) (terminal-token local probability vs EBS rank) requires NEW per-position logit instrumentation not confirmed to already exist in current logging -- a real but modest, training-free re-instrumentation cost that must be verified before the DPC probe runs."
+    },
+    {
+      "id": "T3",
+      "result": "PASS",
+      "evidence": "The DPC is well-formed, falsifiable, and checkable purely on existing/re-instrumented frozen-O0 logs (no training, no GPU job): concrete S-bin definitions, an O0-matched oracle control that isolates headroom from training benefit, and four concrete numeric GO thresholds (S3 share >=40%, oracle rescue >=20% of S3, gain >=+3pp/25% relative, step-shift >=25% earlier). This PASS is a design-validity judgment only -- the probe has NOT been executed (dpc_check=NOT_RUN per explicit instruction not to fail T3 for non-execution). FAIL would require an ill-formed/unfalsifiable/not-pre-training-checkable prediction, none of which apply."
+    },
+    {
+      "id": "T4",
+      "result": "PASS",
+      "evidence": "DeadlineBox is preregistered as a simpler old-object rival (deterministic, tightness-gated force-fill, no trained head) with an explicit kill-if-rival-explains-it clause (kill condition #4: DeadlineBox captures >=70% of oracle rescues => not a modeling object). It is grounded in, but is NOT identical to, the already-tested 5.9.2 'force-box' control (that control forced an answer regardless of remaining-capacity tightness and showed -42pp; DeadlineBox adds the tightness gate the old control lacked) -- this is a genuine, non-strawman escalation of a real prior negative, not a fabricated rival. Caveat: AG-GRPO, arguably a MORE dangerous rival (a trained closure-like signal via full policy post-training) is only flagged in prose, not preregistered as an empirical DPC control -- a real T4 gap to close before ELIGIBLE."
+    },
+    {
+      "id": "T5",
+      "result": "PASS",
+      "evidence": "Both required negative controls are preregistered with numeric kill thresholds: shuffled-S (shuffle S within task x difficulty x step-decile x output-length bins; kill if shuffled-S predicts rescue nearly as well as real S) and generic-difficulty (regress rescue on entropy/confidence/mask-count/step-fraction/lengths/item-pass-rate/task-FE, then add S; kill unless AUC gain >=0.05 and OR>=2.0 for S3, with item-clustered SEs). Matches schema's mandatory {shuffled_S, generic_difficulty} set."
+    },
+    {
+      "id": "T6",
+      "result": "PASS",
+      "evidence": "The 'FINAL kill condition' block states 5 conditions, ALL required, with an explicit fallback ('If any fail -> SATURATED; named jump target'). 4 of 5 conditions are object-level kills (oracle headroom absent; S no better than shuffled-S; S is just generic difficulty; DeadlineBox captures the gain and the design itself states this means 'it's deterministic terminalization, not a modeling object') -- these kill the CLOSURE-AS-TRAINED-SIGNAL claim, not one architecture, and route to a named lateral jump rather than a same-substrate retry. Caveat: condition #5 (O0 top-k/top-p must contain terminal tokens) is more an implementation-feasibility check than a direct falsifier of whether closure exists as a structure; and the kill list has no explicit 'confident-wrong false-positive rate on S0-S2 states' check mirroring the 5.9.2 force-box disambiguator that caught the real prior failure mode -- recommended addition, not a hard FAIL."
+    }
+  ],
+  "failed_tests": [],
+  "claim_language_restrictions": [
+    "Do NOT claim 'validated object-shift' or 'closure-utility is a proven modeling object' in any paper/report/promotion text until the DPC probe is actually RUN on existing/re-instrumented O0 logs and dpc_check flips to DIFFERENTIAL_PATTERN_FOUND (all 4 GO thresholds met, real-S >> shuffled-S, S survives the generic-difficulty control, and DeadlineBox does NOT capture >=70% of the closure-oracle's rescues).",
+    "Until the DPC probe runs, describe this lever ONLY as a candidate DSpark-style systems variant ('closure-aware commit re-ranking, DPC pending') and route it through /baseline-champion for a measured-delta check against DeadlineBox -- per the project's own rule that DSpark-flavored systems leads may skip the object-shift ceremony -- rather than marketing it as a novel modeling object.",
+    "Do NOT describe DeadlineBox as literally identical to the node-5.9.2 force-box control already killed -- the 5.9.2 control lacked the remaining-capacity tightness gate DeadlineBox has; report them as related-but-distinct controls, and run both if feasible, before claiming the 5.9.2 kill is fully 'respected by construction'.",
+    "Add AG-GRPO as an explicit EMPIRICAL rival (not only a literature caveat) before any claim that O1's eventual gain (if the DPC clears) is attributable to a genuinely new closure state variable rather than to answer-guided post-training in general.",
+    "If the DPC probe clears all GO thresholds, this bundle must be RE-AUDITED (independent, ran_by_proposer=false) for ELIGIBLE_FOR_BACK_HALF before any O1 training GPU-hour is spent -- this DOWNGRADE verdict does not itself license training."
+  ]
+}

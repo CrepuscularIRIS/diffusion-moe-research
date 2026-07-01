@@ -35,6 +35,9 @@ credentials*.json
 /cot-distillation-fidelity-audit/
 /Jackrong-llm-finetuning-guide/
 
+# --- VLA side project (nested repos + large datasets/checkpoints, not tracked here) ---
+/VLA/
+
 # --- Python ---
 __pycache__/
 *.py[cod]
