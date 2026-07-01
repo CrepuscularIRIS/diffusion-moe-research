@@ -270,7 +270,7 @@ Arbor node fields = `hypothesis · status · result · insight · score · test_
 **Rule:** if Arbor has a tool/field for it, USE IT (don't re-implement in md/json). Only the **validated typed
 contracts** (MOC, DPC, object_shift_audit, programme ledgers, negative_case) persist as sealed files — because
 they need fail-closed schema validation Arbor doesn't do — and the node's `code_ref` points at them. This
-deletes the parallel structure-JSON pile (the old `mos-front-architecture.md §16` packet).
+deletes the parallel structure-JSON pile (the old MOS-Front §16 packet, now in `plan/archive/`).
 
 ## 6. Arbor command routing & tree discipline
 > We run a **pragmatic hybrid**: Arbor's tree for STRUCTURE, our methodology for DECISIONS, multi-engine for
