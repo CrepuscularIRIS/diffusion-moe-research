@@ -255,7 +255,7 @@ learned head could pick a better trajectory) — so a G4 negative routes to **N1
 abandoning; (2) implementation confound in the capped-NFE baseline. Positive → **H2** (pMF clean-out, has a
 plain-CE inertness control); negative → **N1**.
 
-## Stage 3 + 4 — Novelty + formal design (Pro 扩展, 2026-06-28) → `plan/gpt55pro-G4-design-2026-06-28.md`
+## Stage 3 + 4 — Novelty + formal design (Pro 扩展, 2026-06-28) → `plan/archive/gpt55pro-G4-design-2026-06-28.md`
 - **Novelty:** no lethal pivot for the exact combination; defensible slice = *"intervention-level
   verified-generation test for whether a frozen large discrete masked-dLLM hosts a decodable continuous
   clean-data / average-velocity field in its tied embedding space."* Closest threats: ELF (trains end-to-end;

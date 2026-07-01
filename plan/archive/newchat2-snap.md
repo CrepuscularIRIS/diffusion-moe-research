@@ -1,0 +1,410 @@
+- generic [ref=e1]:
+  - link "跳至内容" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - navigation "侧边栏":
+        - generic:
+          - generic:
+            - generic:
+              - button "打开边栏":
+                - img
+        - generic:
+          - generic:
+            - link "新聊天":
+              - /url: /
+              - generic:
+                - img
+              - generic: 新聊天
+          - generic:
+            - button "搜索聊天":
+              - generic:
+                - img
+              - generic: 搜索聊天
+          - generic:
+            - button "最近聊天":
+              - generic:
+                - img
+              - generic: 最近聊天
+        - generic:
+          - generic:
+            - button "打开“个人资料”菜单":
+              - generic:
+                - generic:
+                  - img "个人资料图片"
+      - generic [ref=e9]:
+        - heading "历史聊天记录" [level=2] [ref=e10]
+        - generic [ref=e11]:
+          - navigation "历史聊天记录" [ref=e12]:
+            - generic [ref=e15]:
+              - link "主页" [ref=e16] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e17]: ChatGPT
+              - button "关闭边栏" [expanded] [ref=e19]:
+                - img [ref=e20]
+            - list [ref=e23]:
+              - listitem [ref=e24]:
+                - link "新聊天 控制 Shift O" [ref=e25] [cursor=pointer]:
+                  - /url: /
+                  - generic [ref=e26]:
+                    - img [ref=e28]
+                    - generic [ref=e31]: 新聊天
+                  - generic [ref=e33]:
+                    - generic "控制" [ref=e34]:
+                      - generic [ref=e35]: Ctrl
+                      - text: +
+                    - generic "Shift" [ref=e36]:
+                      - generic [ref=e37]: Shift
+                      - text: +
+                    - generic [ref=e39]: O
+              - listitem
+              - listitem [ref=e40]:
+                - button "搜索聊天 控制 K" [ref=e41] [cursor=pointer]:
+                  - generic [ref=e42]:
+                    - img [ref=e44]
+                    - generic [ref=e47]: 搜索聊天
+                  - generic [ref=e49]:
+                    - generic "控制" [ref=e50]:
+                      - generic [ref=e51]: Ctrl
+                      - text: +
+                    - generic [ref=e53]: K
+            - link "文件库" [ref=e54] [cursor=pointer]:
+              - /url: /library
+              - img [ref=e56]
+              - generic [ref=e59]: 文件库
+            - link "项目 新项目" [ref=e60] [cursor=pointer]:
+              - /url: /projects
+              - generic [ref=e61]:
+                - img [ref=e63]
+                - generic [ref=e66]: 项目
+              - button "新项目" [ref=e68]:
+                - img [ref=e70]
+            - link "已安排" [ref=e72] [cursor=pointer]:
+              - /url: /scheduled
+              - img [ref=e74]
+              - generic [ref=e77]: 已安排
+            - link "应用" [ref=e78] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=e80]
+              - generic [ref=e83]: 应用
+            - generic [ref=e85] [cursor=pointer]:
+              - img [ref=e87]
+              - generic [ref=e90]: 更多
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - button "最近" [expanded] [ref=e93] [cursor=pointer]:
+                  - heading "最近" [level=2] [ref=e94]
+                - generic [ref=e96]:
+                  - link "新聊天" [ref=e97] [cursor=pointer]:
+                    - /url: /
+                    - img [ref=e99]
+                  - button "整理聊天" [ref=e101] [cursor=pointer]:
+                    - img [ref=e103]
+              - list [ref=e106]:
+                - listitem [ref=e107]:
+                  - link "ML Paper Prior-Art Audit（未读）" [ref=e594] [cursor=pointer]:
+                    - /url: /c/6a41c534-e7e4-83ea-9c49-d57ac7a57c17?messageId=finalAgentTurnStart
+                    - generic [ref=e110]: ML Paper Prior-Art Audit
+                    - generic [ref=e595]:
+                      - button "置顶 ML Paper Prior-Art Audit" [ref=e596]:
+                        - img [ref=e598]
+                      - button "打开“ML Paper Prior-Art Audit”的对话选项" [ref=e600]:
+                        - img [ref=e602]
+                - listitem [ref=e121]:
+                  - link "翻译与实验进展" [ref=e122] [cursor=pointer]:
+                    - /url: /c/6a3e019d-16ec-83ea-8008-ddf4964c789b
+                    - generic [ref=e124]: 翻译与实验进展
+                    - generic [ref=e126]:
+                      - button "置顶 翻译与实验进展" [ref=e127]:
+                        - img [ref=e129]
+                      - button "打开“翻译与实验进展”的对话选项" [ref=e131]:
+                        - img [ref=e133]
+                - listitem [ref=e135]:
+                  - link "Novelty and Design Critique（未读）" [ref=e136] [cursor=pointer]:
+                    - /url: /c/6a414ca5-3b2c-83ea-a64e-d6c0785a49a6?messageId=finalAgentTurnStart
+                    - generic [ref=e138]: Novelty and Design Critique
+                    - generic [ref=e141]:
+                      - button "置顶 Novelty and Design Critique" [ref=e142]:
+                        - img [ref=e144]
+                      - button "打开“Novelty and Design Critique”的对话选项" [ref=e146]:
+                        - img [ref=e148]
+                - listitem [ref=e152]:
+                  - link "Frozen DiffusionGemma Experiment" [ref=e153] [cursor=pointer]:
+                    - /url: /c/6a41051a-8a7c-83ea-b618-0c41e6d66194
+                    - generic "Frozen DiffusionGemma Experiment" [ref=e155]
+                    - generic [ref=e157]:
+                      - button "置顶 Frozen DiffusionGemma Experiment" [ref=e158]:
+                        - img [ref=e160]
+                      - button "打开“Frozen DiffusionGemma Experiment”的对话选项" [ref=e162]:
+                        - img [ref=e164]
+                - listitem [ref=e166]:
+                  - link "Aerial VLN Novelty Audit" [ref=e167] [cursor=pointer]:
+                    - /url: /c/6a40d5e6-0a30-83ea-ad36-ca919df36a87
+                    - generic [ref=e169]: Aerial VLN Novelty Audit
+                    - generic [ref=e171]:
+                      - button "置顶 Aerial VLN Novelty Audit" [ref=e172]:
+                        - img [ref=e174]
+                      - button "打开“Aerial VLN Novelty Audit”的对话选项" [ref=e176]:
+                        - img [ref=e178]
+                - listitem [ref=e180]:
+                  - link "Model Audit and Design" [ref=e181] [cursor=pointer]:
+                    - /url: /c/6a40b2e4-7150-83ea-ac65-9cee063cba00
+                    - generic [ref=e183]: Model Audit and Design
+                    - generic [ref=e185]:
+                      - button "置顶 Model Audit and Design" [ref=e186]:
+                        - img [ref=e188]
+                      - button "打开“Model Audit and Design”的对话选项" [ref=e190]:
+                        - img [ref=e192]
+                - listitem [ref=e194]:
+                  - link "何凯明论文总结" [ref=e195] [cursor=pointer]:
+                    - /url: /c/6a3e777a-72a0-83ea-a1a6-e1e63f4c9a8a
+                    - generic [ref=e197]: 何凯明论文总结
+                    - generic [ref=e199]:
+                      - button "置顶 何凯明论文总结" [ref=e200]:
+                        - img [ref=e202]
+                      - button "打开“何凯明论文总结”的对话选项" [ref=e204]:
+                        - img [ref=e206]
+                - listitem [ref=e208]:
+                  - link "Novelty Audit for dLLM" [ref=e209] [cursor=pointer]:
+                    - /url: /c/6a3f5495-7d98-83ea-955e-eda7fbc487b5
+                    - generic [ref=e211]: Novelty Audit for dLLM
+                    - generic [ref=e213]:
+                      - button "置顶 Novelty Audit for dLLM" [ref=e214]:
+                        - img [ref=e216]
+                      - button "打开“Novelty Audit for dLLM”的对话选项" [ref=e218]:
+                        - img [ref=e220]
+                - listitem [ref=e222]:
+                  - link "Program-Level Redesign Evaluation" [ref=e223] [cursor=pointer]:
+                    - /url: /c/6a3f2ff9-eda0-83ea-a08d-df606a52fd5b
+                    - generic "Program-Level Redesign Evaluation" [ref=e225]
+                    - generic [ref=e227]:
+                      - button "置顶 Program-Level Redesign Evaluation" [ref=e228]:
+                        - img [ref=e230]
+                      - button "打开“Program-Level Redesign Evaluation”的对话选项" [ref=e232]:
+                        - img [ref=e234]
+                - listitem [ref=e236]:
+                  - link "Data-Informed Paper Review" [ref=e237] [cursor=pointer]:
+                    - /url: /c/6a3ec830-3540-83ea-84e3-6b55f23fe2cc
+                    - generic [ref=e239]: Data-Informed Paper Review
+                    - generic [ref=e241]:
+                      - button "置顶 Data-Informed Paper Review" [ref=e242]:
+                        - img [ref=e244]
+                      - button "打开“Data-Informed Paper Review”的对话选项" [ref=e246]:
+                        - img [ref=e248]
+                - listitem [ref=e250]:
+                  - link "Frozen Diffusion LLM Review" [ref=e251] [cursor=pointer]:
+                    - /url: /c/6a3ea287-50d4-83ea-9b04-5285a5b58c11
+                    - generic [ref=e253]: Frozen Diffusion LLM Review
+                    - generic [ref=e255]:
+                      - button "置顶 Frozen Diffusion LLM Review" [ref=e256]:
+                        - img [ref=e258]
+                      - button "打开“Frozen Diffusion LLM Review”的对话选项" [ref=e260]:
+                        - img [ref=e262]
+                - listitem [ref=e264]:
+                  - link "Research Program Redesign" [ref=e265] [cursor=pointer]:
+                    - /url: /c/6a3e8f93-95a0-83ea-8d7c-6d5abfe25a13
+                    - generic [ref=e267]: Research Program Redesign
+                    - generic [ref=e269]:
+                      - button "置顶 Research Program Redesign" [ref=e270]:
+                        - img [ref=e272]
+                      - button "打开“Research Program Redesign”的对话选项" [ref=e274]:
+                        - img [ref=e276]
+                - listitem [ref=e278]:
+                  - link "Skeptical Review of DiffusionGemma" [ref=e279] [cursor=pointer]:
+                    - /url: /c/6a3e7b4e-5ffc-83ea-a07f-801e6273cd7e
+                    - generic "Skeptical Review of DiffusionGemma" [ref=e281]
+                    - generic [ref=e283]:
+                      - button "置顶 Skeptical Review of DiffusionGemma" [ref=e284]:
+                        - img [ref=e286]
+                      - button "打开“Skeptical Review of DiffusionGemma”的对话选项" [ref=e288]:
+                        - img [ref=e290]
+                - listitem [ref=e292]:
+                  - link "DiffusionMOE模型分析" [ref=e293] [cursor=pointer]:
+                    - /url: /c/6a3e7806-1308-83ea-ac90-3aaf76f5204d
+                    - generic [ref=e295]: DiffusionMOE模型分析
+                    - generic [ref=e297]:
+                      - button "置顶 DiffusionMOE模型分析" [ref=e298]:
+                        - img [ref=e300]
+                      - button "打开“DiffusionMOE模型分析”的对话选项" [ref=e302]:
+                        - img [ref=e304]
+                - listitem [ref=e306]:
+                  - link "dLLM Error Localization Survey" [ref=e307] [cursor=pointer]:
+                    - /url: /c/6a3e70da-eab8-83ea-ac8e-51d869f7c3e0
+                    - generic [ref=e309]: dLLM Error Localization Survey
+                    - generic [ref=e311]:
+                      - button "置顶 dLLM Error Localization Survey" [ref=e312]:
+                        - img [ref=e314]
+                      - button "打开“dLLM Error Localization Survey”的对话选项" [ref=e316]:
+                        - img [ref=e318]
+                - listitem [ref=e320]:
+                  - link "Frozen Residual-Control for dLLMs" [ref=e321] [cursor=pointer]:
+                    - /url: /c/6a3e68f7-9940-83ea-823f-39d2248c5f72
+                    - generic "Frozen Residual-Control for dLLMs" [ref=e323]
+                    - generic [ref=e325]:
+                      - button "置顶 Frozen Residual-Control for dLLMs" [ref=e326]:
+                        - img [ref=e328]
+                      - button "打开“Frozen Residual-Control for dLLMs”的对话选项" [ref=e330]:
+                        - img [ref=e332]
+                - listitem [ref=e334]:
+                  - link "论文内容总结与分析 — 项目 低空具身 中的聊天" [ref=e335] [cursor=pointer]:
+                    - /url: /c/6a3e3ff7-c9c4-83ea-8be6-42b50faf7d65
+                    - generic [ref=e338]:
+                      - generic [ref=e339]: 论文内容总结与分析
+                      - generic [ref=e340]: 低空具身
+                    - generic [ref=e342]:
+                      - button "置顶 论文内容总结与分析" [ref=e343]:
+                        - img [ref=e345]
+                      - button "打开“论文内容总结与分析”的对话选项" [ref=e347]:
+                        - img [ref=e349]
+                - listitem [ref=e351]:
+                  - link "分支 · 论文内容总结与分析 — 项目 低空具身 中的聊天" [ref=e352] [cursor=pointer]:
+                    - /url: /c/6a3e4d5a-cecc-83ea-8d9d-14c783773d7a
+                    - generic [ref=e355]:
+                      - generic [ref=e356]: 分支 · 论文内容总结与分析
+                      - generic [ref=e357]: 低空具身
+                    - generic [ref=e359]:
+                      - button "置顶 分支 · 论文内容总结与分析" [ref=e360]:
+                        - img [ref=e362]
+                      - button "打开“分支 · 论文内容总结与分析”的对话选项" [ref=e364]:
+                        - img [ref=e366]
+                - listitem [ref=e368]:
+                  - link "分支 · 分支 · 论文内容总结与分析 — 项目 低空具身 中的聊天" [ref=e369] [cursor=pointer]:
+                    - /url: /c/6a3e59dc-f004-83ea-af70-738a82248733
+                    - generic [ref=e372]:
+                      - generic [ref=e373]: 分支 · 分支 · 论文内容总结与分析
+                      - generic [ref=e374]: 低空具身
+                    - generic [ref=e376]:
+                      - button "置顶 分支 · 分支 · 论文内容总结与分析" [ref=e377]:
+                        - img [ref=e379]
+                      - button "打开“分支 · 分支 · 论文内容总结与分析”的对话选项" [ref=e381]:
+                        - img [ref=e383]
+                - listitem [ref=e385]:
+                  - link "论文分类与汇报建议 — 项目 低空具身 中的聊天" [ref=e386] [cursor=pointer]:
+                    - /url: /c/6a3d659b-32c8-83ea-9c94-19d584eec635
+                    - generic [ref=e389]:
+                      - generic [ref=e390]: 论文分类与汇报建议
+                      - generic [ref=e391]: 低空具身
+                    - generic [ref=e393]:
+                      - button "置顶 论文分类与汇报建议" [ref=e394]:
+                        - img [ref=e396]
+                      - button "打开“论文分类与汇报建议”的对话选项" [ref=e398]:
+                        - img [ref=e400]
+                - listitem [ref=e402]:
+                  - link "DiffusionGemma M-PCRH Design" [ref=e403] [cursor=pointer]:
+                    - /url: /c/6a3e35c2-202c-83ea-ba45-f90c2e7d95ff
+                    - generic [ref=e405]: DiffusionGemma M-PCRH Design
+                    - generic [ref=e407]:
+                      - button "置顶 DiffusionGemma M-PCRH Design" [ref=e408]:
+                        - img [ref=e410]
+                      - button "打开“DiffusionGemma M-PCRH Design”的对话选项" [ref=e412]:
+                        - img [ref=e414]
+                - listitem [ref=e416]:
+                  - link "申诉信件写作建议" [ref=e417] [cursor=pointer]:
+                    - /url: /c/6a3d6742-de64-83ea-80c6-8a3811b6ea63
+                    - generic [ref=e419]: 申诉信件写作建议
+                    - generic [ref=e421]:
+                      - button "置顶 申诉信件写作建议" [ref=e422]:
+                        - img [ref=e424]
+                      - button "打开“申诉信件写作建议”的对话选项" [ref=e426]:
+                        - img [ref=e428]
+                - listitem [ref=e430]:
+                  - link "ML Diffusion Mechanism Novelty" [ref=e431] [cursor=pointer]:
+                    - /url: /c/6a3e2129-a7a4-83ea-a6bc-8658854dab6f
+                    - generic [ref=e433]: ML Diffusion Mechanism Novelty
+                    - generic [ref=e435]:
+                      - button "置顶 ML Diffusion Mechanism Novelty" [ref=e436]:
+                        - img [ref=e438]
+                      - button "打开“ML Diffusion Mechanism Novelty”的对话选项" [ref=e440]:
+                        - img [ref=e442]
+                - listitem [ref=e444]:
+                  - link "Diffusion-LM MoE Novelty Check" [ref=e445] [cursor=pointer]:
+                    - /url: /c/6a3e1236-2c3c-83ea-9336-582f498d205d
+                    - generic [ref=e447]: Diffusion-LM MoE Novelty Check
+                    - generic [ref=e449]:
+                      - button "置顶 Diffusion-LM MoE Novelty Check" [ref=e450]:
+                        - img [ref=e452]
+                      - button "打开“Diffusion-LM MoE Novelty Check”的对话选项" [ref=e454]:
+                        - img [ref=e456]
+                - listitem [ref=e458]:
+                  - link "Diffusion MoE Novelty Audit" [ref=e459] [cursor=pointer]:
+                    - /url: /c/6a3de974-a63c-83ea-ae39-78d688a979ad
+                    - generic [ref=e461]: Diffusion MoE Novelty Audit
+                    - generic [ref=e463]:
+                      - button "置顶 Diffusion MoE Novelty Audit" [ref=e464]:
+                        - img [ref=e466]
+                      - button "打开“Diffusion MoE Novelty Audit”的对话选项" [ref=e468]:
+                        - img [ref=e470]
+                - listitem [ref=e472]:
+                  - link "并行任务与模型验证" [ref=e473] [cursor=pointer]:
+                    - /url: /c/6a3c898c-6304-83ea-aa84-6f94791c2d18
+                    - generic [ref=e475]: 并行任务与模型验证
+                    - generic [ref=e477]:
+                      - button "置顶 并行任务与模型验证" [ref=e478]:
+                        - img [ref=e480]
+                      - button "打开“并行任务与模型验证”的对话选项" [ref=e482]:
+                        - img [ref=e484]
+                - listitem [ref=e486]:
+                  - link "Diffusion-MoE Routing Analysis" [ref=e487] [cursor=pointer]:
+                    - /url: /c/6a3d89c1-53a8-83ea-8dca-5d63431720de
+                    - generic [ref=e489]: Diffusion-MoE Routing Analysis
+                    - generic [ref=e491]:
+                      - button "置顶 Diffusion-MoE Routing Analysis" [ref=e492]:
+                        - img [ref=e494]
+                      - button "打开“Diffusion-MoE Routing Analysis”的对话选项" [ref=e496]:
+                        - img [ref=e498]
+                - listitem [ref=e500]:
+                  - link "Claudecode 24h持续运行" [ref=e501] [cursor=pointer]:
+                    - /url: /c/6a3c886b-dc20-83ea-9dce-3d84f3108c54
+                    - generic [ref=e503]: Claudecode 24h持续运行
+                    - generic [ref=e505]:
+                      - button "置顶 Claudecode 24h持续运行" [ref=e506]:
+                        - img [ref=e508]
+                      - button "打开“Claudecode 24h持续运行”的对话选项" [ref=e510]:
+                        - img [ref=e512]
+          - button "xufeng ling 个人帐户，打开“个人资料”菜单" [ref=e606] [cursor=pointer]:
+            - generic [ref=e517]:
+              - img "个人资料图片" [ref=e520]
+              - generic [ref=e521]:
+                - generic [ref=e523]: xufeng ling
+                - generic [ref=e526]: 个人帐户
+            - button "下载应用" [ref=e529]:
+              - img [ref=e531]
+    - generic [ref=e535]:
+      - generic [ref=e536]:
+        - banner:
+          - button "开启临时聊天" [ref=e542] [cursor=pointer]:
+            - img [ref=e543]
+      - main [ref=e546]:
+        - generic [ref=e547]:
+          - heading "我们先从哪里开始呢？" [level=1] [ref=e555]:
+            - generic [ref=e556]: 我们先从哪里开始呢？
+          - generic [ref=e557]:
+            - generic [ref=e563]:
+              - generic [ref=e567]:
+                - button "添加文件等" [ref=e570] [cursor=pointer]:
+                  - img
+                - textbox "与 ChatGPT 聊天" [active] [ref=e573]:
+                  - paragraph [ref=e574]: 有问题，尽管问
+                - generic [ref=e575]:
+                  - button "Pro 扩展" [ref=e578] [cursor=pointer]:
+                    - generic [ref=e581]: Pro 扩展
+                    - img
+                  - generic [ref=e582]:
+                    - button "开始听写" [ref=e583] [cursor=pointer]:
+                      - img
+                    - button "启动语音功能" [ref=e587] [cursor=pointer]:
+                      - img [ref=e588]
+              - button [ref=e590]
+              - button [ref=e591]
+            - generic [ref=e611]:
+              - button "生成图片" [ref=e613] [cursor=pointer]:
+                - img [ref=e615]
+                - generic [ref=e618]: 生成图片
+              - button "撰写或编辑" [ref=e620] [cursor=pointer]:
+                - img [ref=e622]
+                - generic [ref=e625]: 撰写或编辑
+              - button "查找资料" [ref=e627] [cursor=pointer]:
+                - img [ref=e629]
+                - generic [ref=e632]: 查找资料
+  - alert [ref=e592]
+  - status [ref=e593]

@@ -60,3 +60,8 @@ runs/
 *.log
 *.output
 nohup.out
+
+# --- Prior-art PDFs + closed He-line scratch code (not tracked) ---
+/plan/priorart_pdfs/
+*.pdf
+/diffusiongemma_sft/heline/

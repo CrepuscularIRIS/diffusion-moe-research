@@ -236,33 +236,54 @@ def load_h4_dataset(
     tower_code = TOWER_DECODER if tower == "decoder" else TOWER_ENCODER
     base = data["tower"] == tower_code
 
-    # Map trajectory (prompt, canvas) -> contiguous traj_idx.
-    pc = np.stack([data["prompt_id"][base], data["canvas_id"][base]], axis=1)
-    uniq_traj, traj_of_row = np.unique(pc, axis=0, return_inverse=True)
-    call_col = data["call_index"][base]
+    # Slice every needed column ONCE (re-slicing data[key][base] per layer over the
+    # full ~1e8-row table was O(layers * N) and dominated load time on real runs).
+    prompt_b = data["prompt_id"][base]
+    canvas_b = data["canvas_id"][base]
+    call_b = data["call_index"][base]
+    tb_b = data["t_bucket"][base]
+    layer_b = data["layer_idx"][base]
+    rid_b = data["record_id"][base]
+    token_b = data["token_idx"][base]
+    slot_b = data["slot"][base]
+    expert_b = data["expert"][base]
+    weight_b = data["weight"][base]
 
-    # Observed call_buckets table.
+    # Map trajectory (prompt, canvas) -> contiguous traj_idx via a 1-D combined key
+    # (np.unique(axis=0) sorts structured rows and is ~10x slower on large arrays).
+    n_canvas = int(canvas_b.max()) + 1 if canvas_b.size else 1
+    traj_key = prompt_b.astype(np.int64) * n_canvas + canvas_b.astype(np.int64)
+    _, traj_of_row = np.unique(traj_key, return_inverse=True)
+    call_col = call_b
+
+    # Observed call_buckets table, built vectorially: each (traj, call) pair maps to
+    # one bucket (constant within a record). Replaces a per-trajectory Python scan
+    # over the full ~1e8-row table (was O(num_trajectories * N), minutes on real runs).
     call_buckets: dict[int, dict[int, int]] = {}
-    tb_col = data["t_bucket"][base]
-    for r in range(uniq_traj.shape[0]):
-        rmask = traj_of_row == r
-        for s, b in zip(call_col[rmask], tb_col[rmask]):
-            call_buckets.setdefault(int(r), {})[int(s)] = int(b)
+    tb_col = tb_b
+    tc_key = traj_of_row.astype(np.int64) * (int(call_col.max()) + 1 if call_col.size else 1) \
+        + call_col.astype(np.int64)
+    uniq_tc, first_idx = np.unique(tc_key, return_index=True)
+    for k, fi in zip(uniq_tc, first_idx):
+        r = int(traj_of_row[fi])
+        s = int(call_col[fi])
+        call_buckets.setdefault(r, {})[s] = int(tb_col[fi])
 
     layer_visits: dict[int, dict[str, np.ndarray]] = {}
-    layer_col = data["layer_idx"][base]
-    for layer in np.unique(layer_col):
-        lmask = layer_col == layer
+    for layer in np.unique(layer_b):
+        lmask = layer_b == layer
         if not lmask.any():
             continue
-        rids = data["record_id"][base][lmask]
-        tokens = data["token_idx"][base][lmask]
-        slots = data["slot"][base][lmask]
-        experts = data["expert"][base][lmask]
-        weights = data["weight"][base][lmask]
-        # Unique visit row per (record_id, token).
-        pair = np.stack([rids, tokens], axis=1)
-        _, row_of = np.unique(pair, axis=0, return_inverse=True)
+        rids = rid_b[lmask]
+        tokens = token_b[lmask]
+        slots = slot_b[lmask]
+        experts = expert_b[lmask]
+        weights = weight_b[lmask]
+        # Unique visit row per (record_id, token), via a 1-D combined int64 key
+        # (faster than np.unique(axis=0); token_idx < canvas_length keeps it exact).
+        n_tok = int(tokens.max()) + 1 if tokens.size else 1
+        visit_key = rids.astype(np.int64) * n_tok + tokens.astype(np.int64)
+        _, row_of = np.unique(visit_key, return_inverse=True)
         n_rows = int(row_of.max()) + 1
         ids = np.full((n_rows, top_k), 0, dtype=np.int64)
         gates = np.zeros((n_rows, top_k), dtype=np.float64)

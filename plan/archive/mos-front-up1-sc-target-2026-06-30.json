@@ -1,0 +1,115 @@
+{
+  "artifact": "mos-front front-half bundle",
+  "direction_id": "UP-1 / SC-target clean-prediction adapter (generator-training axis)",
+  "created": "2026-06-30",
+  "author_engine": "Opus",
+  "self_certified": false,
+  "front_mode": "MOC_FULL",
+
+  "phenomenon_bundle": {
+    "provenance": "pre-existing/observed-before-idea; sourced from .arbor/sessions/diffusion-moe/RUNLOG.md and plan/frozen-pareto-negative-synthesis.md; sealed 2026-06-30",
+    "failures": [
+      {
+        "id": "PB1_premature_readout",
+        "source": "cycle 17 / 17b (2026-06-29), sealed L5-holdout n=94 + dev L5-dev-40",
+        "observed": "Under the output-presence observer, 29/47 native-no-box decision states resolve to a VERIFIER-CORRECT answer (5/47 under forcebox); correct->wrong regressions = 0. The frozen model at a decision step often already 'contains' the correct continuation but the native readout/commitment does not surface it.",
+        "why_relevant": "Direct evidence that frozen features at EB decision steps carry correct-answer signal not surfaced by the native clean-estimate/commitment. (Caveat carried forward: native budget self-banks this equally -> post-hoc stopping cannot exploit it; this is precisely why the lever must be a TRAINING change, not a post-hoc chooser.)"
+      },
+      {
+        "id": "PB2_residual_factorization_free",
+        "source": "cycle V1 (sealed), tree 5.9.1/5.9.3",
+        "observed": "Joint re-denoise of the uncommitted high-entropy residual via the native self-conditioning channel = independent per-position (joint 0.7447 ~= independent 0.7553, plus1_vanilla = native EXACTLY, random_residual = native EXACTLY). Only WRONG-SC conditioning hurt (shuffled -19pp).",
+        "why_relevant": "The NATIVE clean-estimate does not exploit cross-position / trajectory structure in the residual; its target is the per-position marginal, not a verifier-correct joint continuation. Headroom (if any) is in a DIFFERENT target, not a different routing of the same estimate."
+      },
+      {
+        "id": "PB3_budget_quality_gap",
+        "source": "cycle 18 PSC-Bridge oracle, tree 5.9.4 (2026-06-29)",
+        "observed": "native_full(forced48)=0.925 vs native_24(forced24)=0.875 (a real 5pp budget->quality gap); native EB adaptive = 0.95 @ mean 34.27 NFE. The training-free SC-time-transport oracle's +5pp at 24 NFE was reproduced EXACTLY by a final-SC answer-leak control => leakage, not a deployable mechanism.",
+        "why_relevant": "There IS a budget-quality gap the model closes only with more steps; the native adaptive sampler captures most of it. Any new lever must add information the frozen forward does NOT already contain, and must be distinguished from the SAME answer-leakage that killed PSC-Bridge. Sets the rival + the mandatory leakage control."
+      }
+    ]
+  },
+
+  "default_object_map": {
+    "old_object_name": "native self-conditioning clean-estimate (m_k = softmax(logits_k / T) @ W_embed * embed_scale, gated through decoder.self_conditioning)",
+    "community_assumption": "A frozen, well-trained dLLM's own clean-estimate is the best on-manifold denoising target extractable from its features. To produce more verified-correct generations you must change the backbone (more data / scale / weight training); you cannot extract additional verified-correctness from a fixed forward pass.",
+    "equivalence_relation": "Two decision-states with the same native clean-estimate top-1 token + per-position entropy (+ same self-conditioning gate value) are treated as the SAME denoising target and denoised identically, regardless of the eventual verifier outcome.",
+    "examples_same_under_O0": "A decision-state that will resolve to a VERIFIER-CORRECT boxed answer and one that will resolve to a VERIFIER-WRONG answer, if they share the same native-clean-estimate confidence/entropy, get the identical denoising update.",
+    "examples_different_under_O0": "(O0 has no representation of this split; that is the point.)",
+    "optimized_proxy": "per-position masked/clean-token cross-entropy = the diffusion training loss (a MARGINAL-likelihood target). NOT verifier-correctness.",
+    "what_O0_can_see": "per-position marginal clean-token distribution, its own entropy/margin, the self-conditioning gate.",
+    "what_O0_collapses": "the cross-position / trajectory structure that, at MATCHED marginal confidence, distinguishes a verifier-correct continuation from a verifier-wrong one. Because the target is the data marginal, O0 collapses the 'will this resolve correctly?' axis onto the 'is this token marginally likely?' axis."
+  },
+
+  "omitted_structure_hypotheses": [
+    {
+      "miner": "equivalence_split (primary)",
+      "S": "verified-correctness-discriminating direction in FROZEN-feature space at the EB decision steps t in [0.4,0.8]",
+      "observable_proxy": "AUC of a small frozen-feature probe predicting per-trajectory verifier-correctness within matched native-confidence buckets, MINUS native-confidence's own AUC",
+      "contrast_set": "matched native-clean-estimate confidence x matched difficulty (L5) x matched canvas-length band, sliced by {verifier-correct, verifier-wrong}",
+      "candidate_object": "a verified-correctness-aligned clean-estimate (a learned residual on the native estimate in the same embedding/logit space)"
+    },
+    {
+      "miner": "residual_field",
+      "S": "structure in the (verifier-correct target - native clean-estimate) residual that is correlated with frozen features",
+      "observable_proxy": "predictability of the residual sign/direction from frozen features beyond native confidence",
+      "candidate_object": "residual head"
+    },
+    {
+      "miner": "trajectory",
+      "S": "the gap concentrates at the EB decision steps, not at near-clean or near-fully-masked steps (timestep-localization)",
+      "observable_proxy": "probe-minus-native AUC stratified by timestep band; predicted to peak in t in [0.4,0.8]",
+      "candidate_object": "timestep-conditioned correctness head"
+    }
+  ],
+
+  "school_route": {
+    "primary": "Modeling-Object-Shift",
+    "secondary": "Back-to-Basics",
+    "rival": "Bitter-Lesson",
+    "rival_attack_question": "Is the probe's verifier-correctness signal anything MORE than (a) a recalibration of the native head's own confidence, (b) answer-leakage through the canvas / a teacher trajectory (the PSC-Bridge failure mode), or (c) generic problem difficulty/length? I.e., does a probe on frozen features beat the strongest native-confidence baseline AND a shuffled-label control AND a generic-difficulty control AND survive the leakage control, at matched NFE — on a frozen near-ceiling model where the Bitter-Lesson predicts all extractable signal is already used?"
+  },
+
+  "moc": {
+    "old_object": "native self-conditioning clean-estimate (marginal-CE target)",
+    "omitted_structure": {
+      "name": "verified-correctness-discriminating residual on frozen features",
+      "type": "residual / trajectory-stage",
+      "observable_proxy": "frozen-feature probe AUC for per-trajectory verifier-correctness, within matched native-confidence buckets, minus native-confidence AUC"
+    },
+    "proposed_object": {
+      "name": "verified-correctness-aligned clean-estimate",
+      "equivalence_relation": "two decision-states are equivalent iff they have the same P(verifier-correct continuation | frozen features), NOT the same marginal clean token",
+      "relation_to_O0": "O1 = O0 + a learned residual in the same embedding/logit space; O1 reduces to O0 exactly when frozen features carry no verifier-correctness signal beyond native confidence (the rival's prediction)"
+    },
+    "examples_o0_same_o1_separates": "matched native-clean-estimate top-1 + entropy at an EB decision step; one trajectory resolves verifier-correct, one verifier-wrong (PB1 premature-readout 29/47 + the confidently-wrong cases)",
+    "pre_existing_failure_refs": ["PB1_premature_readout", "PB2_residual_factorization_free", "PB3_budget_quality_gap"]
+  },
+
+  "dpc": {
+    "summary": "Two-stage, measure-first. STAGE-1 is a forward-pass AUDIT on LOGGED trajectories (no adapter training, no generation change): does a probe on frozen features at decision steps predict verifier-correctness better than the native head's own confidence, with all controls clean? Only a Stage-1 PASS licenses STAGE-2 (train the small head + verify by generation at matched NFE, with the mandatory leakage control).",
+    "split": "TRAIN the probe on a SEPARATE labeled split (MATH L5 train/aux trajectories); EVALUATE on held-out trajectories WITHOUT access to the held-out problem's answer. DEV = L5-dev-40. Sealed L5-holdout[40:134] + AIME UNTOUCHED until a Stage-2 candidate exists.",
+    "O0_matched_control": "bucket decision-states (EB steps t in [0.4,0.8]) by native-clean-estimate confidence (top-1 prob / negative entropy / margin), within matched difficulty (L5 only) and matched canvas-length band.",
+    "predicted_split_by_S": "within each matched native-confidence bucket, the frozen-feature probe predicts held-out verifier-correctness with AUC strictly above native-confidence's own AUC by >= +0.05 (pre-registered margin).",
+    "primary_statistic_stage1": "delta_AUC = AUC(frozen-feature probe) - AUC(strongest native-confidence baseline), within matched buckets, problem-clustered bootstrap CI.",
+    "negative_controls": {
+      "shuffled_S": "shuffle verifier labels across trajectories within a bucket -> probe AUC must collapse to ~0.5; if it does not, the harness leaks/overfits -> CONTROL_FAILURE.",
+      "generic_difficulty": "replace the verifier-correctness label with a generic-difficulty proxy (problem length / native NFE-to-stop); if a probe trained to predict difficulty reaches >= the correctness probe's delta_AUC, then S is just difficulty -> DOWNGRADE.",
+      "rival_old_object_baseline": "the strongest native-confidence-only predictor (calibrated native top-1, entropy, margin, multi-signal logistic ensemble) is the baseline the probe MUST beat; if it matches, the shift is cosmetic recalibration -> KILL.",
+      "answer_leakage": "MANDATORY (PSC-Bridge failure mode). A leak arm whose probe is allowed to see the eventual answer-bearing features (final canvas / teacher final-SC) must be the ONLY thing that reproduces any Stage-2 generation gain; the DEPLOYABLE probe (decision-step frozen features, no future) must achieve its AUC/gain WITHOUT matching the leak arm. If the deployable gain is reproduced exactly by the leak arm -> KILL (identical to tree 5.9.4)."
+    },
+    "kill_condition": "KILL the object-shift if ANY of: (a) Stage-1 delta_AUC <= +0.05 within matched buckets (CI lower bound <= 0); (b) shuffled-label probe AUC > 0.55 (harness leakage / CONTROL_FAILURE); (c) generic-difficulty probe >= correctness probe delta_AUC; (d) [Stage-2] the matched-NFE generation gain is reproduced by the answer-leak control; (e) [Stage-2] the trained-head generation accuracy does not beat native AND always-deepen-to-matched-mean by >= 2pp verified acc at matched NFE + wall-clock on the sealed hard set.",
+    "preregister_hash": "TO_BE_SET at SELECT (freeze S-extractor + native-confidence baseline + matcher + primary statistic before any Stage-1 fit)",
+    "novelty_flag": "NEEDS_PRO_DEEP_DESIGN — overlaps to disambiguate from: process/verifier reward models + latent correctness probes (this is a denoising-TARGET reparameterization fed back through the SC gate, NOT a reranker/PRM), and from ELF/pMF/iMF/JiT/SDTT/LRD/SCMDM/MAR-DiffLoss (frozen large dLLM + tiny head vs from-scratch/vision)."
+  },
+
+  "claim_language": {
+    "allowed_before_audit": ["hypothesized object-shift", "eligible for falsification", "candidate omitted structure S"],
+    "forbidden_before_audit": ["solves", "proves", "new paradigm", "the correct object is", "beats native"]
+  },
+
+  "routing": {
+    "next": "SELECT gate: (1) Pro 扩展 deep-design + novelty audit on the Stage-1 probe design + the O1 target (slow, start now); (2) Codex /object-shift-audit (independent kill-only T1-T6 + DPC validator) -> must be ELIGIBLE_FOR_BACK_HALF, not KILL; (3) /taste-critic (new direction); (4) preregister hash; then DISPATCH Stage-1 audit via /context-bundle -> worktree.",
+    "note": "ELIGIBLE is NOT a contribution pass. Opus PROPOSE-ONLY; eligibility from the independent audit only."
+  }
+}
