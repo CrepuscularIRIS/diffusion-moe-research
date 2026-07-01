@@ -39,16 +39,16 @@
   - **Legacy** (superseded, archived): `plan/archive/research-redesign-equivalence-class.md`
     (equivalence-class / E+A) — reference only.
 
-## 1. Engine stack — the division of labor (Opus 4.8 · Sonnet 5 · GPT-5.5 Pro · Codex hook)
-> **One line:** Opus is the repo-adjacent PI (route + decide + interpret); **Sonnet 5 is the throughput
-> executor** (all code/experiments as subagents); GPT-5.5 Pro is the external brain (the generative leap +
-> prior-art + deep taste); the **Codex review hook** auto-audits every executor diff; the human only grants
-> the flagship contribution. Manual `/codex:rescue` is **RETIRED** — replaced by the automatic hook.
+## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
+> **One line:** Opus is the PI (route + decide + interpret) AND the executor (subagents inherit the session
+> model = Opus 4.8); GPT-5.5 Pro is the external brain (the generative leap + prior-art + deep taste); the
+> **Codex review hook** auto-audits every executor diff; the human only grants the flagship contribution.
+> Manual `/codex:rescue` is **RETIRED** — replaced by the automatic hook.
 
 | Engine | How to invoke | Role |
 |---|---|---|
 | **Opus 4.8 (me)** | direct (main loop) | **PI / router / decision-owner / interpreter.** ROUTE-FIRST lane triage (§5.0), OBSERVE, IDEATE (skeptical + cross-domain), SELECT/DECIDE, assemble+package the Pro hand-off, run the CHEAP inline gates, update tree/RUNLOG. **Never self-grants a strong (UP) verdict.** Prefer Opus high; reserve xhigh for the hardest judgment. |
-| **Sonnet 5** | `Agent`, `model: sonnet` (+ `isolation: "worktree"` when mutating files) | **The throughput executor — ALL implementation / experiment plumbing / verification runs / gate work / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge novelty, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
+| **Opus 4.8 executor subagents** | `Agent` (+ `isolation: "worktree"` when mutating files); inherits session model | **ALL implementation / experiment plumbing / verification runs / gate work / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge novelty, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
 | **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain:** the object-shift generative LEAP (F4.5), prior-art / occupancy scan, deep/contested taste-KILL, novelty/AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
 | **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. This IS the independent substrate now (replaces manual `/codex:rescue`). A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
 | **Human** | HARD-BLOCK escalation | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go. RARE — not a per-cycle bottleneck. |
@@ -142,24 +142,24 @@ Arbor offers two layers; we use only the first.
    subagent-dense work is abnormally slow: per-turn latency scales with (context size × concurrency). →
    **Do small/clear tasks yourself** (a few-min direct edit beats a 30–50 min executor); **leaner prompts /
    less context per agent**; **serialize heavy agents — never 3–4 concurrent Opus subagents** (they
-   rate-limit each other); **executors are Sonnet-5** (throughput, not Opus). **The manual-`/codex:rescue`
+   rate-limit each other); **serialize heavy executors** (Sonnet 5 retired as unstable; executors now Opus 4.8). **The manual-`/codex:rescue`
    zombie-leak is RESOLVED — manual rescue is retired; the single managed Codex review hook (one dispatch per
    subagent, reaped at 30 min, registry-capped) replaces the leaky fan-outs.** GPU idle ≠ progress lost.
 
 ## 5. Science protocol (the kernel — gate every move)
 Falsify-before-build (ship the kill-experiment WITH the idea) · score-up ≠ mechanism (require negative control
 + locality) · eval/test/baseline are a **sealed layer, never changed mid-run** · one variable per probe ·
-isolation: **generator ≠ executor ≠ critic** (Opus generates/observes/selects-tactically; **Sonnet-5 subagents
-execute**; the **Codex review hook** independently audits every executor diff; Playwright-Pro designs the leap /
-audits) · **experiment has absolute veto over elegance** · every experiment pre-declares
+isolation: **generator ≠ executor ≠ critic** (Opus generates/observes/selects-tactically; **Opus executor
+subagents** run in worktrees; the **Codex review hook** independently audits every executor diff; Playwright-Pro
+designs the leap / audits) · **experiment has absolute veto over elegance** · every experiment pre-declares
 {hypothesis, falsifier, acceptance, negative control, locality check, reproducible evidence, recorded
 commands+exit codes} · when evidence contradicts the direction, **redesign the program**, don't defend it.
 Negative results / eliminated confounds / killed directions = SUCCESS.
 
 > **★ SUBSTRATE NOTE (read once, applies to ALL of §5).** Everywhere below, an "INDEPENDENT substrate (Codex)"
 > now means the **automatic Codex review hook** (SubagentStop → independent `gpt-5.5 xhigh`, advisory), NOT a
-> manual `/codex:rescue` dispatch (retired). Operationally: **run the gate work as a Sonnet-5 executor subagent
-> and the hook audits its diff.** A hook finding is a **binding DOWN** verdict (kill/flag); the hook **never
+> manual `/codex:rescue` dispatch (retired). Operationally: **run the gate work as an executor subagent
+> (Opus 4.8, inherits session model) and the hook audits its diff.** A hook finding is a **binding DOWN** verdict (kill/flag); the hook **never
 > grants an UP verdict** — a taste PASS, `structural-negative`, `ELIGIBLE`, `PROGRESSIVE`, reward-hack `CLEAN`,
 > or baseline dominance is granted only by the **machine validator** (where one exists) + **human promotion**,
 > never by the hook's silence. For a deep/contested UP judgment, route to **GPT-5.5 Pro** (Playwright, awaited).
@@ -169,10 +169,10 @@ Before running ANY gate, Opus classifies the task into ONE lane; only that lane'
 cheap and never touches the heavy promotion suite — that is the fix for "rigorous but slow."
 | Lane | What | Owner | Gates that fire |
 |---|---|---|---|
-| **FAST_CODE** | impl / refactor / bugfix / experiment plumbing | Sonnet-5 subagent | `/exp-verify` only + the Codex hook's auto-review of the diff |
-| **EXPERIMENT_RUN** | a real experiment / ablation / verifier run | Sonnet-5 subagent | `/context-bundle` (pre-dispatch) → run → `/exp-verify` |
+| **FAST_CODE** | impl / refactor / bugfix / experiment plumbing | executor subagent | `/exp-verify` only + the Codex hook's auto-review of the diff |
+| **EXPERIMENT_RUN** | a real experiment / ablation / verifier run | executor subagent | `/context-bundle` (pre-dispatch) → run → `/exp-verify` |
 | **NEW_DIRECTION** | a new idea / object-shift lead | Opus assembles + **Pro** designs | `/mos-front` (occupancy-scan FIRST) → `/object-shift-audit` |
-| **DSPARK_SYSTEMS** | a measured throughput/quality/compute lever, NO new object | Sonnet-5 subagent | `/baseline-champion` + measured Δ (skip the object-shift ceremony) |
+| **DSPARK_SYSTEMS** | a measured throughput/quality/compute lever, NO new object | executor subagent | `/baseline-champion` + measured Δ (skip the object-shift ceremony) |
 | **POSITIVE_RESULT** | any improved metric / "it works" (CLAIM BOUNDARY) | independent | `/exp-verify` → `/reward-hack-audit` → `/taste-critic` → `/claim-evidence-matrix` |
 | **COMPARISON** | "beats / faster / Pareto / frontier / architecture advantage" | baseline adversary | `/baseline-champion` BEFORE the wording is allowed |
 | **NEGATIVE_RESULT** | a null / killed branch | Opus (+ independent if structural) | `/exp-verify` → `/bank-negative` |
@@ -306,7 +306,7 @@ deletes the parallel structure-JSON pile (the old `mos-front-architecture.md §1
 ### 6.1 Two ideate skills — NOT in conflict; correct layering (pick by altitude)
 | Skill | Weight | Use when |
 |---|---|---|
-| **/ideate** (`research-ideation`) | HEAVY — multi-engine (Sonnet-5 Explore + Opus generators + Codex-hook rigor + Pro 扩展 novelty/AC), 1h+ Playwright poll | **DIRECTION-level**: a Track turn, a new thesis, a fork after a kill. Output = ranked falsifiable shortlist. |
+| **/ideate** (`research-ideation`) | HEAVY — multi-engine (Opus Explore + Opus generators + Codex-hook rigor + Pro 扩展 novelty/AC), 1h+ Playwright poll | **DIRECTION-level**: a Track turn, a new thesis, a fork after a kill. Output = ranked falsifiable shortlist. |
 | **arbor-agent-ideate** | LIGHT — single-engine, 4-line `tree_add_node`, in-loop | **TACTICAL in-loop**: draft the next node under an active lead, a quick variant. Output = one tree node. |
 > Heuristic: would you route it to Pro 扩展 / does it change the program? → `/ideate`. Is it "what's the next
 > experiment under this lead"? → `arbor-agent-ideate` (or just Opus-propose → Opus tactical SELECT, disciplined

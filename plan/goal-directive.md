@@ -6,11 +6,11 @@ METHOD = STRICTLY enrich (Modeling-Object-Shift, /mos-front): WRONG object = per
 
 PLATFORM: DiffusionGemma-26B-A4B MoE (PRIMARY); LLaDA-8B (trainable, headroom) for a cheap prototype. Verify shard SHAs. Metric = generation/verifier improvement only; diffusion-loss/reference-token INVALID.
 
-ENGINES (§1): Opus=PI/route · Sonnet-5=executors (`model:sonnet`) · Pro=Playwright `Pro 扩展` LEAP (KEEP ALIVE) · Codex=AUTO review HOOK (DOWN-only; /codex:rescue RETIRED).
+ENGINES (§1): Opus=PI/route/executor (subagents inherit session model) · Pro=Playwright `Pro 扩展` LEAP (KEEP ALIVE) · Codex=AUTO review HOOK (DOWN-only; /codex:rescue RETIRED).
 
-★ROUTE-FIRST (§5.0): DESIGN=NEW_DIRECTION→/mos-front(occupancy FIRST→Pro)→/object-shift-audit. TRAIN/measure=EXPERIMENT_RUN→Sonnet-5+/exp-verify. Improvement claim→/baseline-champion+/reward-hack-audit. 1 token/cycle or spinning.
+★ROUTE-FIRST (§5.0): DESIGN=NEW_DIRECTION→/mos-front(occupancy FIRST→Pro)→/object-shift-audit. TRAIN/measure=EXPERIMENT_RUN→executor subagent+/exp-verify. Improvement claim→/baseline-champion+/reward-hack-audit. 1 token/cycle or spinning.
 
-EXECUTION: run the §2/§5 loop — OBSERVE factorization gaps → /mos-front(occupancy→Pro) → /object-shift-audit → preregister → Sonnet-5 worktree (1 GPU, nvidia-smi first, measure-first) → /exp-verify → null→/bank-negative → tree FIRST → NEG: AUTO-PIVOT (next beyond-Markov lever, NO user Q). Caps §2.
+EXECUTION: run the §2/§5 loop — OBSERVE factorization gaps → /mos-front(occupancy→Pro) → /object-shift-audit → preregister → executor worktree (1 GPU, nvidia-smi first, measure-first) → /exp-verify → null→/bank-negative → tree FIRST → NEG: AUTO-PIVOT (next beyond-Markov lever, NO user Q). Caps §2.
 
 FORBIDDEN (banked dead): FROZEN post-hoc joint-readout for REASONING-novelty (5.5/5.9/5.10.3) · He-line continuous-flow on discrete masked (saturated) · compute-allocator/always-deepen · SFT-as-quality-lever · SC-target-on-frozen · wall-clock EVALUATION (dropped).
 
