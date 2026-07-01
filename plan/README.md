@@ -5,7 +5,9 @@
 > Last updated: 2026-07-01.
 >
 > **★ CURRENT DIRECTION: DSpark × AR Speculative Decoding** — beyond-first-order Markov sequential head.
-> The dLLM/DiffusionGemma campaign is CLOSED + archived. See `goal-directive.md`.
+> **IMPROVEMENT lane** (§5.0): skip /mos-front + /object-shift-audit (those are for novelty); instead
+> train → measure → `/baseline-champion`. See `goal-directive.md`.
+> The dLLM/DiffusionGemma campaign is CLOSED + archived.
 
 ---
 

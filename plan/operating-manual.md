@@ -146,8 +146,9 @@ cheap and never touches the heavy promotion suite — that is the fix for "rigor
 |---|---|---|---|
 | **FAST_CODE** | impl / refactor / bugfix / experiment plumbing | executor subagent | `/exp-verify` only + the Codex hook's auto-review of the diff |
 | **EXPERIMENT_RUN** | a real experiment / ablation / verifier run | executor subagent | `/context-bundle` (pre-dispatch) → run → `/exp-verify` |
-| **NEW_DIRECTION** | a new idea / object-shift lead | Opus assembles + **Pro** designs | `/mos-front` (occupancy-scan FIRST) → `/object-shift-audit` |
-| **DSPARK_SYSTEMS** | a measured throughput/quality/compute lever, NO new object | executor subagent | `/baseline-champion` + measured Δ (skip the object-shift ceremony) |
+| **IMPROVEMENT** | a concrete engineering improvement on an existing system (better head / loss / architecture variant); the IDEA is not novel but the MEASURED Δ is the contribution (enrich types B/H/systems) | executor subagent | train/build → `/exp-verify` → `/baseline-champion` (measured Δ vs SOTA baseline). Occupancy-scan checks "has this EXACT improvement been done and measured" NOT "does anyone work in this area." NO /mos-front, NO /object-shift-audit — those are for novelty. |
+| **NEW_DIRECTION** | a genuinely new modeling object (enrich type MOS / sentence-1 "建模错了对象") | Opus assembles + **Pro** designs | `/mos-front` (occupancy-scan FIRST) → `/object-shift-audit` |
+| **DSPARK_SYSTEMS** | a measured throughput/quality/compute lever, NO new object, NO new head | executor subagent | `/baseline-champion` + measured Δ (skip ALL ceremony) |
 | **POSITIVE_RESULT** | any improved metric / "it works" (CLAIM BOUNDARY) | independent | `/exp-verify` → `/reward-hack-audit` → `/taste-critic` → `/claim-evidence-matrix` |
 | **COMPARISON** | "beats / faster / Pareto / frontier / architecture advantage" | baseline adversary | `/baseline-champion` BEFORE the wording is allowed |
 | **NEGATIVE_RESULT** | a null / killed branch | Opus (+ independent if structural) | `/exp-verify` → `/bank-negative` |
