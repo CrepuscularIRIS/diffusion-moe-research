@@ -1,8 +1,11 @@
-# DiffusionGemma Research — Plan Index & Flow
+# Research Plan — Index & Flow
 
 > **Start here.** The whole operating model on one screen: the **Arbor research loop** + the **Research-OS
 > gate optimizations**. This is the map; `operating-manual.md` is the detailed reference it points to.
-> Last updated: 2026-06-30.
+> Last updated: 2026-07-01.
+>
+> **★ CURRENT DIRECTION: DSpark × AR Speculative Decoding** — beyond-first-order Markov sequential head.
+> The dLLM/DiffusionGemma campaign is CLOSED + archived. See `goal-directive.md`.
 
 ---
 
@@ -92,22 +95,16 @@ Design + grounding: `research-operating-system.md`. Routing table: `operating-ma
 | Doc | Role |
 |---|---|
 | **operating-manual.md** | THE how-we-work reference: engines, the loop, GPU/process safety, lessons, science kernel, §5.1 gate routing |
-| **goal-directive.md** | the exact `/goal` input (current = **Track 3** SC-target adapter training) |
+| **goal-directive.md** | the exact `/goal` input (current = **DSpark beyond-Markov sequential head** for speculative decoding on AR models) |
+| **dspark-deep-analysis-2026-07-01.md** | DSpark technical breakdown + occupancy scan for open directions |
 | **research-operating-system.md** | the BACK-half (filter) design — the 7 gates, the asymmetry, the enforceable-contract pattern |
-| **mos-front-architecture.md** | the FRONT-half (generator) design — Modeling-Object-Shift, the DPC keystone, the 3 front gates, the Lakatos programme |
-| **frozen-pareto-negative-synthesis.md** | Track 2 banked structural NEGATIVE (7 kills converge on native Pareto) — the lever for Track 3 |
-| **paper-draft.md** / **paper-outline.md** | Track 1 wall-clock-frontier paper (COMPLETED; parked) |
-| **ideas-he-level-frozen-dllm.md** / **ideas-gradient-field.md** | active ideation shortlists / substrate |
 | **research-method-anatomy.md** | cognitive protocol (skeptical default · cross-domain · first-principles · falsifiability) |
 | **ai-research-conduct-principles.md** | the science conduct protocol (8-point kernel) |
 | **methodology-harvest.md** / **methodology-portable.md** | the 16-repo methodology synthesis + portable extraction recipe |
-| **priorart_pdfs/** | raw prior-art PDFs |
 
-> Prior-art landscape for the active track lives at repo root: `HekaiMing.md`.
+> DSpark analysis at repo root: `DSpark-analysis.md`. Enrich methodology: `enrich.md`.
 
 ## Archived (`plan/archive/`)
-Superseded / one-off / already-distilled: the `gpt55pro-*` Pro query logs, `n2-amendment-*` and
-`research-redesign-*` (superseded redesigns), `deep-research-report (2).md` (distilled into the harvest),
-`rescue-audit-protocol.md` + `saturation-experiment-protocol.md` (dead protocols), and `extraction/` +
-`ros-review/` (already synthesized into `methodology-harvest.md` + `research-operating-system.md`). Nothing
-deleted — all moved for reference.
+The entire dLLM/DiffusionGemma/LLaDA campaign (CLOSED — 5.1-5.13 all done/pruned) + all experiment docs,
+Pro design logs, prior-art PDFs, paper drafts, and He-line research. **Do NOT load these docs for the current
+DSpark direction** — they will cross-contaminate the session toward the dead substrate.

@@ -1,43 +1,22 @@
-# DiffusionGemma Research — Operating Manual
+# Research Operating Manual
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> **For the one-screen flow map (Arbor loop + the gate optimizations) + the plan/ doc index, see
-> `plan/README.md`.** Last updated: 2026-06-30.
+> Last updated: 2026-07-01.
 
 ---
 
 ## 0. Current research state (read this first)
-- **Model:** frozen DiffusionGemma 26B-A4B (Gemma-4 block masked discrete-diffusion MoE; 25.2B/3.8B-active;
-  30 layers; token-choice top-8/128 router that reads ONLY hidden state — no timestep input; 256-token canvas;
-  ~48-step EntropyBoundSampler with adaptive early-stop; D3PM-uniform corruption). 2×RTX 4090, bf16.
-  **Generation WORKS** (after a checkpoint repair). conda env `dllm`, transformers 5.12.1.
-- **Substrate history (critical):** one checkpoint shard (`model-00001-of-00011.safetensors` = `embed_tokens`,
-  tied to `lm_head`) was silently CORRUPTED on disk Jun24–26 (zeroed ~91% of vocab rows incl. all digits) →
-  the model was **digit-blind**. FIXED 2026-06-26 (re-downloaded the shard). **Every pre-fix result is
-  contaminated** and was/should be re-run.
-- **TRUE state of the model (post-fix):** near-ceiling on verifiable tasks — GSM8K 100%, HumanEval 97.5%,
-  MBPP 92.5%, MATH-500 94%. Real headroom ONLY on **AIME-2024 (73%)** and **MATH-L5 (83%)**. The **dominant
-  failure mode is sampler TRUNCATION / early-stop / budget (the model reasons correctly but never commits a
-  `\boxed{}` answer before the canvas runs out) — NOT reasoning.** Some failures are extraction/surface-form
-  artifacts (correct answer mis-scored) and unfixable figure-blindness.
-- **Research tracks (2026-06-29):**
-  - **Track 1 — Wall-clock frontier (COMPLETED).** Ratified positive: frozen DiffusionGemma buys ~5–7× more
-    verified reasoning per wall-clock-second than matched AR (Gemma-4 27B). Paper draft in `plan/paper-draft.md`;
-    frontier data on worktree branch `worktree-agent-aa411b381a8c95d40`. Arbor tree node 5.8 = done/ratified.
-  - **Track 2 — Frozen inference-time campaign (CLOSED — banked structural NEGATIVE).** 7 independent
-    inference-time interventions (commit/stop/allocate/factorize/route/embedding-flow + a training-free
-    SC-transport oracle) all converge on the native budget-Pareto null → a near-ceiling frozen dLLM is
-    Pareto-optimal to post-hoc tinkering. `plan/frozen-pareto-negative-synthesis.md`, tree node 5.9. The
-    synthesis's own conclusion names the open lever → **Track 3**.
-  - **★ Track 3 — SC-target ADAPTER training (ACTIVE, current `/goal`).** The negative re-localized the
-    headroom to TRAINING the generator's target/loss. Bet: train ONLY a small (10–200M) head/adapter on the
-    FROZEN backbone so the self-conditioning clean estimate tracks verifier-correct trajectories; layer the
-    He-line targets (JiT/pMF/ELF/MeanFlow, `HekaiMing.md`); reuse `diffusiongemma_sft/`; reference
-    `Jackrong-llm-finetuning-guide` (AR recipes, adapt for diffusion). Goal directive = `plan/goal-directive.md`.
-    Pre-registered bar = beat native AND always-deepen-at-matched-NFE by ≥2pp verified acc on a sealed hard set.
-  - **Legacy** (superseded, archived): `plan/archive/research-redesign-equivalence-class.md`
-    (equivalence-class / E+A) — reference only.
+- **★ ACTIVE — DSpark × AR Speculative Decoding: beyond-first-order Markov sequential head.**
+  DSpark (arxiv:2606.19348, DeepSeek) proved a 1st-order Markov head cuts suffix decay +26-31% vs EAGLE-3,
+  but is under-modeled (RNN variant = "marginal improvement", unexplored). GOAL: design and train a BETTER
+  sequential head (higher-order / attention-based / context-aware) that achieves measurably higher accepted
+  length. Platform = Qwen3-4B or LLaMA-3-8B (fits 96GB), trained via DeepSpec (MIT, freeze target, TV-distance
+  loss). Metric = accepted length (primary) + tokens/sec. Key refs: `DSpark-analysis.md`,
+  `plan/dspark-deep-analysis-2026-07-01.md`. Goal directive = `plan/goal-directive.md`.
+- **CLOSED (archived to `plan/archive/`, do NOT cross-contaminate):** the entire dLLM/DiffusionGemma/LLaDA
+  campaign — frozen heads, He-line, wall-clock frontier, training-based reasoning. That is a SEPARATE,
+  COMPLETED project (Arbor tree 5.1-5.13 all done/pruned).
 
 ## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
 > **One line:** Opus is the PI (route + decide + interpret) AND the executor (subagents inherit the session
