@@ -100,14 +100,11 @@ Arbor offers two layers; we use only the first.
 > research looks linear. Tree first, every cycle.
 
 ## 4. Hard-won lessons
-1. **Substrate integrity.** A silently-corrupted shard made the model digit-blind for 2 days and invalidated
-   every result. → On load, verify shard SHAs; ground-truth with a trivial task (`7+5→12`) before trusting any
-   probe. Never trust a metric on an unverified checkpoint.
-2. **Metric validity.** Held-out diffusion loss / reference-token CE do **NOT** predict task quality (SFT
-   halved diffusion loss for 0 accuracy gain; reference-token agreement 2.3% vs 90% exact-match). → Use
-   **generation / verifier metrics**; reference-token / teacher-forced probes are **diagnostics only**.
-3. **Failure-mode first.** Profile WHERE the model fails (generation-based) before designing a method — the
-   dominant failure was truncation, invisible to loss.
+1. **Substrate integrity.** Verify model/checkpoint integrity before trusting any metric. Ground-truth with a
+   trivial task before committing compute. (Learned from a corrupted shard in the dLLM campaign — `plan/archive/`.)
+2. **Metric validity.** Proxy metrics (loss, teacher-forced scores) often do NOT predict task quality. → Use
+   **end-to-end generation / verifier metrics** as the primary signal.
+3. **Failure-mode first.** Profile WHERE the model fails (generation-based) before designing a method.
 4. **Tree discipline** (see §3). **Independent review** is mandatory (the Codex hook audits every executor
    diff); the generator never self-grants — tactical SELECT is Opus's, but the KILL gates + hook discipline it.
 5. Kill hung/overrunning jobs immediately — but ONLY a job that passes the §2 **ownership test** (live cwd
