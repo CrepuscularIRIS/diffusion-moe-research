@@ -1,110 +1,93 @@
 # Research Plan — Index & Flow
 
-> **Start here.** The whole operating model on one screen: the **Arbor research loop** + the **Research-OS
-> gate optimizations**. This is the map; `operating-manual.md` is the detailed reference it points to.
-> Last updated: 2026-07-01.
+> **Start here.** The whole operating model on one screen: the **goal-mode loop** running on
+> **research-os v0.5** (the generator release) + the **Arbor** idea tree. This is the map;
+> `operating-manual.md` is the detailed reference it points to. Last updated: 2026-07-02.
 >
 > **★ CURRENT DIRECTION: DSpark × AR Speculative Decoding** — beyond-first-order Markov sequential head.
-> **IMPROVEMENT lane** (§5.0): skip /mos-front + /object-shift-audit (those are for novelty); instead
-> train → measure → `/baseline-champion`. See `goal-directive.md`.
+> TYPE = **Improvement (刷分/改进)**: the contribution is the measured Δ, not idea novelty; occupancy asks
+> "has this EXACT change been measured here", never "does anyone work in this area". See `goal-directive.md`.
 > The dLLM/DiffusionGemma campaign is CLOSED + archived.
 
 ---
 
-## The flow (Arbor loop + anti-Goodhart gates)
+## The loop (research-os v0.5 — generator first, gates at three moments)
 
 ```
-        ┌────────────────────────────────────────────────────────────────────────┐
-        │                                                                          │
-        ▼                                                                          │
-   OBSERVE ──▶ IDEATE ──▶ SELECT ──▶ DISPATCH ──▶ VERIFY ──▶ DECIDE ──▶ BACKPROP ──┘
-   (Opus)     (Opus)     (Codex)    (worktree)   (Codex)    (Codex)    (tree FIRST,
-   tree +     /ideate    indep.     executor                indep.      then RUNLOG)
-   RUNLOG     skeptical  select                 
-                │           │           │           │           │
-                │           │           │           │           ├─ null → /bank-negative (graded;
-                │           │           │           │           │  structural = Codex-CERTIFIED, enforced)
-                │           │           │           │           └─ active programme → /programme-audit
-                │           │           │           │              (Lakatos progressive/degenerating budget)
-                │           │           │           └─ /exp-verify (real run? no-mock, anti-no-op)
-                │           │           │              → /reward-hack-audit (real effect? ≥3 seeds,
-                │           │           │                neg-control, sealed holdout — Codex)
-                │           │           ├─ /context-bundle (freeze: must-read + forbidden-assumptions
-                │           │           │  + sealed-split + hashes; fail-closed). ONE 26B GPU job.
-                │           │           └─ OBJECT-SHIFT claim → /object-shift-audit (Codex kill-only;
-                │           │              T1–T6 + DPC; ELIGIBLE machine-enforced, not a contribution)
-                │           ├─ NEW direction → /taste-critic KILL-gate (He-bar, independent)
-                │           │  + preregister {hypothesis, falsifier, acceptance, metric, neg-control}
-                │           └─ OBJECT-SHIFT direction (front-half) → /mos-front (is this the right
-                │              modeling OBJECT? SKIP_TACTICAL / MOC_LITE / MOC_FULL + DPC)
-                └─ deep design / novelty → route to GPT-5.5 Pro (Playwright, `Pro 扩展`)
-
-   cross-system "beats X" claim, anywhere → /baseline-champion (independent adversary, veto)
-
-   ════════════════════════════════════════════════════════════════════════════════
-   PROMOTION to "contribution" / paper / "architecture advantage" is NOT a loop output.
-   It HARD-BLOCKS → human (or external decider). The loop only banks EVIDENCE and advances.
+   GENERATOR                          DISCIPLINE (the only 3 moments)
+   ┌─────────────────────────┐
+   │ /prospect                │        ┌──────────────────────────────────────────┐
+   │  5 mines: survey 综述 ·  │        │ /prereg     freeze the 10-field contract  │
+   │  own logs · capability   │        │             BEFORE any claim-bearing run  │
+   │  deltas · benchmark ·    │  ───▶  │ /exp-verify real-run check AFTER any run  │
+   │  transplants             │        │             (no-mock · anti-no-op)        │
+   │  → 3–7 problem cards     │        │ /adversary  fires ONLY at a claim         │
+   │                          │        │             boundary — Δ-reality ·        │
+   │ /forge                   │        │             baseline-fairness ·           │
+   │  → 3–5 candidates, each  │        │             claim–evidence · worth        │
+   │  {MECHANISM·KILL·COST·   │        └──────────────────────────────────────────┘
+   │   SURPRISE} + the        │                          │
+   │  REGENERATION RULE       │             claim stands + "contribution"?
+   │  (backlog ≠ menu)        │                          │
+   │                          │              ═══ HARD-BLOCK → HUMAN ═══
+   │ /autopsy                 │
+   │  every null/kill MUST    │ ◀──── nulls, kills, DOWN verdicts
+   │  emit: a CONSTRAINT or   │
+   │  a CANDIDATE or a        │──── region-close → lateral /prospect
+   │  REGION-CLOSE            │
+   └─────────────────────────┘
+        /compass every 3–5 cycles: type-drift (eval-drift detector) · surprise accounting ·
+        programme health (Lakatos as questions) · process budget (>20% meta → ship a run)
 ```
 
-The loop is autonomous for **SEARCH + FALSIFICATION**. It is **not** autonomous for **defining success,
-broadening scope, or declaring a contribution** — those terminate off the proposer (the gate asymmetry below).
+The loop is autonomous for **search + falsification**. It is **not** autonomous for defining success,
+broadening scope, or declaring a contribution — the one invariant below.
 
----
+## The one invariant
 
-## "Arbor" vs "our optimizations" (what's borrowed vs what we added)
+> **A verdict that helps the proposer if gamed must never be granted by the proposer.**
 
-| Layer | Source | What it is |
+Proposer self-administers **DOWN only** (kill / scoped-negative / downgrade-to-hypothesis / toy).
+`CLAIM_STANDS` = independent substrate only (Codex hook / fresh-context reviewer / Pro — uncurated, never
+re-rolled). Contribution/paper promotion = **human only**. Silence ≠ pass.
+
+## Name the TYPE first (the v0.5 axis — `operating-manual.md §5.0`)
+
+| Type | Value = | The trap |
 |---|---|---|
-| Idea **tree** (`tree_view/add/update/prune`), worktree isolation, loop shape | **Arbor MCP** | the canonical research STRUCTURE — branches, status, result, insight, prune |
-| **Goal-mode** as the driver (replaced the deprecated `arbor-cycle` skill loop) | ours | human-in-loop continuous loop; `goal-directive.md` is the input |
-| **Multi-engine isolation** (Opus proposes · Codex selects+reviews · Pro designs/audits) | ours | the generator never selects or self-evaluates |
-| **7 anti-Goodhart gates + taste asymmetry** | ours | the optimization this repo is "the previous framework + …" — see below |
-| **Enforceable-contract discipline** (machine-checked, not prose) | ours | a gate invariant must be a runnable validator + tests, not a SKILL.md sentence |
-| **Science kernel** (falsify-before-build · sealed eval · one-variable · neg-controls) | ours | gates every move; negatives = success |
+| **Improvement 刷分** ★current | measured Δ vs honest baseline | occupancy-as-veto |
+| **Evaluation 评估** | a decision that CHANGES | certificate-production |
+| **Survey 综述** | a map + a mined problem list | summarizing, not mining |
+| **Novelty 新对象** | a reframe that predicts | cosmetic relabel |
+| Systems · Negative 证伪 · Theory · Tooling · Reproduction | see §5.0 | proxy-wins · strawman · post-hoc · unused infra · peripheral |
 
----
+Verification is TYPE-scoped (`/adversary` applies the matching checks, not a universal battery). The
+canonical drift: goal says *design/improvement*, artifacts trend *evaluation-shaped* — `/compass` catches it.
 
-## The gates (the "optimizations") — one line each
+## What changed from v0.4 (the 10 gates)
 
-**Front-half — MOS-Front GENERATOR** (is this the right modeling object? — fires at IDEATE→SELECT; design: `plan/archive/mos-front-architecture.md`):
-| Gate (command) | Fires at | Strong verdict is… |
-|---|---|---|
-| **/mos-front** | IDEATE (object-shift direction) | Opus GENERATES (SKIP_TACTICAL / MOC_LITE / MOC_FULL + DPC); never self-certifies |
-| **/object-shift-audit** | SELECT (object-shift claim) | `ELIGIBLE` ⇒ **Codex independent + machine-enforced** (T1–T6 + DPC; "S predicts failure" ≠ sufficient) |
-| **/programme-audit** | BACKPROP (active programme) | `PROGRESSIVE` ⇒ **independent + machine-enforced** Lakatos budget score (hard-core-edit = −4) |
-
-**Back-half — FILTER** (is the result real/honest?):
-| Gate (command) | Fires at | Strong verdict is… |
-|---|---|---|
-| **/taste-critic** | SELECT (new direction) + pre-promotion | KILL = autonomous; **PASS = human/external** (never proposer-self-granted) |
-| **/context-bundle** | DISPATCH | fail-closed frozen context; missing piece ⇒ no dispatch |
-| **/exp-verify** | post-run | 3-stage real-run check (no-mock, anti-no-op log_assertion) |
-| **/reward-hack-audit** | DECIDE / pre-promotion | CLEAN ⇒ **Codex independent** (≥3-seed, neg-control, sealed holdout, token-shuffle) |
-| **/baseline-champion** | any "beats X" claim | dominance sign-off ⇒ **independent adversary**, veto |
-| **/bank-negative** | DECIDE (null) | `scoped` self-grade OK; **`structural` = Codex-certified, machine-enforced** |
-| **/claim-evidence-matrix** | pre-paper | every claim → typed evidence or auto-downgrade to hypothesis |
-
-**The governing invariant:** *"would gaming this verdict help the proposer? then the proposer can't grant
-it."* The proposer self-administers only **conservative/DOWNward** verdicts (kill, scoped-negative,
-claim-downgrade); every **strong/consequential** verdict runs on an independent substrate (Codex/Pro) and,
-for anything written up as a contribution, terminates in a human/external decider.
-Design + grounding: `research-operating-system.md`. Routing table: `operating-manual.md §5.1`.
-
----
+The 10-gate filter stack is **superseded** — diagnosis: filters don't create value; gates selected for
+gateable (eval-shaped) work; candidate menus exhausted; banked negatives regenerated nothing; progress
+tokens were farmable. Kept: the invariant, prereg+sealed evals, exp-verify, the Codex hook, Arbor.
+Mapping: mos-front/object-shift-audit → `/forge` (MOS = one palette move; DPC = optional prereg block) ·
+taste-critic → `/adversary` D + `/forge`'s generative He-bar · context-bundle → `/prereg` ·
+reward-hack-audit+baseline-champion+claim-evidence-matrix → `/adversary` · bank-negative → `/autopsy`
+(conversion law) · programme-audit + progress tokens → `/compass` (questions + surprise accounting).
+Full story: research-os `README.md`; design history: `research-operating-system.md` (archive-grade).
 
 ## Core docs (live)
 
 | Doc | Role |
 |---|---|
-| **operating-manual.md** | THE how-we-work reference: engines, the loop, GPU/process safety, lessons, science kernel, §5.1 gate routing |
-| **goal-directive.md** | the exact `/goal` input (current = **DSpark beyond-Markov sequential head** for speculative decoding on AR models) |
-| **dspark-deep-analysis-2026-07-01.md** | DSpark technical breakdown + occupancy scan for open directions |
-| **research-operating-system.md** | the BACK-half (filter) design — the 7 gates, the asymmetry, the enforceable-contract pattern |
+| **operating-manual.md** | THE how-we-work reference: engines, the loop, GPU/process safety, lessons, §5 types+commands |
+| **goal-directive.md** | the exact `/goal` input (written by the user; current = DSpark beyond-Markov head) |
+| **research-os plugin** (`~/cli/research-os`) | the 7 commands + skills + `taste.md` (the taste model, extends enrich) + `research-types.md` |
+| **dspark-deep-analysis-2026-07-01.md** | DSpark technical breakdown + occupancy scan |
 | **research-method-anatomy.md** | cognitive protocol (skeptical default · cross-domain · first-principles · falsifiability) |
-| **ai-research-conduct-principles.md** | the science conduct protocol (8-point kernel) |
-| **methodology-harvest.md** / **methodology-portable.md** | the 16-repo methodology synthesis + portable extraction recipe |
+| **ai-research-conduct-principles.md** | the science conduct protocol |
+| **research-operating-system.md** | v0.4 gate design history (superseded — do not operate from it) |
 
-> DSpark analysis at repo root: `DSpark-analysis.md`. Enrich methodology: `enrich.md`.
+> DSpark analysis at repo root: `DSpark-analysis.md`. Methodology: `enrich.md` (+ the plugin's `taste.md`).
 
 ## Archived (`plan/archive/`)
 The entire dLLM/DiffusionGemma/LLaDA campaign (CLOSED — 5.1-5.13 all done/pruned) + all experiment docs,

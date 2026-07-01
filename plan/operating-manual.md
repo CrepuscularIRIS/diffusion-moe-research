@@ -2,7 +2,7 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-01.
+> Last updated: 2026-07-02 (research-os v0.5 — the generator release).
 
 ---
 
@@ -20,17 +20,18 @@
 
 ## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
 > **One line:** Opus is the PI (route + decide + interpret) AND the executor (subagents inherit the session
-> model = Opus 4.8); GPT-5.5 Pro is the external brain (the generative leap + prior-art + deep taste); the
-> **Codex review hook** auto-audits every executor diff; the human only grants the flagship contribution.
+> model = Opus 4.8); GPT-5.5 Pro is the external brain (deep design + prior-art + contested judgments); the
+> **Codex review hook** auto-audits every executor diff; the human grants contribution promotion — and is
+> most valuable EARLY (shaping problems at /prospect · /forge time), not only at sign-off.
 > Manual `/codex:rescue` is **RETIRED** — replaced by the automatic hook.
 
 | Engine | How to invoke | Role |
 |---|---|---|
-| **Opus 4.8 (me)** | direct (main loop) | **PI / router / decision-owner / interpreter.** ROUTE-FIRST lane triage (§5.0), OBSERVE, IDEATE (skeptical + cross-domain), SELECT/DECIDE, assemble+package the Pro hand-off, run the CHEAP inline gates, update tree/RUNLOG. **Never self-grants a strong (UP) verdict.** Prefer Opus high; reserve xhigh for the hardest judgment. |
-| **Opus 4.8 executor subagents** | `Agent` (+ `isolation: "worktree"` when mutating files); inherits session model | **ALL implementation / experiment plumbing / verification runs / gate work / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge novelty, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
-| **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain:** the object-shift generative LEAP (F4.5), prior-art / occupancy scan, deep/contested taste-KILL, novelty/AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
-| **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. This IS the independent substrate now (replaces manual `/codex:rescue`). A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
-| **Human** | HARD-BLOCK escalation | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go. RARE — not a per-cycle bottleneck. |
+| **Opus 4.8 (me)** | direct (main loop) | **PI / decision-owner / interpreter.** OBSERVE, `/prospect`, `/forge`, SELECT/DECIDE, assemble+package the Pro hand-off, `/autopsy`, `/compass`, update tree/RUNLOG. **Never self-grants `CLAIM_STANDS`.** Prefer Opus high; reserve xhigh for the hardest judgment. |
+| **Opus 4.8 executor subagents** | `Agent` (+ `isolation: "worktree"` when mutating files); inherits session model | **ALL implementation / experiment plumbing / verification runs / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge worth, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
+| **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain:** the `/forge` deep-design escalation, prior-art / occupancy reads, contested `/adversary` passes, AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
+| **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. An uncurated, un-re-rollable independent substrate. A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
+| **Human** | HARD-BLOCK escalation + EARLY problem-shaping | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go; writes the goals. RARE at the back of the loop — most valuable at the front. |
 
 ## 2. The Arbor MCP — what we keep, what we dropped
 Arbor offers two layers; we use only the first.
@@ -43,27 +44,22 @@ Arbor offers two layers; we use only the first.
 - **Policy:** GOAL mode is the driver. The **Arbor MCP idea tree is the canonical research STRUCTURE**
   (`.arbor/sessions/<run>/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
   then RUNLOG)**. Use `worktree_create`/`eval_run`/`git_merge_branch`/`generate_report` opportunistically.
-- **★ GOAL = a CONTINUOUS loop, not one stage.** OBSERVE → IDEATE → SELECT → DISPATCH+verify → DECIDE →
-  (experiment pass: bank EVIDENCE & advance · FAIL **or decisive NEGATIVE**: BANK it, then **AUTO-PIVOT** —
-  re-IDEATE / dispatch the next surfaced lead; **the loop picks the pivot itself by taste and NEVER stops to ask
-  the user which direction**) → loop. **★ A banked negative is a per-cycle WIN that feeds the NEXT pivot — it is
-  NOT a run-stop, and NOT "inconclusive" (only a no-decision cycle counts as inconclusive). Banking a negative
-  and then halting is the #1 loop bug — do not repeat it.** **★ EFFICIENCY (the fix for "always failing", full
-  rules §5.2): IDEATE runs an OCCUPANCY-SCAN FIRST (cheap-kill an occupied/substrate-mismatched lever BEFORE any
-  design or Pro round); the object-shift generative LEAP is DESIGNED BY Pro (not Opus-checklisted); after 2
-  occupied/substrate kills in ONE region the next IDEATE makes a LATERAL JUMP (new task-family/substrate, never
-  another neighbor); DSpark-flavored systems leads take the `/baseline-champion` lane, not the object-shift
-  machinery.** A
-  contribution/paper/"publishable" claim is **NOT** an autonomous loop outcome — it HARD-BLOCKS to
-  human/external (§5.1 taste-gate asymmetry); the loop only banks evidence and advances. **`/ideate` "stops at
-  ideas" ends the IDEATE STAGE ONLY — it does NOT stop the goal loop.** Never end the session at "shortlist
-  ready" or "one experiment done"; continue to dispatch the next un-run lead. **Concrete caps (bounded
+- **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → `/prereg` → run → `/exp-verify` →
+  (claim → `/adversary` · null → `/autopsy`) → loop; `/compass` every 3–5 cycles. **★ THE ANTI-EXHAUSTION
+  RULE (why past campaigns "kept stopping"): the backlog is ALIVE, never a menu.** Every `/autopsy` MUST
+  emit its conversion-law output (a constraint, a new/reshaped candidate, or an explicit region-close that
+  triggers a lateral `/prospect`). A null result is a per-cycle WIN **only if it generated something** —
+  banking a negative that reshapes nothing is an incomplete autopsy, and halting after banking is the #1
+  loop bug. **The loop picks its pivots itself by taste and NEVER stops to ask the user which direction.**
+  A contribution/paper/"publishable" claim is **NOT** an autonomous loop outcome — it HARD-BLOCKS to
+  human/external (§5.1); the loop only banks evidence and advances. Never end the session at "shortlist
+  ready" or "one experiment done"; continue to the next live candidate. **Concrete caps (bounded
   autonomy):** ≤12 dispatched cycles/session; ≤3 consecutive inconclusive leads → stop+report; each experiment
   pre-declares a wall-clock budget (≤3h dev / ≤12h sealed), `kill -9` on overrun OR >30min zero-output.
-  Otherwise the RUN stops ONLY when: a result reaches the promotion gate (→ human/external, §5.1); OR the
-  shortlist is drained — i.e. **every surfaced lead has ITSELF been killed** (a surfaced-but-untried lead is the
-  NEXT cycle, never a stop) — AND 2 re-ideate rounds are dry (meta-saturation); OR a hard cap is hit; OR
-  genuinely blocked (needs user). **A surviving/untried lead means the run is NOT done — pivot to it.** **Safe background (ZERO orphans):** only ONE 26B GPU job at a
+  Otherwise the RUN stops ONLY when: a claim clears `/adversary` and reaches the promotion gate (→
+  human/external); OR `/compass` says STOP_AND_REPORT (programme degenerated / caps); OR genuinely blocked
+  (needs user). **A live backlog candidate means the run is NOT done — pivot to it.**
+  **Safe background (ZERO orphans):** only ONE 26B GPU job at a
   time — `nvidia-smi` BEFORE dispatch, QUEUE don't collide. **EVERY long job MUST be TRACKED — no
   fire-and-forget:** prefer harness `run_in_background` (auto re-invokes on completion); a `setsid`-detached
   job is allowed ONLY if it writes a PID-file AND a RUNLOG registry line (cmd / PID / **cwd** / **start-time** /
@@ -86,13 +82,14 @@ Arbor offers two layers; we use only the first.
 | Artifact | Role | Cadence |
 |---|---|---|
 | `.claude/CLAUDE.md` | LEAN config: identity, engine routing, keys, hard rules, POINTERS | rarely |
-| `plan/README.md` | **one-screen flow map** (Arbor loop + gate optimizations) + plan/ doc index — START HERE | when structure changes |
-| `plan/operating-manual.md` (this) | how-we-work reference (engines, Arbor, conventions, lessons, science kernel, §5.1 gates) | when process changes |
-| `plan/goal-directive.md` | the exact `/goal` input | when goal/workflow changes |
-| `plan/research-operating-system.md` | BACK-half (filter) DESIGN — 7 gates, the asymmetry, the enforceable-contract pattern | when a gate changes |
+| `plan/README.md` | **one-screen flow map** (the v0.5 loop) + plan/ doc index — START HERE | when structure changes |
+| `plan/operating-manual.md` (this) | how-we-work reference (engines, Arbor, conventions, lessons, science kernel, §5 types+commands) | when process changes |
+| `plan/goal-directive.md` | the exact `/goal` input (written by the user) | when goal changes |
+| **research-os plugin** (`/home/lingxufeng/cli/research-os`) | the 7 commands + skills + `taste.md` + `research-types.md` — the canonical prompt layer | when the method changes |
+| `plan/research-operating-system.md` | HISTORY: the v0.4 gate design + its diagnosis — superseded by research-os v0.5 | archive-grade reference |
 | `plan/dspark-deep-analysis-2026-07-01.md` | DSpark technical breakdown + occupancy scan | when occupancy changes |
 | `DSpark-analysis.md` | DSpark core ideas + transferable concepts | reference |
-| `enrich.md` | the Modeling-Object-Shift methodology | reference |
+| `enrich.md` | the methodology schools + the MOS aesthetic (extended by the plugin's `taste.md`) | reference |
 | **Arbor MCP tree** (`tree_view`) | **canonical STRUCTURE** — branches / status / result / insight / prune | **EVERY 验收, FIRST** |
 | `plan/archive/` | CLOSED dLLM campaign + all prior experiment docs (do NOT load for DSpark work) | — |
 > **The #1 process bug to never repeat:** updating the RUNLOG but not the tree → the tree goes stale and the
@@ -105,7 +102,7 @@ Arbor offers two layers; we use only the first.
    **end-to-end generation / verifier metrics** as the primary signal.
 3. **Failure-mode first.** Profile WHERE the model fails (generation-based) before designing a method.
 4. **Tree discipline** (see §3). **Independent review** is mandatory (the Codex hook audits every executor
-   diff); the generator never self-grants — tactical SELECT is Opus's, but the KILL gates + hook discipline it.
+   diff); the proposer never self-grants `CLAIM_STANDS` — DOWN verdicts only.
 5. Kill hung/overrunning jobs immediately — but ONLY a job that passes the §2 **ownership test** (live cwd
    under the project / `.claude/worktrees/` AND cmd matches our job patterns) AND the §2 **PID-reuse re-verify**
    (the live cmd + cwd + start-time all match the registry). **A recorded PID alone NEVER authorizes a kill**
@@ -120,212 +117,147 @@ Arbor offers two layers; we use only the first.
    rate-limit each other); **serialize heavy executors** (Sonnet 5 retired as unstable; executors now Opus 4.8). **The manual-`/codex:rescue`
    zombie-leak is RESOLVED — manual rescue is retired; the single managed Codex review hook (one dispatch per
    subagent, reaped at 30 min, registry-capped) replaces the leaky fan-outs.** GPU idle ≠ progress lost.
+7. **The v0.4 framework lessons (2026-07-01 diagnosis — why the gates were rebuilt).** (a) Filters don't
+   create value — problem selection does; (b) a gate-heavy system selects for gateable work → eval/certificate
+   drift; (c) novelty gates must never judge improvement (刷分) work — occupancy is a cost signal, not a veto;
+   (d) candidate MENUS exhaust — backlogs must regenerate from failures; (e) progress tokens are farmable by
+   orderly retreat — count SURPRISES (plan-changes) instead; (f) process work is never the deliverable
+   (>20% sustained = compass flag).
 
-## 5. Science protocol (the kernel — gate every move)
+## 5. Science protocol (the kernel) + research-os v0.5
 Falsify-before-build (ship the kill-experiment WITH the idea) · score-up ≠ mechanism (require negative control
 + locality) · eval/test/baseline are a **sealed layer, never changed mid-run** · one variable per probe ·
-isolation: **generator ≠ executor ≠ critic** (Opus generates/observes/selects-tactically; **Opus executor
-subagents** run in worktrees; the **Codex review hook** independently audits every executor diff; Playwright-Pro
-designs the leap / audits) · **experiment has absolute veto over elegance** · every experiment pre-declares
-{hypothesis, falsifier, acceptance, negative control, locality check, reproducible evidence, recorded
-commands+exit codes} · when evidence contradicts the direction, **redesign the program**, don't defend it.
-Negative results / eliminated confounds / killed directions = SUCCESS.
+isolation: **generator ≠ executor ≠ critic** (Opus generates/selects; executor subagents run in worktrees; the
+Codex hook audits every diff; Pro designs/arbitrates) · **experiment has absolute veto over elegance** · every
+claim-bearing run pre-declares its contract (`/prereg`) · when evidence contradicts the direction, **redesign
+the program**, don't defend it. A negative result is a SUCCESS **iff its autopsy generated something**.
 
-> **★ SUBSTRATE NOTE (read once, applies to ALL of §5).** Everywhere below, an "INDEPENDENT substrate (Codex)"
-> now means the **automatic Codex review hook** (SubagentStop → independent `gpt-5.5 xhigh`, advisory), NOT a
-> manual `/codex:rescue` dispatch (retired). Operationally: **run the gate work as an executor subagent
-> (Opus 4.8, inherits session model) and the hook audits its diff.** A hook finding is a **binding DOWN** verdict (kill/flag); the hook **never
-> grants an UP verdict** — a taste PASS, `structural-negative`, `ELIGIBLE`, `PROGRESSIVE`, reward-hack `CLEAN`,
-> or baseline dominance is granted only by the **machine validator** (where one exists) + **human promotion**,
-> never by the hook's silence. For a deep/contested UP judgment, route to **GPT-5.5 Pro** (Playwright, awaited).
+> **★ SUBSTRATE NOTE (applies to ALL of §5).** An "INDEPENDENT substrate" = the **automatic Codex review
+> hook** (SubagentStop, advisory, uncurated, un-re-rollable), a dispatched fresh-context reviewer, or
+> **GPT-5.5 Pro** — never the proposer. Independence grants DOWN bindingly and UP only through an actual
+> pass (`CLAIM_STANDS`); **silence ≠ pass**; contribution/paper promotion = human only.
 
-### 5.0 ROUTE-FIRST — the gate budget (efficiency: don't run promotion machinery on plumbing)
-Before running ANY gate, Opus classifies the task into ONE lane; only that lane's gates fire. Most work is
-cheap and never touches the heavy promotion suite — that is the fix for "rigorous but slow."
-| Lane | What | Owner | Gates that fire |
+### 5.0 Research TYPES — name the type FIRST, verify by type
+> Full taxonomy: research-os `skills/prospect/references/research-types.md`. Schools (enrich.md) = how to
+> think; TYPES = what kind of output + how it is valued + verified. The v0.4 bug was type-blindness:
+> novelty gates killed improvement work; gate pressure herded output toward evaluation certificates.
+
+| Type | Value = | Verify | Characteristic failure |
 |---|---|---|---|
-| **FAST_CODE** | impl / refactor / bugfix / experiment plumbing | executor subagent | `/exp-verify` only + the Codex hook's auto-review of the diff |
-| **EXPERIMENT_RUN** | a real experiment / ablation / verifier run | executor subagent | `/context-bundle` (pre-dispatch) → run → `/exp-verify` |
-| **IMPROVEMENT** | a concrete engineering improvement on an existing system (better head / loss / architecture variant); the IDEA is not novel but the MEASURED Δ is the contribution (enrich types B/H/systems) | executor subagent | train/build → `/exp-verify` → `/baseline-champion` (measured Δ vs SOTA baseline). Occupancy-scan checks "has this EXACT improvement been done and measured" NOT "does anyone work in this area." NO /mos-front, NO /object-shift-audit — those are for novelty. |
-| **NEW_DIRECTION** | a genuinely new modeling object (enrich type MOS / sentence-1 "建模错了对象") | Opus assembles + **Pro** designs | `/mos-front` (occupancy-scan FIRST) → `/object-shift-audit` |
-| **DSPARK_SYSTEMS** | a measured throughput/quality/compute lever, NO new object, NO new head | executor subagent | `/baseline-champion` + measured Δ (skip ALL ceremony) |
-| **POSITIVE_RESULT** | any improved metric / "it works" (CLAIM BOUNDARY) | independent | `/exp-verify` → `/reward-hack-audit` → `/taste-critic` → `/claim-evidence-matrix` |
-| **COMPARISON** | "beats / faster / Pareto / frontier / architecture advantage" | baseline adversary | `/baseline-champion` BEFORE the wording is allowed |
-| **NEGATIVE_RESULT** | a null / killed branch | Opus (+ independent if structural) | `/exp-verify` → `/bank-negative` |
-| **PROGRAMME_BUDGET** | continue this programme? | Opus + independent for a favorable status | `/programme-audit` |
+| **Improvement 刷分/改进** | measured Δ vs honestly-tuned baseline; idea novelty IRRELEVANT | `/adversary` A+B (Δ-reality + baseline fairness). Occupancy = "has this EXACT change been measured here", never "does anyone work here" | unfair baseline; occupancy-as-veto |
+| **Evaluation 评估** | a DECISION that changes because of the measurement | name the changed decision — no decision-change = certificate | certificate-production (audit theater) — the loop's most seductive failure |
+| **Survey 综述** | a map that changes where people search + a mined PROBLEM LIST (surveys are a `/prospect` mine, not a reading assignment) | ≥1 problem someone would drop their work to attack | summarizing instead of mining |
+| **Novelty 新对象** | a reframe that explains old failures AND predicts new ones (enrich MOS) | differential prediction where it applies (optional `/prereg` DPC block) | cosmetic relabel |
+| **Systems 系统** | end-to-end wall-clock/cost lever at equal quality | end-to-end, never proxy | proxy wins, e2e loses |
+| **Negative 证伪** | a killed assumption the community builds on | scope honesty; structural = independent-only | strawman; scope inflation |
+| **Theory 理论** | many phenomena → one mechanism + ≥1 NEW prediction | the prediction, tested | post-hoc unification |
+| **Tooling 工具** | an experiment class others can now run — and DO | used in anger within one cycle | infra for its own sake (v0.4's own disease) |
+| **Reproduction 复现** | trust recalibration on a LOAD-BEARING result | pre-stated deltas + sealed protocol | reproducing the peripheral |
 
-**The budget rule:** FAST_CODE / EXPERIMENT_RUN do **NOT** trigger taste / reward-hack / claim-matrix — those
-fire ONLY at a **CLAIM BOUNDARY** (a "works / beats X / is a contribution" assertion). **Every cycle emits ONE
-progress token** — `VALID_CODE_MERGED` · `REAL_RUN_VERIFIED` · `NEGATIVE_BANKED` · `POSITIVE_BLOCKED_AS_HACK` ·
-`POSITIVE_CLEARED` · `OBJECT_SHIFT_ELIGIBLE` · `LATERAL_JUMP` · `PROGRAMME_RETIRED`. A cycle that emits none is
-spinning ("thinking hard, not advancing") → force a lateral jump or bank the null and pivot.
+**Type-drift is the canonical loop failure** (`/compass` check 1): goal says design/improvement, artifacts
+trend evaluation-shaped (certificates/audits/probes). Detect structurally — type the last 3–5 artifacts.
 
-### 5.1 Research-OS taste & anti-Goodhart gates (the ROS layer)
-> Full design + grounding: `plan/research-operating-system.md`. **Principle:** goal mode is autonomous for
-> SEARCH + FALSIFICATION; it is NOT autonomous for defining success, broadening scope, or declaring a
-> CONTRIBUTION. The success-defining gates run on an **INDEPENDENT substrate (never the proposing agent)** —
-> Codex-B's invariant: *a success-defining gate must never be runnable by the proposer.*
->
-> **Taste-gate ASYMMETRY (the fix for the gameable-pass hole).** In autonomous goal mode the SAME orchestrator
-> that proposes also *dispatches* `/taste-critic`, *curates the context* it sees, and *can re-run it* — so a
-> proposer-routed critic's verdict is NOT a true independent gate (exactly the "kill-reviewers GAMEABLE"
-> failure: sanitized context + narrowed claim + re-run until clean). The gaming failure mode is a **false
-> PASS**, never a false KILL. So authority splits by direction:
-> - **KILL / DOWNGRADE = autonomous and safe.** The agent SHOULD run `/taste-critic` to kill its own
->   academic-toys / standard-redefinition early; a kill-only critic cutting the proposer's *own* work cannot
->   be gamed toward over-promotion. This is the "minimize human" win — AI filters out toys with no human.
-> - **PASS / promotion = NOT autonomously self-grantable.** A proposer-dispatched critic's "no standing kill"
->   is **advisory only**; it does NOT authorize promoting a result to "contribution" / paper / "architecture
->   advantage." Promotion HARD-BLOCKS in autonomous mode and terminates in a **human (or a genuinely external
->   critic the proposer does not control)**. Rare — only survivors of the autonomous kill-filter reach it.
->
-> **GENERAL INVARIANT (this asymmetry is not taste-specific — it governs EVERY gate below).** The proposer
-> may self-administer a verdict only in the **conservative / DOWNward direction** — the direction where
-> gaming cannot help it: KILL/downgrade a direction, grade a null `scoped-negative`, downgrade an unsupported
-> claim to a hypothesis. The **strong / consequential / "this counts as a result" verdict** — a taste PASS, a
-> `structural-negative`, a baseline-champion dominance sign-off, a `/reward-hack-audit` CLEAN — is a
-> success-defining decision and is **NEVER proposer-self-granted**: it runs on an independent substrate
-> (Codex/Pro) and, for anything written up as a contribution, terminates in a human/external decider. One-line
-> test before trusting any verdict: *"would gaming this verdict help the proposer? then the proposer can't be
-> the one who grants it."*
+### 5.1 The three discipline moments + the one invariant (the filter, collapsed)
+> Most work never sees a gate: plumbing, exploration, tactical runs flow freely. Discipline binds at
+> exactly THREE moments. One question replaces the old lane table: **"is this a claim leaving the loop?"**
+> yes → `/adversary`; no → just go.
 
-| Loop point | Gate | Required action | Decider |
-|---|---|---|---|
-| SELECT (NEW direction/thesis) | **Taste gate (KILL — autonomous)** | Run `/taste-critic` (He-bar, kill-only) on an INDEPENDENT substrate (Codex/Pro, fresh context). `ACADEMIC-TOY` / `STANDARD-REDEFINITION-HACK` → BLOCKED; re-ideate (never reword to pass). A `no-kill` clears the direction for *work*, NOT for *promotion* (see promotion row). | independent AI critic KILLS autonomously; `no-kill` ≠ a contribution-pass |
-| Pre-experiment | **Preregister** | Freeze {hypothesis, falsifier, acceptance, metric, split, neg-control}, timestamped, before sealed data. Sealed splits immutable; one-tailed tests pre-registered (stat norm). | the frozen contract |
-| Cross-system compare | **Baseline champion** | Before any "beats X"/frontier/architecture claim, an independent agent (NOT the proposer) optimizes the OPPOSING baseline to win — same feature set/preprocessing/tuning budget; vLLM/SGLang if serving matters. No dominance claim without sign-off. Model-vs-model = **PAIRED** stats (5×2CV/McNemar/DeLong), never unpaired t-test on shared CV folds. | independent adversary; veto |
-| DECIDE / pre-promotion | **Reward-hack audit** | `/reward-hack-audit` on EXTERNAL artifacts: **≥3 seeds mean±std (not best run)**, per-example regression, neg-control consistency, sealed holdout, token-shuffle ablation, no-mock + anti-no-op log_assertion. | Codex (independent) |
-| DECIDE | **Negative grade (DOWNward self-grade only)** | `/bank-negative`. The proposer self-assigns **only `failed-attempt` / `scoped-negative`** (conservative — self-grading allowed DOWNward only, since a `structural-negative` is a publishable contribution-equivalent and Goodhart pressure pushes UP). A `structural-negative` is **NOT self-certifiable**: Codex independently verifies the 3-part gate (pre-declared falsifier fired + live controls clean + sealed confirm) against external artifacts; absent that, it stays `scoped-negative (structural-PENDING)`. **ENFORCED, not prose:** every banked case must pass `~/.claude/skills/bank-negative/validate_negative_case.py` (JSON Schema + fail-closed check; `structural_certified_by` has no `proposer` value; regression-tested) — exit≠0 ⇒ not banked. Writing a structural-negative up as a contribution routes through the promotion row. No over-generalizing a scoped null to "direction dead." | self-grade ≤ scoped autonomous; **structural cert = Codex (independent), never proposer — machine-enforced**; write-up → promotion row |
-| Contribution/paper promotion (PASS — NOT autonomous) | **Taste-critic + claim-evidence** | A `/taste-critic` `REAL-CONTRIBUTION` classification + every claim mapped to an evidence type are **necessary advisory evidence, not a self-grantable pass**. Promoting a result to "contribution"/paper/"architecture advantage" HARD-BLOCKS in autonomous mode → terminates in a **human (or external critic the proposer doesn't control)**. ENGINEERING ≠ contribution; **a new metric/benchmark is GUILTY until it corrects a misleading existing eval (REFORMS).** | proposer-dispatched critic = advisory; the PASS is **human / external**, never proposer-self-granted |
+| Moment | Command | What it does |
+|---|---|---|
+| **Before a claim-bearing run** | **`/prereg`** | freeze {HYPOTHESIS, MECHANISM, TYPE, METRIC, sealed SPLIT, ACCEPT-if, KILL-if, NEG-CONTROL, SEEDS ≥3, ONE-VAR} in 10–20 lines, via Arbor. Post-hoc edits void the run as evidence. **Exploration is free** — contract only what will be cited. Optional DPC block for novelty claims. |
+| **After any run** | **`/exp-verify`** | 3-stage real-run check: no-mock → executed-on-real-data → **anti-no-op** (the intervention provably FIRED). A no-op FAILS even if the metric improved. VERIFIED = real run, not real effect. |
+| **At the claim boundary ONLY** | **`/adversary`** | ONE independent pass, TYPE-scoped: **A** Δ-reality (≥3 seeds mean±std, per-example regression, neg-control, sealed holdout) · **B** baseline fairness (make the OPPOSING baseline win — equal budget, paired stats 5×2CV/McNemar/DeLong) · **C** claim–evidence map (no artifact ⇒ auto-downgrade to hypothesis; new-metric-as-evidence GUILTY until it corrects a misleading eval; structural-negative needs the 3-part gate) · **D** worth check (toy? goalpost-moved? He-bar graded TYPE-relative; eval claims must name the changed decision). |
 
-**Autonomy boundary** ("do not ask the user to choose" = TACTICAL choices only):
-- MAY unilaterally: observe · ideate · tactical variants · preregister · dispatch worktree executors · tune ·
-  run dev/sealed eval under frozen contracts · update tree/RUNLOG · bank EVIDENCE · **run `/taste-critic` to
-  KILL/downgrade its own toys early** (the autonomous kill-filter).
-- MAY NOT: change the success metric after seeing results · broaden scope · **self-grant a taste PASS that
-  promotes a result to CONTRIBUTION / publishable / "architecture advantage"** — that PASS terminates in a
-  human (or a genuinely external critic the proposer does not control); a proposer-dispatched critic's
-  "no-kill" is advisory evidence, NOT the pass.
-- **AI CAN do taste — but only the KILL side autonomously.** As an INDEPENDENT, kill-only critic the agent
-  filters out toys with no human in the loop (taste-FILTERING, autonomous; this is the "minimize human" win).
-  It may NOT autonomously grant the promotion PASS, because a proposer that dispatches + curates + re-runs the
-  critic can manufacture a false pass — gaming pushes toward false-PASS, never false-KILL. The human is a RARE
-  escalation: the **promotion PASS**, critic↔proposer deadlock, or flagship go/no-go — **not** a per-cycle
-  bottleneck (most work is killed or stays internal and never reaches the human).
-- **External backing for "taste = independent, not proposer":** the community agent-native rigor-reviewer
-  structurally omits novelty/significance; openreviewer "complements, not replaces" human review.
+**THE ONE INVARIANT (unchanged from v0.4 — the piece that was correct):** *a verdict that helps the
+proposer if gamed must never be granted by the proposer.* Proposer self-administers **DOWN only**
+(`REFUTED` / `DOWNGRADED_TO_HYPOTHESIS` / `TOY` / kill / `scoped-negative`). **`CLAIM_STANDS` = independent
+substrate only** (fresh uncurated context; a failed pass is ANSWERED point-by-point, never re-rolled).
+**Contribution / paper promotion = human only**; an AI `CLAIM_STANDS` is advisory input to that decision.
 
-### 5.2 MOS-Front — the front-half GENERATOR gates (the enrich layer)
-> Full design: `plan/archive/mos-front-architecture.md`. The §5.1 gates are the **filter** (is the result real?);
-> MOS-Front is the **generator** (is this the right modeling OBJECT?), firing at IDEATE→SELECT, BEFORE the
-> filter. **Role split (efficiency + the "near-original" engine):** Opus ASSEMBLES context + PACKAGES;
-> **GPT-5.5 Pro DESIGNS the generative leap** (the new object — a different model + independent context reaches
-> what an Opus checklist would not; this is where enrich's scheme-types become near-original content); Codex
-> AUDITS/kills; human grants the consequential contribution. **Two efficiency rules (the fix for "always
-> failing"):** (1) **occupancy-scan FIRST** — cheap-kill a lever that is occupied / fails-on-substrate BEFORE
-> any design or Pro round (most past cycles wasted the design first, then died "occupied"); (2) **lateral-jump**
-> — after 2 occupied/substrate kills in ONE region, the next `/mos-front` MUST change task-family/substrate (no
-> more neighbors of the dead idea). Generative engine = **O0-equivalence failure mining**; keystone = the
-> **DPC** (a pre-training, O0-matched, S-stratified failure-split prediction with shuffled-S + generic-difficulty
-> controls) — the machine-checkable real-vs-cosmetic test. **DSpark-flavored systems leads** (a measured lever,
-> no new object) skip this machinery → the systems lane (`/baseline-champion` + measured Δ); it is co-equal.
+**Autonomy boundary** (unchanged): MAY unilaterally — observe · prospect · forge · prereg · dispatch
+worktree executors · run dev/sealed eval under frozen contracts · autopsy · update tree/RUNLOG · kill its
+own toys. MAY NOT — change the success metric after seeing results · broaden scope · self-grant
+`CLAIM_STANDS` · promote to contribution. The human is a RARE escalation, not a per-cycle bottleneck.
 
-| Loop point | Gate | Required action | Decider |
-|---|---|---|---|
-| IDEATE (new direction / object-shift lead) | **`/mos-front`** (Opus assembles + Pro designs the leap) | **Occupancy-scan FIRST** (F2.5: occupied/substrate-fail → `LATERAL_JUMP`, no design; 2 region-kills → forced jump). Then two-lane triage `SKIP_TACTICAL` / `MOC_LITE` / `MOC_FULL`. For LITE/FULL: phenomenon-bundle → default-object-map → omitted-structure miner → school-router (+ **mandatory rival**) → **route the generative LEAP to Pro** (F4.5 hand-off: occupancy-map + substrate-constraints + omitted-structure → Pro designs O1 + DPC) → Opus packages into MOC + **DPC**. SKIP_TACTICAL/LATERAL_JUMP may NOT use object-shift language. | Pro DESIGNS, Opus PACKAGES (`self_certified:false`); eligibility = independent `/object-shift-audit`, never self-granted |
-| SELECT (object-shift claim — **both MOC_LITE & MOC_FULL**) | **`/object-shift-audit`** (Codex, kill-only) | T1–T6 (distinct-object · observable-S · pre-training differential-prediction · rival-baseline · neg-control · kill-action) + the DPC check (LITE = lightweight). Verdict `KILL_COSMETIC_RESHIFT` / `DOWNGRADE_TO_TACTICAL_VARIANT` / `ELIGIBLE_FOR_BACK_HALF` (NOT a contribution — only "may enter the kill-filter"). **Machine-enforced** by `validate_object_shift.py`. | proposer self-assigns only KILL/DOWNGRADE; **`ELIGIBLE_FOR_BACK_HALF` = Codex (independent), machine-enforced** |
-| BACKPROP (active programme) | **`/programme-audit`** (Codex, tree) | Lakatos progressive-vs-degenerating BUDGET signal: deterministic `programme_progress_score` from immutable ledgers → `PROGRESSIVE` / `STABLE_BUT_UNPROVEN` / `DEGENERATING_WATCH` / `DEGENERATED_RETIRE_OR_FORK`. Hard-core-edit-after-failure = −4. **Machine-enforced** by `validate_programme.py`. | self-claim ≤ canonical; **`PROGRESSIVE` = independent, machine-enforced** |
+### 5.2 The GENERATOR — /prospect · /forge · /autopsy (+ /compass) — the enrich layer, operationalized
+> This is what v0.4 lacked: of 10 gates, zero generated. Research quality is decided at problem-selection
+> time; these commands are where taste acts GENERATIVELY (ranking and shaping), not as a filter.
+> Foundations: research-os `skills/forge/references/taste.md` (the taste model — extends enrich.md) +
+> `references/schools.md` (the 14-school palette + the 10-question generator).
 
-**Orchestration (when /goal calls what) — LANE-AWARE (match the §5.0 lane):**
-- **IMPROVEMENT lane** (engineering improvement, measured Δ is the contribution) → design a candidate → train
-  (DeepSpec / executor worktree) → measure → `/exp-verify` → `/baseline-champion` (vs SOTA baseline, PAIRED
-  stats) + `/reward-hack-audit` at claim boundary. **NO `/mos-front`, NO `/object-shift-audit`** — those are for
-  novelty; the IMPROVEMENT lane's occupancy check is "has this EXACT improvement been done and measured on this
-  target" not "does anyone work in this area." No Δ → bank negative → AUTO-PIVOT to next candidate.
-- **NEW_DIRECTION lane** (genuinely new modeling object) → `/mos-front`: **occupancy-scan FIRST** (occupied/
-  substrate-fail → `LATERAL_JUMP`) → else FULL (Pro designs the leap) → `/object-shift-audit`(must be
-  ELIGIBLE_FOR_BACK_HALF) → preregister → DISPATCH.
-- **DSPARK_SYSTEMS lane** (measured lever, no new object, no new head) → skip ALL ceremony →
-  `/baseline-champion` + measured Δ.
-- Object-shift-flavored lead under a programme → `/mos-front`(LITE). Tactical variant → SKIP_TACTICAL waiver →
-  straight to the back-half.
-- Every cycle on an active programme → `/programme-audit`.
-The §5.1 filter gates fire unchanged after DISPATCH for ALL lanes.
+| Command | Fires | What it does |
+|---|---|---|
+| **`/prospect`** | goal start · compass "no surprises" · region-close lateral · any fresh corpus | Hunt problems through the FIVE MINES: ① literature/survey 综述 (contradictions between papers · silently-shared assumptions · future-work graveyards · missing head-to-heads · stale numbers predating a capability shift) ② own logs (anomalies, seed variance, baseline misbehavior — the cheapest original problems) ③ capability deltas ("X was designed under constraint C; C just disappeared") ④ benchmark critique ⑤ cross-domain transplants (transplant the precondition, not the buzzword). Output: 3–7 ranked problem cards `{Q, TYPE, WHY-NOW, STAKES, PROBE, SURPRISE}`. Discard: gap-filling without a WHY-EMPTY answer; no-stakes problems; gate-shaped (easy-to-verify) problems. |
+| **`/forge`** | one problem chosen | Name the load-bearing variable → type-scoped occupancy re-pricing (≤15 min, NEVER a veto) → generate 3–5 candidates via the schools palette (**+1 rival school, always**; the MOS move is ONE move, used when the failure signature smells like a wrong object) → each card `{MECHANISM one-sentence-why, KILL cheapest-falsifier, COST, SURPRISE}` → taste-rank → He-bar in GENERATIVE mode ("what would make this beautiful?" — 5 real min simplifying) → **the REGENERATION RULE** (which failure promotes which candidate — the anti-menu clause). Deep-design need → one-page package to Pro. |
+| **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
+| **`/compass`** | every 3–5 cycles · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
+
+**The loop:** `/prospect` → `/forge` → `/prereg` → run → `/exp-verify` → (claim → `/adversary` → human if
+contribution · null → `/autopsy` → back into the backlog) · `/compass` every 3–5 cycles.
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json
-> **Arbor MCP is the canonical store and the execution substrate; it is more reliable than hand-written
-> md/json. So every gate PERSISTS its STRUCTURAL output through Arbor MCP, and md/json is reduced to ONLY the
-> sealed, VALIDATED typed contracts research-os adds that Arbor's fixed-field node cannot hold.** The Arbor
-> tree (`idea_tree.json` via the MCP) is the source of truth for structure; RUNLOG is secondary narrative (or
-> generate it with `generate_report`). "Research-OS keeps only what Arbor can't express."
+> **Arbor MCP is the canonical store and the execution substrate.** Every command PERSISTS its structural
+> output through Arbor; md/json is reduced to the few sealed contracts a fixed-field node cannot hold.
+> The tree is the source of truth; RUNLOG is secondary narrative (or `generate_report`).
 
 Arbor node fields = `hypothesis · status · result · insight · score · test_score · code_ref`; session meta =
 `eval_cmd/eval_cmd_test · baseline/trunk_score · metric_direction`. The write-through map:
 
-| Loop point | Arbor MCP (the substrate — PRIMARY) | research-os-only (sealed artifact, `node.code_ref` → it) |
+| Loop point | Arbor MCP (PRIMARY) | sealed artifact (`node.code_ref` → it) |
 |---|---|---|
-| OBSERVE | `tree_view` | — |
-| new direction / hypothesis | `tree_add_node(hypothesis, status)` | — |
-| preregister the eval contract | `tree_set_meta(eval_cmd, eval_cmd_test, baseline_score, metric_direction)` | the {falsifier, neg-control} not in meta → 1 small sealed prereg file |
-| DISPATCH isolation | `worktree_create` / `worktree_remove` | the `/context-bundle` (built from `tree_view` recent insights) |
-| run eval + record score | **`eval_run(cmd, split=dev|test, node_id, set_meta)`** | the `/reward-hack-audit` rigor checks (≥3-seed/neg-control/shuffle) |
-| DECIDE outcome | `tree_update_node(result, insight, score, status)` | — |
-| bank a null | `tree_prune(reason)` + `tree_update_node(insight)` | the `/bank-negative` GRADE (validator) → sealed `negative_case` |
-| merge / promote | **`git_merge_branch`** (already a no-regression gate: beat-trunk-on-B_test + required_outputs + protected_paths) | the `/baseline-champion` "is the baseline STRONG?" check (Arbor only checks beat-trunk) |
-| programme node | `tree_add_node` + `tree_update_node` | the `programme` ledgers + `/programme-audit` score (validator) |
-| object-shift | `tree_update_node(insight=verdict, code_ref→bundle)` | the sealed `MOC + DPC` + `/object-shift-audit` (validator) |
+| `/prospect` cards | `tree_add_node(hypothesis=card, status=pending)` | — |
+| `/forge` choice + backlog | `tree_update_node(status=in_progress)`; backlog + regeneration rule in insight | — |
+| `/prereg` contract | `tree_set_meta(eval_cmd, eval_cmd_test, baseline_score, metric_direction)` | the 10-field contract file (timestamped) |
+| DISPATCH isolation | `worktree_create` / `worktree_remove` | the contract + exact inputs (no ambient dump) |
+| run + score | **`eval_run(cmd, split=dev\|test, node_id, set_meta)`** | `/exp-verify` verdict = node insight |
+| claim boundary | `tree_update_node(result, insight)` | `/adversary` per-check evidence |
+| null / kill | `tree_prune(reason)` + `tree_update_node(insight=conversion-law output)` | — |
+| merge / promote | **`git_merge_branch`** (already a no-regression gate) | human promotion record |
+| programme pulse | append to programme node insight | `/compass` verdict paragraph |
 | the narrative | `generate_report` | — |
 
-**Rule:** if Arbor has a tool/field for it, USE IT (don't re-implement in md/json). Only the **validated typed
-contracts** (MOC, DPC, object_shift_audit, programme ledgers, negative_case) persist as sealed files — because
-they need fail-closed schema validation Arbor doesn't do — and the node's `code_ref` points at them. This
-deletes the parallel structure-JSON pile (the old MOS-Front §16 packet, now in `plan/archive/`).
+**Rule:** if Arbor has a tool/field for it, USE IT (don't re-implement in md/json).
 
 ## 6. Arbor command routing & tree discipline
-> We run a **pragmatic hybrid**: Arbor's tree for STRUCTURE, our methodology for DECISIONS, multi-engine for
-> REVIEW. We do NOT adopt the full Arbor skill suite — that's built for an *unattended full-auto* loop; ours
-> is *human-in-the-loop goal mode* (the user decides at Track turns). Forcing the full INIT→…→DECIDE ceremony
-> every cycle would slow the research. This section writes down the routing that was previously implicit.
+> A **pragmatic hybrid**: Arbor's tree for STRUCTURE, research-os for DECISIONS, multi-engine for REVIEW.
+> We do NOT adopt the full Arbor skill suite (built for unattended full-auto; ours is human-in-the-loop
+> goal mode).
 
-### 6.1 Two ideate skills — NOT in conflict; correct layering (pick by altitude)
-| Skill | Weight | Use when |
+### 6.1 Ideation layering (pick by altitude)
+| Layer | Weight | Use when |
 |---|---|---|
-| **/ideate** (`research-ideation`) | HEAVY — multi-engine (Opus Explore + Opus generators + Codex-hook rigor + Pro 扩展 novelty/AC), 1h+ Playwright poll | **DIRECTION-level**: a Track turn, a new thesis, a fork after a kill. Output = ranked falsifiable shortlist. |
-| **arbor-agent-ideate** | LIGHT — single-engine, 4-line `tree_add_node`, in-loop | **TACTICAL in-loop**: draft the next node under an active lead, a quick variant. Output = one tree node. |
-> Heuristic: would you route it to Pro 扩展 / does it change the program? → `/ideate`. Is it "what's the next
-> experiment under this lead"? → `arbor-agent-ideate` (or just Opus-propose → Opus tactical SELECT, disciplined
-by the KILL gates + Codex hook; Pro for a consequential direction).
-> **Front-half (§5.2):** if the direction claims a new modeling OBJECT (not a new module/loss), run
-> `/mos-front` to turn it into a falsifiable MOC+DPC → `/object-shift-audit`. `/ideate` and `/mos-front`
-> compose: `/ideate` surfaces directions; `/mos-front` makes an object-shift direction *killable*.
+| **`/prospect` + `/forge`** (research-os) | HEAVY — the generator; may escalate to Pro | **DIRECTION-level**: goal start, a new problem, a fork after a region-close. Output = ranked problem cards / a live candidate backlog. |
+| **arbor-agent-ideate** | LIGHT — single-engine, 4-line `tree_add_node`, in-loop | **TACTICAL in-loop**: draft the next node under an active candidate, a quick variant. Output = one tree node. |
+> Heuristic: does it change the programme / need the external brain? → `/prospect`+`/forge`. Is it "the
+> next experiment under this candidate"? → arbor-agent-ideate (or plain Opus-propose, disciplined by the
+> Codex hook).
 
 ### 6.2 Tree-update checklist (fixes the #1 process bug — loose tree discipline)
 At EVERY 验收, tree FIRST then RUNLOG:
-- [ ] `tree_update_node` the dispatched node — status (done/pruned/in_progress) + result + insight.
-- [ ] new lead → `tree_add_node` (4-line hypothesis) BEFORE dispatch · dead branch → `tree_prune` + reason.
-- [ ] **node types = {idea, experiment, negative, `programme`}** (§5.2). A `programme` node (durable
-  object-shift: hard_core + positive/negative heuristic + corroboration/degeneration ledgers) is created ONLY
-  after the first `DIFFERENTIAL_PATTERN_FOUND` + human budget approval (avoids programme bloat); audit it with
-  `/programme-audit` each cycle.
+- [ ] `tree_update_node` the dispatched node — status (done/pruned/in_progress) + result + insight
+      (for a null: the `/autopsy` conversion-law output IS the insight).
+- [ ] new candidate → `tree_add_node` BEFORE dispatch · dead branch → `tree_prune` + reason.
+- [ ] node types = {idea, experiment, negative, `programme`}. A `programme` node is created only after a
+      candidate survives its first claim boundary + human budget approval; its health is checked by
+      `/compass` (questions, not scores).
 - [ ] new track/eval at INIT → `tree_set_meta` the eval contract (B_dev/B_test, metric, metric_direction).
 - [ ] THEN append the RUNLOG narrative.
 
-### 6.3 Arbor commands: use / skip / adopt-for-Track-3
+### 6.3 Arbor commands: use / skip / adopt-later
 | Capability | Status |
 |---|---|
-| `tree_view/add/update/prune` · peer-review-gate · `/ideate`+`arbor-agent-ideate` | **USED** |
+| `tree_view/add/update/prune` · peer-review-gate · arbor-agent-ideate | **USED** |
 | novelty (`arbor-agent-search`) | covered by Pro 扩展 |
 | setup-intake / coordinator | covered by `goal-directive.md` + goal mode |
 | `arbor-agent-tools` (emulation layer) | N/A — we have the native MCP tools |
 | research-agent / orchestrator (full-auto loop) | **deliberately NOT used** — goal mode fits human-in-loop |
-| **`tree_set_meta`+`eval_run`+`git_merge_branch`** (merge-eval automation) | **NOT YET — worth ADOPTING for Track 3.** metadata has been N/A all project (manual Opus DECIDE + Codex-hook review of the merge diff — works, but doesn't scale). Track 3 trains MANY adapter variants → populated trunk/test scores + automated eval finally pay off. NOT a current blocker; the infra to add when variant-count grows. |
-| executor `RunTraining` + resume/checkpoint (`arbor-agent-resume-report`) | **consider for Track 3** — long training runs need checkpoint/resume; standardizes train→eval. |
+| **`tree_set_meta`+`eval_run`+`git_merge_branch`** (merge-eval automation) | **ADOPT when variant-count grows** (many trained heads → automated eval pays off). Not a current blocker. |
+| executor `RunTraining` + resume/checkpoint | consider for long training runs. |
 
-### 6.4 Isolation discipline (kernel ⑥ — occasionally broke)
-IDEATE proposes (Opus). **SELECT** (with manual `/codex:rescue` retired): a **routine tactical selection**
-(which of N surfaced leads to run) is Opus's own call — a resource choice inside the autonomy boundary,
-disciplined by the KILL gates (taste-KILL + `/object-shift-audit` can veto a pick), the occupancy-scan, and the
-**Codex hook** that independently audits the resulting work. A **consequential direction / thesis selection**
-routes to an independent read (**GPT-5.5 Pro**, Playwright). The old "Codex decides every SELECT" pre-work
-dispatch is gone — the anti-self-love discipline is now the KILL gates + the automatic hook, not a mandatory
-Codex call before work starts.
+### 6.4 Isolation discipline (kernel ⑥)
+`/prospect`/`/forge` propose (Opus). A **routine tactical selection** (which backlog candidate to run) is
+Opus's own call — a resource choice inside the autonomy boundary, disciplined by the KILL side of
+`/adversary`/`/autopsy` and the **Codex hook** that independently audits the resulting work. A
+**consequential direction / thesis selection** routes to an independent read (**GPT-5.5 Pro**, Playwright).
+The anti-self-love discipline = DOWN-only self-verdicts + the automatic hook, not a mandatory pre-work
+review call.

@@ -1,5 +1,13 @@
 # Methodology Harvest — Cross-Repo Synthesis (2026-06-29)
 
+> **⚠ SUPERSEDED (2026-07-02) — HISTORICAL HARVEST, NOT LIVE ROUTING.** The command/skill candidates named
+> below (`/reward-hack-audit`, `/bank-negative`, `/context-bundle`, `/mos-front`, `/object-shift-audit`, …)
+> were the v0.4 gate proposals and **no longer exist**. They were built, run, diagnosed, and rebuilt as
+> **research-os v0.5** — the 7 live commands are `/prospect · /forge · /prereg · /exp-verify · /adversary ·
+> /autopsy · /compass` (see `plan/README.md`, `operating-manual.md §5`, and the plugin at
+> `~/cli/research-os`). Read this file only for the cross-repo *ideas* it harvested, never for the command
+> vocabulary. Do NOT invoke any `/`-command named in this doc.
+>
 > Source: 9 parallel extractions in `plan/archive/extraction/` mining 16 repos (MultiAgent, Experiment, Agora×3,
 > methodology+beatless, AutoResearchClaw-v18, AiScientist, scientist×7) + this project's own RUNLOG + the
 > Arbor/MCP utilization audit. This doc consolidates what to ADOPT, the deduped **command/skill candidates**
