@@ -2,29 +2,25 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-02 (VLA → CAF-VLA pivot · research-os v0.8 — the operator axis).
+> Last updated: 2026-07-02 (goal → AMBITION-ANCHORED / direction self-selected by research-os · v0.8).
 
 ---
 
 ## 0. Current research state (read this first)
-- **★ ACTIVE — CAF-VLA: interventional causal stream-attribution for robust VLA (manipulation track).** The
-  original fusion-primary hard core ("VLA robustness failure is a fusion problem") was **REFUTED twice** (own
-  DECOMPOSE probe + the Rank-1 recoverability screen: all modalities necessary, no redundant stream, oracle-
-  gating hurts, 4 suites) — `/compass` = healthy Lakatosian **problemshift, NOT drift**. Contribution PIVOTED
-  to an **INTERVENTIONAL CAUSAL STREAM-ATTRIBUTION** protocol separating fusion-misuse / grounding-loss /
-  info-destruction / action-head-control failures, whose **PREDICTION-VALIDATION (attribution > random at
-  ranking which repair works) IS the claim**; reliability-fusion DEMOTED to a conditional repair (Paper A →
-  Information Fusion 一区). Platform = **StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus** on
-  2×4090D — **CYCLE-0 PASSED** (server↔sim loop proven). Metric = the per-stream causal-map signals
-  (necessity / damage / oracle-gate recoverability / conflict-following) + attribution>random, NOT raw success.
-  **NEXT = the PROPRIO REDOUBT** (recoverability screen with a state-consuming head OFT/GR00T, state_dim=7) →
-  the attribution build. Goal = `plan/goal-directive.md`; design = `VLA/attribution-pivot-design-2026-07-02.md`;
-  refs = `VLA/research-directions-2026-07-01.md` (**SUPERSEDED framing** — read it through the pivot design) ·
-  `VLA/platform-setup.md` (NO date suffix), plus the `/forge` frame + operator palettes (`frames.md` +
-  `taste-operators.md`, loaded by `/forge`; the `recoverability-gated-fusion` operator = this pivot
-  de-domained). **★ The GAF-VLA occupancy go/no-go is RESOLVED (GO-with-reframe) and the fusion-mechanism
-  mainline is KILLED by the recoverability screen — do NOT re-open it; the attribution protocol is the
-  contribution and survives regardless.**
+- **★ ACTIVE — AMBITION-ANCHORED goal (produce ONE 一区-grade contribution — Information Fusion / ESWA;
+  DIRECTION self-selected by research-os).** The goal (`plan/goal-directive.md`) no longer prescribes a hard
+  core: the human sets the **AMBITION + a VALUE BAR** (a genuine contribution, and after a refutation a
+  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v0.8
+  `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
+  from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
+- **Current in-flight campaign = VLA robustness** on the built platform (**StarVLA** frozen Qwen2.5-VL-3B +
+  FAST + LoRA + **LIBERO-Plus**, 2×4090D; **CYCLE-0 PASSED**). The fusion-primary framing was REFUTED twice;
+  the live line is a **diagnosis-guided BUILD** (causal stream-attribution PREDICTS which repair works → BUILD
+  that repair as a small LoRA → measured robustness Δ). The loop FINISHES or forks it. **VLA is the current
+  vehicle, NOT a mandate** — `/prospect` may go LATERAL to a new topic (a move, not a stop). Design =
+  `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED
+  framing) · `VLA/platform-setup.md` (NO date suffix), plus `/forge`'s `frames.md` + `taste-operators.md`
+  (the `recoverability-gated-fusion` operator). The anti-retreat guard lives in the goal's VALUE BAR.
 - **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
   beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
   the entire dLLM/DiffusionGemma/LLaDA campaign (archived `plan/archive/`, Arbor tree 5.1-5.13 done/pruned).

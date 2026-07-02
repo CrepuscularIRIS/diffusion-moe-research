@@ -1,23 +1,17 @@
 <!-- Paste everything below the `---` after `/goal`. Body is <3000 chars. -->
 ---
-HARD CORE (PIVOTED 2026-07-02 — fusion-primary core REFUTED twice by own probes + lit): VLA robustness failures are NOT one mechanism. Contribution = CAF-VLA, an INTERVENTIONAL CAUSAL STREAM-ATTRIBUTION protocol separating fusion-misuse / grounding-loss / info-destruction / action-head-control failures AND PREDICTING when reliability-fusion helps vs cannot. The prediction-validation (attribution > random at ranking repairs) IS the contribution, not a decomposition. Reliability-fusion DEMOTED to conditional repair. Paper A → Information Fusion 一区.
+AMBITION (the ONE goal): produce ONE genuine 一区-grade contribution (Information Fusion / ESWA tier). That is the whole target. The DIRECTION — topic, problem, idea, method, TYPE — is deliberately NOT prescribed; research-os SELF-SELECTS it. Do not ask the human which-direction — decide and report; the human sets the ambition + the value bar, never the direction.
 
-POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) SIZE-FIRST recoverability screen before ANY adapter; mechanism survives ONLY under D≥20pp ∧ N≤10–15pp ∧ G≥0.35 (libero_goal, G=0). (2) PROPRIO REDOUBT — re-run with a STATE head (OFT/GR00T, state_dim=7); proprio over-reliance = lit's fusion-misuse locus (ReViP), ABSENT from the null's testbed. (3) BUILD attribution: Layer-2 classifier + Layer-3 prediction-validation, 4 suites. (4) taste-bank op `recoverability-gated-fusion` = this de-domained; /autopsy mines own logs (Mine-1).
+VALUE BAR (the only hard core — what keeps "get a paper" honest): the result must be a GENUINE, falsifiable contribution of an honestly-named research TYPE (§5.0), defensible at a 一区 bar — NOT a safe certificate / audit-theater / measurement-retreat. **ANTI-RETREAT:** when a risky direction is refuted, do a PROGRESSIVE problemshift (a new attack that predicts a NEW fact), never a degenerating retreat to the safest publishable thing. A pivot to a diagnosis/evaluation endpoint is allowed ONLY when a building/design result is proven unreachable — and /compass must flag it as a retreat, not bank it as progress. Contribution is human-granted (the one invariant).
 
-TYPES (§5.0): 新对象 stream-trust attribution AS object · 评估 per-stream causal map (necessity/damage/G/conflict-following) · 刷分 ONLY a conditional gate on a proven-redundant slice. NOT robot SOTA.
+AUTONOMY: research-os v0.8 is mature — RUN it, don't pre-plan around it. /prospect (own eval-log anomalies FIRST) → /forge (+ forced off-frame + forced taste-operator) → /prereg (launch-arithmetic + armed Monitor; resume-fail = STOP) → run → /exp-verify → /adversary (opposing baseline optimized; ≥3 seeds, paired) → /autopsy → /compass (every 2nd). The human redirects from REPORTS; it does not hand-write the direction.
 
-FRAMES: causal-graph (interventional/do-operator) · information-geometry · optimal-transport. Off-frames first (frames.md + taste-operators.md).
+REALITY (constraints, not direction): compute = 2×4090D — frozen VLM + LoRA/adapter + heavy evaluation, NOT full pretraining, NOT a SOTA race, NOT from-scratch training. Built asset available: StarVLA (frozen Qwen2.5-VL-3B + FAST + LoRA) + LIBERO-Plus — USE it if /prospect chooses a VLA problem; the in-flight experiment (VLA causal-attribution-guided build) gets FINISHED or forked as the loop decides, but VLA is NOT mandated. CLOSED, do NOT cross-contaminate: DSpark × speculative decoding + the dLLM/DiffusionGemma/LLaDA campaign (separate, non-active).
 
-PLATFORM: StarVLA (frozen Qwen2.5-VL-3B + FAST + LoRA) + LIBERO-Plus 4 suites (goal/object/spatial/10), 2×4090D. Metric = the causal-map signals + attribution>random, NOT raw success.
+ENGINES (§1): Pro generates (design/off-frame/operator, `Pro 扩展` KEEP ALIVE); Opus operates; Codex AUTO HOOK; human = taste + contribution.
 
-ENGINES (§1): Pro generates (design/off-frame/operator, `Pro 扩展` KEEP ALIVE); Opus operates; Codex AUTO HOOK.
+READ: operating-manual (§0 state · §1 engines · §4.8-10 launch-arithmetic/Monitor · §5 types+discipline+generator) → the active campaign's docs + RUNLOG if continuing one. Keys .env.
 
-LOOP: CYCLE-0 PASS; Rank-1 screen DONE = mechanism-KILLED (no redundant stream, N≥48pp, G<0, 4 suites). NEXT = proprio test → attribution build. /prospect (own logs FIRST) → /forge (+off-frame +operator) → /prereg (LAUNCH-ARITHMETIC + ARM MONITOR; resume-fail=STOP) → run → /exp-verify → /adversary (OPPOSING baseline; attribution>random, ≥3 seeds) → /autopsy → /compass (every 2nd). Caps §2.
+RULES (§5.1): name the TYPE first, verify BY type; /prereg seals the contract for any claim-bearing run; NUMBERS FROM ARTIFACTS (§4.8); DOWN-only self-grant, CLAIM_STANDS independent, contribution → human; public push → /artifact-acceptance.
 
-FORBIDDEN: mainline the fusion adapter (conditional only) · "solves VLA robustness" overclaim · new backbone/action-head · flow-loss headline (π0/GR00T) · generalist SOTA · from-scratch (LoRA/frozen) · DSpark/dLLM · FIXED menu.
-
-READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/{attribution-pivot-design-2026-07-02, research-directions-2026-07-01, platform-setup}. Keys .env.
-
-RULES (§5.1): /prereg seals {hyp/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS FROM ARTIFACTS (§4.8). DOWN-only self-grant; CLAIM_STANDS independent; contribution → human.
-
-STOP: /compass STOP_AND_REPORT · attribution>random clears /adversary → human · caps · proprio ALSO negative ⇒ formal attribution paper (Rank-4), mechanism archived. Paper B (ESWA) contingent.
+STOP: /compass STOP_AND_REPORT · a contribution clears /adversary at the 一区 bar → human · caps hit · a direction refuted AND no progressive problemshift remains ⇒ /prospect LATERAL to a new topic (a move). "为什么一直停下来" is designed out — a dead direction regenerates the backlog or jumps laterally; it never idles.
