@@ -196,8 +196,10 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 | **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
 | **`/compass`** | every 3–5 cycles · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
 
-**The loop:** `/prospect` → `/forge` → `/prereg` → run → `/exp-verify` → (claim → `/adversary` → human if
-contribution · null → `/autopsy` → back into the backlog) · `/compass` every 3–5 cycles.
+**The loop:** `/prospect` → `/forge` → `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
+→ cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
+back into the backlog) · `/compass` every 3–5 cycles. Layer-2 (§5.4) fires at high-stakes only:
+`/epistemic-calibration` before promoting a novelty/occupancy claim, `/artifact-acceptance` at a handoff.
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json
 > **Arbor MCP is the canonical store and the execution substrate.** Every command PERSISTS its structural
