@@ -1,9 +1,18 @@
-# The Taste Refinery — a taste-mining supply chain (design, not yet built)
+# The Taste Refinery — a taste-mining supply chain (design + as-shipped status)
 
-> **Status: DESIGN (approved shape, 2026-07-02). Implementation DEFERRED — do NOT modify the live
-> research-os workflow while the VLA goal is running.** Authored by the user (the 9-section design) +
-> Fable5 refinements + the resolved engine choices. The output (`taste-bank/`) is a staging area *outside*
-> research-os; the connect-back is designed here but wired only when the user says the goal is at a pause.
+> **★ STATUS UPDATE (2026-07-02): the connect-back IS NOW WIRED — research-os v0.8.0 (commit 1ac2c69).**
+> The user said "先改进工作流吧" (improve the workflow now), so §7's connect-back was implemented. **What
+> actually shipped differs from §6/§7 in three ways** (the as-shipped reality wins over the design text
+> below): (1) the bank is **`opus-pass/operators.md`** (project root, 21 ★ operators), NOT
+> `plan/taste-bank/operators.md`; (2) it is **project-side markdown read like `frames.md`**, NOT an Arbor
+> `taste-bank` run — a shadow tree was rejected as a drift risk (Arbor's only role = a live cross-link
+> `operator:<name>` on the campaign node); (3) `/compass` gained an OPERATOR half of **check 5**
+> (frame- & operator-monoculture), NOT a "6th check", and the `/forge` step is **3‴** (not 3″). The COLLECT
+> stage (LDR/MiniMax + Gemini breadth) is still partly pending — a parallel Fable5 extraction pass is
+> running and MERGES later via the `/autopsy` accumulation gate. The sections below are the ORIGINAL design
+> of record; read them for rationale, but trust the status note above for what the live workflow does.
+>
+> Authored by the user (the 9-section design) + Fable5 refinements + the resolved engine choices.
 
 ## 1. What this is (and what it is NOT)
 
@@ -78,7 +87,12 @@ transfer → demote to source-episode. 6. too broad to guide action → split. 7
 generate a killable candidate with a DIFF-PREDICTION + cheap-probe that we would not otherwise have thought
 of?* Only generation-passing operators enter the bank.
 
-## 6. Staging layout (outside research-os — no live-workflow change)
+## 6. Staging layout (design intent — see the as-shipped note: the live BANK moved to `opus-pass/`)
+
+> **As-shipped:** the operator BANK is `opus-pass/{operators.md, source-episodes.md, anti-patterns.md}`
+> (project root — the retrieval source `/forge` reads). `plan/taste-bank/` holds the raw DeepResearch source
+> episodes + `extraction-prompts.md` (provenance + the reusable recipe). The design below assumed one
+> `plan/taste-bank/` dir; the split (bank at root, raw reports under `plan/taste-bank/`) is the shipped shape.
 
 ```
 plan/taste-bank/                 (staging; NOT skills/forge/references/ yet)
@@ -88,18 +102,19 @@ plan/taste-bank/                 (staging; NOT skills/forge/references/ yet)
   extraction-prompts.md          # Prompt 1/2/3 + the 10-step 套话 ladder (verbatim, reusable)
 ```
 
-## 7. The connect-back (DESIGNED, DEFERRED — wire only at a goal pause)
+## 7. The connect-back (✅ SHIPPED in research-os v0.8.0 — see the status note at the top for as-shipped deltas)
 
-When the VLA goal is at a pause point, wire the bank into the existing pipeline (mirrors the frames-axis
-wiring; ZERO new commands):
+Wired into the existing pipeline (mirrors the frames-axis wiring; ZERO new commands). As-shipped: `/forge`
+step is **3‴** (not 3″); `/compass` extends **check 5** to cover operator-monoculture (not a "6th check");
+the bank is markdown at `opus-pass/operators.md`. The four insertion points below are what shipped:
 - **`/prospect`** — add **Taste-Bank retrieval** as a mining input (operators whose `failure_signature`
   matches the problem).
-- **`/forge` step 3″** — **operator-card forcing**: force ≥1 candidate derived from a bank operator (with a
+- **`/forge` step 3‴** — **operator-card forcing**: force ≥1 candidate derived from a bank operator (with a
   `DIFF-PREDICTION`), symmetric to the rival-school and off-frame rules.
 - **`/autopsy`** — every surprise also asks: *did this produce a NEW operator, or correct an existing one?*
   (the bank grows from our own anomalies, closing the loop).
-- **`/compass`** — a 6th check: **operator-monoculture** (are all recent `/forge` rounds using the same
-  operator?), symmetric to frame-monoculture.
+- **`/compass`** — **check 5** extended to **operator-monoculture** (are all recent `/forge` rounds using
+  the same operator?), symmetric to frame-monoculture (now "frame- & operator-monoculture").
 
 ## 8. Execution plan (a separate offline batch — the "Refinery run")
 

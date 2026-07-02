@@ -1,5 +1,22 @@
 # research-os v0.8 — Operator Axis + Living Taste Bank — Implementation Plan
 
+> **★★ AS-SHIPPED STATUS (2026-07-02): EXECUTED, but DELIBERATELY SIMPLIFIED — this plan is now the
+> HISTORICAL design, not the built reality.** Shipped in research-os v0.8.0 (commit 1ac2c69) + huggingface
+> ec86aff. **The Arbor-as-bank-structure design in Phase 0/1 was DROPPED** after the Phase-0 spike (Arbor
+> *can* host it — root id `ROOT`, run-scoped dotted node-ids — but a shadow tree duplicates the source of
+> truth and invites the drift bug, and sits off the `/forge` read path). **What actually shipped, and what
+> does NOT exist (do not go looking for it):**
+> - ✅ **Bank = markdown `opus-pass/operators.md`** (21 ★ operators, read like `frames.md`).
+> - ❌ **NO Arbor `taste-bank` run**, **NO `taste-bank/edges.json`**, **NO `taste-bank/operators/*.md`
+>   sealed-card split** (Phase 1 Tasks 1.1–1.3 as written were superseded — the bank was already built as
+>   one file; splitting it added nothing). Arbor's only role = an optional live cross-link `operator:<name>`
+>   on the campaign node insight.
+> - ✅ **Phase 2 (plugin wiring) shipped in full**: `taste-operators.md` machinery + `/forge` step 3‴ +
+>   `/prospect` + `/autopsy` + `/compass` check 5 + v0.8.0 manifests/README, synced to `~/.claude`.
+> - ✅ **Phase 3 (project-doc sync) shipped**: op-manual §5.2, plan/README, `.claude/CLAUDE.md`.
+> - Executed **INLINE** (not subagent-driven): pure markdown/prompt edits, no test suite, and the project's
+>   subagent-slowness lesson. The Arbor edge-model reasoning in Phase 0 remains valid reference.
+>
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or
 > superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax.
 

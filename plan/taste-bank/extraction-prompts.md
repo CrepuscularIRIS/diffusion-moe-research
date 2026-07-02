@@ -65,4 +65,6 @@ must generate a killable candidate we would not otherwise have thought of.
 
 ## Output files (this dir)
 `source-episodes.md` (raw, provenance) · `operators.md` (30–60 clustered, KEEP-only) · `anti-patterns.md`
-(buzzword-transplants killed). Connect-back to /prospect·/forge·/autopsy·/compass is DEFERRED (design §7).
+(buzzword-transplants killed). **Connect-back to /prospect·/forge·/autopsy·/compass is ✅ SHIPPED in
+research-os v0.8.0** (commit 1ac2c69; `/forge` step 3‴ retrieves from the bank). The live bank is
+`opus-pass/operators.md` (21 ★); this dir is the provenance/recipe staging.
