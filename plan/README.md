@@ -91,7 +91,7 @@ a Fable 5 methodology audit (archived: `archive/fable5-methodology-extraction-20
 |---|---|
 | **operating-manual.md** | THE how-we-work reference: engines, the loop, GPU/process safety, lessons, §5 types+commands |
 | **goal-directive.md** | the exact `/goal` input (written by the user; current = DSpark beyond-Markov head) |
-| **research-os plugin** (`~/cli/research-os`) | the 7 commands + skills + `taste.md` (the taste model, extends enrich) + `research-types.md` |
+| **research-os plugin** (`~/cli/research-os`, **v0.8**) | the 7 commands + skills + the FOUR generative axes: `taste.md`/`schools.md` (how to think) · `research-types.md` (what output) · `frames.md` (which mathematics) · `taste-operators.md` (which modeling MOVE — the v0.8 object-shift bank, seeded from `opus-pass/operators.md`) |
 | **dspark-deep-analysis-2026-07-01.md** | DSpark technical breakdown + occupancy scan |
 | **research-method-anatomy.md** | cognitive protocol (skeptical default · cross-domain · first-principles · falsifiability) |
 | **ai-research-conduct-principles.md** | the science conduct protocol |

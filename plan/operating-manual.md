@@ -231,6 +231,19 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 | **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
 | **`/compass`** | **after every 2nd `/autopsy`** (a countable trigger — "every 3–5 cycles" never fired in the DSpark campaign) · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
 
+> **Two generative axes added to `/forge` since the table above (v0.7 + v0.8) — both are prompt-allocation,
+> no new commands.** ③ **frames** (v0.7, `references/frames.md`): `/forge` step 3′ forces ONE non-incumbent
+> mathematical-frame candidate carrying a `DIFF-PREDICTION` (no differential ⇒ relabeling ⇒ discard) — the
+> fix for mathematical monoculture; a goal may inject a `FRAMES:` line. ④ **operators** (v0.8,
+> `references/taste-operators.md`): step 3‴ forces ONE *retrieved+rotated* taste-bank operator candidate (a
+> reusable modeling-object-SHIFT move) — retrieve 1–3 by failure-signature, never a sweep. The bank is
+> project-side markdown (`opus-pass/operators.md`, the ★ generation-test survivors); it grows via `/autopsy`
+> `[OPERATOR-CANDIDATE]` under the corrosion gate (3 load-bearing fields + deletion test) + an INDEPENDENT
+> audit (never self-granted); GPT-5.5 Pro deep-reads the operator's source papers just-in-time before
+> `/prereg`. `/prospect` retrieves operators as a mining prior + prints a frame-and-operator ledger;
+> `/compass` check 5 flags frame- AND operator-monoculture. **Four axes: schools · types · frames ·
+> operators — the ceiling.**
+
 **The loop:** `/prospect` → `/forge` → `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
 → cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
 back into the backlog) · `/compass` **after every 2nd `/autopsy`** (§5.2). Layer-2 (§5.4) fires at high-stakes only:
