@@ -2,7 +2,7 @@
 ---
 HARD CORE (PIVOTED 2026-07-02 — fusion-primary core REFUTED twice by own probes + lit): VLA robustness failures are NOT one mechanism. Contribution = CAF-VLA, an INTERVENTIONAL CAUSAL STREAM-ATTRIBUTION protocol separating fusion-misuse / grounding-loss / info-destruction / action-head-control failures AND PREDICTING when reliability-fusion helps vs cannot. The prediction-validation (attribution > random at ranking repairs) IS the contribution, not a decomposition. Reliability-fusion DEMOTED to conditional repair. Paper A → Information Fusion 一区.
 
-POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) SIZE-FIRST recoverability screen before ANY adapter; mechanism survives ONLY under D≥20pp ∧ N≤10–15pp ∧ G≥0.35 (libero_goal, G=0). (2) PROPRIO REDOUBT — re-run with a STATE head (StarVLA-OFT/GR00T, state_dim=7); proprio over-reliance = lit's fusion-misuse locus (ReViP), ABSENT from the null's testbed. (3) BUILD attribution: Layer-2 classifier + Layer-3 prediction-validation, 4 suites. (4) taste-bank op `recoverability-gated-fusion` = this de-domained; /autopsy mines own logs (Mine-1).
+POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) SIZE-FIRST recoverability screen before ANY adapter; mechanism survives ONLY under D≥20pp ∧ N≤10–15pp ∧ G≥0.35 (libero_goal, G=0). (2) PROPRIO REDOUBT — re-run with a STATE head (OFT/GR00T, state_dim=7); proprio over-reliance = lit's fusion-misuse locus (ReViP), ABSENT from the null's testbed. (3) BUILD attribution: Layer-2 classifier + Layer-3 prediction-validation, 4 suites. (4) taste-bank op `recoverability-gated-fusion` = this de-domained; /autopsy mines own logs (Mine-1).
 
 TYPES (§5.0): 新对象 stream-trust attribution AS object · 评估 per-stream causal map (necessity/damage/G/conflict-following) · 刷分 ONLY a conditional gate on a proven-redundant slice. NOT robot SOTA.
 
@@ -16,7 +16,7 @@ LOOP: CYCLE-0 PASS; Rank-1 screen DONE = mechanism-KILLED (no redundant stream, 
 
 FORBIDDEN: mainline the fusion adapter (conditional only) · "solves VLA robustness" overclaim · new backbone/action-head · flow-loss headline (π0/GR00T) · generalist SOTA · from-scratch (LoRA/frozen) · DSpark/dLLM · FIXED menu.
 
-READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/{attribution-pivot-design-2026-07-02, research-directions, platform-setup}. Keys .env.
+READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/{attribution-pivot-design-2026-07-02, research-directions-2026-07-01, platform-setup}. Keys .env.
 
 RULES (§5.1): /prereg seals {hyp/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS FROM ARTIFACTS (§4.8). DOWN-only self-grant; CLAIM_STANDS independent; contribution → human.
 
