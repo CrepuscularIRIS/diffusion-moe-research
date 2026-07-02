@@ -19,11 +19,15 @@
   COMPLETED project (Arbor tree 5.1-5.13 all done/pruned).
 
 ## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
-> **One line:** Opus is the PI (route + decide + interpret) AND the executor (subagents inherit the session
-> model = Opus 4.8); GPT-5.5 Pro is the external brain (deep design + prior-art + contested judgments); the
-> **Codex review hook** auto-audits every executor diff; the human grants contribution promotion — and is
-> most valuable EARLY (shaping problems at /prospect · /forge time), not only at sign-off.
-> Manual `/codex:rescue` is **RETIRED** — replaced by the automatic hook.
+> **One line — Pro generates · Opus operates · Codex checks · human sets taste.** GPT-5.5 Pro is the
+> DEFAULT engine for the GENERATIVE acts (idea/problem generation in /prospect, approach+head DESIGN in
+> /forge, failure→next-candidate in /autopsy) — a different model reaches the enrich-level reframe a local
+> checklist misses; skipping Pro on a generative act needs a stated reason, and Pro is NOT used for
+> tactical iteration. Opus OPERATES: routes, packages the Pro hand-off, runs the mechanical moves
+> (/prereg, /exp-verify), TUNES what Pro designed, decides tactically, interprets, AND is the executor
+> (subagents inherit the session model = Opus 4.8). The **Codex review hook** auto-audits every executor
+> diff (DOWN-only). The human grants contribution promotion — most valuable EARLY (shaping problems at
+> /prospect · /forge), not only at sign-off. Manual `/codex:rescue` is **RETIRED**.
 
 | Engine | How to invoke | Role |
 |---|---|---|
