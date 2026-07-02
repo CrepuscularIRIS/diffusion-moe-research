@@ -8,7 +8,7 @@ PLATFORM: target = Qwen3-4B or LLaMA-3-8B (fits 96GB with draft head). DeepSpec 
 
 CANDIDATE SEED (the /forge backlog is LIVE — regenerate from each /autopsy conversion law; NOT a fixed menu): 2nd/3rd-order conditional · lightweight cross-attention over draft prefix · gated RNN (improved DSpark variant) · hybrid Markov+attention · MoE-router-informed confidence.
 
-ENGINES (§1): Opus=PI/route/executor (subagents inherit session model) · Pro=Playwright `Pro 扩展` (deep design if needed; KEEP ALIVE) · Codex=AUTO review HOOK (DOWN-only; /codex:rescue RETIRED).
+ENGINES (§1): Opus=PI/route/executor (subagents inherit model) · Pro=Playwright `Pro 扩展` (DESIGNS heads by default, Opus tunes; KEEP ALIVE) · Codex=AUTO review HOOK (DOWN-only; /codex:rescue RETIRED).
 
 EXECUTION: §5.2 generator + §5.1 discipline loop — OBSERVE(suffix decay in Markov-head drafts) → /forge(pick a candidate) → /prereg → TRAIN(DeepSpec, executor worktree, 1 GPU, nvidia-smi first) → MEASURE(accepted length + tokens/sec) → /exp-verify → Δ>0? → /adversary(A+B, vs 1st-order Markov) → DECIDE → BACKPROP(tree FIRST) → no Δ: /autopsy(CONVERSION LAW → constraint/candidate/region-close) → AUTO-PIVOT (NO user Q). /compass every 3–5 cycles. Caps §2.
 
