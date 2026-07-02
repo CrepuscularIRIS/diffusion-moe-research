@@ -2,22 +2,29 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-02 (VLA robustness track · research-os v0.7 — the mathematics axis).
+> Last updated: 2026-07-02 (VLA → CAF-VLA pivot · research-os v0.8 — the operator axis).
 
 ---
 
 ## 0. Current research state (read this first)
-- **★ ACTIVE — VLA robustness via reliability-aware multimodal fusion (manipulation track).** Treat VLA as
-  an auditable multimodal-grounding→action system; study WHY it fails under quality-varying / conflicting /
-  cross-view inputs, and fix it with SMALL training (frozen VLM + LoRA/adapter). Contribution = the fusion
-  MECHANISM + the reliability-DIAGNOSIS methodology, NOT a robot-SOTA number (Paper A → Information Fusion
-  一区). Platform = **StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus** on 2×4090D — built +
-  env'd, smoke test pending (cycle-0). Metric = robustness curves + reliability↔error correlation, NOT raw
-  success. Goal = `plan/goal-directive.md`; refs = `VLA/research-directions-2026-07-01.md` ·
-  `VLA/platform-setup.md` (NO date suffix) · `VLA/ideas-vla-manipulation-2026-07-01.md`, plus the `/forge`
-  frame palette (`~/.claude/skills/forge/references/frames.md`, loaded automatically by `/forge`).
-  **★ Outstanding go/no-go: the GAF-VLA occupancy check vs
-  ST4VLA + 2026-Q2 fusion-reliability-for-VLA (route to Pro) BEFORE any Paper-A compute.**
+- **★ ACTIVE — CAF-VLA: interventional causal stream-attribution for robust VLA (manipulation track).** The
+  original fusion-primary hard core ("VLA robustness failure is a fusion problem") was **REFUTED twice** (own
+  DECOMPOSE probe + the Rank-1 recoverability screen: all modalities necessary, no redundant stream, oracle-
+  gating hurts, 4 suites) — `/compass` = healthy Lakatosian **problemshift, NOT drift**. Contribution PIVOTED
+  to an **INTERVENTIONAL CAUSAL STREAM-ATTRIBUTION** protocol separating fusion-misuse / grounding-loss /
+  info-destruction / action-head-control failures, whose **PREDICTION-VALIDATION (attribution > random at
+  ranking which repair works) IS the claim**; reliability-fusion DEMOTED to a conditional repair (Paper A →
+  Information Fusion 一区). Platform = **StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus** on
+  2×4090D — **CYCLE-0 PASSED** (server↔sim loop proven). Metric = the per-stream causal-map signals
+  (necessity / damage / oracle-gate recoverability / conflict-following) + attribution>random, NOT raw success.
+  **NEXT = the PROPRIO REDOUBT** (recoverability screen with a state-consuming head OFT/GR00T, state_dim=7) →
+  the attribution build. Goal = `plan/goal-directive.md`; design = `VLA/attribution-pivot-design-2026-07-02.md`;
+  refs = `VLA/research-directions-2026-07-01.md` (**SUPERSEDED framing** — read it through the pivot design) ·
+  `VLA/platform-setup.md` (NO date suffix), plus the `/forge` frame + operator palettes (`frames.md` +
+  `taste-operators.md`, loaded by `/forge`; the `recoverability-gated-fusion` operator = this pivot
+  de-domained). **★ The GAF-VLA occupancy go/no-go is RESOLVED (GO-with-reframe) and the fusion-mechanism
+  mainline is KILLED by the recoverability screen — do NOT re-open it; the attribution protocol is the
+  contribution and survives regardless.**
 - **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
   beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
   the entire dLLM/DiffusionGemma/LLaDA campaign (archived `plan/archive/`, Arbor tree 5.1-5.13 done/pruned).
