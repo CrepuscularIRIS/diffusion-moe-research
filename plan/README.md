@@ -75,6 +75,16 @@ reward-hack-audit+baseline-champion+claim-evidence-matrix → `/adversary` · ba
 (conversion law) · programme-audit + progress tokens → `/compass` (questions + surprise accounting).
 Full story: research-os `README.md`; design history: `research-operating-system.md` (archive-grade).
 
+## Layer 2 — the wrap (research-os v0.6, optional, high-stakes only)
+
+Three wrap skills around the core loop, fired only at high-stakes moments (never every cycle):
+`/epistemic-calibration` (grade a claim's evidence A–E before promoting — the novelty-by-memory guard) ·
+`/irreversible-decision-audit` (detect narrative/benchmark/method/evidence/compute/reputation/product lock →
+PROCEED/DELAY/RESCOPE/BLOCK — the detector for the "external commitment → human" edge) · `/artifact-acceptance`
+(is a deliverable shippable → SHIP/REVISE/HOLD/KILL; distinct from `/adversary`'s claim-truth). Distilled from
+a Fable 5 methodology audit (archived: `archive/fable5-methodology-extraction-2026-07-01/`); details in
+`operating-manual.md §5.4`. Same invariant; escalation → independent substrate or human.
+
 ## Core docs (live)
 
 | Doc | Role |

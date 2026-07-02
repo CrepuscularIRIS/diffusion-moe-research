@@ -222,6 +222,22 @@ Arbor node fields = `hypothesis · status · result · insight · score · test_
 
 **Rule:** if Arbor has a tool/field for it, USE IT (don't re-implement in md/json).
 
+### 5.4 Layer-2 wrap (optional, high-stakes — research-os v0.6)
+> Three wrap skills around the core loop, fired ONLY at high-stakes moments (never every cycle). Each adds a
+> decision boundary the core 7 do not gate; none duplicates them. Distilled from a Fable 5 methodology audit
+> (archived: `plan/archive/fable5-methodology-extraction-2026-07-01/`).
+
+| Command | Fires | Boundary it adds |
+|---|---|---|
+| **`/epistemic-calibration`** | before promoting/citing/contracting a claim, or spending compute/reputation | grade evidence **A–E**: A/B decide · C HOLD · D (memory/taste) can't-promote · E escalate. The novelty-by-memory + overclaiming guard; a grade-D "this is novel" → HOLD + live search, never a contracted claim. |
+| **`/irreversible-decision-audit`** | before a committing step (benchmark/story/method/big-run/public-claim) | detect the lock (narrative/benchmark/method/evidence/compute/reputation/product) → **PROCEED/DELAY/RESCOPE/BLOCK** + a reversible substitute. This is the DETECTOR for the "external/irreversible commitment → human" boundary; DSpark default = a full run before the ceiling-probe → DELAY/BLOCK. |
+| **`/artifact-acceptance`** | at a share/reuse/handoff of a deliverable (report/README/demo/skill) | is it usable by another person → **SHIP/REVISE/HOLD/KILL** (distinct from `/adversary`'s claim-truth). External SHIP still routes through the human promotion gate. |
+
+Same invariant: proposer self-administers only DOWN verdicts; escalation → independent substrate (contested)
+or human (external). The audit's `agent-governance` was NOT added as a skill (it IS the invariant + the
+engine division); its two sharp bits — the **cold-start review packet** and the **agreement-illusion guard**
+(stance-separated, REFUTE-prompted review) — are folded into `/adversary`.
+
 ## 6. Arbor command routing & tree discipline
 > A **pragmatic hybrid**: Arbor's tree for STRUCTURE, research-os for DECISIONS, multi-engine for REVIEW.
 > We do NOT adopt the full Arbor skill suite (built for unattended full-auto; ours is human-in-the-loop
