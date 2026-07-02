@@ -52,11 +52,13 @@ Markov head 通过看前一个已采样 token 来修正后续 position 的 logit
 
 **最有前景 = "beyond first-order Markov" sequential head。** DSpark 留了这个口，DeepSpec 框架现成，head 小 96GB 够，测量指标清晰。
 
-**风险：** "marginal improvement" 可能意味着 1st-order 已近 ceiling — suffix decay 主要信息在前一个 token 里。需要 DPC 来 falsify。
+**风险：** "marginal improvement" 可能意味着 1st-order 已近 ceiling — suffix decay 主要信息在前一个 token 里。用 /prereg 的 KILL 条件（例如 2nd-order head 相对 1st-order 的 accepted-length Δ ≤ 噪声）来 falsify。
 
-## 4. 推荐下一步
+## 4. 推荐下一步（research-os v0.5，TYPE = Improvement 刷分）
+> 这是刷分/改进型工作，走 TYPE-scoped 验证；不需要 novelty gate（占用性只是重定价，绝不是否决）。
 
 1. 深读 DSpark + DeepSpec 代码 — 确认 RNN variant 具体实现 + ablation 数字
-2. 精确 occupancy — 搜索有没有 "higher-order sequential head for speculative decoding" 的独立工作
-3. 如果 OPEN → enrich /mos-front → Pro 设计 → /object-shift-audit → 训练
+2. 精确 occupancy — "has this EXACT improvement been measured on this target"（非"有没有人做这个领域"）
+3. /forge 生成候选 head（保留 rival-school 候选）→ /prereg 封契约 → 训练 → /exp-verify → 声明边界跑 /adversary（A Δ-reality + B baseline-fairness vs 1st-order Markov）；深设计需要时打包给 Pro
 4. 训练基底 = Qwen3-4B/8B (DeepSpec 框架) 或 LLaMA-3-8B，96GB 够
+5. 无 Δ → /autopsy（conversion law：constraint / candidate / region-close）→ 自动 pivot
