@@ -13,8 +13,10 @@
   MECHANISM + the reliability-DIAGNOSIS methodology, NOT a robot-SOTA number (Paper A → Information Fusion
   一区). Platform = **StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus** on 2×4090D — built +
   env'd, smoke test pending (cycle-0). Metric = robustness curves + reliability↔error correlation, NOT raw
-  success. Goal = `plan/goal-directive.md`; refs = `VLA/{research-directions,platform-setup,ideas-vla-
-  manipulation}-2026-07-01.md` + `frames.md`. **★ Outstanding go/no-go: the GAF-VLA occupancy check vs
+  success. Goal = `plan/goal-directive.md`; refs = `VLA/research-directions-2026-07-01.md` ·
+  `VLA/platform-setup.md` (NO date suffix) · `VLA/ideas-vla-manipulation-2026-07-01.md`, plus the `/forge`
+  frame palette (`~/.claude/skills/forge/references/frames.md`, loaded automatically by `/forge`).
+  **★ Outstanding go/no-go: the GAF-VLA occupancy check vs
   ST4VLA + 2026-Q2 fusion-reliability-for-VLA (route to Pro) BEFORE any Paper-A compute.**
 - **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
   beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
@@ -52,7 +54,8 @@ Arbor offers two layers; we use only the first.
   (`.arbor/sessions/<run>/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
   then RUNLOG)**. Use `worktree_create`/`eval_run`/`git_merge_branch`/`generate_report` opportunistically.
 - **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → `/prereg` → run → `/exp-verify` →
-  (claim → `/adversary` · null → `/autopsy`) → loop; `/compass` every 3–5 cycles. **★ THE ANTI-EXHAUSTION
+  (claim → `/adversary` · null → `/autopsy`) → loop; `/compass` **after every 2nd `/autopsy`** (the countable
+  trigger — "every 3–5 cycles" never fired in the DSpark campaign; §5.2). **★ THE ANTI-EXHAUSTION
   RULE (why past campaigns "kept stopping"): the backlog is ALIVE, never a menu.** Every `/autopsy` MUST
   emit its conversion-law output (a constraint, a new/reshaped candidate, or an explicit region-close that
   triggers a lateral `/prospect`). A null result is a per-cycle WIN **only if it generated something** —
@@ -230,7 +233,7 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 
 **The loop:** `/prospect` → `/forge` → `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
 → cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
-back into the backlog) · `/compass` every 3–5 cycles. Layer-2 (§5.4) fires at high-stakes only:
+back into the backlog) · `/compass` **after every 2nd `/autopsy`** (§5.2). Layer-2 (§5.4) fires at high-stakes only:
 `/epistemic-calibration` before promoting a novelty/occupancy claim, `/artifact-acceptance` at a handoff.
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json

@@ -6,7 +6,7 @@ POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) DECOMPOSE FIRST — cheap p
 
 RESEARCH TYPES (§5.0): 综述 map fusion-robustness-for-VLA → occupancy + missing head-to-heads · 评估 per-perturbation failure decomposition · 系统/刷分 the fusion adapter, measured robustness Δ · 新对象 reliability-as-object.
 
-FRAMES: information-geometry (modality-reliability manifold) · causal-graph (cross-modal conflict) · optimal-transport (cross-view align) — off-frames first (frames.md).
+FRAMES: information-geometry (modality-reliability manifold) · causal-graph (cross-modal conflict) · optimal-transport (cross-view align) — off-frames first (/forge frames.md).
 
 PLATFORM: StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus (7-axis, 10K tasks). 2×4090D, disk ample. Metric = robustness curve + reliability↔error correlation + calibration, NOT raw success.
 
@@ -18,7 +18,7 @@ LOOP: CYCLE-0 = PLATFORM GROUND-TRUTH (Task6 resize-embed 151936→153713 + save
 
 FORBIDDEN: new backbone / new action-head (StarVLA-α killed it) · flow-loss-swap headline (π0/GR00T occupy) · full generalist SOTA (compute) · DSpark/dLLM cross-contaminate · FIXED menu · from-scratch training (LoRA/frozen only).
 
-READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/research-directions-2026-07-01 → VLA/platform-setup → VLA/ideas-vla-manipulation → frames.md. Keys .env.
+READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/research-directions-2026-07-01 → VLA/platform-setup → VLA/ideas-vla-manipulation. Keys .env.
 
 RULES (§5.1): /prereg seals {hyp/mechanism/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS READ FROM ARTIFACTS (§4.8); public push → /artifact-acceptance. Self-grant ONLY DOWN; CLAIM_STANDS independent; contribution → human.
 
