@@ -20,4 +20,4 @@ READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/{attribution-pivot-design-2
 
 RULES (§5.1): /prereg seals {hyp/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS FROM ARTIFACTS (§4.8). DOWN-only self-grant; CLAIM_STANDS independent; contribution → human.
 
-STOP: /compass STOP_AND_REPORT · attribution>random clears /adversary → human · caps · proprio ALSO negative ⇒ formal attribution paper (Rank-4), mechanism archived. Paper B (ESWA) contingent on A.
+STOP: /compass STOP_AND_REPORT · attribution>random clears /adversary → human · caps · proprio ALSO negative ⇒ formal attribution paper (Rank-4), mechanism archived. Paper B (ESWA) contingent.
