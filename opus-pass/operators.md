@@ -17,6 +17,80 @@
 
 ---
 
+## Pro-pass reconciliation (2026-07-02) — independent 2nd extraction (GPT-5.5 Pro), paper-VERIFIED
+
+> A second, independent extraction (GPT-5.5 Pro, web-grounded; full paper-cited cards in
+> `plan/taste-bank/GPT5.5Pro.md`) re-ran the gate from the episodes WITHOUT inheriting this bank and returned
+> **22 KEEP + 8 ARCHIVE + 10 KILL**. Result = strong **convergent validation**: ~15 of its operators
+> re-derive this bank's ★ set from scratch (lag-kernelization=memory-kernel-closure, transport-coupling,
+> polarization, multiscale, factor-graph, observable-lifting, operator-lifting, the affordance/correspondence/
+> object-slot/belief fields, path-straightening, chunking, manifold≈invariant), and it **paper-VERIFIED**
+> many of their `differential_prediction`s against source papers (evidence grade B→A: Koopman 1408.4408,
+> Polar 0807.3917, DeepONet 1910.03193, CBF 7782377, Flow-Matching 2210.02747, dependency-aware parallel
+> decoding 2603.12996). A few Pro cards only REFINE existing operators without a new object
+> (implicit-boundary≈#37 implicit-topology · gap-context≈#33 context · collective-variable≈#29/#31 ·
+> ensemble-measure≈#26 distribution-output) — noted, not duplicated.
+>
+> **The one invariant holds:** Pro is the *proposer*; this is the *independent* Opus corrosion-gate + dedup
+> pass; the Codex hook reviews the diff. No operator self-granted. KILL list confirmed ours (bigger-backbone,
+> carrier-name-dropping, module-adding, reliability-reweighting-without-recoverability, longer-context-as-memory).
+
+### NET-NEW operators promoted from the Pro pass (absent from the ★ set below)
+
+#### N1. `recoverability-gated-fusion` ★★  (our own VLA anomaly — the CAF-VLA operator)
+- **one_sentence_core_move:** before reweighting modalities, TEST whether any modality is recoverable from
+  the others; treat reliability as a routing object ONLY where redundancy actually exists.
+- **old→new object:** always-fuse / always-reweight modality scores → a recoverability matrix + a reliability
+  policy over redundant / conflicting / indispensable evidence.
+- **mathematical_frame:** conditional-redundancy graph / information-recovery matrix / causal-graph (do-gate).
+- **core_simplification:** removes impossible rescue work — if every modality is individually necessary and
+  none is reconstructible from the rest, fusion-reweighting has no redundant evidence to exploit.
+- **differential_prediction:** reliability-reweighting helps under benign conflict / missing-noisy single
+  modality, but CANNOT help when recoverable_fraction≈0 and every removal collapses success; forced
+  reweighting then does nothing or degrades. Deletion test: strip "recoverability" and the "reweighting is
+  futile here" prediction disappears.
+- **cheap_probe:** leave-one-modality-out matrix + a tiny conditional imputer BEFORE training; kill
+  fusion-reweighting if all removals collapse success AND all conditional-recovery probes fail.
+- **failure_signature:** all single-modality ablations fatal; pairwise substitution never restores success;
+  reliability weights saturate but success doesn't recover.
+- **transfer_targets:** VLA fusion (precondition check before any reliability router — the CAF-VLA screen) ·
+  MLLM grounding (irreducible modality conjunction) · OOD (separate redundancy- from contradiction-failures)
+  · dataset eval (label non-recoverable multimodal tasks).
+- **source_episodes:** OUR VLA `recoverable_fraction≈0` anomaly (libero_goal, N≥48pp, G<0, 4 suites) · DCR/ADA
+  conflict arbitration · EBMC reliability/trust distillation · C2MF context-credibility.
+- **generation_test:** the CAF-VLA Rank-1 recoverability screen — the operator says the seed failure does NOT
+  mean "build a better router"; it means "test recoverability first, and if absent, reach for a conjunctive
+  object (belief / factor-graph / object-slot / affordance field), not a reweighting object."
+
+#### N2. `barrier-certificate-localization` ★  (VERIFIED — Control Barrier Functions, IEEE 7782377)
+- **core_move:** replace a soft penalty over future trajectories with a LOCAL certificate that forbids leaving
+  the safe set (control barrier function / forward-invariant set / local QP filter).
+- **core_simplification:** no need to search the whole future to certify safety — the hard object is a local
+  inequality at the boundary (the state derivative).
+- **differential_prediction:** the barrier rejects unsafe actions even when the policy/reward ranks them high,
+  and rejections correlate with boundary-crossing risk; a penalty term with no forward-invariance test does not.
+- **cheap_probe:** on logged trajectories, define a candidate barrier and test whether violations predict
+  future failure BETTER than reward or confidence.
+- **failure_signature:** rare-but-catastrophic safety failures; average reward improves while boundary
+  violations persist. **transfer:** VLA action safety filter · MLLM geometric no-go · systems SLA barrier ·
+  spec-decoding schema-validity barrier before token acceptance.
+
+#### N3. `dependency-bounded-assembly` ★  (VERIFIED — dependency-aware parallel decoding, arXiv 2603.12996)
+- **core_move:** replace independent parallel commits with an explicit dependency graph over candidate pieces;
+  assemble only LOW-coupling sets (conditional-independence test / attention-derived coupling / conflict graph).
+- **core_simplification:** kills the false factorization assumption — the expensive object is no longer the
+  full joint, only the dependency boundary among candidate commits.
+- **differential_prediction:** high-confidence but strongly mutually-dependent tokens FAIL when committed
+  together, while lower-confidence conditionally-independent sets commit safely in parallel; confidence alone
+  can't tell them apart.
+- **cheap_probe:** estimate pairwise dependency (attention / conditional entropy / remask sensitivity) on
+  frozen samples; compare confidence-only vs dependency-pruned commit sets on denoising loss + exact-match.
+- **failure_signature:** parallel decoding gains speed but loses correctness; confidence high yet simultaneous
+  commits break syntax/math/code. **transfer:** diffusion-LLM joint assembly · spec-decoding multi-token accept
+  · systems (batch only low-coupling jobs).
+
+---
+
 ## Family 1 — Coarse-graining & closure (long-tail crown jewels: what to do with the DOFs you drop)
 
 ### 1. memory-kernel-closure ★
@@ -600,12 +674,14 @@
 ---
 
 ## Coverage note
-38 KEEP operators, ranked long-tail-generative first. The 15 marked ★ pass the generation test on at least
-one live direction (VLA fusion · diffusion-LLM joint-assembly · speculative-decoding sequential correction):
+41 KEEP operators (38 opus-pass + 3 net-new promoted from the Pro pass — see the reconciliation section at
+the top), ranked long-tail-generative first. The 21 marked ★ pass the generation test on at least one live
+direction (VLA fusion · diffusion-LLM joint-assembly · speculative-decoding sequential correction):
 memory-kernel-closure · observable-lifting · multiscale-correction-hierarchy · flux-conservation-ization ·
 factor-graph-ization · ratio-ization · path-straightening · transport-coupling-ization · graph-ization ·
 object-slot-ization · affordance-field-ization · correspondence-field-ization · operator-lifting ·
-polarization-ization · invariant-ization · belief-ization · residual-ization · chunk-ization.
-(That is 18 ★ — the top-generativity core; the extra three over "~15" are kept because each generates a
-distinct killable spec-decode/dLLM candidate.) See `source-episodes.md` for provenance and demoted cases,
-`anti-patterns.md` for the killed buzzword-transplants.
+polarization-ization · invariant-ization · belief-ization · residual-ization · chunk-ization · **recoverability-
+gated-fusion ★★ (the CAF-VLA operator, from our own VLA anomaly)** · **barrier-certificate-localization** ·
+**dependency-bounded-assembly**. See `source-episodes.md` for provenance and demoted cases,
+`anti-patterns.md` for the killed buzzword-transplants, and `plan/taste-bank/GPT5.5Pro.md` for the Pro pass's
+full paper-cited cards.

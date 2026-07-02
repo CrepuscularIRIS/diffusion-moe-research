@@ -1,25 +1,23 @@
 <!-- Paste everything below the `---` after `/goal`. Body is <3000 chars. -->
 ---
-HARD CORE: VLA robustness failure under distribution shift is primarily a MULTIMODAL FUSION problem, NOT action-head incapacity — a reliability-aware fusion mechanism recovers it with SMALL training. Contribution = the fusion MECHANISM + the reliability-DIAGNOSIS methodology, NOT robot SOTA. (Paper A → Information Fusion 一区.)
+HARD CORE (PIVOTED 2026-07-02 — fusion-primary core REFUTED twice by own probes + lit): VLA robustness failures are NOT one mechanism. Contribution = CAF-VLA, an INTERVENTIONAL CAUSAL STREAM-ATTRIBUTION protocol separating fusion-misuse / grounding-loss / info-destruction / action-head-control failures AND PREDICTING when reliability-fusion helps vs cannot. The prediction-validation (attribution > random at ranking repairs) IS the contribution, not a decomposition. Reliability-fusion DEMOTED to conditional repair. Paper A → Information Fusion 一区.
 
-POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) DECOMPOSE FIRST — cheap probe: fusion-limited vs grounding/head-limited? size the prize before any adapter. (2) fusion-limited → reliability-aware dynamic fusion (corr(weight,error)<0). (3) every /autopsy emits the next candidate; mine own LIBERO-Plus failure logs as Mine-1 anomalies. (4) rotate the FRAME.
+POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) SIZE-FIRST recoverability screen before ANY adapter; mechanism survives ONLY under D≥20pp ∧ N≤10–15pp ∧ G≥0.35 (libero_goal, G=0). (2) PROPRIO REDOUBT — re-run with a STATE head (StarVLA-OFT/GR00T, state_dim=7); proprio over-reliance = lit's fusion-misuse locus (ReViP), ABSENT from the null's testbed. (3) BUILD attribution: Layer-2 classifier + Layer-3 prediction-validation, 4 suites. (4) taste-bank op `recoverability-gated-fusion` = this de-domained; /autopsy mines own logs (Mine-1).
 
-RESEARCH TYPES (§5.0): 综述 map fusion-robustness-for-VLA → occupancy + missing head-to-heads · 评估 per-perturbation failure decomposition · 系统/刷分 the fusion adapter, measured robustness Δ · 新对象 reliability-as-object.
+TYPES (§5.0): 新对象 stream-trust attribution AS object · 评估 per-stream causal map (necessity/damage/G/conflict-following) · 刷分 ONLY a conditional gate on a proven-redundant slice. NOT robot SOTA.
 
-FRAMES: information-geometry (modality-reliability manifold) · causal-graph (cross-modal conflict) · optimal-transport (cross-view align) — off-frames first (/forge frames.md).
+FRAMES: causal-graph (interventional/do-operator) · information-geometry · optimal-transport. Off-frames first (frames.md + taste-operators.md).
 
-PLATFORM: StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus (7-axis, 10K tasks). 2×4090D, disk ample. Metric = robustness curve + reliability↔error correlation + calibration, NOT raw success.
+PLATFORM: StarVLA (frozen Qwen2.5-VL-3B + FAST + LoRA) + LIBERO-Plus 4 suites (goal/object/spatial/10), 2×4090D. Metric = the causal-map signals + attribution>random, NOT raw success.
 
-ENGINES (§1): Pro generates (design + off-frame, `Pro 扩展`, KEEP ALIVE) · Opus operates + executor · Codex AUTO HOOK · human early.
+ENGINES (§1): Pro generates (design/off-frame/operator, `Pro 扩展` KEEP ALIVE); Opus operates; Codex AUTO HOOK.
 
-LOOP: CYCLE-0 = PLATFORM GROUND-TRUTH (Task6 resize-embed 151936→153713 + save + load; Task8 policy-server + LIBERO end-to-end eval — substrate gate; NO research compute until PASS). Then /prospect (own eval-log anomalies FIRST) → /forge (+ forced off-frame) → /prereg (LAUNCH-ARITHMETIC: ETA vs cap + data-ratio + kill-checkpoint + ARM A MONITOR; resume-fail=STOP) → run → /exp-verify → /adversary (OPPOSING baseline optimized, ST4VLA-style; robustness Δ, ≥3 seeds, paired) → /autopsy → /compass (every 2nd autopsy). Caps §2.
+LOOP: CYCLE-0 PASS; Rank-1 screen DONE = mechanism-KILLED (no redundant stream, N≥48pp, G<0, 4 suites). NEXT = proprio test → attribution build. /prospect (own logs FIRST) → /forge (+off-frame +operator) → /prereg (LAUNCH-ARITHMETIC + ARM MONITOR; resume-fail=STOP) → run → /exp-verify → /adversary (OPPOSING baseline; attribution>random, ≥3 seeds) → /autopsy → /compass (every 2nd). Caps §2.
 
-★ GATE (BEFORE any Paper-A compute): GAF-VLA occupancy vs ST4VLA + 2026-Q2 fusion-reliability-for-VLA → Pro. Occupied ⇒ rescope to the measurement-half OR aerial backup (VLM-zuhui/HI2T).
+FORBIDDEN: mainline the fusion adapter (conditional only) · "solves VLA robustness" overclaim · new backbone/action-head · flow-loss headline (π0/GR00T) · generalist SOTA · from-scratch (LoRA/frozen) · DSpark/dLLM · FIXED menu.
 
-FORBIDDEN: new backbone / new action-head (StarVLA-α killed it) · flow-loss-swap headline (π0/GR00T occupy) · full generalist SOTA (compute) · DSpark/dLLM cross-contaminate · FIXED menu · from-scratch training (LoRA/frozen only).
+READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/{attribution-pivot-design-2026-07-02, research-directions, platform-setup}. Keys .env.
 
-READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/research-directions-2026-07-01 → VLA/platform-setup → VLA/ideas-vla-manipulation. Keys .env.
+RULES (§5.1): /prereg seals {hyp/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS FROM ARTIFACTS (§4.8). DOWN-only self-grant; CLAIM_STANDS independent; contribution → human.
 
-RULES (§5.1): /prereg seals {hyp/mechanism/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS READ FROM ARTIFACTS (§4.8); public push → /artifact-acceptance. Self-grant ONLY DOWN; CLAIM_STANDS independent; contribution → human.
-
-STOP: /compass STOP_AND_REPORT · a promotable robustness Δ clears /adversary → human · caps · occupancy GATE kills Paper A → pivot (measurement-half / aerial). Paper B (ESWA) = CONTINGENT on A, NOT lead.
+STOP: /compass STOP_AND_REPORT · attribution>random clears /adversary → human · caps · proprio ALSO negative ⇒ formal attribution paper (Rank-4), mechanism archived. Paper B (ESWA) contingent on A.
