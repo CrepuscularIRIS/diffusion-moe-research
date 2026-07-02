@@ -1,23 +1,25 @@
 <!-- Paste everything below the `---` after `/goal`. Body is <3000 chars. -->
 ---
-HARD CORE (the durable claim): DSpark's (arxiv:2606.19348) 1st-order Markov correction head UNDER-MODELS the sequential structure in the draft prefix — accepted length is recoverable by (a) modeling more of it at low compute and (b) measuring WHERE suffix decay bites. DSpark called its RNN variant "marginal" (no warm-start); beyond-1st-order quality/speed is unmapped.
+HARD CORE: VLA robustness failure under distribution shift is primarily a MULTIMODAL FUSION problem, NOT action-head incapacity — a reliability-aware fusion mechanism recovers it with SMALL training. Contribution = the fusion MECHANISM + the reliability-DIAGNOSIS methodology, NOT robot SOTA. (Paper A → Information Fusion 一区.)
 
-POSITIVE HEURISTIC (generates the next question; the backlog is LIVE, never a menu): (1) CEILING-PROBE first — attend-everything head = upper bound on recoverable sequential info; sizes the prize before optimizing. (2) prize real → capture it CHEAPLY (gated O(1) recurrent head; selective higher-order gated on uncertainty). (3) every /autopsy mechanism-why EMITS the next candidate. (4) mine adjacent problems from the landscape + logs.
+POSITIVE HEURISTIC (backlog LIVE, never a menu): (1) DECOMPOSE FIRST — cheap probe: fusion-limited vs grounding/head-limited? size the prize before any adapter. (2) fusion-limited → reliability-aware dynamic fusion (corr(weight,error)<0). (3) every /autopsy emits the next candidate; mine own LIBERO-Plus failure logs as Mine-1 anomalies. (4) rotate the FRAME.
 
-RESEARCH TYPES (enter via /prospect; name the TYPE, §5.0): 综述 map the head landscape (EAGLE/Medusa/DSpark) → missing head-to-heads + the dismissed-RNN graveyard → problems · 刷分 train better heads, measured accepted-length Δ (the core) · 评估 per-position acceptance profile → WHERE decay bites · 新对象 opportunistic, if a residual/trajectory reframe emerges (/forge MOS).
+RESEARCH TYPES (§5.0): 综述 map fusion-robustness-for-VLA → occupancy + missing head-to-heads · 评估 per-perturbation failure decomposition · 系统/刷分 the fusion adapter, measured robustness Δ · 新对象 reliability-as-object.
 
-PLATFORM: Qwen3-4B or LLaMA-3-8B (fits 96GB / 2×4090D). DeepSpec (deepseek-ai/DeepSpec, freeze target, TV-distance loss). Metric = accepted length (primary) + tokens/sec vs 1st-order Markov on the same target.
+FRAMES: information-geometry (modality-reliability manifold) · causal-graph (cross-modal conflict) · optimal-transport (cross-view align) — off-frames first (frames.md).
 
-ENGINES (§1 — Pro generates · Opus operates · Codex checks): Pro (Playwright `Pro 扩展`, KEEP ALIVE) DESIGNS heads + 视角转换/idea-gen by default; Opus packages/tunes/preregs/decides + executor; Codex AUTO HOOK (DOWN-only); human only for external commitment (async).
+PLATFORM: StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus (7-axis, 10K tasks). 2×4090D, disk ample. Metric = robustness curve + reliability↔error correlation + calibration, NOT raw success.
 
-LOOP (§5.2+§5.1): /prospect → /forge (live backlog + REGENERATION RULE) → /prereg → /irreversible-decision-audit (big run? compute-lock → CEILING-PROBE first) → TRAIN (DeepSpec, executor worktree, nvidia-smi FIRST, 1 GPU) → /exp-verify → /adversary (A+B vs 1st-order Markov) at claim boundary → DECIDE → /autopsy (CONVERSION LAW) → AUTO-PIVOT (NO user Q). /compass every 3–5 cycles.
+ENGINES (§1): Pro generates (design + off-frame, `Pro 扩展`, KEEP ALIVE) · Opus operates + executor · Codex AUTO HOOK · human early.
 
-LAYER-2 (§5.4): /epistemic-calibration before promoting a novelty/occupancy claim · /artifact-acceptance at a report/skill handoff.
+LOOP: CYCLE-0 = PLATFORM GROUND-TRUTH (Task6 resize-embed 151936→153713 + save + load; Task8 policy-server + LIBERO end-to-end eval — substrate gate; NO research compute until PASS). Then /prospect (own eval-log anomalies FIRST) → /forge (+ forced off-frame) → /prereg (LAUNCH-ARITHMETIC: ETA vs cap + data-ratio + kill-checkpoint + ARM A MONITOR; resume-fail=STOP) → run → /exp-verify → /adversary (OPPOSING baseline optimized, ST4VLA-style; robustness Δ, ≥3 seeds, paired) → /autopsy → /compass (every 2nd autopsy). Caps §2.
 
-FORBIDDEN: dLLM/LLaDA/DiffusionGemma (CLOSED) · a FIXED candidate menu · He-line · wall-clock framing.
+★ GATE (BEFORE any Paper-A compute): GAF-VLA occupancy vs ST4VLA + 2026-Q2 fusion-reliability-for-VLA → Pro. Occupied ⇒ rescope to the measurement-half OR aerial backup (VLM-zuhui/HI2T).
 
-READ: operating-manual(§1,§5.0,§5.1,§5.2,§5.4) → DSpark-analysis → dspark-deep-analysis-2026-07-01 → enrich.md. Keys .env.
+FORBIDDEN: new backbone / new action-head (StarVLA-α killed it) · flow-loss-swap headline (π0/GR00T occupy) · full generalist SOTA (compute) · DSpark/dLLM cross-contaminate · FIXED menu · from-scratch training (LoRA/frozen only).
 
-RULES (§5.1): /prereg seals {hyp/mechanism/falsifier/accept/neg-control/metric/split/seeds} before any claim-bearing run; sealed test untouched; PAIRED stats model-vs-model. Self-grant ONLY DOWN; CLAIM_STANDS = independent (Codex hook); contribution/external commitment → human (async).
+READ: operating-manual(§0,§1,§4.8-10,§5) → VLA/research-directions-2026-07-01 → VLA/platform-setup → VLA/ideas-vla-manipulation → frames.md. Keys .env.
 
-STOP (degeneration, NOT menu-exhaustion): only when /compass = STOP_AND_REPORT (hard core hit + heuristic dry + 2 dry re-/prospect rounds) · OR a promotable Δ clears /adversary CLAIM_STANDS → notify human · OR hard caps §2. A banked negative WITH its conversion-law output = CYCLE-progress, NEVER a stop.
+RULES (§5.1): /prereg seals {hyp/mechanism/falsifier/accept/neg-control/metric/split/seeds} + launch-arithmetic + Monitor; NUMBERS READ FROM ARTIFACTS (§4.8); public push → /artifact-acceptance. Self-grant ONLY DOWN; CLAIM_STANDS independent; contribution → human.
+
+STOP: /compass STOP_AND_REPORT · a promotable robustness Δ clears /adversary → human · caps · occupancy GATE kills Paper A → pivot (measurement-half / aerial). Paper B (ESWA) = CONTINGENT on A, NOT lead.

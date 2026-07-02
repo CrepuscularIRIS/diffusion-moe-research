@@ -2,21 +2,24 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-02 (research-os v0.5 — the generator release).
+> Last updated: 2026-07-02 (VLA robustness track · research-os v0.7 — the mathematics axis).
 
 ---
 
 ## 0. Current research state (read this first)
-- **★ ACTIVE — DSpark × AR Speculative Decoding: beyond-first-order Markov sequential head.**
-  DSpark (arxiv:2606.19348, DeepSeek) proved a 1st-order Markov head cuts suffix decay +26-31% vs EAGLE-3,
-  but is under-modeled (RNN variant = "marginal improvement", unexplored). GOAL: design and train a BETTER
-  sequential head (higher-order / attention-based / context-aware) that achieves measurably higher accepted
-  length. Platform = Qwen3-4B or LLaMA-3-8B (fits 96GB), trained via DeepSpec (MIT, freeze target, TV-distance
-  loss). Metric = accepted length (primary) + tokens/sec. Key refs: `DSpark-analysis.md`,
-  `plan/dspark-deep-analysis-2026-07-01.md`. Goal directive = `plan/goal-directive.md`.
-- **CLOSED (archived to `plan/archive/`, do NOT cross-contaminate):** the entire dLLM/DiffusionGemma/LLaDA
-  campaign — frozen heads, He-line, wall-clock frontier, training-based reasoning. That is a SEPARATE,
-  COMPLETED project (Arbor tree 5.1-5.13 all done/pruned).
+- **★ ACTIVE — VLA robustness via reliability-aware multimodal fusion (manipulation track).** Treat VLA as
+  an auditable multimodal-grounding→action system; study WHY it fails under quality-varying / conflicting /
+  cross-view inputs, and fix it with SMALL training (frozen VLM + LoRA/adapter). Contribution = the fusion
+  MECHANISM + the reliability-DIAGNOSIS methodology, NOT a robot-SOTA number (Paper A → Information Fusion
+  一区). Platform = **StarVLA (frozen Qwen2.5-VL-3B + FAST head + LoRA) + LIBERO-Plus** on 2×4090D — built +
+  env'd, smoke test pending (cycle-0). Metric = robustness curves + reliability↔error correlation, NOT raw
+  success. Goal = `plan/goal-directive.md`; refs = `VLA/{research-directions,platform-setup,ideas-vla-
+  manipulation}-2026-07-01.md` + `frames.md`. **★ Outstanding go/no-go: the GAF-VLA occupancy check vs
+  ST4VLA + 2026-Q2 fusion-reliability-for-VLA (route to Pro) BEFORE any Paper-A compute.**
+- **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
+  beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
+  the entire dLLM/DiffusionGemma/LLaDA campaign (archived `plan/archive/`, Arbor tree 5.1-5.13 done/pruned).
+  Both are SEPARATE, non-active projects.
 
 ## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
 > **One line — Pro generates · Opus operates · Codex checks · human sets taste.** GPT-5.5 Pro is the
@@ -63,8 +66,10 @@ Arbor offers two layers; we use only the first.
   Otherwise the RUN stops ONLY when: a claim clears `/adversary` and reaches the promotion gate (→
   human/external); OR `/compass` says STOP_AND_REPORT (programme degenerated / caps); OR genuinely blocked
   (needs user). **A live backlog candidate means the run is NOT done — pivot to it.**
-  **Safe background (ZERO orphans):** only ONE 26B GPU job at a
-  time — `nvidia-smi` BEFORE dispatch, QUEUE don't collide. **EVERY long job MUST be TRACKED — no
+  **Safe background (ZERO orphans):** GPU concurrency is PLATFORM-SCOPED, re-derived at campaign
+  start from the current model's memory footprint (26B-class → ONE job total; 4B/8B-class → one job
+  PER GPU, pair candidate+control across the two 4090Ds — an idle second GPU during a training
+  campaign is a bug, see §4 lesson 10) — `nvidia-smi` BEFORE dispatch, QUEUE don't collide. **EVERY long job MUST be TRACKED — no
   fire-and-forget:** prefer harness `run_in_background` (auto re-invokes on completion); a `setsid`-detached
   job is allowed ONLY if it writes a PID-file AND a RUNLOG registry line (cmd / PID / **cwd** / **start-time** /
   budget) AND arms a ScheduleWakeup monitor on that PID — detach without all three is FORBIDDEN.
@@ -127,6 +132,33 @@ Arbor offers two layers; we use only the first.
    (d) candidate MENUS exhaust — backlogs must regenerate from failures; (e) progress tokens are farmable by
    orderly retreat — count SURPRISES (plan-changes) instead; (f) process work is never the deliverable
    (>20% sustained = compass flag).
+8. **★ ARTIFACT-FIDELITY (2026-07-02, DSpark archive audit — the most serious incident to date).** Every
+   number in a shipped/banked document (report, README, tree result, memory) is READ FROM ITS ARTIFACT
+   FILE at writing time, with the artifact path cited next to the table — NEVER recalled from working
+   memory. The DSpark public archive shipped back-computed baselines, a wrong probe-model name, a
+   cross-contaminated TV figure, and a "94% E[τ] ceiling" whose probe was never run (all corrected
+   2026-07-02). A planned-but-unexecuted probe's numbers are NOT results. **Any push to a public remote
+   REQUIRES `/artifact-acceptance` first, and its checklist includes: recompute each number from its
+   cited source file — mismatch = HOLD.** (Full autopsy: `plan/retrospective-workflow-audit-2026-07-02.md`.)
+9. **★ LAUNCH ARITHMETIC + CHEAP-SIGNAL LADDER (2026-07-02).** Before ANY training launch, inside the
+   `/prereg` (or, for exploratory runs, a 3-line note): (a) measured sec/step × total steps = ETA — ETA
+   over the §2 cap (≤3h dev / ≤12h sealed) ⇒ redesign, never launch; (b) data-sufficiency ratio vs the
+   reference recipe (4.5K vs DSpark's ~500K = 100× short — one division would have predicted the
+   from-scratch failure); (c) a declared KILL-CHECKPOINT {step, threshold, action=KILL} — a checkpoint
+   eval below threshold kills the run, and a RESUME FAILURE IS A STOP, never a silent restart-from-0;
+   **ENFORCED, not declared: at launch ARM A MONITOR on the run log** (`grep -E` covering progress ·
+   kill-threshold cross · `Traceback|resume-failed|OOM|Killed`) so the kill-checkpoint fires the moment it
+   trips — even after attention has moved on (the DSpark step-500 signal was ignored because nothing was
+   watching). Agent-armed per-run = zero conflict with the global hook stack; NO blocking PreToolUse hook.
+   Design + the >30-min launch ritual: `plan/workflow-enforcement-design-2026-07-02.md`.
+   (d) never retrain what a released checkpoint already provides (the vanilla-retrain waste). LADDER:
+   for head/method work the forge KILL experiment defaults to an inference-time replay / oracle probe
+   when one exists — no training run before its oracle-replay upper bound is measured (the skipped
+   Probe C would have sized the RSMH prize at zero training cost).
+10. **GPU throughput defaults (2026-07-02).** Generation-heavy steps (data regen, sampling evals) use
+   vLLM / batched generation, never unbatched HF `.generate()` (observed 0.1 samples/s, a ~20-50×
+   waste); measure samples/s in the first minute and abort if ETA > budget. Small-model campaigns keep
+   BOTH GPUs busy (candidate + control / next candidate in parallel).
 
 ## 5. Science protocol (the kernel) + research-os v0.5
 Falsify-before-build (ship the kill-experiment WITH the idea) · score-up ≠ mechanism (require negative control
@@ -194,7 +226,7 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 | **`/prospect`** | goal start · compass "no surprises" · region-close lateral · any fresh corpus | Hunt problems through the FIVE MINES: ① literature/survey 综述 (contradictions between papers · silently-shared assumptions · future-work graveyards · missing head-to-heads · stale numbers predating a capability shift) ② own logs (anomalies, seed variance, baseline misbehavior — the cheapest original problems) ③ capability deltas ("X was designed under constraint C; C just disappeared") ④ benchmark critique ⑤ cross-domain transplants (transplant the precondition, not the buzzword). Output: 3–7 ranked problem cards `{Q, TYPE, WHY-NOW, STAKES, PROBE, SURPRISE}`. Discard: gap-filling without a WHY-EMPTY answer; no-stakes problems; gate-shaped (easy-to-verify) problems. |
 | **`/forge`** | one problem chosen | Name the load-bearing variable → type-scoped occupancy re-pricing (≤15 min, NEVER a veto) → generate 3–5 candidates via the schools palette (**+1 rival school, always**; the MOS move is ONE move, used when the failure signature smells like a wrong object) → each card `{MECHANISM one-sentence-why, KILL cheapest-falsifier, COST, SURPRISE}` → taste-rank → He-bar in GENERATIVE mode ("what would make this beautiful?" — 5 real min simplifying) → **the REGENERATION RULE** (which failure promotes which candidate — the anti-menu clause) → **route the candidate DESIGN to Pro by DEFAULT** (Pro designs the architecture, Opus only tunes; skip only for tactical tuning of an already-Pro-designed arch, with a written reason — the fix for "the loop never uses Pro though Pro is better"). |
 | **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
-| **`/compass`** | every 3–5 cycles · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
+| **`/compass`** | **after every 2nd `/autopsy`** (a countable trigger — "every 3–5 cycles" never fired in the DSpark campaign) · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
 
 **The loop:** `/prospect` → `/forge` → `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
 → cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
@@ -263,6 +295,9 @@ At EVERY 验收, tree FIRST then RUNLOG:
       candidate survives its first claim boundary + human budget approval; its health is checked by
       `/compass` (questions, not scores).
 - [ ] new track/eval at INIT → `tree_set_meta` the eval contract (B_dev/B_test, metric, metric_direction).
+- [ ] **direction/campaign CLOSE → close-out sweep**: reconcile ALL descendant node statuses (no
+      dangling in_progress/pending under a closed node) + purge any number lacking an artifact from
+      tree/memory before it can propagate into reports (the phantom-E[τ] lesson, §4.8).
 - [ ] THEN append the RUNLOG narrative.
 
 ### 6.3 Arbor commands: use / skip / adopt-later
@@ -273,7 +308,7 @@ At EVERY 验收, tree FIRST then RUNLOG:
 | setup-intake / coordinator | covered by `goal-directive.md` + goal mode |
 | `arbor-agent-tools` (emulation layer) | N/A — we have the native MCP tools |
 | research-agent / orchestrator (full-auto loop) | **deliberately NOT used** — goal mode fits human-in-loop |
-| **`tree_set_meta`+`eval_run`+`git_merge_branch`** (merge-eval automation) | **ADOPT when variant-count grows** (many trained heads → automated eval pays off). Not a current blocker. |
+| **`tree_set_meta`+`eval_run`+`git_merge_branch`** (merge-eval automation) | **ADOPT NOW** — `eval_run` writes scores into the tree from the actual command output, which is the structural antidote to write-from-memory number drift (§4.8; the deferral was load-bearing in the DSpark archive incident). |
 | executor `RunTraining` + resume/checkpoint | consider for long training runs. |
 
 ### 6.4 Isolation discipline (kernel ⑥)
