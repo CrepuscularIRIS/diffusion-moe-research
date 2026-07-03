@@ -212,14 +212,15 @@ the program**, don't defend it. A negative result is a SUCCESS **iff its autopsy
 **Type-drift is the canonical loop failure** (`/compass` check 1): goal says design/improvement, artifacts
 trend evaluation-shaped (certificates/audits/probes). Detect structurally — type the last 3–5 artifacts.
 
-### 5.1 The three discipline moments + the one invariant (the filter, collapsed)
-> Most work never sees a gate: plumbing, exploration, tactical runs flow freely. Discipline binds at
-> exactly THREE moments. One question replaces the old lane table: **"is this a claim leaving the loop?"**
-> yes → `/adversary`; no → just go.
+### 5.1 The discipline moments + the one invariant (the filter, collapsed)
+> Most work never sees a gate: plumbing, exploration, tactical runs, and cheap size-first probes flow
+> freely. Discipline binds at a few late moments. One question replaces the old lane table: **"is this a
+> claim leaving the loop?"** yes → `/adversary`; no → just go.
 
 | Moment | Command | What it does |
 |---|---|---|
-| **Before a claim-bearing run** | **`/prereg`** | freeze {HYPOTHESIS, MECHANISM, TYPE, METRIC, sealed SPLIT, ACCEPT-if, KILL-if, NEG-CONTROL, SEEDS ≥3, ONE-VAR} in 10–20 lines, via Arbor. Post-hoc edits void the run as evidence. **Exploration is free** — contract only what will be cited. Optional DPC block for novelty claims. |
+| **At the CONFIRMATION boundary (LATE, opt-in — v0.9)** | **`/rigor`** | ONCE a cheap probe shows the effect is likely real (NOT during ideation/exploration/size-first), COMPILE the evidence contract — statistical UNIT · valid paired TEST by data type (McNemar/bootstrap/Wilcoxon/rliable-IQM) · SEED-variance budget · required BASELINE spec (what `/adversary` B will fight) · ALLOWED-CLAIM envelope · **FAST-mode ablations = the 3 cheap catchers (necessity/negative-control/cost)**; FULL (sufficiency/stress/breakdown) only for a venue claim. Proposer-side DOWN-only; feeds `/prereg`. **Efficiency-first — running 5 ablations per candidate is the ceremony this avoids.** |
+| **Before a claim-bearing run** | **`/prereg`** | SEAL the (`/rigor`-compiled) contract: {HYPOTHESIS, MECHANISM, TYPE, METRIC, sealed SPLIT, ACCEPT-if, KILL-if, NEG-CONTROL, SEEDS ≥3, ONE-VAR} in 10–20 lines, via Arbor. Post-hoc edits void the run as evidence. **Exploration is free** — contract only what will be cited. Optional DPC block for novelty claims. |
 | **After any run** | **`/exp-verify`** | 3-stage real-run check: no-mock → executed-on-real-data → **anti-no-op** (the intervention provably FIRED). A no-op FAILS even if the metric improved. VERIFIED = real run, not real effect. |
 | **At the claim boundary ONLY** | **`/adversary`** | ONE independent pass, TYPE-scoped: **A** Δ-reality (≥3 seeds mean±std, per-example regression, neg-control, sealed holdout) · **B** baseline fairness (make the OPPOSING baseline win — equal budget, paired stats 5×2CV/McNemar/DeLong) · **C** claim–evidence map (no artifact ⇒ auto-downgrade to hypothesis; new-metric-as-evidence GUILTY until it corrects a misleading eval; structural-negative needs the 3-part gate) · **D** worth check (toy? goalpost-moved? He-bar graded TYPE-relative; eval claims must name the changed decision). |
 
