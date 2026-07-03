@@ -2,7 +2,7 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-03 (goal → AMBITION-ANCHORED / FAST-mode · research-os v0.9 — adds /rigor evidence-contract).
+> Last updated: 2026-07-03 (goal → AMBITION-ANCHORED / FAST-mode · research-os **v1.0** — 大道至简 11→6 cmds; /rigor folded into /prereg CONFIRMATORY, /compass into /autopsy programme pulse; anti-accretion rule installed).
 
 ---
 
@@ -10,7 +10,7 @@
 - **★ ACTIVE — AMBITION-ANCHORED goal (produce ONE 一区-grade contribution — Information Fusion / ESWA;
   DIRECTION self-selected by research-os).** The goal (`plan/goal-directive.md`) no longer prescribes a hard
   core: the human sets the **AMBITION + a VALUE BAR** (a genuine contribution, and after a refutation a
-  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v0.9
+  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v1.0
   `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
   from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
 - **Current in-flight campaign = VLA robustness** on the built platform (**StarVLA** frozen Qwen2.5-VL-3B +
@@ -18,7 +18,7 @@
   region is CLOSED.** CN-SRA (cross-stream restoration adapter) was BUILT end-to-end + cleanly **KILLED**
   (sealed verdict R_D=0.17, margin-vs-intra≈0, and the shuffled-sibling control recovered MORE, 0.229>0.171 →
   the cross-stream signal is CONFOUNDED, not real) — the 2nd refutation on this line (shared root cause = **no
-  cross-stream redundancy** on this platform; every stream necessary). `/compass` = **LATERAL**. `/prospect`
+  cross-stream redundancy** on this platform; every stream necessary). The `/autopsy` programme pulse (ex-`/compass`) = **LATERAL**. `/prospect`
   (node 2) returned Card-1 (repair-compiler) / Card-2 (active-acquisition) — but both stayed INSIDE the
   cross-stream region and hit the same wall (Card-2 blocked: LIBERO-Plus corruptions are deterministic, can't
   be re-observed). **★ REGION-CLOSE (goal discipline): the whole cross-stream / fusion-mechanism family is
@@ -50,7 +50,7 @@
 
 | Engine | How to invoke | Role |
 |---|---|---|
-| **Opus 4.8 (me)** | direct (main loop) | **PI / decision-owner / interpreter.** OBSERVE, `/prospect`, `/forge`, SELECT/DECIDE, assemble+package the Pro hand-off, `/autopsy`, `/compass`, update tree/RUNLOG. **Never self-grants `CLAIM_STANDS`.** Prefer Opus high; reserve xhigh for the hardest judgment. |
+| **Opus 4.8 (me)** | direct (main loop) | **PI / decision-owner / interpreter.** OBSERVE, `/prospect`, `/forge`, SELECT/DECIDE, assemble+package the taste-SHAPED Pro hand-off, `/autopsy` (carries the programme pulse, ex-`/compass`), update tree/RUNLOG. **Never self-grants `CLAIM_STANDS`.** Prefer Opus high; reserve xhigh for the hardest judgment. |
 | **Opus 4.8 executor subagents** | `Agent` (+ `isolation: "worktree"` when mutating files); inherits session model | **ALL implementation / experiment plumbing / verification runs / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge worth, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
 | **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain — DESIGNS each new candidate architecture by DEFAULT** (the `/forge` step-7 flip: Pro designs, Opus only tunes; skipping Pro needs a written reason — "optional" Pro = never-used Pro = the better design path thrown away). Also: prior-art / occupancy reads, contested `/adversary` passes, AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
 | **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. An uncurated, un-re-rollable independent substrate. A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
@@ -67,8 +67,8 @@ Arbor offers two layers; we use only the first.
 - **Policy:** GOAL mode is the driver. The **Arbor MCP idea tree is the canonical research STRUCTURE**
   (`.arbor/sessions/<run>/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
   then RUNLOG)**. Use `worktree_create`/`eval_run`/`git_merge_branch`/`generate_report` opportunistically.
-- **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → *(confirmed claim → `/rigor` FAST →)* `/prereg` → run → `/exp-verify` →
-  (claim → `/adversary` · null → `/autopsy`) → loop; `/compass` **after every 2nd `/autopsy`** (the countable
+- **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → `/prereg` *(+ CONFIRMATORY block = ex-`/rigor`, once a probe shows the effect is likely real)* → run → `/exp-verify` →
+  (claim → `/adversary` · null → `/autopsy`) → loop; the `/autopsy` **programme pulse** (ex-`/compass`) runs **after every 2nd `/autopsy`** (the countable
   trigger — "every 3–5 cycles" never fired in the DSpark campaign; §5.2). **★ THE ANTI-EXHAUSTION
   RULE (why past campaigns "kept stopping"): the backlog is ALIVE, never a menu.** Every `/autopsy` MUST
   emit its conversion-law output (a constraint, a new/reshaped candidate, or an explicit region-close that
@@ -81,7 +81,7 @@ Arbor offers two layers; we use only the first.
   autonomy):** ≤12 dispatched cycles/session; ≤3 consecutive inconclusive leads → stop+report; each experiment
   pre-declares a wall-clock budget (≤3h dev / ≤12h sealed), `kill -9` on overrun OR >30min zero-output.
   Otherwise the RUN stops ONLY when: a claim clears `/adversary` and reaches the promotion gate (→
-  human/external); OR `/compass` says STOP_AND_REPORT (programme degenerated / caps); OR genuinely blocked
+  human/external); OR the `/autopsy` programme pulse says STOP_AND_REPORT (programme degenerated / caps); OR genuinely blocked
   (needs user). **A live backlog candidate means the run is NOT done — pivot to it.**
   **Safe background (ZERO orphans):** GPU concurrency is PLATFORM-SCOPED, re-derived at campaign
   start from the current model's memory footprint (26B-class → ONE job total; 4B/8B-class → one job
@@ -195,7 +195,7 @@ Arbor offers two layers; we use only the first.
    waste); measure samples/s in the first minute and abort if ETA > budget. Small-model campaigns keep
    BOTH GPUs busy (candidate + control / next candidate in parallel).
 
-## 5. Science protocol (the kernel) + research-os v0.5
+## 5. Science protocol (the kernel) + research-os v1.0
 Falsify-before-build (ship the kill-experiment WITH the idea) · score-up ≠ mechanism (require negative control
 + locality) · eval/test/baseline are a **sealed layer, never changed mid-run** · one variable per probe ·
 isolation: **generator ≠ executor ≠ critic** (Opus generates/selects; executor subagents run in worktrees; the
@@ -225,7 +225,7 @@ the program**, don't defend it. A negative result is a SUCCESS **iff its autopsy
 | **Tooling 工具** | an experiment class others can now run — and DO | used in anger within one cycle | infra for its own sake (v0.4's own disease) |
 | **Reproduction 复现** | trust recalibration on a LOAD-BEARING result | pre-stated deltas + sealed protocol | reproducing the peripheral |
 
-**Type-drift is the canonical loop failure** (`/compass` check 1): goal says design/improvement, artifacts
+**Type-drift is the canonical loop failure** (the `/autopsy` programme pulse's type-drift check): goal says design/improvement, artifacts
 trend evaluation-shaped (certificates/audits/probes). Detect structurally — type the last 3–5 artifacts.
 
 ### 5.1 The discipline moments + the one invariant (the filter, collapsed)
@@ -235,8 +235,8 @@ trend evaluation-shaped (certificates/audits/probes). Detect structurally — ty
 
 | Moment | Command | What it does |
 |---|---|---|
-| **At the CONFIRMATION boundary (LATE, opt-in — v0.9)** | **`/rigor`** | ONCE a cheap probe shows the effect is likely real (NOT during ideation/exploration/size-first), COMPILE the evidence contract — statistical UNIT · valid paired TEST by data type (McNemar/bootstrap/Wilcoxon/rliable-IQM) · SEED-variance budget · required BASELINE spec (what `/adversary` B will fight) · ALLOWED-CLAIM envelope · **FAST-mode ablations = the 3 cheap catchers (necessity/negative-control/cost)**; FULL (sufficiency/stress/breakdown) only for a venue claim. Proposer-side DOWN-only; feeds `/prereg`. **Efficiency-first — running 5 ablations per candidate is the ceremony this avoids.** |
-| **Before a claim-bearing run** | **`/prereg`** | SEAL the (`/rigor`-compiled) contract: {HYPOTHESIS, MECHANISM, TYPE, METRIC, sealed SPLIT, ACCEPT-if, KILL-if, NEG-CONTROL, SEEDS ≥3, ONE-VAR} in 10–20 lines, via Arbor. Post-hoc edits void the run as evidence. **Exploration is free** — contract only what will be cited. Optional DPC block for novelty claims. |
+| **At the CONFIRMATION boundary (LATE, opt-in)** | **`/prereg` CONFIRMATORY block** (ex-`/rigor`, folded v1.0) | ONCE a cheap probe shows the effect is likely real (NOT during ideation/exploration/size-first), the `/prereg` card adds its CONFIRMATORY block — statistical UNIT · valid paired TEST by data type (McNemar/bootstrap/Wilcoxon/rliable-IQM) · SEED-variance budget · required BASELINE spec (what `/adversary` B will fight) · ALLOWED-CLAIM envelope · **FAST-mode ablations = the 3 cheap catchers (necessity/negative-control/cost)**; FULL (sufficiency/stress/breakdown) only for a venue claim. Proposer-side DOWN-only. **Efficiency-first — running 5 ablations per candidate is the ceremony this avoids.** |
+| **Before a claim-bearing run** | **`/prereg`** | SEAL the contract (base fields + the CONFIRMATORY block above): {HYPOTHESIS, MECHANISM, TYPE, METRIC, sealed SPLIT, ACCEPT-if, KILL-if, NEG-CONTROL, SEEDS ≥3, ONE-VAR} in 10–20 lines, via Arbor. Post-hoc edits void the run as evidence. **Exploration is free** — contract only what will be cited. Optional DPC block for novelty claims. |
 | **After any run** | **`/exp-verify`** | 3-stage real-run check: no-mock → executed-on-real-data → **anti-no-op** (the intervention provably FIRED). A no-op FAILS even if the metric improved. VERIFIED = real run, not real effect. |
 | **At the claim boundary ONLY** | **`/adversary`** | ONE independent pass, TYPE-scoped: **A** Δ-reality (≥3 seeds mean±std, per-example regression, neg-control, sealed holdout) · **B** baseline fairness (make the OPPOSING baseline win — equal budget, paired stats 5×2CV/McNemar/DeLong) · **C** claim–evidence map (no artifact ⇒ auto-downgrade to hypothesis; new-metric-as-evidence GUILTY until it corrects a misleading eval; structural-negative needs the 3-part gate) · **D** worth check (toy? goalpost-moved? He-bar graded TYPE-relative; eval claims must name the changed decision). |
 
@@ -251,7 +251,7 @@ worktree executors · run dev/sealed eval under frozen contracts · autopsy · u
 own toys. MAY NOT — change the success metric after seeing results · broaden scope · self-grant
 `CLAIM_STANDS` · promote to contribution. The human is a RARE escalation, not a per-cycle bottleneck.
 
-### 5.2 The GENERATOR — /prospect · /forge · /autopsy (+ /compass) — the enrich layer, operationalized
+### 5.2 The GENERATOR — /prospect · /forge · /autopsy (carries the programme pulse, ex-/compass) — the enrich layer, operationalized
 > This is what v0.4 lacked: of 10 gates, zero generated. Research quality is decided at problem-selection
 > time; these commands are where taste acts GENERATIVELY (ranking and shaping), not as a filter.
 > Foundations: research-os `skills/forge/references/taste.md` (the taste model — extends enrich.md) +
@@ -262,7 +262,7 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 | **`/prospect`** | goal start · compass "no surprises" · region-close lateral · any fresh corpus | Hunt problems through the FIVE MINES: ① literature/survey 综述 (contradictions between papers · silently-shared assumptions · future-work graveyards · missing head-to-heads · stale numbers predating a capability shift) ② own logs (anomalies, seed variance, baseline misbehavior — the cheapest original problems) ③ capability deltas ("X was designed under constraint C; C just disappeared") ④ benchmark critique ⑤ cross-domain transplants (transplant the precondition, not the buzzword). Output: 3–7 ranked problem cards `{Q, TYPE, WHY-NOW, STAKES, PROBE, SURPRISE}`. Discard: gap-filling without a WHY-EMPTY answer; no-stakes problems; gate-shaped (easy-to-verify) problems. |
 | **`/forge`** | one problem chosen | Name the load-bearing variable → type-scoped occupancy re-pricing (≤15 min, NEVER a veto) → generate 3–5 candidates via the schools palette (**+1 rival school, always**; the MOS move is ONE move, used when the failure signature smells like a wrong object) → each card `{MECHANISM one-sentence-why, KILL cheapest-falsifier, COST, SURPRISE}` → taste-rank → He-bar in GENERATIVE mode ("what would make this beautiful?" — 5 real min simplifying) → **the REGENERATION RULE** (which failure promotes which candidate — the anti-menu clause) → **route the candidate DESIGN to Pro by DEFAULT** (Pro designs the architecture, Opus only tunes; skip only for tactical tuning of an already-Pro-designed arch, with a written reason — the fix for "the loop never uses Pro though Pro is better"). |
 | **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
-| **`/compass`** | **after every 2nd `/autopsy`** (a countable trigger — "every 3–5 cycles" never fired in the DSpark campaign) · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
+| **`/autopsy` programme pulse** (ex-`/compass`, folded v1.0) | **after every 2nd `/autopsy`** (a countable trigger — "every 3–5 cycles" never fired in the DSpark campaign) · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
 
 > **Two generative axes added to `/forge` since the table above (v0.7 + v0.8) — both are prompt-allocation,
 > no new commands.** ③ **frames** (v0.7, `references/frames.md`): `/forge` step 3′ forces ONE non-incumbent
@@ -274,13 +274,11 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 > `[OPERATOR-CANDIDATE]` under the corrosion gate (3 load-bearing fields + deletion test) + an INDEPENDENT
 > audit (never self-granted); GPT-5.5 Pro deep-reads the operator's source papers just-in-time before
 > `/prereg`. `/prospect` retrieves operators as a mining prior + prints a frame-and-operator ledger;
-> `/compass` check 5 flags frame- AND operator-monoculture. **Four axes: schools · types · frames ·
+> the `/autopsy` pulse's check 5 flags frame- AND operator-monoculture. **Four axes: schools · types · frames ·
 > operators — the ceiling.**
 
-**The loop:** `/prospect` → `/forge` → *(confirmed claim → `/rigor` FAST →)* `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
-→ cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
-back into the backlog) · `/compass` **after every 2nd `/autopsy`** (§5.2). Layer-2 (§5.4) fires at high-stakes only:
-`/epistemic-calibration` before promoting a novelty/occupancy claim, `/artifact-acceptance` at a handoff.
+**The loop:** `/prospect` → `/forge` → `/prereg` *(+ CONFIRMATORY block = ex-`/rigor`; big/committing run? cheap falsifier first — the folded irreversible-decision reflex)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
+back into the backlog) · the `/autopsy` **programme pulse** (ex-`/compass`) runs **after every 2nd `/autopsy`** (§5.2). The v1.0 folds of the old Layer-2 (§5.4): epistemic-calibration = the one invariant's memory-is-not-evidence corollary; irreversible-decision = the cheap-falsifier-first reflex; artifact-acceptance = the external-handoff checklist.
 
 ### 5.3 ★ ARBOR IS THE SUBSTRATE — write STRUCTURE through the MCP, not md/json
 > **Arbor MCP is the canonical store and the execution substrate.** Every command PERSISTS its structural
@@ -300,12 +298,12 @@ Arbor node fields = `hypothesis · status · result · insight · score · test_
 | claim boundary | `tree_update_node(result, insight)` | `/adversary` per-check evidence |
 | null / kill | `tree_prune(reason)` + `tree_update_node(insight=conversion-law output)` | — |
 | merge / promote | **`git_merge_branch`** (already a no-regression gate) | human promotion record |
-| programme pulse | append to programme node insight | `/compass` verdict paragraph |
+| programme pulse | append to programme node insight | `/autopsy` pulse verdict paragraph (ex-`/compass`) |
 | the narrative | `generate_report` | — |
 
 **Rule:** if Arbor has a tool/field for it, USE IT (don't re-implement in md/json).
 
-### 5.4 Layer-2 wrap (optional, high-stakes — research-os v0.6)
+### 5.4 Layer-2 reflexes (FOLDED into v1.0 — kept as reference for WHEN the reflexes apply, NOT as separate commands: epistemic-calibration → the one invariant's memory-is-not-evidence corollary; irreversible-decision → cheap-falsifier-first; artifact-acceptance → the external-handoff checklist)
 > Three wrap skills around the core loop, fired ONLY at high-stakes moments (never every cycle). Each adds a
 > decision boundary the core 7 do not gate; none duplicates them. Distilled from a Fable 5 methodology audit
 > (archived: `plan/archive/fable5-methodology-extraction-2026-07-01/`).
@@ -342,7 +340,7 @@ At EVERY 验收, tree FIRST then RUNLOG:
 - [ ] new candidate → `tree_add_node` BEFORE dispatch · dead branch → `tree_prune` + reason.
 - [ ] node types = {idea, experiment, negative, `programme`}. A `programme` node is created only after a
       candidate survives its first claim boundary + human budget approval; its health is checked by
-      `/compass` (questions, not scores).
+      the `/autopsy` programme pulse (questions, not scores).
 - [ ] new track/eval at INIT → `tree_set_meta` the eval contract (B_dev/B_test, metric, metric_direction).
 - [ ] **direction/campaign CLOSE → close-out sweep**: reconcile ALL descendant node statuses (no
       dangling in_progress/pending under a closed node) + purge any number lacking an artifact from
