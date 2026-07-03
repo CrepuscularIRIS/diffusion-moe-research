@@ -2,7 +2,7 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-03 (goal → AMBITION-ANCHORED / FAST-mode · research-os **v1.0** — 大道至简 11→6 cmds; /rigor folded into /prereg CONFIRMATORY, /compass into /autopsy programme pulse; anti-accretion rule installed).
+> Last updated: 2026-07-03 (goal → **improvement-first BUILD-on-evidence** — VLA-fusion region CLOSED (crux image-bridge NO-GAP); Pro-survey-mining entry across 多模态融合/信息压缩/矩阵表示/OOD; HF-expandable; 2-GPU pipeline/split §5.5 · research-os **v1.0** 6 cmds, anti-accretion held).
 
 ---
 
@@ -13,9 +13,12 @@
   **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v1.0
   `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
   from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
-- **Current in-flight campaign = VLA robustness** on the built platform (**StarVLA** frozen Qwen2.5-VL-3B +
-  FAST + LoRA + **LIBERO-Plus**, 2×4090D; CYCLE-0 PASSED). **State (2026-07-03): the cross-stream-mechanism
-  region is CLOSED.** CN-SRA (cross-stream restoration adapter) was BUILT end-to-end + cleanly **KILLED**
+- **State (2026-07-03) — VLA-fusion region CLOSED; mode pivoted to improvement-first BUILD-on-evidence**
+  (design: `plan/open-build-improvement-first-design-2026-07-03.md`). On the built platform (**StarVLA** frozen
+  Qwen2.5-VL-3B + FAST + LoRA + **LIBERO-Plus**, 2×4090D) the cross-stream/fusion family was killed 2× AND the
+  crux image-bridge probe returned **NO-GAP** (base cross-modal ACS 0.997, reads images fine; ~7 probes / 0
+  positives) — the frozen 3B already saturates our synthetic composition/fusion tasks (we probed where the
+  model is already strong). ★ REGION-CLOSE fired on the whole territory. CN-SRA (cross-stream restoration adapter) was BUILT end-to-end + cleanly **KILLED**
   (sealed verdict R_D=0.17, margin-vs-intra≈0, and the shuffled-sibling control recovered MORE, 0.229>0.171 →
   the cross-stream signal is CONFOUNDED, not real) — the 2nd refutation on this line (shared root cause = **no
   cross-stream redundancy** on this platform; every stream necessary). The `/autopsy` programme pulse (ex-`/compass`) = **LATERAL**. `/prospect`
@@ -23,12 +26,13 @@
   cross-stream region and hit the same wall (Card-2 blocked: LIBERO-Plus corruptions are deterministic, can't
   be re-observed). **★ REGION-CLOSE (goal discipline): the whole cross-stream / fusion-mechanism family is
   CLOSED → the next `/prospect` must make a GENUINE lateral (new problem / testbed / platform), NOT another
-  VLA-cross-stream neighbor.** NEXT MOVE = run the **taste-bank operators** (`opus-pass/operators.md`) against
-  the own-anomaly ledger (`VLA/prospect-lateral-handoff-2026-07-03.md` — A1–A5, esp. **A5** the validated
-  *predict-repair-before-build* screen + **A2** reliability-gating is *mis-targeted*) + the surviving VLA ideas
-  (`VLA/ideas-vla-manipulation-2026-07-01.md`) for a fresh BUILDABLE hypothesis. **VLA is the current vehicle,
-  NOT a mandate** — carry as reusable priors the built platform + the load-once harness + the VALIDATED N/G/U
-  causal screen (a transferable diagnostic) + the anomaly ledger {no-cross-stream-redundancy, shuffle>matched}. Design =
+  VLA-cross-stream neighbor.** NEXT MOVE = the NEW mode's ENTRY: **Pro-survey-mining** (`/prospect` Mine 2) across **多模态融合 · 信息压缩 ·
+  矩阵表示 · OOD/semantic-support** for LONG-OPEN / recurring-hard problems, each with a **matching HF dataset**
+  (datasets/models EXPANDABLE from HuggingFace — π0.7/π0.5, …; prefer HF) + a cheap real-data headroom test;
+  base fails with Δ room ⇒ EVIDENCED target ⇒ COMMIT the ~4h train (2-GPU pipeline/split, §5.5). **VLA is now
+  ONE domain option, NOT the vehicle** — carry as reusable priors the built platform + load-once harness + the
+  VALIDATED N/G/U causal screen + the taste-bank operators (`opus-pass/operators.md`) + the anomaly ledger
+  (`VLA/prospect-lateral-handoff-2026-07-03.md`). Design =
   `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED) ·
   `VLA/platform-setup.md`, plus `/forge`'s `frames.md` + `taste-operators.md` (the `recoverability-gated-fusion`
   operator). The anti-retreat guard lives in the goal's VALUE BAR.
@@ -318,6 +322,25 @@ Same invariant: proposer self-administers only DOWN verdicts; escalation → ind
 or human (external). The audit's `agent-governance` was NOT added as a skill (it IS the invariant + the
 engine division); its two sharp bits — the **cold-start review packet** and the **agreement-illusion guard**
 (stance-separated, REFUTE-prompted review) — are folded into `/adversary`.
+
+### 5.5 ★ 2-GPU parallelism + the BUILD-on-evidence gate (the goal points here)
+> DEFAULT = **pipeline**; SPLIT only when two evidenced targets are queued. Fixes "训练一直放不开" without dueling writes.
+
+- **Pipeline (default).** A training/eval run occupies the GPU(s); the main loop does NOT idle-wait — it uses
+  that window to DESIGN/SEARCH the next node (Pro-survey-mining · next-candidate design · reading results).
+  Compute + cognition overlap; this is the productive form of the WAIT discipline (§4.9) — *the wait IS when
+  you design the next node.*
+- **Split (two evidenced targets queued, each fits one GPU).** GPU0=Idea-1, GPU1=Idea-2 as a parallel burst,
+  then reconverge. **Each split run = its OWN Arbor node + its OWN worktree** (no shared state, no dueling tree
+  writes); set `CUDA_VISIBLE_DEVICES` per run and label each node with its GPU.
+- **The training GATE = BUILD-on-evidence (not free training).** Earn a ~4h run only on an EVIDENCED target: a
+  survey-evidenced hard problem → a matching **HF dataset** → a cheap headroom eval on the REAL data shows the
+  frozen base FAILS with Δ room. Kill only if the base already solves it, or it's a pure capability wall.
+  (Retargets size-first from local synthetic probes — which kept saturating — to real-data headroom; the fix
+  for the 0-positive stall.)
+- **WAIT unchanged (§4.9).** 4h train → Monitor or Bash bg-wait firing ONCE on {verdict | crash | timeout};
+  consume→verdict on fire, never re-arm, never a ScheduleWakeup poll. Launch arithmetic (§4.9-10) per run:
+  ETA-vs-cap · data-sufficiency · kill-checkpoint · resume-fail = STOP.
 
 ## 6. Arbor command routing & tree discipline
 > A **pragmatic hybrid**: Arbor's tree for STRUCTURE, research-os for DECISIONS, multi-engine for REVIEW.

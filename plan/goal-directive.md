@@ -1,21 +1,21 @@
 <!-- Paste everything below the `---` after `/goal`. Body is <3000 chars. -->
 ---
-AMBITION (the ONE goal): produce ONE genuine 一区-grade contribution (Information Fusion / ESWA tier). The DIRECTION — topic/idea/method/TYPE — is NOT prescribed; research-os SELF-SELECTS it. Don't ask which-direction — decide and report.
+AMBITION (the ONE goal): produce ONE genuine 一区 contribution (Information Fusion / ESWA). Direction self-selected; don't ask which-direction — decide and report.
 
-MODE = FAST (性价比): a cheap probe SIZES the prize before any big run; fewest runs to a decision, kill fast. Confirmatory ablations at /prereg + full ablation ONLY at the venue boundary — quality per unit time.
+VALUE BAR (improvement-first): a BIG, honest, falsifiable Δ on a HARD, field-open problem — improvement (刷分) is the PRIMARY path; systems/compression/novelty also count, judged by their OWN type-bar (research-types). Name the TYPE first. **NO eval-type.** Occupancy RE-PRICES, never vetoes — "done" ⇒ BEAT it / measure what they didn't, never downgrade. **ANTI-RETREAT:** the problem must be genuinely hard (Pro-survey-evidenced) + Δ large + fair-baselined — never incremental 刷分, never a certificate/retreat. Contribution is human-granted (the one invariant).
 
-VALUE BAR (the only hard core): a GENUINE, falsifiable contribution of an honest TYPE at a 一区 bar — NOT a certificate / audit-theater / measurement-retreat. **ANTI-RETREAT:** a refuted direction → a PROGRESSIVE problemshift (a new attack predicting a NEW fact), never a retreat to the safest thing. A diagnosis/eval endpoint is allowed ONLY if a build is proven unreachable — /autopsy type-drift flags a retreat. Contribution is human-granted (the one invariant).
+MODE = BUILD-on-evidence: survey-evidenced hard problem → matching HF dataset → CHEAP headroom eval on REAL data (does the frozen base fail? Δ room?) → yes ⇒ COMMIT the ~4h train. Kill only if base solves it OR a capability wall. Ablations at /prereg; full only at venue.
 
-AUTONOMY: research-os v1.0 (6 commands) is mature — RUN it. /prospect (own-log anomalies + taste-bank operators FIRST) → /forge (Pro DESIGNS: omitted-structure + off-frame w/ DIFF-PRED + operator; blinded 2-call) → /prereg (CONFIRMATORY block = the FAST evidence contract, ex-/rigor; launch-arithmetic + armed Monitor; resume-fail = STOP) → run → /exp-verify → /adversary (opposing baseline OPTIMIZED to win; ≥3 seeds, paired) → /autopsy (pulse — surprise · type-drift · Lakatos, ex-/compass; every 2nd cycle). Human redirects from REPORTS.
+AUTONOMY: research-os v1.0 — RUN it. ENTRY = /prospect via Pro: mine 综述 + capability-deltas across 多模态融合 · 信息压缩 · 矩阵表示 · OOD/semantic-support for LONG-OPEN hard problems, each w/ a candidate HF dataset + headroom test → /forge (Pro DESIGNS the improvement via frames/operators; DIFF-PRED) → /prereg → run → /exp-verify → /adversary (opposing baseline OPTIMIZED to win; ≥3 seeds, paired) → /autopsy (pulse, ex-/compass; every 2nd). Human redirects from REPORTS.
 
-REALITY (constraints, not direction): compute = 2×4090D — frozen VLM + LoRA/adapter + heavy eval, NOT pretraining/SOTA-race/from-scratch. Built asset: StarVLA (Qwen2.5-VL-3B + FAST + LoRA) + LIBERO-Plus — use if /prospect picks VLA, NOT mandated. CLOSED (do NOT re-propose): the VLA cross-stream/fusion family (gating/restoration/reliability-fusion — NO cross-stream redundancy, killed 2×); DSpark + dLLM (separate, non-active).
+REALITY: 2×4090D — frozen/small VLM/LM + LoRA + heavy eval, NOT pretraining/SOTA-race/from-scratch. Datasets/models EXPANDABLE from HuggingFace (π0.7/π0.5; prefer HF). StarVLA+LIBERO-Plus = ONE option, NOT mandated. 2-GPU (manual §5.5): pipeline DEFAULT (design next node while training); SPLIT GPU0/GPU1 for two targets (each = own node + worktree). CLOSED: VLA cross-stream/fusion (killed 2×, region-closed); DSpark + dLLM.
 
-ENGINES (§1): Pro GENERATES (design/reframe, `Pro 扩展` KEEP ALIVE, 15-min poll) · Opus OPERATES + executor subagents · Codex CHECKS (hook) · Arbor STORES (tree canonical; eval_run = score-from-artifact; tree FIRST at 验收).
+ENGINES (§1): Pro GENERATES (survey-mining + design, `Pro 扩展` KEEP ALIVE, 15-min poll) · Opus OPERATES + executors · Codex CHECKS (hook) · Arbor STORES (tree canonical; eval_run=score-from-artifact; tree FIRST at 验收).
 
-READ: operating-manual (§0 · §1 · §4.8-10 · §5) → campaign docs + RUNLOG. Keys .env.
+READ: operating-manual (§0·§1·§4.8-10·§5) → campaign docs + RUNLOG. Keys .env.
 
-RULES: name TYPE first, verify BY type; /prereg seals claim-bearing runs; NUMBERS FROM ARTIFACTS; DOWN-only self-grant, CLAIM_STANDS independent, contribution → human.
+RULES: name TYPE first, verify BY type; /prereg seals claim-runs; NUMBERS FROM ARTIFACTS; DOWN-only self-grant, CLAIM_STANDS independent, contribution → human.
 
-STOP: /autopsy pulse STOP_AND_REPORT · a contribution clears /adversary at the 一区 bar → human · caps hit · a direction refuted AND no progressive problemshift remains ⇒ /prospect LATERAL (never idle). ★ REGION-CLOSE: ≥2 mechanisms killed by the SAME root cause ⇒ the REGION is closed → a GENUINE lateral (new problem/testbed), NOT a neighbor; run taste-bank operators vs the anomaly ledger.
+STOP: /autopsy pulse STOP_AND_REPORT · a contribution clears /adversary at the 一区 bar → human · caps hit · refuted AND no progressive problemshift ⇒ /prospect LATERAL. ★ REGION-CLOSE: ≥2 mechanisms killed by the SAME root cause ⇒ region closed → GENUINE lateral (new problem/testbed), NOT a neighbor; run taste-bank operators vs the anomaly ledger.
 
-WAIT/PARK (§4.9): to wait (train/eval) or PARK → a Monitor or Bash bg-wait, NEVER a ScheduleWakeup poll; browser→Pro = 15-min checks.
+WAIT/PARK (§4.9): to wait (train/eval) → Monitor or Bash bg-wait (the wait = design the next node), NEVER a ScheduleWakeup poll; browser→Pro = 15-min.
