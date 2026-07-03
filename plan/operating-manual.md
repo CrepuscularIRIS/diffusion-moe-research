@@ -2,7 +2,7 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-02 (goal → AMBITION-ANCHORED / direction self-selected by research-os · v0.8).
+> Last updated: 2026-07-03 (goal → AMBITION-ANCHORED / FAST-mode · research-os v0.9 — adds /rigor evidence-contract).
 
 ---
 
@@ -10,7 +10,7 @@
 - **★ ACTIVE — AMBITION-ANCHORED goal (produce ONE 一区-grade contribution — Information Fusion / ESWA;
   DIRECTION self-selected by research-os).** The goal (`plan/goal-directive.md`) no longer prescribes a hard
   core: the human sets the **AMBITION + a VALUE BAR** (a genuine contribution, and after a refutation a
-  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v0.8
+  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v0.9
   `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
   from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
 - **Current in-flight campaign = VLA robustness** on the built platform (**StarVLA** frozen Qwen2.5-VL-3B +
@@ -64,7 +64,7 @@ Arbor offers two layers; we use only the first.
 - **Policy:** GOAL mode is the driver. The **Arbor MCP idea tree is the canonical research STRUCTURE**
   (`.arbor/sessions/<run>/.coordinator/idea_tree.json`). Maintain it at **every 验收 (tree FIRST,
   then RUNLOG)**. Use `worktree_create`/`eval_run`/`git_merge_branch`/`generate_report` opportunistically.
-- **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → `/prereg` → run → `/exp-verify` →
+- **★ GOAL = a CONTINUOUS loop, not one stage.** `/prospect` → `/forge` → *(confirmed claim → `/rigor` FAST →)* `/prereg` → run → `/exp-verify` →
   (claim → `/adversary` · null → `/autopsy`) → loop; `/compass` **after every 2nd `/autopsy`** (the countable
   trigger — "every 3–5 cycles" never fired in the DSpark campaign; §5.2). **★ THE ANTI-EXHAUSTION
   RULE (why past campaigns "kept stopping"): the backlog is ALIVE, never a menu.** Every `/autopsy` MUST
@@ -261,7 +261,7 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 > `/compass` check 5 flags frame- AND operator-monoculture. **Four axes: schools · types · frames ·
 > operators — the ceiling.**
 
-**The loop:** `/prospect` → `/forge` → `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
+**The loop:** `/prospect` → `/forge` → *(confirmed claim → `/rigor` FAST →)* `/prereg` → *(big/committing run? `/irreversible-decision-audit` first
 → cheap probe)* → run → `/exp-verify` → (claim → `/adversary` → human if contribution · null → `/autopsy` →
 back into the backlog) · `/compass` **after every 2nd `/autopsy`** (§5.2). Layer-2 (§5.4) fires at high-stakes only:
 `/epistemic-calibration` before promoting a novelty/occupancy claim, `/artifact-acceptance` at a handoff.
