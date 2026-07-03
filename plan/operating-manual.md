@@ -14,13 +14,21 @@
   `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
   from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
 - **Current in-flight campaign = VLA robustness** on the built platform (**StarVLA** frozen Qwen2.5-VL-3B +
-  FAST + LoRA + **LIBERO-Plus**, 2×4090D; **CYCLE-0 PASSED**). The fusion-primary framing was REFUTED twice;
-  the live line is a **diagnosis-guided BUILD** (causal stream-attribution PREDICTS which repair works → BUILD
-  that repair as a small LoRA → measured robustness Δ). The loop FINISHES or forks it. **VLA is the current
-  vehicle, NOT a mandate** — `/prospect` may go LATERAL to a new topic (a move, not a stop). Design =
-  `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED
-  framing) · `VLA/platform-setup.md` (NO date suffix), plus `/forge`'s `frames.md` + `taste-operators.md`
-  (the `recoverability-gated-fusion` operator). The anti-retreat guard lives in the goal's VALUE BAR.
+  FAST + LoRA + **LIBERO-Plus**, 2×4090D; CYCLE-0 PASSED). **State (2026-07-03): the cross-stream-mechanism
+  region is CLOSED.** CN-SRA (cross-stream restoration adapter) was BUILT end-to-end + cleanly **KILLED**
+  (sealed verdict R_D=0.17, margin-vs-intra≈0, and the shuffled-sibling control recovered MORE, 0.229>0.171 →
+  the cross-stream signal is CONFOUNDED, not real) — the 2nd refutation on this line (shared root cause = **no
+  cross-stream redundancy** on this platform; every stream necessary). `/compass` = **LATERAL**. `/prospect`
+  (Pro) returned 6 ranked directions ("predict-before-build repair selection"); the on-platform candidate =
+  **Card-1 repair-compiler** (needs no acquisition, tests the predict-before-build claim directly), with
+  active-acquisition (Card-2) HELD for a transplant domain (LIBERO-Plus corruptions are deterministic → cannot
+  be re-observed). A Pro `/forge` of Card-2 was routed just before the pause — pull + reconcile against that
+  feasibility fact. **VLA is the current vehicle, NOT a mandate** — `/prospect` may go LATERAL / leave VLA,
+  carrying as priors the built platform + the load-once eval harness + the VALIDATED recoverability screen +
+  the own-anomaly ledger {no-cross-stream-redundancy, shuffle>matched confound}. Design =
+  `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED) ·
+  `VLA/platform-setup.md`, plus `/forge`'s `frames.md` + `taste-operators.md` (the `recoverability-gated-fusion`
+  operator). The anti-retreat guard lives in the goal's VALUE BAR.
 - **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
   beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
   the entire dLLM/DiffusionGemma/LLaDA campaign (archived `plan/archive/`, Arbor tree 5.1-5.13 done/pruned).
@@ -76,9 +84,14 @@ Arbor offers two layers; we use only the first.
   start from the current model's memory footprint (26B-class → ONE job total; 4B/8B-class → one job
   PER GPU, pair candidate+control across the two 4090Ds — an idle second GPU during a training
   campaign is a bug, see §4 lesson 10) — `nvidia-smi` BEFORE dispatch, QUEUE don't collide. **EVERY long job MUST be TRACKED — no
-  fire-and-forget:** prefer harness `run_in_background` (auto re-invokes on completion); a `setsid`-detached
+  fire-and-forget:** prefer harness `run_in_background` (auto re-invokes on completion — ONE clean signal, no polling); a `setsid`-detached
   job is allowed ONLY if it writes a PID-file AND a RUNLOG registry line (cmd / PID / **cwd** / **start-time** /
-  budget) AND arms a ScheduleWakeup monitor on that PID — detach without all three is FORBIDDEN.
+  budget) AND arms a **`Monitor`** (a condition-watch → ONE clean notification when the job exits) — detach without all three is FORBIDDEN.
+  **★ WAIT / PARK DISCIPLINE (2026-07-03 lesson — the Stop-hook re-fire loop):** to wait on a LOCAL condition
+  (training/eval done, a file appears) → hang a **`Monitor`** or a Bash `run_in_background` wait — ONE clean
+  notification at the condition. **NEVER a `ScheduleWakeup` poll: a timed wakeup that re-checks under an active
+  Stop-hook re-fires the loop = the churn.** Browser→Pro waits → quiet **15-min** checks (never busy-poll). To
+  **PARK / suspend** a run between steps → arm a `Monitor` and stop; do NOT idle-loop or schedule a re-poll.
   **★ THE SINGLE OWNERSHIP TEST (live-checkable; goal-directive + §4 lesson #5 reference THIS):** a process is
   **PROVABLY OURS** iff *(live) its cwd is under the project / `.claude/worktrees/` AND its cmd matches our job
   patterns*. A registry/PID-file entry only says WHICH PID to look at — **it NEVER proves ownership and NEVER
