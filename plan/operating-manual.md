@@ -19,13 +19,16 @@
   (sealed verdict R_D=0.17, margin-vs-intra≈0, and the shuffled-sibling control recovered MORE, 0.229>0.171 →
   the cross-stream signal is CONFOUNDED, not real) — the 2nd refutation on this line (shared root cause = **no
   cross-stream redundancy** on this platform; every stream necessary). `/compass` = **LATERAL**. `/prospect`
-  (Pro) returned 6 ranked directions ("predict-before-build repair selection"); the on-platform candidate =
-  **Card-1 repair-compiler** (needs no acquisition, tests the predict-before-build claim directly), with
-  active-acquisition (Card-2) HELD for a transplant domain (LIBERO-Plus corruptions are deterministic → cannot
-  be re-observed). A Pro `/forge` of Card-2 was routed just before the pause — pull + reconcile against that
-  feasibility fact. **VLA is the current vehicle, NOT a mandate** — `/prospect` may go LATERAL / leave VLA,
-  carrying as priors the built platform + the load-once eval harness + the VALIDATED recoverability screen +
-  the own-anomaly ledger {no-cross-stream-redundancy, shuffle>matched confound}. Design =
+  (node 2) returned Card-1 (repair-compiler) / Card-2 (active-acquisition) — but both stayed INSIDE the
+  cross-stream region and hit the same wall (Card-2 blocked: LIBERO-Plus corruptions are deterministic, can't
+  be re-observed). **★ REGION-CLOSE (goal discipline): the whole cross-stream / fusion-mechanism family is
+  CLOSED → the next `/prospect` must make a GENUINE lateral (new problem / testbed / platform), NOT another
+  VLA-cross-stream neighbor.** NEXT MOVE = run the **taste-bank operators** (`opus-pass/operators.md`) against
+  the own-anomaly ledger (`VLA/prospect-lateral-handoff-2026-07-03.md` — A1–A5, esp. **A5** the validated
+  *predict-repair-before-build* screen + **A2** reliability-gating is *mis-targeted*) + the surviving VLA ideas
+  (`VLA/ideas-vla-manipulation-2026-07-01.md`) for a fresh BUILDABLE hypothesis. **VLA is the current vehicle,
+  NOT a mandate** — carry as reusable priors the built platform + the load-once harness + the VALIDATED N/G/U
+  causal screen (a transferable diagnostic) + the anomaly ledger {no-cross-stream-redundancy, shuffle>matched}. Design =
   `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED) ·
   `VLA/platform-setup.md`, plus `/forge`'s `frames.md` + `taste-operators.md` (the `recoverability-gated-fusion`
   operator). The anti-retreat guard lives in the goal's VALUE BAR.
