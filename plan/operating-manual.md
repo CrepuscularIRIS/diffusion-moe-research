@@ -90,11 +90,24 @@ Arbor offers two layers; we use only the first.
   fire-and-forget:** prefer harness `run_in_background` (auto re-invokes on completion — ONE clean signal, no polling); a `setsid`-detached
   job is allowed ONLY if it writes a PID-file AND a RUNLOG registry line (cmd / PID / **cwd** / **start-time** /
   budget) AND arms a **`Monitor`** (a condition-watch → ONE clean notification when the job exits) — detach without all three is FORBIDDEN.
-  **★ WAIT / PARK DISCIPLINE (2026-07-03 lesson — the Stop-hook re-fire loop):** to wait on a LOCAL condition
-  (training/eval done, a file appears) → hang a **`Monitor`** or a Bash `run_in_background` wait — ONE clean
-  notification at the condition. **NEVER a `ScheduleWakeup` poll: a timed wakeup that re-checks under an active
-  Stop-hook re-fires the loop = the churn.** Browser→Pro waits → quiet **15-min** checks (never busy-poll). To
-  **PARK / suspend** a run between steps → arm a `Monitor` and stop; do NOT idle-loop or schedule a re-poll.
+  **★ WAIT / PARK DISCIPLINE (2026-07-03 — supersedes; two failure modes closed). THE WAIT IS NOT THE
+  DELIVERABLE — the VERDICT is.** An agent that ends a turn having only *armed a monitor* has done zero work;
+  the terminal action is ALWAYS **read the artifact → produce the verdict.**
+  - **Match the wait to the DURATION.** **MINUTES-long** (an inference kill-probe, a ~minutes verifier head) →
+    run **SYNCHRONOUSLY in ONE turn**: foreground Bash, or `run_in_background` + a bounded read-loop, then READ
+    the result and emit the verdict THIS turn. Do NOT arm a Monitor + end the turn for a minutes-long job — that
+    adds a full turn-cycle of latency and invites the re-arm stall. **HOURS-long** (real training) → arm a
+    **`Monitor`** + end the turn (you cannot block for hours).
+  - **Consume → verdict, NEVER re-arm.** When the signal fires, the NEXT action is READ + DECIDE. Re-arming
+    another monitor / re-checking-and-waiting is the **STALL** — the `arm-monitor → end-turn → notify → re-arm`
+    loop that once burned ~220k tokens / 2h with no verdict.
+  - **Do NOT dispatch a subagent for a minutes-long probe** — run it inline; a subagent's turn/monitor/notify
+    cycle is heavier than the probe itself, and re-delegating a stuck executor compounds it.
+  - **Circuit-breaker.** A wait that fires N times / runs past its ETA with no verdict artifact → STOP the wait,
+    check **GROUND TRUTH** directly (`ps`, read the artifact file); do NOT re-arm or re-delegate.
+  - **NEVER a `ScheduleWakeup` poll** (the earlier churn — a timed wakeup re-fires under an active Stop-hook).
+    Browser→Pro waits → quiet **15-min** checks (never busy-poll). To PARK between steps → arm a `Monitor` and
+    stop — but the run itself must still terminate in a verdict, not an infinite park.
   **★ THE SINGLE OWNERSHIP TEST (live-checkable; goal-directive + §4 lesson #5 reference THIS):** a process is
   **PROVABLY OURS** iff *(live) its cwd is under the project / `.claude/worktrees/` AND its cmd matches our job
   patterns*. A registry/PID-file entry only says WHICH PID to look at — **it NEVER proves ownership and NEVER
