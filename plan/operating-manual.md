@@ -398,12 +398,16 @@ engine division); its two sharp bits — the **cold-start review packet** and th
 - **Gates only at the CLAIM boundary — never per-iteration.** Inside the loop: run/score/analyze/re-run, fast.
   `/adversary` fires ONLY when you want to say "this Δ is a contribution" (BIG honest Δ vs a TUNED baseline,
   ≥3 seeds, paired). Keep workflow/meta <20% of effort — if we're theorising instead of climbing, ship a run.
-- **CORAL = the 刷分 engine** (installed 2026-07-04). Give it a codebase + a grader → continuous multi-agent
-  score-climbing in isolated worktrees. Use `coral:coral-task-author` to scaffold a task from a repo+goal,
-  `coral:running-coral-experiments` to launch/monitor, `coral:coral-run-doctor` to diagnose a stuck run.
-  ⚠️ **2-GPU caveat:** CORAL's edge is many *parallel* agents; on 2×4090D compute-bound attempts serialize —
-  it still helps (code/method edits parallelize; the grader is the bottleneck), but don't expect its full
-  multi-island throughput. **AI-Research-SKILLs framework SOPs** (verl/grpo/megatron/vllm…) = install
+- **CORAL = an OPTIONAL 刷分 accelerator — NOT a dependency.** ⚠️ **The `coral` CLI is NOT yet installed**
+  (only the plugin skills/subagents are, 2026-07-04). **So the DEFAULT 刷分 loop runs via the EXISTING path:
+  an Opus executor subagent (worktree) runs training/eval directly on the built harness, fast OODA — exactly
+  as we've been running.** Do NOT block the loop on CORAL. To ENABLE CORAL later: install the `coral` CLI
+  (see `coral:coral-quickstart`) → `coral setup` to register the Claude runtime (`coral:setting-up-coral`,
+  verify with `coral agents doctor`) → then `coral:coral-task-author` scaffolds a task (repo+grader →
+  `coral validate`), `coral:running-coral-experiments` launches/monitors, `coral:coral-run-doctor` diagnoses.
+  ⚠️ **2-GPU caveat (applies once enabled):** CORAL's edge is many *parallel* agents; on 2×4090D compute-bound
+  attempts serialize — it still helps (code/method edits parallelize; the grader is the bottleneck), but don't
+  expect its full multi-island throughput. **AI-Research-SKILLs framework SOPs** (verl/grpo/megatron/vllm…) = install
   on-demand for the method you're running; its `autoresearch` orchestrator = SKIP (a generation tool that
   competes with research-os).
 - **The honest venue caveat:** 刷分-to-一区 is *tractable* but still competitive — target niche/underexplored
