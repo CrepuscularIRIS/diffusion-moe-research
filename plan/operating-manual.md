@@ -7,6 +7,19 @@
 ---
 
 ## 0. Current research state (read this first)
+- **★★ SCOPE UPDATE (2026-07-03) — improvement-first campaign: 4 cheap kills / 0 positives / 3 modes; binding
+  constraint = the frozen-add-on-vs-TUNED-incumbent SQUEEZE → LoRA-base-finetune + a bigger frozen VLM are now
+  PRE-AUTHORIZED (the loop DECIDES + reports; it does NOT STOP_AND_REPORT to ask).** Cards died: PRE-HAL
+  arbitration + MathVista token-support (a TUNED VCD / attention-pruning beat our FROZEN add-on = the *trap*);
+  SpatiaLQA planning + VLDBench disinfo (frozen-7B *base-wall*). Root: within *frozen-small-VLM + small-module +
+  established-benchmark* the sweet spot is squeezed — the model is too weak (wall) or a tuned incumbent already
+  holds the headroom (trap). **RESOLUTION (goal REALITY):** a ≤4h LoRA-finetune of the base + a bigger frozen
+  VLM (≤~32B-4bit) are IN SCOPE and autonomous — this dissolves the trap (train ⇒ equal footing vs tuned
+  incumbents; teach past walls) and finally runs training. **Lesson:** on an established benchmark, either BEAT
+  the tuned incumbent by TRAINING on equal footing, or pick a target with NO tuned incumbent near ceiling. This
+  is the **FINAL in-envelope expansion** within 2-GPU — if a real TRAINED build also walls, THEN a
+  non-improvement TYPE (tooling/diagnosis) becomes anti-retreat-legal, or STOP. Campaign = `openbuild/`; design =
+  `plan/open-build-improvement-first-design-2026-07-03.md`.
 - **★ ACTIVE — AMBITION-ANCHORED goal (produce ONE 一区-grade contribution — Information Fusion / ESWA;
   DIRECTION self-selected by research-os).** The goal (`plan/goal-directive.md`) no longer prescribes a hard
   core: the human sets the **AMBITION + a VALUE BAR** (a genuine contribution, and after a refutation a
