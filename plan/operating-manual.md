@@ -355,6 +355,32 @@ engine division); its two sharp bits — the **cold-start review packet** and th
   consume→verdict on fire, never re-arm, never a ScheduleWakeup poll. Launch arithmetic (§4.9-10) per run:
   ETA-vs-cap · data-sufficiency · kill-checkpoint · resume-fail = STOP.
 
+### 5.6 ★ The Failure Atlas + Necessity Gate — depth memory (research-os 小修, 2026-07-04)
+> The fix for "很会杀但不会越杀越懂" (great at killing, doesn't get smarter by killing): the loop had WRITES
+> (kills, anomalies, region-closes) but no compounding READ per territory. Fable5-primary + Pro-secondary +
+> the user's breadth-then-depth. Full spec = research-os `skills/autopsy/references/failure-atlas.md`. Four
+> independent engines (Opus · Codex · Fable5 · GPT-5.5 Pro) converged on this.
+- **Breadth THEN depth.** Within a domain: Phase A BREADTH scans candidate failure-signatures (necessity-gate
+  each) to MAP the atlas; Phase B DEPTH commits to the top fracture and STAYS. Lateral is a legitimate mapping
+  move; laterally FLEEING before mapping/exploiting is the bug. Three-tier lateral rule: within-domain breadth
+  = allowed (budgeted) · commit-to-depth = the atlas picks · abandon-domain = ONLY on atlas-proven saturation + epitaph.
+- **Necessity Gate (before ANY mechanism).** Design a mechanism ONLY for a failure that survives frozen-base +
+  tuned-prompting + retrieval + fair plain-LoRA + data-scale + seed + OOD/robustness split + metric-sanity +
+  neg-control. Any of them closes it → BENCHMARK_OCCUPIED (reject; NOT a mechanism failure). The SpatiaLQA
+  ledger kill is the textbook trip (plain-LoRA precond-F1 0.582 ≥ ledger 0.523).
+- **The atlas file.** `<campaign>/atlas/<territory>.md`; entry = claim · evidence-pointer · grade(own-run|lit)
+  · what-it-re-prices; a region-close writes an EPITAPH (dead-because-X, reopen-if-Y). `/autopsy` writes;
+  `/prospect` (Mine 0) + `/forge` read FIRST. Re-prices, NEVER vetoes (a contradicting run = an [ANOMALY]).
+- **3-tier enrichment (anchored-territory ONLY).** FIND (Arbor alphaXiv + `Pro 扩展` + DeepResearch) → DOWNLOAD
+  the arXiv PDF/source LOCAL → 精读 by an **Opus SUBAGENT per paper** (Read handles PDFs) returning ATLAS ROWS
+  (strongest tuned baseline · method · hidden trap · what-they-didn't-measure · occupancy · probe). Output =
+  atlas rows, NEVER "I read N papers" (anti-ceremony guard). Playwright→Pro alone is insufficient (browser
+  summary, rate-limited) — hence the local download + subagent deep-read.
+- **Arbor (adopt/reject).** ADOPT its worktree / held-out / merge-margin discipline + alphaXiv grounding; the
+  atlas is the failure-typed per-territory UPGRADE of Arbor's `get_constraints_block` insight-block (ROOT
+  insight + PRUNED LESSONS + VALIDATED FINDINGS). REJECT Arbor's score-plateau→"different approach family"
+  convergence reflex — that IS the anti-depth lateral bug, mechanized.
+
 ## 6. Arbor command routing & tree discipline
 > A **pragmatic hybrid**: Arbor's tree for STRUCTURE, research-os for DECISIONS, multi-engine for REVIEW.
 > We do NOT adopt the full Arbor skill suite (built for unattended full-auto; ours is human-in-the-loop
