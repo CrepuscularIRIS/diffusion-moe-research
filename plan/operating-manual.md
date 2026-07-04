@@ -381,6 +381,35 @@ engine division); its two sharp bits — the **cold-start review packet** and th
   insight + PRUNED LESSONS + VALIDATED FINDINGS). REJECT Arbor's score-plateau→"different approach family"
   convergence reflex — that IS the anti-depth lateral bug, mechanized.
 
+### 5.7 ★ 刷分-first HIGH-THROUGHPUT loop + CORAL (2026-07-04, user pivot) — restore the v0.4 experiment velocity
+> The mature endpoint of the generation diagnosis: **AI can't invent the harder problem — that comes from
+> surveyed papers, not our experiments — but AI CAN climb a defined benchmark.** So play to the strength:
+> 刷分 (improvement-type, `research-types.md`) is now PRIMARY; the novelty/necessity-gate strategy (§5.6) is
+> secondary/optional. **What made us slow lately was META-WORK, not research-os** (the `taste.md`
+> process-budget>20% trap). This restores "almost-always-刷分" velocity — *better* than v0.4, because gates
+> fire only at the claim boundary and the target is a real paper-sourced benchmark, not gate-shaped nothing.
+- **The insight (user):** in 刷分 the **metric-GAP IS the failure signature** — the most concrete, quantified,
+  visible one (分数不够 = the failure case). So the taste武器库 (frames · operators · 视角转换/reframe · elegant
+  math modeling) is **aimed at the score gap**, not at abstract problem-finding — a *constrained, well-posed*
+  use of generation AI can actually do: *fix a measured bottleneck*, not *invent a problem*.
+- **The FAST OODA loop:** `run → score → 分数不够 (the failure) → analyze WHY (which examples fail, what
+  bottleneck = the per-benchmark ATLAS) → aim the taste武器库 at the bottleneck → fix → re-run.` The atlas is
+  the failure-map; the score is the compass. Method-source = the arXiv-精读 pipeline (§5.6), not AI invention.
+- **Gates only at the CLAIM boundary — never per-iteration.** Inside the loop: run/score/analyze/re-run, fast.
+  `/adversary` fires ONLY when you want to say "this Δ is a contribution" (BIG honest Δ vs a TUNED baseline,
+  ≥3 seeds, paired). Keep workflow/meta <20% of effort — if we're theorising instead of climbing, ship a run.
+- **CORAL = the 刷分 engine** (installed 2026-07-04). Give it a codebase + a grader → continuous multi-agent
+  score-climbing in isolated worktrees. Use `coral:coral-task-author` to scaffold a task from a repo+goal,
+  `coral:running-coral-experiments` to launch/monitor, `coral:coral-run-doctor` to diagnose a stuck run.
+  ⚠️ **2-GPU caveat:** CORAL's edge is many *parallel* agents; on 2×4090D compute-bound attempts serialize —
+  it still helps (code/method edits parallelize; the grader is the bottleneck), but don't expect its full
+  multi-island throughput. **AI-Research-SKILLs framework SOPs** (verl/grpo/megatron/vllm…) = install
+  on-demand for the method you're running; its `autoresearch` orchestrator = SKIP (a generation tool that
+  competes with research-os).
+- **The honest venue caveat:** 刷分-to-一区 is *tractable* but still competitive — target niche/underexplored
+  benchmarks or tasks where compute isn't the moat, with a BIG honest Δ (climb where the incumbent genuinely
+  fails, per the atlas), not "+0.5% by stacking 3 papers" (the incremental trap `/adversary` D rejects).
+
 ## 6. Arbor command routing & tree discipline
 > A **pragmatic hybrid**: Arbor's tree for STRUCTURE, research-os for DECISIONS, multi-engine for REVIEW.
 > We do NOT adopt the full Arbor skill suite (built for unattended full-auto; ours is human-in-the-loop
