@@ -12,6 +12,8 @@ REALITY: 2×4090D — a FROZEN VLM (≤~32B-4bit) OR a ≤4h LoRA-finetune of th
 
 ENGINES (§1): Pro/DeepResearch/arXiv-精读 ENRICH atlas (NOT direction; keep `Pro 扩展` ALIVE — closed browser blocks the pipeline) · Opus OPERATES · Codex CHECKS (hook) · Arbor STORES (eval_run=artifact-score; tree FIRST at 验收) · CORAL optional (CLI TODO).
 
+★ MoA PANEL (§1): on HIGH-VALUE forks (mechanism · direction · hard-problem) /prospect·/forge GENERATE via the differentiated 5-advisor panel (Gemini·GPT-5.5·DeepSeek·MiMo·Opus4.6 — each a DISTINCT operator+frame+school+dropout via `moa/moa_panel.sh --per-lane`) → Opus RECONCILES (consensus/conflict/unique/blind-spot). TIERED — routine 刷分 = solo Opus. DEV = Sonnet4.6 subagent + Opus4.8, Codex hook reviews. Browser: agent-browser = arXiv/blogs/concurrent · playwright-extension = ChatGPT/Gemini (Cloudflare/login).
+
 READ: operating-manual (§0·§1·§4.8-10·§5) + campaign docs + RUNLOG. Keys .env.
 
 RULES: name TYPE first, verify BY type; /prereg seals claim-runs; NUMBERS FROM ARTIFACTS; DOWN-only self-grant, CLAIM_STANDS independent, contribution → human.
