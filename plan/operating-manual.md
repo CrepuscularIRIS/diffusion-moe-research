@@ -2,16 +2,20 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-04 — CURRENT SEED = **LIBERO-Plus / LIBERO-Para VLA-robustness 刷分** (§0); MODE = 刷分-first HIGH-THROUGHPUT OODA (§5.7); research-os **v1.1** (6 cmds + Failure Atlas). §0 = live state only; closed-campaign narrative lives in `VLA/RUNLOG.md` (this is not a runlog).
+> Last updated: 2026-07-05 — **CURRENT SEED = Aerial VLN 刷分 (UAV vision-language navigation; OpenFly platform + AerialVLN benchmark)** (§0); MODE = 刷分-first HIGH-THROUGHPUT OODA (§5.7); research-os **v1.1** (6 cmds + Failure Atlas). §0 = live state only. **(Pre-2026-07-05 StarVLA / LIBERO-manipulation content below = SUPERSEDED history.)**
 > **PATH NOTE:** `VLA/*` references throughout are **LOCAL working state (gitignored)** — present on this machine, NOT in a repo clone. They are intentional local pointers (campaign state is kept out of the repo by design), not tracked docs.
 
 ---
 
 ## 0. Current research state (read this first)
-- **★★★ CURRENT SEED (2026-07-04, human) — LIBERO-Plus / LIBERO-Para VLA-robustness 刷分 on the built StarVLA
-  platform. THIS IS THE ANCHOR:** a cold `/goal` session runs the 刷分-first loop (§5.7) on THIS seed — do NOT
-  re-run `/prospect` to pick a different benchmark (the survey-mining already RESOLVED here, via Pro's ranking:
-  `VLA/benchmark-inventory-2026-07-04.md`). `/prospect` only re-fires if the seed itself region-closes.
+- **★★★ CURRENT SEED (2026-07-05, human) — Aerial VLN 刷分 (UAV vision-language navigation). THIS IS THE ANCHOR:**
+  a cold `/goal` session runs the 刷分-first loop (§5.7) on the **OpenFly** platform (`/data/projects/VLA/aerial/`
+  — LOCAL: code + 30G scenes + 29G lerobot + checkpoints, smoke-tested → **START HERE**) + the **AerialVLN**
+  standardized benchmark (download AerialVLN / AerialVLN-S / AVDN, <1GB → `/data/huggingface/datasets/`). Anchor
+  paper `VLA/paper/综述_Aerial_VLN.pdf`; inventory `VLA/aerial-vln-inventory-2026-07-05.md`; metrics SR / SPL / nDTW.
+  首推方向 = viewpoint-robustness / long-horizon-instruction-decomposition (frozen-VLM + light adapter, ≤4h cap).
+  **OUT-OF-DOMAIN: StarVLA (2604) manipulation · Orca (2606) — experiments STAY in Aerial VLN.**
+  **⚠ The StarVLA / LIBERO / manipulation bullets BELOW in §0 are SUPERSEDED HISTORY (pre-pivot) — do NOT operate from them.**
   - **Platform (VERIFIED loads on our HW):** StarVLA policy-server + LIBERO-plus MuJoCo sim (two-process,
     `examples/LIBERO-plus/eval_files/` — `run_policy_server.sh` in `starvla` env + `eval_libero.sh` in
     `libero_plus` env); ckpt `.../Qwen2.5-VL-FAST-LIBERO-4in1/checkpoints/steps_30000_pytorch_model.pt` (8.1GB);
