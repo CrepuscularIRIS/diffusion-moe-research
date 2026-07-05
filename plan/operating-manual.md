@@ -76,9 +76,11 @@
 
 > **Browser division of labor (2026-07-05):** **playwright-extension** (real Chrome, bypasses Cloudflare, holds
 > the login session) → **ChatGPT / Gemini web** (Pro 扩展, DeepResearch) = the DEEP-design / DeepResearch lane.
-> **agent-browser** (its own Chrome, `--profile`, concurrent, stable-ref snapshots) → **arXiv fetch · blogs ·
+> **agent-browser** (its own **HEADLESS** Chrome, concurrent, no user interaction; login/profile = pass
+> `session` + `extraArgs: ["--profile","Default"]` at the tool call, NOT a second MCP) → **arXiv fetch · blogs ·
 > GitHub · docs · concurrent public reads** = the atlas-enrichment legwork. Fast model Q&A stays on the
-> **codex / agy CLIs** (not a browser). Playwright is NOT retired — it keeps the real-browser / anti-bot niche.
+> **codex / agy CLIs** (not a browser). The two **do NOT conflict** (separate Chromes; the extension's one-time
+> "Allow" persists). Playwright is NOT retired — it keeps the real-browser / anti-bot niche.
 
 ## 2. The Arbor MCP — what we keep, what we dropped
 Arbor offers two layers; we use only the first.
