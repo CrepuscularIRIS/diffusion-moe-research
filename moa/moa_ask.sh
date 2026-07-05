@@ -8,6 +8,15 @@
 #   lanes (OpenCode gw): deepseek | mimo | kimi | glm | qwen | minimax   (reasoning ON via enable_thinking)
 #   NOTE: Sonnet 4.6 is the DEVELOPMENT subagent (native `Agent`, model:"sonnet") — NOT a research advisor.
 #
+#   ⚠ TOOL DISCIPLINE (honest — do NOT assume "pure Q&A" for every lane):
+#     • deepseek/mimo/kimi/glm/qwen/minimax (gateway) = STRUCTURALLY tool-free (no tools passed). The only
+#       guaranteed pure-Q&A lanes.
+#     • gpt5 (codex) = web_search DISABLED, but codex RETAINS shell/MCP tools it *could* invoke; for a plain
+#       question it answers directly, but it is NOT sandbox-guaranteed tool-free.
+#     • gemini + opus46 (agy) = TOOL-CAPABLE / AGENTIC: --dangerously-skip-permissions AUTO-APPROVES any tool
+#       the model invokes. The "answer from your own knowledge, no tools" PROMPT line (router) is a SOFT
+#       request only, not an enforced guarantee.
+#
 # Contract: prints the answer to stdout; EMPTY stdout = dead advisor (caller filters/degrades gracefully).
 # Diagnostics go to stderr. Env knobs: MOA_MAXTOK (default 800), MOA_TIMEOUT seconds (default 180).
 set -uo pipefail

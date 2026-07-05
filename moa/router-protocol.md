@@ -20,11 +20,10 @@
    > search or any tools. Be concrete and independent; do not hedge or survey."
 6. Write to `<dir>/<lane>.txt`, then `moa/moa_panel.sh --per-lane <dir>`.
 
-## Tool discipline per lane (baked into the prompt + the script)
-- **gpt5 (codex):** `--disable web_search` (in `moa_ask.sh`) + the "no tools" prompt line → pure Q&A.
-- **gemini (agy):** no per-call flag → the "no tools" prompt line is the control.
-- **opus46 (agy):** **全量 / agentic** (the script can't lock it down) — accepted as the rich Claude advisor.
-- **deepseek / mimo (gateway):** naturally pure (no tools passed) + reasoning ON.
+## Tool discipline per lane — HONEST (only the gateway is structurally tool-free)
+- **deepseek / mimo (gateway):** STRUCTURALLY tool-free (no tools passed) + reasoning ON — the ONLY guaranteed pure-Q&A lanes.
+- **gpt5 (codex):** `--disable web_search` (no search); RETAINS shell/MCP it *could* invoke — answers directly for a plain Q&A, but is NOT sandbox-guaranteed tool-free.
+- **gemini / opus46 (agy):** TOOL-CAPABLE / AGENTIC — `--dangerously-skip-permissions` AUTO-APPROVES any tool the model invokes. The "no tools" prompt line is a SOFT request only, not enforcement.
 
 ## Assignment table (example, 5 advisors)
 | advisor | operator | frame | school | dropout |

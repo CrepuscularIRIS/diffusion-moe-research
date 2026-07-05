@@ -66,8 +66,10 @@ Output = **reconciled answer + the dispute map** (so the reasoning is auditable,
 - **USE for:** generative ideation — `/prospect` (problem-finding) · `/forge` (candidate design). Where diverse
   priors/reasoning is the value and hallucination is cheap to filter downstream.
 - **DO NOT use for:**
-  - **Factual grounding / occupancy / prior-art** — Q&A advisors have no tools ⇒ they HALLUCINATE citations.
-    Grounding stays on tool-enabled paths (`agy research`, Playwright→Pro DeepResearch, web search).
+  - **Factual grounding / occupancy / prior-art** — the panel runs Q&A/UNGROUNDED (only the gateway lanes are
+    structurally tool-free; the agy/codex lanes are *asked* not to use tools but are tool-CAPABLE), so treat all
+    panel output as ungrounded reasoning that may hallucinate citations. Grounding stays on the dedicated
+    tool-enabled paths (`agy research`, Playwright→Pro DeepResearch, web search).
   - **The claim boundary (`/adversary` CLAIM_STANDS)** — stays the disciplined **independent** check
     (Codex hook · `agy:review` Gemini · human). The panel is a **PROPOSER**; a Claude-heavy panel (Sonnet)
     shares the judge's family and is not a valid independent substrate for granting a claim.
