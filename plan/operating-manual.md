@@ -3,6 +3,7 @@
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
 > Last updated: 2026-07-04 — CURRENT SEED = **LIBERO-Plus / LIBERO-Para VLA-robustness 刷分** (§0); MODE = 刷分-first HIGH-THROUGHPUT OODA (§5.7); research-os **v1.1** (6 cmds + Failure Atlas). §0 = live state only; closed-campaign narrative lives in `VLA/RUNLOG.md` (this is not a runlog).
+> **PATH NOTE:** `VLA/*` references throughout are **LOCAL working state (gitignored)** — present on this machine, NOT in a repo clone. They are intentional local pointers (campaign state is kept out of the repo by design), not tracked docs.
 
 ---
 
