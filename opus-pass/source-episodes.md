@@ -96,3 +96,58 @@ order-parameter-ization, sufficient-summary-functionalization, coverage-set-izat
 distinct killable spec-decode/dLLM candidates; and (b) merging report-1's energyization into
 correction-field/affordance-field (energy is a carrier, and its differential — argmin/ranking — is captured by
 those two), and merging manifoldization into group-equivariance-ization + conservation-structure-ization.
+
+## Ilya-27 pass provenance (2026-07-04 — Fable5 propose → Opus corrosion; papers = `papers/IlyaSutskever_Shared_27Papers`)
+
+Operator ← source paper (Ilya-27 net-new. STATUS after the 2026-07-04 re-audit: N4–N7 = ★ object-shift cards in `operators.md`; N8/N9 = RECLASSIFIED to its meta/eval subsection [no longer ★]; N10 = DEMOTED to this file — see the re-audit section below):
+| operator | source paper(s) |
+|---|---|
+| N4 two-part-code-ization ★★ | MDL tutorial (Grünwald) + Keeping NNs Simple (Hinton–van Camp) + Kolmogorov book; trajectory facet ← Coffee Automaton (Aaronson/Carroll/Ouellette, 1405.6903) |
+| N5 bits-back-refund-pricing ★ | Keeping NNs Simple §5–7 (Hinton–van Camp) + Variational Lossy Autoencoder |
+| N6 program-store-factorization ★ | Neural Turing Machines (Graves et al., 1410.5401) |
+| N7 selection-output-ization ★ | Pointer Networks (Vinyals et al., 1506.03134) |
+| N8 performance-law-ization — RECLASSIFIED → meta/eval | Scaling Laws for Neural LMs (Kaplan et al., 2001.08361; floor term ← Chinchilla) |
+| N9 simplicity-weighted-aggregation — RECLASSIFIED → meta/eval | Machine Super Intelligence (Legg–Hutter Υ) |
+| N10 regeneration-depth-ization — DEMOTED (see re-audit section below) | Bennett logical depth via Coffee Automaton §2.3 + Antunes–Fortnow |
+
+Folded / held (not promoted): structure-noise-bipartition → folded into N4 (trajectory facet) ·
+linearization-as-latent (Order Matters) → refinement note on #14 set-ization · endpoint-variation-localization
+(First Law of Complexity) → HELD, canon-discount (= influence functions / adjoint / implicit-diff).
+
+Canon deduped, NO card (the discount rule): ResNet ×2 → #32 residual-ization · Dilated Conv → #3 + #32 ·
+Relation Nets / Relational RNN → #15 + #16 · MPNN + Neural Quantum Chem → #15 + #20 · Attention · AlexNet ·
+Deep Speech 2 · GPipe · NMT-align · 3 LSTM/RNN blogs · Annotated Transformer · RNN-dropout = backbone/scaling/
+expository/reg-knob (see `anti-patterns.md` for the killed forms).
+
+## 2026-07-04 re-audit demotions (independent Opus + GPT-5.5/codex — both agreed)
+
+Two independent corrosion re-audits (main-loop Opus + GPT-5.5 via codex) each flagged these: they PASS the
+deletion test (a real differential) but lack a killable LIVE-direction `generation_test`. DEMOTED from
+`operators.md` to here — content preserved below so each is revivable; not deleted.
+
+- **N10 `regeneration-depth-ization`** (Bennett logical depth; Coffee Automaton §2.3 + Antunes–Fortnow).
+  MOVE: structure = the SEQUENTIAL COMPUTE to regenerate an object from a near-minimal description (depth),
+  not description length; equal-size / equal-likelihood objects can differ enormously in depth. DIFFERENTIAL:
+  matched-likelihood samples diverge FIRST when the sequential budget is cut (fewer denoising steps / shorter
+  CoT / wider parallel commits); resists amortization into a small fast student. PROBE: sweep the sequential
+  budget on matched-likelihood outputs, record which fail first. Distinct from N4 (TIME-to-regenerate vs
+  description-length/SPACE). WHY DEMOTED: proxy-sensitive (which regenerator?), uncomputable, generates only
+  on the archived dLLM/spec-decode directions. REVIVE if a diffusion-LLM / speculative-decoding direction goes live.
+- **#30 `persistent-topology-ization`** (Persistent Homology / TDA). MOVE: replace fixed-scale geometric
+  features with birth–death topological features (persistence diagram / barcode) across a filtration.
+  DIFFERENTIAL: scale-dependent topological signatures stable under small perturbation, distinguishing
+  structures a Euclidean distance conflates. PROBE: persistence diagram vs feature-distance on a toy embedding;
+  test perturbation stability. WHY DEMOTED: no killable live-direction candidate. REVIVE if a latent-topology /
+  OOD-detection direction goes live.
+- **#31 `order-parameter-ization`** (Renormalization Group; mean-field / phase transitions; Wang–Landau).
+  MOVE: track a coarse order parameter + its coarse-graining/RG flow, watching for a sharp transition in a
+  control parameter. DIFFERENTIAL: universality (detail-independence near a transition), the transition
+  location, and data-collapse under rescaling. PROBE: sweep a control parameter (data/model size, temperature,
+  noise); look for a sharp jump + data-collapse. WHY DEMOTED: no concrete VLA/diffusion/spec-decode
+  generation_test. REVIVE if a training-dynamics / grokking / emergence / phase-transition direction goes live.
+
+Also flagged (single-engine DEMOTE call, KEPT in `operators.md` with ⚠ in the index — needs a live
+generation_test or faces demotion next pass): **#21 sparse-support-ization**, **#36 sufficient-summary-functionalization**.
+RECLASSIFIED (not demoted) to a meta/eval subsection of `operators.md`: **N8 performance-law-ization**,
+**N9 simplicity-weighted-aggregation** (both operate on a meta-object — a performance law / an evaluation
+measure — not on the modeling object of the system under study).

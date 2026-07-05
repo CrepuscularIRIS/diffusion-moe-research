@@ -8,12 +8,72 @@
 >
 > **Ranking:** most generative / most under-transferred (long-tail, cross-disciplinary) first; the famous
 > ML canon (score/diffusion/ResNet/MAE) is DISCOUNTED — already in every model's prior, low marginal value.
-> **★ = passes the GENERATION TEST** on a live direction (VLA multimodal fusion · diffusion-LLM
-> joint-assembly · speculative-decoding sequential correction): the card generates a *killable* candidate
+> **★ = passes the GENERATION TEST** on a live direction — currently **VLA-robustness / 刷分
+> (LIBERO-Plus/Para)** (N4–N7 below; N8/N9 reclassified as meta); historically VLA multimodal fusion (now closed) · diffusion-LLM
+> joint-assembly · speculative-decoding sequential correction: the card generates a *killable* candidate
 > with a differential prediction + cheap probe we would not otherwise have written down. `generation_test:`
-> field shows that candidate.
+> field shows that candidate. **Card counts: 41 → 48 → 45** (Ilya-27 pass added N4–N10; 2026-07-04 re-audit: −3 demoted [N10·#30·#31], N8/N9 reclassified as meta).
 >
 > `mathematical_frame` values are drawn from the 14-frame palette in `skills/forge/references/frames.md`.
+
+---
+
+## Retrieval index — scan THIS, then open ONLY the 1–3 matched cards
+
+> **`/forge` step 3‴ / `/prospect` retrieval:** match the problem's **failure signature** against the
+> "reach for it when…" column, pick 1–3, then open ONLY those full cards below (by name). Do NOT read all
+> the cards into context — that is the menu-browsing anti-pattern. **★** = object-shift generation-test
+> survivor · **meta** = meta/process/eval operator (own subsection, not an object-shift) · **⚠** = kept but
+> needs a live generation_test or faces demotion next pass. Net-new: N1–N3 (Pro), N4–N9 (Ilya-27). 3 demoted
+> in the 2026-07-04 re-audit (N10 · #30 · #31 → source-episodes.md).
+
+| Operator | ★ | Reach for it when… (failure signature) | Core move |
+|---|---|---|---|
+| N1 recoverability-gated-fusion | ★★ | all single-modality ablations fatal; reweighting saturates but success doesn't recover | test modality recoverability BEFORE reweighting |
+| N2 barrier-certificate-localization | ★ | rare catastrophic safety failures; reward up but boundary violations persist | local safe-set certificate, not a trajectory penalty |
+| N3 dependency-bounded-assembly | ★ | parallel decoding gains speed loses correctness; high-conf simultaneous commits break | dependency graph over commits; assemble low-coupling sets |
+| N4 two-part-code-ization | ★★ | rank equal-train-loss candidates w/o a val split; suspected complexity-purchased gain | model bits(model)+bits(residual) as one code |
+| N5 bits-back-refund-pricing | ★ | a latent/channel ignored despite capacity; where should info live? | price stochastic parts at KL; entropy is a refund |
+| N6 program-store-factorization | ★ | accuracy cliff exactly at training-size; difficulty scales w/ memory not rule | size-invariant program × addressable external store |
+| N7 selection-output-ization | ★ | hallucinated outputs outside the legal set; output cardinality varies | output = index into the input, not a fixed vocab |
+| N8 performance-law-ization | meta | budget split across resource axes; each candidate evaluated at full cost | model the resource→performance LAW; read decisions off it |
+| N9 simplicity-weighted-aggregation | meta | benchmark saturated/curated; "generality" asserted not measured | weight tasks by 2^−K(task); capability = compression |
+| 1 memory-kernel-closure | ★ | longer context helps sub-linearly; rollouts drift; failures correlate w/ far-past | dropped DOFs → memory kernel + noise |
+| 2 observable-lifting | ★ | need cheap long-horizon prediction / a linear handle from a step-wise rollout | lift to observables where evolution is linear (Koopman) |
+| 3 multiscale-correction-hierarchy | ★ | coarse & fine passes disagree; refinement helps locally but global bias persists | model error on a scale hierarchy (restrict→correct→prolong) |
+| 4 collective-variable-ization | | few slow modes hidden in a fast signal; exploration re-visits a basin | model on slow reaction-coordinates |
+| 5 flux-conservation-ization | ★ | captures correlations but violates a resource/physical budget | model conserved flux crossing boundaries |
+| 6 factor-graph-ization | ★ | global solve expensive/opaque; need to attribute failure to one constraint | local factors exchanging messages |
+| 7 far-interaction-compression | | pairwise cost dominates but distant interactions smooth/low-rank | summarize far-field as low-rank/multipole |
+| 8 conservation-structure-ization | | short-term accurate but long rollouts drift/explode | bake a conserved geometric structure into the update |
+| 9 ratio-ization | ★ | absolute scores hard to calibrate but relative ordering is what's consumed | fit the ratio (data-like / preferred / acceptable) |
+| 10 correction-field-ization | | one-shot predictor mean-collapses on multimodal targets | predict the direction back to the clean manifold |
+| 11 path-straightening | ★ | quality falls off a cliff as sampling/rollout steps are cut | straightest transport path between endpoints |
+| 12 transport-coupling-ization | ★ | similarity high but alignment wrong; align heterogeneous spaces | model mass flow A→B under a cost geometry |
+| 13 particle-measure-ization | | single model confidently wrong; covariance too big to operate on | small set of interacting particles (empirical measure) |
+| 14 set-ization | | performance drops on reordering; item/tool count varies | permutation-invariant variable-cardinality set |
+| 15 graph-ization | ★ | flat model won't compose over relations / breaks w/ entity count | entity–relation graph + message passing |
+| 16 object-slot-ization | ★ | fails on occlusion/rearrangement; object identity drifts | exchangeable persistent object slots |
+| 17 field-ization | | discrete geometry tears at boundaries; need open-vocab/continuous queries | continuously queryable field |
+| 18 affordance-field-ization | ★ | recognizes the object but can't act; fixed primitive can't localize | spatial field of where/how to act |
+| 19 correspondence-field-ization | ★ | action regression fails on symmetry/deformables/new layouts | recast pose as spatial correspondence matching |
+| 20 operator-lifting | ★ | each new condition/resolution forces a retrain | lift instance map to a function→function operator |
+| 21 sparse-support-ization | ⚠ | true structure = few active terms; measurements expensive | model the sparse active support |
+| 22 polarization-ization | ★ | medium-confidence ensemble w/ no obvious high-certainty subset | recursively split into extremal reliable/frozen channels |
+| 23 invariant-ization | ★ | pooled training good but collapses on a new environment | predictor stable across environments (causal parents) |
+| 24 group-equivariance-ization | | breaks at rotation boundaries / pose wrap-around | objects respecting the symmetry group |
+| 25 belief-ization | ★ | failures from hidden state/partial observability, not capacity | plan on a sufficient belief carrying uncertainty |
+| 26 distribution-output-ization | | point predictor mean-collapses; tail risk hidden by an expectation | output a distribution/set, not a point |
+| 27 coverage-set-ization | | must bound error rate / abstain reliably | output a guaranteed-coverage set |
+| 28 latent-variable-ization | | need conditional generation/imputation; obs-space model unstable | inferable conditionable latent w/ posterior |
+| 29 information-bottleneck-ization | | nuisance/shortcut features hurt robustness; need a sufficiency criterion | keep the minimal representation sufficient for the target |
+| 32 residual-ization | ★ | base broadly right but wrong in a few regions; from-scratch data costly | freeze base, learn only its systematic deviation |
+| 33 context-ization | | failures from platform/env differences, not capacity | online-estimable latent context (extrinsics) |
+| 34 skill-option-ization | | long-horizon needs too-deep rollouts; sub-behaviors recur | reusable temporally-extended skills |
+| 35 chunk-ization | ★ | long rollouts accumulate error; actions jitter; per-step verify is the bottleneck | multi-step blocks committed together |
+| 36 sufficient-summary-functionalization | ⚠ | coupling intractable but a low-dim aggregate captures what matters | prove a low-dim summary sufficient; rewrite as its functional |
+| 37 implicit-topology-ization | | explicit geometry breaks on contact/merge/split | implicit zero-level-set field |
+| 38 executable-spec-ization | | scalar objective brittle/opaque; true spec is compositional | LLM-generated searched/evolved executable program |
 
 ---
 
@@ -88,6 +148,113 @@
 - **failure_signature:** parallel decoding gains speed but loses correctness; confidence high yet simultaneous
   commits break syntax/math/code. **transfer:** diffusion-LLM joint assembly · spec-decoding multi-token accept
   · systems (batch only low-coupling jobs).
+
+---
+
+## Ilya-27 pass (2026-07-04) — independent Opus corrosion of a Fable5 extraction
+
+> Source = the 27 papers Ilya Sutskever shared (`papers/IlyaSutskever_Shared_27Papers`). Four **Fable 5**
+> agents (the PROPOSER) read the PDFs directly, focus-fired on the seams this bank was thinnest on; this
+> **Opus pass (the INDEPENDENT corrosion gate)** re-ran the DELETION TEST on every candidate, verified a real
+> pre-training `cheap_probe`, and deduped against the 41 operators above + cross-agent. **~15 of the 27 = canon
+> deduped, no card:** ResNet ×2 → #32 `residual-ization`; Dilated Conv → #3 + #32; Relation Nets / Relational
+> RNN → #15/#16; MPNN + Neural Quantum Chem → #15/#20; Attention·AlexNet·Deep Speech 2 = backbone/scaling
+> (kill-list); NMT-align · 3 LSTM/RNN blogs · Annotated Transformer · RNN-dropout = canon/expository/reg-knob.
+> **The two seams that paid: MDL/description-length (was ABSENT) and content-addressable-store / selection-output.**
+> Per the one invariant, Fable 5 self-granted nothing; ★ below is this independent pass's grant (generation-test
+> on the live VLA-robustness / 刷分 direction). Codex hook reviews the diff.
+
+#### N4. `two-part-code-ization` ★★  (MDL — Grünwald tutorial + Hinton–van Camp + Kolmogorov; the bank's biggest gap)
+- **one_sentence_core_move:** stop optimizing/reporting FIT; model the TOTAL MESSAGE — bits(model) + bits(residuals|model) — as one objective in one currency, so complexity control is internal, not an external val-tuned penalty.
+- **old→new object:** training loss/likelihood with complexity handled externally (val-tuned regularizers, param counts, early stopping) → a two-part code L(H)+L(D|H); the model is a message you must pay for; idealized = Kolmogorov structure function (structure bits + incompressible residual).
+- **mathematical_frame:** algorithmic information / coding theory (two-part & universal/NML codes; Kraft ⇒ codelengths=probabilities).
+- **core_simplification:** removes the external overfitting apparatus — plain weight-decay is the degenerate special case (two fixed Gaussians), exposing what the tuned coefficient was secretly pricing (σ_j²/σ_w²).
+- **differential_prediction:** (selection facet) two models with IDENTICAL train loss have ORDERED held-out performance, predicted by the MODEL-bits term measured on training data ALONE — pure likelihood and #29 IB (which needs a target Y) have no signal to order them; equal-param-count families of different functional form get different penalties. (trajectory facet = `structure-noise-bipartition`, Coffee Automaton) split the code into structured/coarse-grained bits vs incompressible residual and instrument BOTH along a process trajectory: the structure channel is NON-MONOTONE (peaks mid-process) while entropy is MONOTONE, and peak-structure scales with interface (∝n) while max-entropy scales with volume (∝n²); a single scalar loss predicts neither. Deletion test: strip "code length of the model" and both the equal-loss ordering AND the peak vanish. SURVIVES.
+- **cheap_probe:** prequential codelength on a FROZEN model (sum −log p of each next chunk before conditioning — ICL is the online learner, no gradient); effective-bits = the bit-width at which held-out loss degrades; **residual-compressibility** (gzip/LM-compress a fitted model's ERRORS — if residuals still compress, structure remains and total codelength was not minimized, *even if likelihood looks good*). Trajectory probe: structure=gzip(coarse-grained state) vs entropy=gzip(raw) across checkpoints/denoising-steps — MANDATORY controls: finer-threshold artifact control + a decoupled negative control (a naive coarse-graining manufactures a FAKE peak).
+- **failure_signature:** equal-train-loss candidates must be ranked without a val split; regularization tuning is circular; comparing model classes of different form; a benchmark gain may be complexity-purchased; "representations got interesting then collapsed" mid-training.
+- **transfer_targets:** dataset-eval (prequential codelength of labels|inputs → noisy labels = incompressible, leaked/dup data = anomalously short) · distillation (distill iff bits(student)+bits(correction) < bits(teacher-message); distill the structure-PEAK checkpoint not the final one) · diffusion-LLM (structure peaks at intermediate noise → pick remask schedule by peak, not loss) · OOD · the /forge NECESSITY GATE re-cast as bit-accounting.
+- **generation_test (VLA 刷分):** the necessity gate becomes bit-accounting — a robustness adapter is NECESSARY only if bits(adapter)+bits(residual-errors) < bits(plain-LoRA message) at equal robustness; the residual-compressibility probe KILLS adapters whose Δ is complexity-purchased BEFORE the claim run.
+- **dedup defense:** NOT #29 information-bottleneck (rate–RELEVANCE, needs a target Y — this prices the MODEL+residual message with no target); NOT #21 sparse-support. `structure-noise-bipartition` folded here (same object, distinct differential).
+- **source_paper:** `.A Tutorial Introduction to the MDL Principle` (Grünwald §1.3–1.4,2.5) + `Keeping NNs Simple by Minimizing the Description Length of the Weights` (Hinton–van Camp) + `kolmbook` (K(x) substrate); trajectory facet = Aaronson/Carroll/Ouellette, *Coffee Automaton*, arXiv:1405.6903.
+
+#### N5. `bits-back-refund-pricing` ★  (Hinton–van Camp bits-back + Variational Lossy Autoencoder)
+- **one_sentence_core_move:** price any stochastic component (noisy weight, latent code) not at raw encoding cost but at KL(posterior‖prior) — the noise entropy is a REFUND, so information migrates to whichever channel is cheapest under this price.
+- **old→new object:** deterministic params/latents priced at raw precision; posterior-collapse seen as an optimization bug; KL seen as a generic regularizer → a communication protocol where true cost = C−R = KL(Q‖P); ELBO = expected codelength; each piece of info sits in its cheapest channel.
+- **mathematical_frame:** variational coding / Helmholtz free energy.
+- **core_simplification:** removes the paradox that noise is expensive (high-variance components become CHEAP) and the trial-and-error "why is my latent dead" debugging — placement is predicted from coding cost alone.
+- **differential_prediction:** (i) noisy weights cost LESS than precise ones (naive two-part coding predicts more), and generalization tracks ΣKL not param count; (ii) with a decoder locally able to model the data the latent is ignored AT THE OPTIMUM — better optimizers will NOT fix it; the collapse cost is exactly KL(q(z|x)‖p(z|x)); (iii) shrinking the decoder's receptive field forces a SPECIFIC, measurable migration of global info into the latent (VLAE: 13.3 nats lossy vs 37.3 full). Deletion test: strip the refund vocabulary and (i) inverts, (ii) disappears, (iii) loses its bit-accounting. SURVIVES.
+- **cheap_probe:** noise-tolerance = effective bits (add weight noise on a FROZEN model until held-out loss degrades); per-dimension KL(q‖p) reads bits actually purchased → diagnoses dead dims/collapse with NO training; a miniature receptive-field sweep verifies the predicted KL rise + content migration in minutes.
+- **failure_signature:** a latent/side channel is ignored despite ample capacity; you must decide WHERE information should live among competing channels (latent vs decoder, summary vs local window, plan vs policy).
+- **transfer_targets:** long-context (KV-summary vs local-attention = two channels; constrain the local one to force global state into the summary) · VLA/MLLM latent plans · distillation (price student stochastic states at KL) · diffusion-LLM.
+- **generation_test (VLA):** a latent-plan / intermediate-representation adapter atop the FROZEN Qwen2.5-VL action decoder WILL collapse at optimum unless the decoder's local scope is cut — the per-dim-KL probe kills such designs BEFORE training (a pre-training kill-gate for any latent-plan robustness candidate).
+- **dedup defense:** NOT #28 latent-variable-ization (VLAE's latent machinery IS #28; the net-new is the KL-refund PRICING + channel-placement move); weight-noise WITHOUT the accounting = a killed reg-knob.
+- **source_paper:** `Keeping NNs Simple…` §5–7 + `Variational Lossy Autoencoder` §2.2–3.2.
+
+#### N6. `program-store-factorization` ★  (Neural Turing Machines — opens a new bank axis)
+- **one_sentence_core_move:** factor a learned system into a small size-invariant PROGRAM (weights = data-independent access rule) × an unbounded addressable NON-parametric STORE (instance data), so capacity leaves the learning problem.
+- **old→new object:** monolithic state/weights entangling rule and data (capacity ∝ params) → a controller emitting content/position-addressed read/write kernels over an external store whose capacity is a free, test-time-extensible resource.
+- **mathematical_frame:** probability kernels over a discrete index set (content-similarity softmax + shift) coupled to a small controller dynamical system.
+- **core_simplification:** weights encode only HOW to store/fetch, not WHAT is stored — the hypothesis class shrinks from "functions of the whole history" to "size-invariant access policies," which is why the learned solution is a compact algorithm at all.
+- **differential_prediction:** (i) size extrapolation — trained ≤n, executes ≫n (NTM copy trained ≤20 runs at 120; matched LSTM collapses past 20); (ii) test-time capacity scaling — enlarge the store, extend competence with ZERO weight change (impossible for a param-entangled model); (iii) error signature = discrete local SLIPS (one duplicated/shifted vector), not global blur/decay.
+- **cheap_probe:** rule/instance separability check (can a human write size-invariant pseudocode over pointer+array?); train the incumbent small (≤n), test at 3–6×n, look for a cliff at exactly n; hand the incumbent a trivial external scratchpad/retrieval cache at TEST time ONLY — if accuracy moves, storage (not rule) was binding.
+- **failure_signature:** accuracy cliff exactly at the training-size boundary; difficulty scales with how much must be REMEMBERED, not rule complexity; adding params shifts the cliff but never removes it.
+- **transfer_targets:** long-context (store-extension/retrieval beats window-growth exactly on rule-constant separable tasks, NOT holistic ones) · VLA (variable object count: fixed policy over an object registry vs re-encoding a scene into one vector) · speculative-decoding (draft policy as a program over the accepted-prefix store) · distillation (distill the access PROGRAM → student inherits length extrapolation).
+- **generation_test (VLA):** under Layout/object-count perturbation a fixed policy over an addressable object registry should count-extrapolate where a scene-to-one-vector encoder cliffs — cheap to probe (train ≤k objects, test >k).
+- **dedup defense:** OPPOSITE axis to #1 memory-kernel-closure / #25 belief / #36 sufficient-summary (those compress history into a fixed statistic and DISCARD data; this RETAINS raw data non-parametrically and learns only access) — new axis = **parametric-compression vs indexed-retention**. "bigger store" ≠ "bigger window" (killed).
+- **source_paper:** Graves, Wayne & Danihelka, *Neural Turing Machines*, arXiv:1410.5401.
+
+#### N7. `selection-output-ization` ★  (Pointer Networks)
+- **one_sentence_core_move:** re-type the OUTPUT space from a frozen closed vocabulary to an INDEX over the instance's own input elements, so the feasible set is constructed per-instance and feasibility holds by construction.
+- **old→new object:** softmax over a design-time-frozen inventory (fixed cardinality; one model per problem size) → a conditional distribution over the positions/elements of the CURRENT input (cardinality = instance size; the attention weights ARE the output).
+- **mathematical_frame:** a per-instance output measure on the input's index set.
+- **core_simplification:** deletes the closed-world inventory and the content-synthesis that can fabricate outputs — the model only RANKS given evidence; feasibility (output ∈ input) is by construction, not learned; also deletes retrain-per-size.
+- **differential_prediction:** (i) one model solves variable and UNSEEN output cardinality (Ptr-Net trained n≤50 generalizes above it; a fixed-softmax seq2seq provably cannot even REPRESENT the task); (ii) ZERO out-of-feasible-set outputs, vs the incumbent's hallucinated/blurry direct-content predictions. Deletion test: strip "selection/index" and both vanish. SURVIVES.
+- **cheap_probe:** compute the COPY RATE (fraction of target elements literally in the input) + whether the label space varies per instance; if copy-rate high, bolt a tiny pointer head on a FROZEN encoder and verify feasibility-violations→0 and size-extrapolation improves.
+- **failure_signature:** hallucinated outputs outside the instance's legal set; label space padded to max-size with masking; retrain needed when instance size changes; targets that are verbatim input elements.
+- **transfer_targets:** MLLM (extractive grounding: answer = region/token index → kills hallucination on extractive questions specifically) · VLA (grasp-target = point into the detected-object set → zero grasps at non-existent objects) · long-context (answer-by-citation vs regenerate) · speculative-decoding (verification as selection over draft candidates) · dataset-eval (split benchmarks by copy-rate).
+- **generation_test (VLA/MLLM robustness):** under object-reference / language shift, a selection head (index into detected objects) predicts zero references to ABSENT objects + count-extrapolation — a fixed-vocabulary head predicts neither; cheap to probe via copy-rate + a frozen-encoder pointer head.
+- **dedup defense:** NOT "add attention" (killed) — the move is RE-TYPING the output space (reusing attention AS the output distribution); NOT #26 distribution-output-ization (point→distribution over a FIXED space).
+- **source_paper:** Vinyals, Fortunato & Jaitly, *Pointer Networks*, arXiv:1506.03134.
+
+### Meta / process & evaluation operators — NOT object-shifts (reclassified 2026-07-04 re-audit)
+
+> Both Opus and GPT-5.5/codex flagged N8 + N9: they operate on the META-object (a fitted performance law;
+> an evaluation measure), not on the modeling object of the system under study. KEPT for their type
+> (planning · 评估) but categorized apart — and NOT ★-counted as object-shift operators — so the
+> object-shift retrieval stays clean.
+
+#### N8. `performance-law-ization`  (Scaling Laws — META: models the resource→performance law; overlaps launch-arithmetic §4.9)
+- **one_sentence_core_move:** stop studying the model-at-a-configuration; the OBJECT is the fitted low-dimensional LAW mapping resources→performance (power-law terms + irreducible floor), and every decision (go/no-go, allocation, stopping) is read off the law's extrapolations, never off a full-cost run.
+- **old→new object:** empirical config-by-config evaluation (tune shape, train to convergence, see what you get) → the resource–performance SURFACE L(N,D,C,S) as a parametric object fitted on cheap small runs, whose out-of-range extrapolation + constrained-budget optimum ARE the deliverable.
+- **mathematical_frame:** power-law/critical-exponent asymptotics + additive bottleneck decomposition + Lagrange allocation on the fitted surface.
+- **core_simplification:** collapses millions of architecture/HP DOFs into ~3 scalars (loss varies only % across 40× aspect-ratio once non-embedding N is fixed) and demotes the expensive run to a held-out TEST POINT of a cheap fit.
+- **differential_prediction:** the incumbent ("bigger=better, tune arch, train to convergence") predicts only monotone improvement; the law-object predicts and it does NOT: (1) the NUMERIC loss of an unseen 10–100× run before it exists; (2) convergence is compute-INEFFICIENT — train larger, stop short (contradicts practice) and the law can prescribe scaling DOWN (Chinchilla 70B>280B at equal compute — proof this is NOT the "bigger-model" knob, since the output can be ANTI-scaling); (3) resource coupling (8× model needs ~5× data); (4) B_crit a function of LOSS not architecture. Deletion test: strip the fitted-law vocabulary and (1)–(4) disappear. SURVIVES.
+- **cheap_probe:** fit the power law on the 3–4 smallest runs spanning ≥2 orders of magnitude; PRE-REGISTER the predicted loss of the next-larger run; validated iff the held-out run lands on the curve AND the exponent is stable under leave-one-out refit.
+- **failure_signature:** budget must be split across resource axes and the current answer is convention ("train to convergence", "collect more data"); each candidate evaluated at full cost; you need a big run's outcome before affording it.
+- **transfer_targets:** dataset-eval (predict benchmark perf vs data size before collecting) · distillation (student-size vs fidelity law) · speculative-decoding (accept-rate vs draft-capacity law) · VLA (demos-vs-model-size law on a fixed collection budget) · systems (throughput/quality frontier).
+- **generation_test (VLA 刷分):** fit robustness-Δ vs LoRA-rank (and vs perturbation-data size) on 3–4 small runs, predict the full-scale Δ BEFORE spending the ~4h train, and read the compute-optimal rank off the curve.
+- **dedup defense:** adjacency to #31 order-parameter (universality flavor) + #36 sufficient-summary (few numbers) but neither predicts extrapolation/allocation/stop-short; the "just-scale-it" reading = the killed bigger-model/bigger-data anti-pattern — the LAW-object is precisely the distinguisher.
+- **source_paper:** Kaplan, McCandlish et al., *Scaling Laws for Neural LMs*, arXiv:2001.08361 (floor term explicit in Chinchilla, Hoffmann et al. 2022).
+
+#### N9. `simplicity-weighted-aggregation`  (Legg–Hutter — META/EVALUATION: prices a task space, not a modeling object)
+- **one_sentence_core_move:** replace "score on a curated benchmark" with "expected performance over ALL tasks in a class, each weighted 2^(−K(task))" — the codelength of a task's own spec is the measure; capability is read as compression.
+- **old→new object:** a fixed human-curated suite with uniform/advocacy weights (capability = leaderboard) → a weighted mixture over an unbounded computable task space Υ(π)=Σ_μ 2^(−K(μ))V_μ^π; weights from task-spec CODELENGTH, not difficulty (a complex-to-describe but trivially-rewarding env is low-weight).
+- **mathematical_frame:** algorithmic probability / universal (Solomonoff) mixture; Occam prior over environments.
+- **core_simplification:** removes benchmark curation and its politics — no committee picks tasks; "wide range of environments" becomes ONE number; removes the impossible uniform-over-infinite normalization.
+- **differential_prediction:** (i) agent RANKINGS invert moving from curated-uniform to simplicity-weighted (a fixed-benchmark framing predicts rank stability and offers no principled re-mix); (ii) a narrow specialist scores ≈0 under Υ while a mediocre generalist scores higher; (iii) cumulative prequential log-loss on raw UNLABELED streams (model-as-compressor) predicts downstream capability across domains. Deletion test: strip the 2^(−K) weighting and (i),(ii) disappear. SURVIVES.
+- **cheap_probe:** weight each EXISTING benchmark task by a proxy codelength of its spec (gzip/LM bits of the definition), recompute the leaderboard, check for rank inversion (an afternoon, no training); or bits/byte of a frozen model on mixed raw corpora vs its task scores.
+- **failure_signature:** benchmark scores saturated or suspiciously curated; "generality" must be measured not asserted; you need capability signal on domains with no labeled tasks; comparing agents whose task mixes differ.
+- **transfer_targets:** dataset-eval / 评估 (benchmark re-pricing; curation-skew detection) · OOD (generality as simplicity-weighted breadth) · distillation (does the student keep the low-K mass or only the benchmark modes?).
+- **generation_test (robustness evaluation):** re-weight the LIBERO-Plus 7 perturbation axes by the codelength of each perturbation's spec; predicts a rank inversion between the uniform-axis total and the simplicity-weighted total — a cheap, killable claim about how robustness should be aggregated.
+- **dedup defense:** no bank operator prices a TASK SPACE; AIXI/"universal agent" itself = killed (uncomputable, no probe) — only the MEASURE survives. K is uncomputable ⇒ report the proxy compressor as part of the claim.
+- **source_paper:** Legg, *Machine Super Intelligence* (Υ, def. 4.1.3).
+
+> **N10 `regeneration-depth-ization` — DEMOTED to `source-episodes.md`** (2026-07-04 re-audit: both engines agreed — proxy-sensitive cheap_probe, no live VLA generation_test; generates only on the archived dLLM/spec-decode directions). The distinct-from-N4 axis (TIME-to-regenerate vs description-length / Bennett logical depth) is preserved there as provenance; revive if a diffusion-LLM / speculative-decoding direction goes live.
+
+### Folds / holds from this pass (not promoted — recorded so we don't re-derive)
+- **`structure-noise-bipartition`** (Coffee Automaton) → FOLDED into **N4** as the trajectory-instrument facet (same static object = the two-part code; distinct differential = temporal non-monotonicity + interface-vs-volume scaling + flat-under-decoupling certificate). Not a separate card, per anti-accretion.
+- **`linearization-as-latent`** (Order Matters) → REFINEMENT NOTE on **#14 set-ization**: treat serialization ORDER as a latent nuisance to search/learn rather than fix — the ALTERNATIVE response to #14's invariance (change the model vs expose the order variable). Generates a distinct diffusion-LLM any-order-decoding candidate; recorded for that (archived) campaign, not promoted to a card.
+- **`endpoint-variation-localization`** (First Law of Complexity) → HELD / canon-discount: the move (sensitivity of an optimum via the endpoint costate) already exists in ML as influence functions / adjoint / implicit differentiation — genuinely absent from the 41 but low marginal generative value. Source-episode; promotion is the human's call.
 
 ---
 
@@ -539,33 +706,7 @@
 - **negative_examples / when_it_misleads:** a bottleneck layer with no rate–relevance tradeoff is just a narrow layer; canon — discount.
 - **source_episodes:** IB/VIB (report-2), CPC (report-2), IB (科学计算 #35).
 
-### 30. persistent-topology-ization
-- **one_sentence_core_move:** replace fixed-scale geometric features with birth–death topological features tracked across scales.
-- **old_object_pattern:** single-scale geometry or hand-crafted descriptors on a point cloud/representation.
-- **new_object_pattern:** a persistence diagram / barcode of topological features (components, loops, voids) across a filtration.
-- **mathematical_frame:** Algebraic / group (algebraic topology, persistence).
-- **core_simplification:** multi-scale structure is summarized into a stable topological signature instead of a scale-fragile descriptor.
-- **differential_prediction:** predicts *scale-dependent topological signatures stable under small perturbation* and distinguishes structures a Euclidean distance conflates — a fixed-scale descriptor predicts no persistence and is perturbation-fragile.
-- **cheap_probe:** persistence diagram vs feature-distance on a toy point cloud / embedding; test perturbation stability and discrimination.
-- **failure_signature:** reach for it when structure lives in multi-scale connectivity (loops/voids) that pointwise distance misses.
-- **transfer_targets:** dataset-eval / OOD detection, multimodal latent topology, systems anomaly detection.
-- **positive_examples:** Persistent Homology / TDA.
-- **negative_examples / when_it_misleads:** a UMAP picture is not persistence unless it carries a birth–death signature with a stability claim.
-- **source_episodes:** Persistent Homology (report-3), TDA (AI案例 table).
-
-### 31. order-parameter-ization
-- **one_sentence_core_move:** stop tracking micro details; track a coarse *order parameter* and its coarse-graining flow across scales, looking for a sharp transition in a control parameter.
-- **old_object_pattern:** the full microscopic Hamiltonian / all micro interactions, or a raw scaling curve.
-- **new_object_pattern:** an order parameter + a renormalization/coarse-graining flow, with a phase-transition/universality lens.
-- **mathematical_frame:** Statistical mechanics / mean-field (order parameter, renormalization group).
-- **core_simplification:** near a transition, micro detail is irrelevant — behavior is captured by one order parameter and a few critical exponents.
-- **differential_prediction:** predicts *universality (detail-independent behavior near the transition), the location of a sharp transition in a control parameter, and data-collapse under rescaling* — a micro model predicts detail-dependence and no sharp collapse.
-- **cheap_probe:** sweep a control parameter (data/model size, temperature, noise); look for a sharp order-parameter jump and a data-collapse across scales.
-- **failure_signature:** reach for it when a capability/behavior emerges sharply with scale/temperature (grokking, phase-like transitions), and micro detail seems to wash out.
-- **transfer_targets:** scaling-law / emergence analysis, grokking, dataset-eval (phase structure), multiscale pooling design.
-- **positive_examples:** Renormalization Group, mean-field / phase transitions, Wang–Landau (density of states over energy).
-- **negative_examples / when_it_misleads:** plotting a monotone scaling curve is not order-parameter-ization unless a sharp transition / universality is predicted and tested.
-- **source_episodes:** Renormalization Group (科学计算 #25; report-3), Wang–Landau (report-3).
+> **#30 `persistent-topology-ization` · #31 `order-parameter-ization` — DEMOTED to `source-episodes.md`** (2026-07-04 re-audit: both engines found the differential real but no killable live-direction candidate). Numbers left as gaps (no renumber — keeps external `#N` refs stable). Revive #30 if a latent-topology / OOD-detection direction goes live; #31 if a training-dynamics / grokking / phase-transition direction goes live.
 
 ---
 
@@ -674,14 +815,17 @@
 ---
 
 ## Coverage note
-41 KEEP operators (38 opus-pass + 3 net-new promoted from the Pro pass — see the reconciliation section at
-the top), ranked long-tail-generative first. The 21 marked ★ pass the generation test on at least one live
-direction (VLA fusion · diffusion-LLM joint-assembly · speculative-decoding sequential correction):
+45 KEEP cards = 43 object-shift operators + 2 meta/eval (N8 performance-law-ization · N9 simplicity-weighted-
+aggregation) = 38 opus-pass + 3 Pro [N1–N3] + 7 Ilya-27 [N4–N10], MINUS 3 DEMOTED in the 2026-07-04 re-audit
+(N10 · #30 · #31 → source-episodes.md; both Opus and GPT-5.5/codex agreed). Ranked long-tail-generative first.
+The 25 marked ★ (object-shift only) pass the generation test on at least one live direction (currently
+**VLA-robustness / 刷分**; historically VLA fusion [closed] · diffusion-LLM joint-assembly · speculative-decoding):
 memory-kernel-closure · observable-lifting · multiscale-correction-hierarchy · flux-conservation-ization ·
 factor-graph-ization · ratio-ization · path-straightening · transport-coupling-ization · graph-ization ·
 object-slot-ization · affordance-field-ization · correspondence-field-ization · operator-lifting ·
 polarization-ization · invariant-ization · belief-ization · residual-ization · chunk-ization · **recoverability-
 gated-fusion ★★ (the CAF-VLA operator, from our own VLA anomaly)** · **barrier-certificate-localization** ·
-**dependency-bounded-assembly**. See `source-episodes.md` for provenance and demoted cases,
+**dependency-bounded-assembly** · **two-part-code-ization ★★ (Ilya-27)** · **bits-back-refund-pricing** ·
+**program-store-factorization** · **selection-output-ization** (N8/N9 now META, not ★). See `source-episodes.md` for provenance and demoted cases,
 `anti-patterns.md` for the killed buzzword-transplants, and `plan/taste-bank/GPT5.5Pro.md` for the Pro pass's
 full paper-cited cards.
