@@ -1,7 +1,7 @@
 # Taste Refinery — extraction prompts + run config (staging)
 
 > Stage-1 collection engine: **LDR (ldr-mcp) with MiniMax-M3** (after the MCP restart) — hybrid: LDR for
-> breadth, Gemini DeepResearch for the long-tail deep-dig later. Design: `plan/taste-refinery-design-2026-07-02.md`.
+> breadth, Gemini DeepResearch for the long-tail deep-dig later. Design: `plan/archive/taste-refinery-design-2026-07-02.md`.
 > Search engines (no API key, long-tail-biased): **semantic_scholar · openalex · arxiv** (+ searxng general).
 > Strategy: `parallel` or `source-based`, iterations 3–4.
 

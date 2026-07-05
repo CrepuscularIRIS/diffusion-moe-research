@@ -70,3 +70,6 @@ nohup.out
 *.pdf
 /diffusiongemma_sft/heline/
 plan/Audit/backup-pre-atlas-2026-07-04/
+
+# Showcase site — standalone Vite app with its own git; not part of the research repo
+/UI/site/

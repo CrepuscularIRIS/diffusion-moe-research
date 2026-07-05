@@ -2,7 +2,7 @@
 
 > The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
 > This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
-> Last updated: 2026-07-04 — CURRENT SEED = **LIBERO-Plus / LIBERO-Para VLA-robustness 刷分** (§0); MODE = 刷分-first HIGH-THROUGHPUT OODA (§5.7); research-os **v1.1** (6 cmds + Failure Atlas). §0 = live state only; closed-campaign narrative lives in `VLA/RUNLOG.md` (this is not a runlog).
+> Last updated: 2026-07-04 (**★ CURRENT SEED = LIBERO-Plus / LIBERO-Para VLA-robustness 刷分** on the built StarVLA platform — human-seeded from Pro's benchmark ranking; MODE = 刷分-first HIGH-THROUGHPUT OODA §5.7; research-os **v1.1** 6 cmds + Failure Atlas. Prior improvement-first BUILD mode + VLA-fusion region CLOSE = history below, kept for the region-close lessons.)
 
 ---
 
@@ -15,32 +15,83 @@
     `examples/LIBERO-plus/eval_files/` — `run_policy_server.sh` in `starvla` env + `eval_libero.sh` in
     `libero_plus` env); ckpt `.../Qwen2.5-VL-FAST-LIBERO-4in1/checkpoints/steps_30000_pytorch_model.pt` (8.1GB);
     ~2 min startup (torch.compile), ~9.2GB VRAM, binds a websocket port.
-  - **All S-tier data READY ✅ (2026-07-04):** LIBERO clean 4 suites (`/data/datasets/LEROBOT_LIBERO_DATA/`) ·
-    LIBERO-Para (5623 bddl + metrics) · LIBERO-Plus (9.5GB assets bundled in the repo clone) · base VLM
-    Qwen2.5-VL-3B. All three runnable now; do NOT duplicate downloads (USER's session owns them).
-  - **Baseline = the free atlas row (our EXACT ckpt):** Qwen2.5-VL-FAST LIBERO-Plus zero-shot total **48.9** —
-    failure LOCALIZED to Camera **19.6** / Noise **27.4** / Robot **27.6** (near-random) vs Language 74.5 /
-    Light 75.2 / BG 71.0 / Layout 62.7. For LIBERO-Para, measure the baseline directly (paper: 22–52pp drop,
-    80–96% planning-level trajectory divergence). Reproduce on a SEALED subset before citing any Δ.
-  - **Where the DEFENSIBLE Δ lives (taste filter):** Para/Language is fastest but MOST occupied by plain
-    paraphrase-aug (highest necessity risk); the augmentation-resistant **Camera / Noise / Robot** axes are where
-    a mechanism is most likely NECESSARY. GUARD (SpatiaLQA lesson, `/forge` SECONDARY + necessity gate): a
-    *contribution* must BEAT a TUNED aug-LoRA baseline run FIRST — pure 刷分 (climb the number by any means)
-    skips the gate.
-  - **Eval-cost discipline (§5.7 throughput):** LIBERO-Plus = 10,030 tasks (MuJoCo rollouts, long). Inner OODA
-    loop = SEALED stratified per-axis SUBSET (weighted to the 3 weak axes) + shard both GPUs + weak-axis SR
-    proxy; the full 10,030 runs ONLY at the `/adversary` claim boundary.
-- **CLOSED — do NOT revive / cross-contaminate** (narrative + full lessons in `VLA/RUNLOG.md` +
-  `VLA/CAMPAIGN-CLOSEOUT-2026-07-03.md` + the research-os failure-atlas — NOT here): VLA-fusion / cross-stream
-  (killed 2×, crux image-bridge NO-GAP, base ACS 0.997) · improvement-first QA (PRE-HAL / MathVista =
-  tuned-incumbent *trap*; SpatiaLQA / VLDBench = frozen-base *wall*; SpatiaLQA Ledger-DAG 0.523 < plain-LoRA
-  0.582 = KILLED). **Root lesson:** on an established frozen-VLM benchmark the model is too weak (wall) or a tuned
-  incumbent already holds the headroom (trap) — the LIBERO OOD-robustness regime is the escape (clean base ~90%
-  but COLLAPSES under perturbation = a transfer gap a mechanism can own; that's why the seed anchors there). The
-  standing goal philosophy (AMBITION + VALUE BAR, do-not-ask-which-direction, progressive problemshift) lives in
-  `plan/goal-directive.md`.
-- **PAUSED (separate projects, do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
-  beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/archive/dspark-deep-analysis-2026-07-01.md`) AND
+  - **Runnable NOW (2026-07-04):** LIBERO clean (4 suites, `/data/datasets/LEROBOT_LIBERO_DATA/`) ✅ +
+    **LIBERO-Para** (5623 bddl + code + metrics, ready) ✅ + base VLM Qwen2.5-VL-3B ✅ + FAST-LIBERO ckpt ✅.
+    **DEFERRED:** LIBERO-Plus needs `assets.zip` (6GB) which FAILED to download (flaky HF large-file link) —
+    **LIBERO-Plus eval CANNOT run until it lands** (manual / other-machine fetch). ⇒ **START the 刷分 loop on
+    LIBERO-Para NOW; fold in the LIBERO-Plus Camera/Noise/Robot axes once assets.zip arrives.** Do NOT duplicate
+    the LIBERO-Para download (USER's other session owns it).
+  - **Baselines — which applies to which target:** the published Qwen2.5-VL-FAST LIBERO-Plus atlas row (total
+    **48.9**; Camera **19.6** / Noise **27.4** / Robot **27.6** near-random vs Language 74.5 / Light 75.2 / BG
+    71.0 / Layout 62.7) is for **LIBERO-Plus (DEFERRED)** — not the runnable target. For the **LIBERO-Para** loop
+    that starts NOW, MEASURE the baseline on Para directly (paper: 0.6B–7.5B VLAs drop **22–52pp** under
+    paraphrase; **80–96% of failures = planning-level trajectory divergence**, not low-level execution). Reproduce
+    on a SEALED subset before citing any Δ (numbers-from-artifacts).
+  - **⚠ Necessity caveat, sharpened by the deferral:** the ONLY runnable target (Para/Language) is the axis I
+    flagged as MOST occupied by plain paraphrase-aug — so the FIRST run in the Para loop is the **paraphrase-aug
+    LoRA baseline**; if it already closes the Para gap, the *contribution* likely waits for the
+    augmentation-resistant **Camera/Noise** axes (LIBERO-Plus, deferred). Para climbs the number fast; the
+    defensible Δ may not live there.
+  - **Necessity inversion (taste filter on Pro's ordering):** START on Para for a fast clean diagnostic loop, but
+    Para/Language is the axis MOST occupied by plain paraphrase-aug (highest necessity-gate risk); the DEFENSIBLE
+    Δ is likelier on **Camera/Noise/Robot** (augmentation-resistant). GUARD (SpatiaLQA lesson): a *contribution*
+    mechanism must BEAT a TUNED aug-LoRA baseline, run FIRST (`/forge` SECONDARY strategy + necessity gate). Pure
+    刷分 climbing the number by any means skips the gate.
+  - **Eval-cost discipline (§5.7 throughput):** LIBERO-Plus = 10,030 tasks (MuJoCo rollouts, "extremely long").
+    Inner OODA loop runs a SEALED stratified per-axis SUBSET (weighted to the 3 weak axes) + shards both GPUs +
+    weak-axis SR as the fast proxy; the full 10,030 runs ONLY at the `/adversary` claim boundary.
+  - **Do NOT revive (region-CLOSED):** Regime-1 fusion (MMQA/MOCHEG/SPIQA/GW-Coupler — base saturates, crux
+    NO-GAP) + Regime-2 improvement (PRE-HAL/MathVista tuned-incumbent-trap · SpatiaLQA/VLDBench base-wall;
+    SpatiaLQA Ledger-DAG 0.523 < plain-LoRA 0.582 = KILLED). The LIBERO OOD-robustness regime is the escape
+    those closes' epitaph pointed to: the clean base SUCCEEDS (~90%) but COLLAPSES under perturbation = a
+    TRANSFER failure, the one regime where a mechanism is NECESSARY (not the IID benchmarks where LoRA already
+    transfers).
+- **★★ SCOPE UPDATE (2026-07-03) [SUPERSEDED by the CURRENT SEED above — kept for the region-close lessons] —
+  improvement-first campaign: 4 cheap kills / 0 positives / 3 modes; binding
+  constraint = the frozen-add-on-vs-TUNED-incumbent SQUEEZE → LoRA-base-finetune + a bigger frozen VLM are now
+  PRE-AUTHORIZED (the loop DECIDES + reports; it does NOT STOP_AND_REPORT to ask).** Cards died: PRE-HAL
+  arbitration + MathVista token-support (a TUNED VCD / attention-pruning beat our FROZEN add-on = the *trap*);
+  SpatiaLQA planning + VLDBench disinfo (frozen-7B *base-wall*). Root: within *frozen-small-VLM + small-module +
+  established-benchmark* the sweet spot is squeezed — the model is too weak (wall) or a tuned incumbent already
+  holds the headroom (trap). **RESOLUTION (goal REALITY):** a ≤4h LoRA-finetune of the base + a bigger frozen
+  VLM (≤~32B-4bit) are IN SCOPE and autonomous — this dissolves the trap (train ⇒ equal footing vs tuned
+  incumbents; teach past walls) and finally runs training. **Lesson:** on an established benchmark, either BEAT
+  the tuned incumbent by TRAINING on equal footing, or pick a target with NO tuned incumbent near ceiling. This
+  is the **FINAL in-envelope expansion** within 2-GPU — if a real TRAINED build also walls, THEN a
+  non-improvement TYPE (tooling/diagnosis) becomes anti-retreat-legal, or STOP. Campaign = `openbuild/`; design =
+  `plan/archive/open-build-improvement-first-design-2026-07-03.md`.
+- **★ ACTIVE — AMBITION-ANCHORED goal (produce ONE 一区-grade contribution — Information Fusion / ESWA;
+  DIRECTION self-selected by research-os).** The goal (`plan/goal-directive.md`) no longer prescribes a hard
+  core: the human sets the **AMBITION + a VALUE BAR** (a genuine contribution, and after a refutation a
+  **PROGRESSIVE problemshift — never a retreat to the safest publishable thing**), and `research-os` v1.0
+  `/prospect`→`/forge`→… selects the topic / idea / direction / TYPE **autonomously**. The human redirects
+  from REPORTS; it does not hand-write the direction (do-not-ask-which-direction stays in force).
+- **State (2026-07-03) [SUPERSEDED — this "NEXT MOVE = Pro-survey-mining" RESOLVED to the CURRENT SEED
+  (LIBERO-Plus/Para) at the top of §0; kept for the region-close lessons] — VLA-fusion region CLOSED; mode pivoted to improvement-first BUILD-on-evidence**
+  (design: `plan/archive/open-build-improvement-first-design-2026-07-03.md`). On the built platform (**StarVLA** frozen
+  Qwen2.5-VL-3B + FAST + LoRA + **LIBERO-Plus**, 2×4090D) the cross-stream/fusion family was killed 2× AND the
+  crux image-bridge probe returned **NO-GAP** (base cross-modal ACS 0.997, reads images fine; ~7 probes / 0
+  positives) — the frozen 3B already saturates our synthetic composition/fusion tasks (we probed where the
+  model is already strong). ★ REGION-CLOSE fired on the whole territory. CN-SRA (cross-stream restoration adapter) was BUILT end-to-end + cleanly **KILLED**
+  (sealed verdict R_D=0.17, margin-vs-intra≈0, and the shuffled-sibling control recovered MORE, 0.229>0.171 →
+  the cross-stream signal is CONFOUNDED, not real) — the 2nd refutation on this line (shared root cause = **no
+  cross-stream redundancy** on this platform; every stream necessary). The `/autopsy` programme pulse (ex-`/compass`) = **LATERAL**. `/prospect`
+  (node 2) returned Card-1 (repair-compiler) / Card-2 (active-acquisition) — but both stayed INSIDE the
+  cross-stream region and hit the same wall (Card-2 blocked: LIBERO-Plus corruptions are deterministic, can't
+  be re-observed). **★ REGION-CLOSE (goal discipline): the whole cross-stream / fusion-mechanism family is
+  CLOSED → the next `/prospect` must make a GENUINE lateral (new problem / testbed / platform), NOT another
+  VLA-cross-stream neighbor.** NEXT MOVE = the NEW mode's ENTRY: **Pro-survey-mining** (`/prospect` Mine 2) across **多模态融合 · 信息压缩 ·
+  矩阵表示 · OOD/semantic-support** for LONG-OPEN / recurring-hard problems, each with a **matching HF dataset**
+  (datasets/models EXPANDABLE from HuggingFace — π0.7/π0.5, …; prefer HF) + a cheap real-data headroom test;
+  base fails with Δ room ⇒ EVIDENCED target ⇒ COMMIT the ~4h train (2-GPU pipeline/split, §5.5). **VLA is now
+  ONE domain option, NOT the vehicle** — carry as reusable priors the built platform + load-once harness + the
+  VALIDATED N/G/U causal screen + the taste-bank operators (`opus-pass/operators.md`) + the anomaly ledger
+  (`VLA/prospect-lateral-handoff-2026-07-03.md`). Design =
+  `VLA/attribution-pivot-design-2026-07-02.md`; refs = `VLA/research-directions-2026-07-01.md` (SUPERSEDED) ·
+  `VLA/platform-setup.md`, plus `/forge`'s `frames.md` + `taste-operators.md` (the `recoverability-gated-fusion`
+  operator). The anti-retreat guard lives in the goal's VALUE BAR.
+- **CLOSED / PAUSED (do NOT cross-contaminate):** DSpark × speculative decoding (warm-start RSMH; the
+  beyond-Markov head space is largely exhausted — `DSpark-analysis.md`, `plan/dspark-deep-analysis-*`) AND
   the entire dLLM/DiffusionGemma/LLaDA campaign (archived `plan/archive/`, Arbor tree 5.1-5.13 done/pruned).
   Both are SEPARATE, non-active projects.
 

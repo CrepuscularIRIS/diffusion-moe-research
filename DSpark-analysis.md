@@ -31,7 +31,7 @@ low-confidence tails early. Hardware-aware: adapt to live GPU load.
 ### 2. Sequential correction beyond 1st-order Markov
 The Markov head only conditions on the immediately preceding token — it is **under-modeled**. Higher-order
 conditioning (2nd/3rd-order, attention-based, gated RNN) could capture longer-range intra-draft dependencies
-and push accepted length further. **This is the primary open direction** (see `plan/dspark-deep-analysis-2026-07-01.md`).
+and push accepted length further. **This is the primary open direction** (see `plan/archive/dspark-deep-analysis-2026-07-01.md`).
 
 ### 3. Suffix decay → structural intra-draft dependency
 The deeper question: what dependency structure WITHIN a draft span matters most for acceptance? The answer
@@ -45,4 +45,4 @@ informs whether a Markov head, attention head, or structured prediction model is
 
 ## Open research direction (current goal)
 **Beyond-first-order Markov sequential head for speculative decoding.** See `plan/goal-directive.md` and
-`plan/dspark-deep-analysis-2026-07-01.md` for the occupancy scan and candidate designs.
+`plan/archive/dspark-deep-analysis-2026-07-01.md` for the occupancy scan and candidate designs.

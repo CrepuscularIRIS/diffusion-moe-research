@@ -1,0 +1,60 @@
+{
+  "schema_version": "osa.v1",
+  "front_mode": "MOC_FULL",
+  "ran_by_proposer": false,
+  "audit_date": "2026-07-01",
+  "design_doc": "plan/gpt55pro-hope-dspark-2026-07-01.md",
+  "T1": {
+    "verdict": "PASS",
+    "reason": "O0 (DSpark 1st-order Markov head: l_k = l_k^D + U*a_1(x_{k-1})) and O1 (HOPE-DSpark: l_k = l_k^D + U*[a_1(x_{k-1}) + g_k*(W_p*p_k + W_c*c_k)] + b_k) are both specified with concrete formulas, parameter dimensions (pair MLP hidden=128, prefix attention heads=1-2 dim=64, window=8), and integration points into the DFlash runtime loop."
+  },
+  "T2": {
+    "verdict": "PASS",
+    "reason": "O0 conditions only on x_{k-1} (1st-order Markov); O1 adds 2nd-order conditioning via pair path on (x_{k-2}, x_{k-1}), variable-length causal attention over the sampled draft prefix, and selective entropy gating from DFlash uncertainty -- the conditioning ORDER changes from 1st to higher, which is a structural shift in the model class, not merely added capacity within the same conditioning structure. Caveat: O1 is a residual refinement of O0 (warm-starts from trained Markov basis), not a replacement."
+  },
+  "T3": {
+    "verdict": "PASS",
+    "reason": "Four falsifiers are listed (section 5); falsifier 1 ('DPC fails: no higher-order TV signal in suffix positions') is explicitly pre-training. Section 4 specifies three DPC probes (A: swap x_{k-2} and measure TV change; B: vary earlier prefix; C: offline acceptance replay) all runnable on existing DSpark Markov drafts without any HOPE training, with concrete pass thresholds (>=2-3% TV reduction on suffix k>4, >=0.05-0.10 E[tau] gain, >=0.02 AUC improvement)."
+  },
+  "T4": {
+    "verdict": "PASS",
+    "reason": "TreeFlash (arXiv:2606.03819) and Hydra (arXiv:2402.05109) are named with arXiv IDs. TreeFlash distinction (tree-branching topology vs HOPE's single linear-chain sequential correction) is genuine at the architectural level. Hydra distinction (multiple heads predicting different future positions vs HOPE's single head correcting within-block suffix positions) is genuine. Caveat: both TreeFlash and HOPE condition on previous tokens via learned MLP -- the conditioning MECHANISM overlaps even though the topology differs; the design does not directly argue why linear-chain is structurally superior to tree for this signal."
+  },
+  "T5": {
+    "verdict": "PASS",
+    "reason": "Design explicitly clears all FORBIDDEN items (line 141): no mention of dLLM, LLaDA, DiffusionGemma, He-line, wall-clock eval framing, or compute-allocator. Target models are standard AR (Qwen3-4B / LLaMA-3-8B), framework is DeepSpec (MIT, standard speculative decoding), metric is accepted length + tokens/sec."
+  },
+  "T6": {
+    "verdict": "PASS",
+    "reason": "Section 4 specifies three DPC probes (A, B, C) all runnable before any HOPE training: Probe A measures TV(target(x_k|x_{<k})) sensitivity to swapping x_{k-2} in existing DSpark Markov drafts; Probe B measures target sensitivity to varying earlier prefix tokens; Probe C does offline acceptance replay with corrected distributions. All require only frozen DSpark Markov inference + target model forward passes, no O1 training."
+  },
+  "overall_verdict": "ELIGIBLE_FOR_BACK_HALF",
+  "dpc_check": "NOT_RUN",
+  "additional_checks": {
+    "treeflash_distinction_genuine": {
+      "verdict": "GENUINE_WITH_CAVEAT",
+      "reason": "The topological distinction (tree-branching vs single sequential linear-chain) is real -- TreeFlash explores multiple candidate continuations per position while HOPE applies a single sequential correction along the draft chain. However, both condition on (drafter_hidden, prev_token) via learned MLP, so the pair-path component of HOPE has mechanism overlap with TreeFlash's MLP. HOPE's prefix-attention component (causal attention over the full sampled draft buffer) has no TreeFlash counterpart and is the genuinely novel architectural element relative to TreeFlash."
+    },
+    "pair_path_prefix_attention_overlap": {
+      "verdict": "NO_EXACT_OVERLAP_BUT_CLOSE_TO_DSPARK_RNN",
+      "reason": "Pair path (factorized bigram conditioning) is a standard n-gram technique not occupied as a spec-dec correction head specifically. Lookahead decoding (occupied) uses n-grams as draft candidates, not correction features -- different role. Prefix attention over sampled draft buffer is structurally similar to what DSpark's own RNN variant already does (track full prefix), making the claimed novelty rest primarily on the training change (sampled-prefix exposure-bias fix), not the architecture. No named occupied method exactly matches the pair+attention combination."
+    },
+    "exposure_bias_hypothesis_testable": {
+      "verdict": "TESTABLE_BUT_NOT_PREREGISTERED_AS_CONTROL",
+      "reason": "The hypothesis that DSpark's RNN was 'marginal' due to exposure bias (trained teacher-forced, tested on sampled prefixes) is directly testable: retrain the simpler RNN with 50% sampled prefixes (the Pathwise-TV experiment in section 8). If this matches HOPE, the architecture is unnecessary and only the training recipe matters. HOWEVER: section 8 treats Pathwise-TV as a post-failure FALLBACK ('if HOPE fails -> jump target'), not a mandatory concurrent control. This means any HOPE success would be unattributable -- architecture gain vs training-fix gain cannot be separated. This is a significant confound."
+    }
+  },
+  "honesty_gaps": [
+    "EXPOSURE-BIAS CONFOUND (critical): HOPE bundles two independent changes -- (1) higher-order architecture (pair path + prefix attention) and (2) sampled-prefix training (exposure-bias fix). The design's own hypothesis (section 3, 'KEY INSIGHT') is that training mismatch caused DSpark's RNN to appear 'marginal'. If true, retraining the SIMPLER 1st-order Markov head with sampled prefixes (Pathwise-TV, section 8) might suffice -- no HOPE architecture needed. But Pathwise-TV is deferred to 'if HOPE fails' rather than being a mandatory concurrent matched control. Any HOPE improvement would be unattributable: architecture vs training fix.",
+    "RNN ABLATION NUMBERS UNQUANTIFIED: The design references DSpark's 'marginal improvement' for the RNN variant but never specifies the actual accepted-length numbers. Without knowing the Markov-vs-RNN gap, the DPC pass thresholds (>=2-3% TV reduction, >=0.05-0.10 E[tau]) cannot be calibrated against the known headroom.",
+    "PAIRMARKOV-HASH NOT A KILL GATE: Section 6 defines a simpler rival (hashed bigram correction + scalar entropy gate, no attention, no learned MLP) but does not require beating it as a pre-training or post-training kill condition. If PairMarkov-Hash captures most of the gain, HOPE's prefix-attention path is overdesigned. This should be a preregistered ablation kill condition, not just a named rival.",
+    "TREEFLASH MECHANISM OVERLAP UNADDRESSED: TreeFlash's MLP conditions on (drafter_hidden, prev_token) -- the same inputs as HOPE's pair path minus x_{k-2}. The design claims topological distinction (tree vs sequence) but does not argue why HOPE's linear-chain conditioning captures signal that TreeFlash's MLP misses, or vice versa. This leaves the novelty claim vulnerable to a reviewer arguing 'TreeFlash already does this with a simpler MLP'."
+  ],
+  "claim_language_restrictions": [
+    "Do NOT claim 'HOPE improves upon DSpark Markov by adding higher-order conditioning' until the exposure-bias confound is isolated -- run Pathwise-TV (section 8) as a concurrent matched control, not a post-failure fallback. Until then, any gain is unattributable between architecture and training recipe.",
+    "Do NOT attribute improvement to 'pair path' or 'prefix attention' components without PairMarkov-Hash ablation showing which component contributes. Report component-wise ablation, not just aggregate HOPE vs Markov.",
+    "Do NOT claim architectural novelty vs TreeFlash without explicitly comparing HOPE's pair-MLP conditioning mechanism against TreeFlash's prev-token MLP conditioning -- the topological difference (tree vs sequence) may mask a shared mechanism. Describe as 'complementary approach' until a head-to-head comparison exists.",
+    "Describe this as a 'candidate higher-order DSpark head, DPC pending' until probes A-C are actually run and pass all stated thresholds.",
+    "The ELIGIBLE verdict licenses DPC probing only, NOT training. The exposure-bias confound must be addressed in the experiment preregistration (add Pathwise-TV as a concurrent control) before any GPU-hour is spent on HOPE training."
+  ]
+}
