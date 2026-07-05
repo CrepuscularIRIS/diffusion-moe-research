@@ -55,6 +55,16 @@
 > (subagents inherit the session model = Opus 4.8). The **Codex review hook** auto-audits every executor
 > diff (DOWN-only). The human grants contribution promotion — most valuable EARLY (shaping problems at
 > /prospect · /forge), not only at sign-off. Manual `/codex:rescue` is **RETIRED**.
+>
+> **★ GENERATIVE-ENGINE UPGRADE (2026-07-05) — the differentiated MoA advisor panel.** On HIGH-VALUE generative
+> forks (mechanism design · direction selection · hard problem-finding), the generative act FANS OUT to a
+> 5-advisor panel — Gemini 3.1 Pro (`agy`) · GPT-5.5 (`codex`) · DeepSeek V4 Pro · MiMo V2.5 Pro (OpenCode gw) ·
+> Opus 4.6 (`agy`) — each given a DIFFERENTIATED prior (rotated operator + frame + school + structured dropout =
+> the 前面路由 router); **Opus 4.8 reconciles** (consensus / conflict / unique-insight / blind-spot = 后面验收).
+> Scripts `moa/moa_ask.sh` + `moa/moa_panel.sh --per-lane`; protocol `moa/router-protocol.md`; design
+> `plan/moa-advisor-panel-design-2026-07-04.md`. **TIERED** — routine 刷分 = solo Opus; medium = Opus + 1; the
+> full panel is for the FORKS, not every iteration (it costs ~1 min + N models). **Sonnet 4.6 = the DEVELOPMENT
+> executor** (native `Agent` model:"sonnet") + Opus 4.8, GPT-5.5 Codex hook reviews — NOT a research advisor.
 
 | Engine | How to invoke | Role |
 |---|---|---|
@@ -63,6 +73,12 @@
 | **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain — DESIGNS each new candidate architecture by DEFAULT** (the `/forge` step-7 flip: Pro designs, Opus only tunes; skipping Pro needs a written reason — "optional" Pro = never-used Pro = the better design path thrown away). Also: prior-art / occupancy reads, contested `/adversary` passes, AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
 | **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. An uncurated, un-re-rollable independent substrate. A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
 | **Human** | HARD-BLOCK escalation + EARLY problem-shaping | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go; writes the goals. RARE at the back of the loop — most valuable at the front. |
+
+> **Browser division of labor (2026-07-05):** **playwright-extension** (real Chrome, bypasses Cloudflare, holds
+> the login session) → **ChatGPT / Gemini web** (Pro 扩展, DeepResearch) = the DEEP-design / DeepResearch lane.
+> **agent-browser** (its own Chrome, `--profile`, concurrent, stable-ref snapshots) → **arXiv fetch · blogs ·
+> GitHub · docs · concurrent public reads** = the atlas-enrichment legwork. Fast model Q&A stays on the
+> **codex / agy CLIs** (not a browser). Playwright is NOT retired — it keeps the real-browser / anti-bot niche.
 
 ## 2. The Arbor MCP — what we keep, what we dropped
 Arbor offers two layers; we use only the first.
