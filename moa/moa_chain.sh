@@ -13,7 +13,8 @@
 # INFORMED chain: run round-by-round — Opus RECONCILES each round and writes the NEXT round's prompts from the
 # prior answers (q2 uses q1's root; q4 attacks q2; q5 probes q4). This wrapper fires the rounds PRESENT and labels
 # them; it does NOT auto-generate follow-ups (decompose + reconcile is Opus's job). Opus does NOT solo-answer —
-# the panel ANSWERS (diversity); route the HARDER rounds (q1 root, q2 design) to DR / GPT-5.5 Pro instead.
+# the panel ANSWERS (diversity); route the HARDER rounds (q1 root, q2 design) to GPT-5.5 Pro instead.
+# (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, ClaudeCode cannot read its output.)
 #
 # Usage:
 #   moa/moa_chain.sh <chain-dir>     # fires, in natural-sort order, every q*/ (per-lane) or q*.txt (shared)

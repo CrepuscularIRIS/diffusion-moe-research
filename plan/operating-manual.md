@@ -79,7 +79,7 @@
 | **Human** | HARD-BLOCK escalation + EARLY problem-shaping | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go; writes the goals. RARE at the back of the loop — most valuable at the front. |
 
 > **Browser division of labor (2026-07-05):** **playwright-extension** (real Chrome, bypasses Cloudflare, holds
-> the login session) → **ChatGPT / Gemini web** (Pro 扩展, DeepResearch) = the DEEP-design / DeepResearch lane.
+> the login session) → **ChatGPT web** (`Pro 扩展`, GPT-5.5 Pro) = the DEEP-design lane (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, ClaudeCode can't read its output).
 > **agent-browser** (its own **HEADLESS** Chrome, concurrent, no user interaction; login/profile = pass
 > `session` + `extraArgs: ["--profile","Default"]` at the tool call, NOT a second MCP) → **arXiv fetch · blogs ·
 > GitHub · docs · concurrent public reads** = the atlas-enrichment legwork. Fast model Q&A stays on the
@@ -384,7 +384,7 @@ engine division); its two sharp bits — the **cold-start review packet** and th
 - **The atlas file.** `<campaign>/atlas/<territory>.md`; entry = claim · evidence-pointer · grade(own-run|lit)
   · what-it-re-prices; a region-close writes an EPITAPH (dead-because-X, reopen-if-Y). `/autopsy` writes;
   `/prospect` (Mine 0) + `/forge` read FIRST. Re-prices, NEVER vetoes (a contradicting run = an [ANOMALY]).
-- **3-tier enrichment (anchored-territory ONLY).** FIND (Arbor alphaXiv + `Pro 扩展` + DeepResearch) → DOWNLOAD
+- **3-tier enrichment (anchored-territory ONLY).** FIND (Arbor alphaXiv + `Pro 扩展`; DeepResearch DROPPED — Cloudflare-blocked) → DOWNLOAD
   the arXiv PDF/source LOCAL → 精读 by an **Opus SUBAGENT per paper** (Read handles PDFs) returning ATLAS ROWS
   (strongest tuned baseline · method · hidden trap · what-they-didn't-measure · occupancy · probe). Output =
   atlas rows, NEVER "I read N papers" (anti-ceremony guard). Playwright→Pro alone is insufficient (browser

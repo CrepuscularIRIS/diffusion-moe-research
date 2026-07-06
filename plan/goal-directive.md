@@ -24,7 +24,7 @@ you obey prose — so the PROCESS lives in the ACTIVE SURFACES below, enforced w
 7. **PHASE GATE — reproduction is CALIBRATION, never contribution.** Reproducing a known AerialVLA rung = BASELINE
    CALIBRATION only. Known-rung work ENDS at baseline parity OR after 2 known rungs tested; THEREAFTER every
    training-eating mechanism is LABELED at `/prereg`: `KNOWN_RUNG` (a parity baseline to BEAT) vs `CONTRIBUTION`
-   (novel mechanism / beats the occupied path — Pro/DR-checked). Do NOT spend consecutive cycles only reproducing
+   (novel mechanism / beats the occupied path — Pro-checked; DeepResearch dropped). Do NOT spend consecutive cycles only reproducing
    occupied rungs; `/autopsy` pulse flags reproduction-inertia.
 8. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS; `/prereg` seals claim-runs; proposer self-grants DOWN only;
    CLAIM_STANDS = independent substrate (the Codex hook); contribution = human.

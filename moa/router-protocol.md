@@ -48,8 +48,9 @@ query count = rounds × advisors, far more diverse. Opus DECOMPOSES + RECONCILES
 5. **CHEAP PROBE** — the fastest pre-GPU test that decides GO/KILL.
 - **INFORMED chain:** run round-by-round — reconcile each, write the next round's prompts from the prior answers
   (q2 uses q1's root · q4 attacks q2 · q5 probes q4). Fire with `moa/moa_chain.sh <chain-dir>` (q1/ … q5/).
-- **Route the HARDER rounds (q1 root · q2 design) to DR / GPT-5.5 Pro** — deep design + literature-grounded root is
-  the external brain's job, not the fast panel's. Rely on the ENVIRONMENT (panel + DR + Pro), not Opus-solo.
+- **Route the HARDER rounds (q1 root · q2 design) to GPT-5.5 Pro** — deep design + literature-grounded root is
+  the external brain's job, not the fast panel's. Rely on the ENVIRONMENT (panel + Pro), not Opus-solo.
+  (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, unreadable by ClaudeCode; Pro is the only browser lane.)
 
 ## 后面验收 (reconcile — the judge)
 Opus 4.8 reconciles via the dispute-map (consensus / conflict / **unique-insight** / **blind-spot**), discounting
