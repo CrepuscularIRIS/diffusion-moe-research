@@ -4,7 +4,7 @@
 AMBITION: produce ONE genuine 一区 contribution (Information Fusion / ESWA). Direction self-selected. Improvement
 (刷分) is PRIMARY; systems / compression / novelty OK — name the TYPE first. Contribution is human-granted.
 
-**8 HARD CONSTRAINTS** (this doc carries ONLY these + the pointers; `/goal` guarantees you keep running, NOT that
+**9 HARD CONSTRAINTS** (this doc carries ONLY these + the pointers; `/goal` guarantees you keep running, NOT that
 you obey prose — so the PROCESS lives in the ACTIVE SURFACES below, enforced when each skill/script runs):
 
 1. **AUTONOMY.** Opus DECIDES every fork + REPORTS; subagents EXECUTE; Pro ASSISTS design (never decides). NEVER
@@ -21,9 +21,14 @@ you obey prose — so the PROCESS lives in the ACTIVE SURFACES below, enforced w
    loaded when it runs — NOT in this doc. RUN the pipeline; the skills carry the how.
 6. **VALUE BAR / ANTI-RETREAT.** A BIG, honest, falsifiable Δ on a HARD, field-open problem. Occupancy RE-PRICES
    ("done" ⇒ BEAT it), never vetoes. NEVER incremental / certificate / retreat.
-7. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS; `/prereg` seals claim-runs; proposer self-grants DOWN only;
+7. **PHASE GATE — reproduction is CALIBRATION, never contribution.** Reproducing a known AerialVLA rung = BASELINE
+   CALIBRATION only. Known-rung work ENDS at baseline parity OR after 2 known rungs tested; THEREAFTER every
+   training-eating mechanism is LABELED at `/prereg`: `KNOWN_RUNG` (a parity baseline to BEAT) vs `CONTRIBUTION`
+   (novel mechanism / beats the occupied path — Pro/DR-checked). Do NOT spend consecutive cycles only reproducing
+   occupied rungs; `/autopsy` pulse flags reproduction-inertia.
+8. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS; `/prereg` seals claim-runs; proposer self-grants DOWN only;
    CLAIM_STANDS = independent substrate (the Codex hook); contribution = human.
-8. **HARD STOP.** STOP_AND_REPORT ONLY for a user-only call. refuted ⇒ a cheap_probe auto-ROUTES
+9. **HARD STOP.** STOP_AND_REPORT ONLY for a user-only call. refuted ⇒ a cheap_probe auto-ROUTES
    problemshift-vs-lateral (never ask). REGION-CLOSE ONLY when ≥2 mechanisms hit the SAME root ⇒ genuine lateral
    (atlas epitaph), not a neighbor.
 
