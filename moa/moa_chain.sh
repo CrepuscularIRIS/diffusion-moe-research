@@ -4,14 +4,16 @@
 # and drills them in sequence instead of asking once. Query count = rounds × advisors → far more diverse.
 #
 # Default 5-question drill (Opus writes the prompts; each round = a per-lane dir or a shared .txt):
-#   q1 ROOT       — 溯因: what MOVE generated the SOTA / what is the TRUE load-bearing bottleneck?
-#   q2 MECHANISM  — the sharpest attack on that root under the ≤4h envelope
+#   q1 ROOT       — LATENT-ROOT / 逆向溯因: do the bottlenecks share ONE hidden cause?
+#                   Return ROOT=<common cause> or SPLIT=<causes + ROOT-DISCRIMINATOR>; no fixes yet.
+#   q1b DISCRIM   — optional: if q1 roots conflict, ask the cheapest root-discriminator before mechanism design
+#   q2 MECHANISM  — sharpest attack on that root; tag ARCHITECT-TRACK vs SURGEON-TRACK and name MVE
 #   q3 RIVAL      — what a DIFFERENT school/frame would do instead (force divergence)
 #   q4 SELF-ATTACK— the biggest failure reason (leakage·baseline·metric·seed·budget·scale)
-#   q5 CHEAP PROBE— the fastest pre-GPU test that decides GO/KILL
+#   q5 CHEAP PROBE— fastest pre-GPU GO/KILL; prefer ORACLE-CEILING, TRIVIAL-FLOOR, or ROOT-DISCRIMINATOR
 #
 # INFORMED chain: run round-by-round — Opus RECONCILES each round and writes the NEXT round's prompts from the
-# prior answers (q2 uses q1's root; q4 attacks q2; q5 probes q4). This wrapper fires the rounds PRESENT and labels
+# prior answers (q2 uses q1's root; q1b resolves root conflicts; q4 attacks q2; q5 probes q4). This wrapper fires the rounds PRESENT and labels
 # them; it does NOT auto-generate follow-ups (decompose + reconcile is Opus's job). Opus does NOT solo-answer —
 # the panel ANSWERS (diversity); route the HARDER rounds (q1 root, q2 design) to GPT-5.5 Pro instead.
 # (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, ClaudeCode cannot read its output.)

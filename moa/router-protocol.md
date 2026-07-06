@@ -13,13 +13,22 @@
 4. **Structured dropout** — for ~half the advisors, **WITHHOLD the incumbent framing**: state the phenomenon with
    the field's vocabulary STRIPPED (the `/forge` step-7 blinding protocol). The rest get the full framing.
    Surgical, never random — dropout forces off-frame ideas; Opus discounts any that come back degraded.
-5. **Per-advisor prompt** = `{problem core, full or blinded}` + `{your operator: <name + one_sentence_core_move>}`
+5. **Per-advisor prompt** = `{problem core, full or blinded}` +
+   `{your operator: <name + core_move + core_simplification + differential_prediction + cheap_probe>}`
    + `{frame it as: <frame>}` + `{your school lens: <soul-question>}` + the **output contract**:
-   > "Output EXACTLY: MECHANISM (1–2 sentences) | DIFFERENTIAL PREDICTION (an observable the incumbent does NOT
-   > predict) | CHEAP PROBE (test before training) | BIGGEST SELF-ATTACK (of {data-leakage · under-tuned baseline
-   > · metric-gaming · seed-luck · tuning-budget artifact · doesn't-scale}, which MOST threatens this mechanism's
-   > claimed gain — and how the cheap probe defends). ≤140 words. Answer from your OWN knowledge — do NOT use web
-   > search or any tools. Be concrete and independent; do not hedge or survey."
+   > "Before proposing a fix, run **LATENT-ROOT AUDIT**: treat the observed bottlenecks as EFFECTS, not tasks.
+   > Ask whether they share ONE hidden cause that is more direct to attack than any local patch. Use the assigned
+   > operator as a lens for reverse-abduction, not as a recipe to apply mechanically. Output EXACTLY:
+   > IDEATION-TAG (`ARCHITECT-TRACK` if breaking a base assumption; `SURGEON-TRACK` if minimal intervention on
+   > a strong base; include `PRIMAL-AXIOM` / `META-FUNCTIONALITY` if useful) | LATENT-ROOT (one hidden common
+   > cause, or `SPLIT` + `ROOT-DISCRIMINATOR`) | MECHANISM (1–2 sentences) |
+   > DIFFERENTIAL PREDICTION / TERMINOLOGY-TEST (prediction/computation/measurement that changes; none =
+   > vocabulary) | MVE (<=50-line idealized probe, or n/a with reason) | CHEAP PROBE (prefer `ORACLE-CEILING`,
+   > `TRIVIAL-FLOOR`, or `ROOT-DISCRIMINATOR` before training) |
+   > BIGGEST SELF-ATTACK (of {data-leakage · under-tuned baseline · metric-gaming · seed-luck · tuning-budget
+   > artifact · doesn't-scale}, which MOST threatens this mechanism's claimed gain — and how the cheap probe
+   > defends). ≤160 words. Answer from your OWN knowledge — do NOT use web search or any tools. Be concrete and
+   > independent; do not hedge or survey."
    > *(BIGGEST SELF-ATTACK = spark.md Battery 2, applied in advance — pressure-test the number BEFORE it eats a
    > training run, not after. See `plan/Audit/pipeline-audit-2026-07-05.md`.)*
 6. Write to `<dir>/<lane>.txt`, then `moa/moa_panel.sh --per-lane <dir>`.
@@ -41,13 +50,17 @@
 ## 连续询问 (DEPTH axis — the 5-question CHAIN; complements the breadth panel above)
 **Do NOT ask MoA once. After 逆向溯因, Opus DECOMPOSES the problem into ~5 CONSECUTIVE questions and drills them —
 query count = rounds × advisors, far more diverse. Opus DECOMPOSES + RECONCILES; it does NOT solo-answer.** Default drill:
-1. **ROOT (溯因)** — what MOVE generated the SOTA / what is the TRUE load-bearing bottleneck?
+1. **ROOT / LATENT-ROOT (逆向溯因)** — treat the failure cluster as observations, not tasks: what smallest
+   hidden cause could generate the bottlenecks? Return `ROOT=<common cause>` OR `SPLIT=<independent causes +
+   ROOT-DISCRIMINATOR>`; do **not** list fixes.
 2. **MECHANISM** — the sharpest attack on that root under the ≤4h envelope.
 3. **RIVAL / OFF-FRAME** — what a DIFFERENT school/frame would do instead (force divergence).
 4. **SELF-ATTACK** — the biggest failure reason (leakage·baseline·metric·seed·budget·scale; = Battery 2).
-5. **CHEAP PROBE** — the fastest pre-GPU test that decides GO/KILL.
+5. **CHEAP PROBE / BRACKET** — the fastest pre-GPU test that decides GO/KILL; prefer `ORACLE-CEILING`
+   (perfect component upper-bound), `TRIVIAL-FLOOR` (embarrassing baseline), or `ROOT-DISCRIMINATOR`.
 - **INFORMED chain:** run round-by-round — reconcile each, write the next round's prompts from the prior answers
-  (q2 uses q1's root · q4 attacks q2 · q5 probes q4). Fire with `moa/moa_chain.sh <chain-dir>` (q1/ … q5/).
+  (q2 uses q1's root · q4 attacks q2 · q5 probes q4). If roots conflict, insert `q1b ROOT-DISCRIMINATOR`
+  before q2. Fire with `moa/moa_chain.sh <chain-dir>` (q1/ … q5/).
 - **Route the HARDER rounds (q1 root · q2 design) to GPT-5.5 Pro** — deep design + literature-grounded root is
   the external brain's job, not the fast panel's. Rely on the ENVIRONMENT (panel + Pro), not Opus-solo.
   (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, unreadable by ClaudeCode; Pro is the only browser lane.)
@@ -63,6 +76,9 @@ Claude-family correlation (opus46). **SELECT by the uncertainty-first battery, N
 candidate whose CHEAP PROBE kills the BIGGEST unknown fastest (info-gain); if a candidate's `BIGGEST SELF-ATTACK`
 is unaddressed → it stays a HYPOTHESIS, not a pick. Any panel-surfaced CONFUSION (an unexplained result / disputed
 premise) = HALT → resolve BEFORE dispatch. Synthesis flows into `/prereg → /adversary`; CLAIM_STANDS stays independent.
+**LATENT-ROOT precedence:** if ≥2 independent advisors converge on the same `LATENT-ROOT`, prefer the probe that
+kills that root before local fixes. If roots conflict, run `q1b ROOT-DISCRIMINATOR` before mechanism design. If a
+round returns fixes without a latent-root verdict, the prompt failed — rewrite q1, do not reconcile a menu.
 
 ## Tiering — by REVERSIBILITY (CLAUDE.md rule 10), not vibes
 Full differentiated panel fires on **IRREVERSIBLE forks**: mechanism design that will EAT a training run · direction

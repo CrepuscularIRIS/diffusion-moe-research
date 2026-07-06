@@ -1,7 +1,10 @@
 # Research Operating Manual
 
-> The single "how we work" reference. Read at session start together with `plan/goal-directive.md`.
-> This DISTILLS the operational content so `CLAUDE.md` can stay lean and just point here.
+> **AUTHORITY: REFERENCE / history, NOT an active rule source.** On ANY conflict, `.claude/CLAUDE.md` +
+> `plan/goal-directive.md` + the research-os skills + `moa/router-protocol.md` WIN. This manual explains the
+> WHY, holds the archive, and expands the detail behind those surfaces — it never overrides them.
+> The "how we work" reference. Read ONLY for WHY / history / deep ops detail — NOT at every session start
+> (the active rules live in `CLAUDE.md` + the skills; this manual just expands them).
 > Last updated: 2026-07-05 — **CURRENT SEED = Aerial VLN 刷分 (UAV vision-language navigation; OpenFly platform + AerialVLN benchmark)** (§0); MODE = 刷分-first HIGH-THROUGHPUT OODA (§5.7); research-os **v1.1** (6 cmds + Failure Atlas). §0 = live state only. **(Pre-2026-07-05 StarVLA / LIBERO-manipulation content below = SUPERSEDED history.)**
 > **PATH NOTE:** `VLA/*` references throughout are **LOCAL working state (gitignored)** — present on this machine, NOT in a repo clone. They are intentional local pointers (campaign state is kept out of the repo by design), not tracked docs.
 
@@ -12,7 +15,7 @@
   a cold `/goal` session runs the 刷分-first loop (§5.7) on the **OpenFly** platform (`/data/projects/VLA/aerial/`
   — LOCAL: code + 30G scenes + 29G lerobot + checkpoints, smoke-tested → **START HERE**) + the **AerialVLN**
   standardized benchmark (download AerialVLN / AerialVLN-S / AVDN, <1GB → `/data/huggingface/datasets/`). Anchor
-  paper `VLA/paper/综述_Aerial_VLN.pdf`; inventory `VLA/aerial-vln-inventory-2026-07-05.md`; metrics SR / SPL / nDTW.
+  paper `VLA/paper/Aerial_VLN.pdf`; inventory `VLA/aerial-vln-inventory-2026-07-05.md`; metrics SR / SPL / nDTW.
   首推方向 = viewpoint-robustness / long-horizon-instruction-decomposition (frozen-VLM + light adapter, ≤4h cap).
   **OUT-OF-DOMAIN: StarVLA (2604) manipulation · Orca (2606) — experiments STAY in Aerial VLN.**
   **⚠ The StarVLA / LIBERO / manipulation bullets BELOW in §0 are SUPERSEDED HISTORY (pre-pivot) — do NOT operate from them.**
@@ -74,7 +77,7 @@
 |---|---|---|
 | **Opus 4.8 (me)** | direct (main loop) | **PI / decision-owner / interpreter.** OBSERVE, `/prospect`, `/forge`, SELECT/DECIDE, assemble+package the taste-SHAPED Pro hand-off, `/autopsy` (carries the programme pulse, ex-`/compass`), update tree/RUNLOG. **Never self-grants `CLAIM_STANDS`.** Prefer Opus high; reserve xhigh for the hardest judgment. |
 | **Opus 4.8 executor subagents** | `Agent` (+ `isolation: "worktree"` when mutating files); inherits session model | **ALL implementation / experiment plumbing / verification runs / repo exploration / debug** (effort high default; xhigh for a hard bug). Returns changed-files + commands + test-results + artifact-paths + known-risks. Does NOT judge worth, grant a PASS, touch a sealed holdout, or rewrite the thesis. |
-| **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain — DESIGNS each new candidate architecture by DEFAULT** (the `/forge` step-7 flip: Pro designs, Opus only tunes; skipping Pro needs a written reason — "optional" Pro = never-used Pro = the better design path thrown away). Also: prior-art / occupancy reads, contested `/adversary` passes, AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
+| **GPT-5.5 Pro** | Playwright `browser_*`; model button = **`Pro 扩展` (the ONLY tier — never switch)** | **External brain = REFINER — REFINES the SELECTED candidate's architecture by DEFAULT** (MoA generates the candidate SET in `/forge` step 3; the step-7 flip: Pro refines the chosen one, Opus only tunes; skipping Pro needs a written reason — "optional" Pro = never-used Pro = the better design path thrown away). Pro does NOT pick the direction (human bet + atlas do). Also: prior-art / occupancy triage, contested `/adversary` passes, AC meta-review. Compact Opus-packaged hand-off (never a repo dump). 1h+; **poll 15 min**; **new chat per query**; **keep Playwright alive — never close/restart**. |
 | **Codex review hook** | AUTOMATIC (SubagentStop; `CODEX_REVIEW_GATE_GLOBAL=true`) | **Independent adversarial review of EVERY executor subagent's diff** — SPARK inline (`gpt-5.3-codex-spark`, fast triage) + DEEP background (`gpt-5.5 xhigh`, read-only), advisory / non-blocking, surfaced via `systemMessage`. An uncurated, un-re-rollable independent substrate. A finding = a **binding DOWN** verdict; it **never grants UP** (silence ≠ pass). |
 | **Human** | HARD-BLOCK escalation + EARLY problem-shaping | Contribution / paper / "architecture-advantage" promotion; critic↔proposer deadlock; flagship go/no-go; writes the goals. RARE at the back of the loop — most valuable at the front. |
 
@@ -228,8 +231,8 @@ Arbor offers two layers; we use only the first.
 ## 5. Science protocol (the kernel) + research-os v1.0
 Falsify-before-build (ship the kill-experiment WITH the idea) · score-up ≠ mechanism (require negative control
 + locality) · eval/test/baseline are a **sealed layer, never changed mid-run** · one variable per probe ·
-isolation: **generator ≠ executor ≠ critic** (Opus generates/selects; executor subagents run in worktrees; the
-Codex hook audits every diff; Pro designs/arbitrates) · **experiment has absolute veto over elegance** · every
+isolation: **generator ≠ executor ≠ critic** (Opus + the MoA panel generate/select; executor subagents run in
+worktrees; the Codex hook audits every diff; Pro refines/arbitrates) · **experiment has absolute veto over elegance** · every
 claim-bearing run pre-declares its contract (`/prereg`) · when evidence contradicts the direction, **redesign
 the program**, don't defend it. A negative result is a SUCCESS **iff its autopsy generated something**.
 
@@ -290,7 +293,7 @@ own toys. MAY NOT — change the success metric after seeing results · broaden 
 | Command | Fires | What it does |
 |---|---|---|
 | **`/prospect`** | goal start · compass "no surprises" · region-close lateral · any fresh corpus | Hunt problems through the FIVE MINES: ① literature/survey 综述 (contradictions between papers · silently-shared assumptions · future-work graveyards · missing head-to-heads · stale numbers predating a capability shift) ② own logs (anomalies, seed variance, baseline misbehavior — the cheapest original problems) ③ capability deltas ("X was designed under constraint C; C just disappeared") ④ benchmark critique ⑤ cross-domain transplants (transplant the precondition, not the buzzword). Output: 3–7 ranked problem cards `{Q, TYPE, WHY-NOW, STAKES, PROBE, SURPRISE}`. Discard: gap-filling without a WHY-EMPTY answer; no-stakes problems; gate-shaped (easy-to-verify) problems. |
-| **`/forge`** | one problem chosen | Name the load-bearing variable → type-scoped occupancy re-pricing (≤15 min, NEVER a veto) → generate 3–5 candidates via the schools palette (**+1 rival school, always**; the MOS move is ONE move, used when the failure signature smells like a wrong object) → each card `{MECHANISM one-sentence-why, KILL cheapest-falsifier, COST, SURPRISE}` → taste-rank → He-bar in GENERATIVE mode ("what would make this beautiful?" — 5 real min simplifying) → **the REGENERATION RULE** (which failure promotes which candidate — the anti-menu clause) → **route the candidate DESIGN to Pro by DEFAULT** (Pro designs the architecture, Opus only tunes; skip only for tactical tuning of an already-Pro-designed arch, with a written reason — the fix for "the loop never uses Pro though Pro is better"). |
+| **`/forge`** | one problem chosen | Name the load-bearing variable → type-scoped occupancy re-pricing (≤15 min, NEVER a veto) → generate 3–5 candidates via the schools palette (**+1 rival school, always**; the MOS move is ONE move, used when the failure signature smells like a wrong object) → each card `{MECHANISM one-sentence-why, KILL cheapest-falsifier, COST, SURPRISE}` → taste-rank → He-bar in GENERATIVE mode ("what would make this beautiful?" — 5 real min simplifying) → **the REGENERATION RULE** (which failure promotes which candidate — the anti-menu clause) → **route the SELECTED candidate's DESIGN to Pro by DEFAULT** (MoA generated the set; Pro REFINES the chosen architecture, Opus only tunes; skip only for tactical tuning of an already-Pro-refined arch, with a written reason — the fix for "the loop never uses Pro though Pro is better"). |
 | **`/autopsy`** | every null / kill / DOWN verdict | Boring-first (bug/data/config — most negatives are bugs; fix, bank nothing) → mechanism-level why (which link of the MECHANISM sentence broke) → DOWN-only scope grade (structural = independent-only) → **THE CONVERSION LAW: emit ≥1 of (a) a CONSTRAINT (re-prices the backlog), (b) a CANDIDATE (run the regeneration rule; 10-question the RESULT), (c) a REGION-CLOSE (→ lateral `/prospect`). None ⇒ the autopsy is incomplete.** Tree FIRST, then RUNLOG, then backlog update. |
 | **`/autopsy` programme pulse** (ex-`/compass`, folded v1.0) | **after every 2nd `/autopsy`** (a countable trigger — "every 3–5 cycles" never fired in the DSpark campaign) · stuck · before an expensive leg | ① TYPE-DRIFT (type the last 3–5 artifacts vs the goal's declared type — the eval-drift detector; on flag, name the next ON-type artifact) ② SURPRISE ACCOUNTING (which observation changed the plan? zero = farming process → force a generator move) ③ PROGRAMME HEALTH (Lakatos as questions: hard core intact? heuristic still generating? predicting or absorbing?) ④ PROCESS BUDGET (workflow >20% sustained → ship a run). Verdict: CONTINUE / REFRAME / LATERAL / STOP_AND_REPORT — advisory; redirects, never blocks. |
 
@@ -321,7 +324,7 @@ Arbor node fields = `hypothesis · status · result · insight · score · test_
 | Loop point | Arbor MCP (PRIMARY) | sealed artifact (`node.code_ref` → it) |
 |---|---|---|
 | `/prospect` cards | `tree_add_node(hypothesis=card, status=pending)` | — |
-| `/forge` choice + backlog | `tree_update_node(status=in_progress)`; backlog + regeneration rule in insight | — |
+| `/forge` choice + backlog | `tree_update_node(status=running)`; backlog + regeneration rule in insight | — |
 | `/prereg` contract | `tree_set_meta(eval_cmd, eval_cmd_test, baseline_score, metric_direction)` | the 10-field contract file (timestamped) |
 | DISPATCH isolation | `worktree_create` / `worktree_remove` | the contract + exact inputs (no ambient dump) |
 | run + score | **`eval_run(cmd, split=dev\|test, node_id, set_meta)`** | `/exp-verify` verdict = node insight |
@@ -443,7 +446,7 @@ engine division); its two sharp bits — the **cold-start review packet** and th
 
 ### 6.2 Tree-update checklist (fixes the #1 process bug — loose tree discipline)
 At EVERY 验收, tree FIRST then RUNLOG:
-- [ ] `tree_update_node` the dispatched node — status (done/pruned/in_progress) + result + insight
+- [ ] `tree_update_node` the dispatched node — status (done/pruned/running; Arbor-standard, never in_progress) + result + insight
       (for a null: the `/autopsy` conversion-law output IS the insight).
 - [ ] new candidate → `tree_add_node` BEFORE dispatch · dead branch → `tree_prune` + reason.
 - [ ] node types = {idea, experiment, negative, `programme`}. A `programme` node is created only after a
@@ -451,7 +454,7 @@ At EVERY 验收, tree FIRST then RUNLOG:
       the `/autopsy` programme pulse (questions, not scores).
 - [ ] new track/eval at INIT → `tree_set_meta` the eval contract (B_dev/B_test, metric, metric_direction).
 - [ ] **direction/campaign CLOSE → close-out sweep**: reconcile ALL descendant node statuses (no
-      dangling in_progress/pending under a closed node) + purge any number lacking an artifact from
+      dangling running/pending under a closed node) + purge any number lacking an artifact from
       tree/memory before it can propagate into reports (the phantom-E[τ] lesson, §4.8).
 - [ ] THEN append the RUNLOG narrative.
 
