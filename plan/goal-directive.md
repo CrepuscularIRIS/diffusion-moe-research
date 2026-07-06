@@ -22,10 +22,11 @@ you obey prose — so the PROCESS lives in the ACTIVE SURFACES below, enforced w
 6. **VALUE BAR / ANTI-RETREAT.** A BIG, honest, falsifiable Δ on a HARD, field-open problem. Occupancy RE-PRICES
    ("done" ⇒ BEAT it), never vetoes. NEVER incremental / certificate / retreat.
 7. **PHASE GATE — reproduction is CALIBRATION, never contribution.** Reproducing a known AerialVLA rung = BASELINE
-   CALIBRATION only. Known-rung work ENDS at baseline parity OR after 2 known rungs tested; THEREAFTER every
-   training-eating mechanism is LABELED at `/prereg`: `KNOWN_RUNG` (a parity baseline to BEAT) vs `CONTRIBUTION`
-   (novel mechanism / beats the occupied path — Pro-checked; DeepResearch dropped). Do NOT spend consecutive cycles only reproducing
-   occupied rungs; `/autopsy` pulse flags reproduction-inertia.
+   CALIBRATION only. At baseline parity OR after 2 known rungs, KNOWN_RUNG STOPS being the DEFAULT: a further
+   KNOWN_RUNG run then needs an explicit parity-building reason, and the default flips to CONTRIBUTION. Every
+   training-eating run is LABELED at `/prereg` (`KNOWN_RUNG` = parity baseline to BEAT · `CONTRIBUTION` = novel
+   mechanism / beats the occupied path, Pro-checked + OCCUPANCY-GATE). No consecutive reproduce-only cycles;
+   `/autopsy` flags reproduction-inertia.
 8. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS; `/prereg` seals claim-runs; proposer self-grants DOWN only;
    CLAIM_STANDS = independent substrate (the Codex hook); contribution = human.
 9. **HARD STOP.** STOP_AND_REPORT ONLY for a user-only call. refuted ⇒ a cheap_probe auto-ROUTES

@@ -16,14 +16,24 @@
 # the panel ANSWERS (diversity); route the HARDER rounds (q1 root, q2 design) to GPT-5.5 Pro instead.
 # (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, ClaudeCode cannot read its output.)
 #
+# ROUTING TRUTH: this script fires the PANEL rounds ONLY (moa_panel.sh). It does NOT call Pro. The harder rounds
+# routed to GPT-5.5 Pro are BROWSER/MANUAL artifacts — save each Pro reply as <round>_pro.md in the chain dir
+# (e.g. q1_pro.md, q2_pro.md). This script SKIPS *_pro.md|*_pro.txt from the panel loop and lists them at the end;
+# Opus reconciles the panel rounds + the *_pro.md Pro artifacts together before /prereg.
+#
 # Usage:
 #   moa/moa_chain.sh <chain-dir>     # fires, in natural-sort order, every q*/ (per-lane) or q*.txt (shared)
 set -uo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 CH="${1:?usage: moa_chain.sh <chain-dir>  (contains q1/ q2/ ...  or  q1.txt q2.txt ...)}"
 shopt -s nullglob
-ROUNDS=( "$CH"/q* )
-[ ${#ROUNDS[@]} -eq 0 ] && { echo "no q*/ or q*.txt rounds in $CH" >&2; exit 2; }
+ALL=( "$CH"/q* )
+# split: PANEL rounds (fired here) vs Pro browser/manual artifacts q*_pro.md|q*_pro.txt (NOT fired — listed at end)
+ROUNDS=(); PRO=()
+for f in "${ALL[@]}"; do
+  case "$f" in *_pro.md|*_pro.txt) PRO+=("$f");; *) ROUNDS+=("$f");; esac
+done
+[ ${#ROUNDS[@]} -eq 0 ] && { echo "no q*/ or q*.txt PANEL rounds in $CH (only Pro artifacts?)" >&2; exit 2; }
 IFS=$'\n' ROUNDS=($(sort -V <<<"${ROUNDS[*]}")); unset IFS
 n=0
 for r in "${ROUNDS[@]}"; do
@@ -32,4 +42,11 @@ for r in "${ROUNDS[@]}"; do
   if [ -d "$r" ]; then "$DIR/moa_panel.sh" --per-lane "$r"; else "$DIR/moa_panel.sh" "$r"; fi
   echo
 done
-echo "########## END CHAIN (${#ROUNDS[@]} rounds) — Opus reconciles ACROSS rounds, then /prereg ##########"
+if [ ${#PRO[@]} -gt 0 ]; then
+  IFS=$'\n' PRO=($(sort -V <<<"${PRO[*]}")); unset IFS
+  echo "########## PRO ROUNDS (GPT-5.5 Pro browser/manual artifacts — NOT fired by this script) ##########"
+  for p in "${PRO[@]}"; do echo "  fold in at reconcile: $p"; done
+else
+  echo "########## NOTE: no q*_pro.md Pro artifacts — were the harder rounds (q1 root · q2 design) routed to GPT-5.5 Pro? save each reply as <round>_pro.md here ##########"
+fi
+echo "########## END CHAIN (${#ROUNDS[@]} panel rounds, ${#PRO[@]} Pro artifacts) — Opus reconciles panel + Pro, then /prereg ##########"

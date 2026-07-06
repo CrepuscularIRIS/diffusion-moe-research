@@ -50,11 +50,11 @@
   Both are SEPARATE, non-active projects.
 
 ## 1. Engine stack — the division of labor (Opus 4.8 · GPT-5.5 Pro · Codex hook)
-> **One line — Pro generates · Opus operates · Codex checks · human sets taste.** GPT-5.5 Pro is the
-> DEFAULT engine for the GENERATIVE acts (idea/problem generation in /prospect, approach+head DESIGN in
-> /forge, failure→next-candidate in /autopsy) — a different model reaches the enrich-level reframe a local
-> checklist misses; skipping Pro on a generative act needs a stated reason, and Pro is NOT used for
-> tactical iteration. Opus OPERATES: routes, packages the Pro hand-off, runs the mechanical moves
+> **One line — MoA generates · Pro refines · Opus operates · Codex checks · human sets taste (2026-07-06, DR gone).**
+> The MoA panel is the DEFAULT GENERATOR (breadth — idea/problem generation in /prospect, the candidate SET in
+> /forge, failure→next-candidate in /autopsy; each advisor a distinct operator/frame/school). GPT-5.5 Pro is the
+> REFINER (depth): it refines the SELECTED design + gates occupancy (做过没有?) — a strong single model reaches the
+> enrich-level reframe on the chosen candidate; Pro is NOT used for tactical iteration. Opus OPERATES: routes, packages the Pro hand-off, runs the mechanical moves
 > (/prereg, /exp-verify), TUNES what Pro designed, decides tactically, interprets, AND is the executor
 > (subagents inherit the session model = Opus 4.8). The **Codex review hook** auto-audits every executor
 > diff (DOWN-only). The human grants contribution promotion — most valuable EARLY (shaping problems at
