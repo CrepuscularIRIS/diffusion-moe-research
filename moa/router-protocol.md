@@ -51,6 +51,11 @@ query count = rounds × advisors, far more diverse. Opus DECOMPOSES + RECONCILES
 - **Route the HARDER rounds (q1 root · q2 design) to GPT-5.5 Pro** — deep design + literature-grounded root is
   the external brain's job, not the fast panel's. Rely on the ENVIRONMENT (panel + Pro), not Opus-solo.
   (DeepResearch DROPPED 2026-07-06 — Cloudflare-blocked, unreadable by ClaudeCode; Pro is the only browser lane.)
+- **MoA = the PRIMARY IDEATOR (2026-07-06 — DR gone), not only the where-it-dies panel.** The generate↔refine loop:
+  MoA GENERATES ideas + next-directions (breadth) → GPT-5.5 Pro + local 精读 gate occupancy ("做过没有?" — Pro-browse
+  triages, the local arXiv→精读 pipeline is the FAITHFUL substrate, Pro must NOT self-certify novelty) → experiment
+  裁决 → on WIN, Pro designs the next 提升 DESIGN leap (tactical knobs stay Opus-fast) → MoA next round; on LOSS, MoA
+  ideates the `/autopsy` conversion candidate. Opus decomposes + reconciles + selects; MoA = diversity, Pro = depth.
 
 ## 后面验收 (reconcile — the judge)
 Opus 4.8 reconciles via the dispute-map (consensus / conflict / **unique-insight** / **blind-spot**), discounting
