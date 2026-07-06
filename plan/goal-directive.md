@@ -1,23 +1,35 @@
-<!-- Paste everything below the `---` after `/goal`. Body is <4000 chars (raised from 3000, 2026-07-04). -->
+<!-- Paste everything below the `---` after `/goal`. Body is <4000 chars. GOAL = boundaries + pointers + hard
+     stops ONLY. PROCESS is NOT here — it is enforced in the ACTIVE surfaces (§ bottom), loaded when they run. -->
 ---
-AMBITION (the ONE goal): produce ONE genuine 一区 contribution (Information Fusion / ESWA). Direction self-selected. DIVISION: OPUS (main) DECIDES every fork (operators DIAGNOSE, a cheap_probe ROUTES), SUBAGENTS EXECUTE, Pro ASSISTS design/contested-judgment (never decides) — NEVER pause the loop to ask; decide + report.
+AMBITION: produce ONE genuine 一区 contribution (Information Fusion / ESWA). Direction self-selected. Improvement
+(刷分) is PRIMARY; systems / compression / novelty OK — name the TYPE first. Contribution is human-granted.
 
-VALUE BAR (improvement-first): a BIG, honest, falsifiable Δ on a HARD, field-open problem — improvement (刷分) is PRIMARY; systems/compression/novelty too (research-types). Name the TYPE first. **NO eval-type.** Occupancy RE-PRICES, never vetoes — "done" ⇒ BEAT it. **ANTI-RETREAT:** hard (survey-evidenced) + Δ large + fair-baselined — never incremental/certificate/retreat. Contribution is human-granted (the one invariant).
+**8 HARD CONSTRAINTS** (this doc carries ONLY these + the pointers; `/goal` guarantees you keep running, NOT that
+you obey prose — so the PROCESS lives in the ACTIVE SURFACES below, enforced when each skill/script runs):
 
-MODE = 刷分-first, HIGH-THROUGHPUT OODA (§5.7): SCORE = target, metric-GAP = the failure. LOOP FAST — run→score→analyze the bottleneck (→atlas)→aim the taste武器库 at it→fix→re-run. Method = surveyed papers (arXiv-精读). GATES fire ONLY at the CLAIM boundary (/adversary: BIG honest Δ vs TUNED baseline), NOT per-iteration → process<20%, always-刷分. Runs via executor-subagent experiments NOW. Novelty (necessity gate §5.6) = SECONDARY.
+1. **AUTONOMY.** Opus DECIDES every fork + REPORTS; subagents EXECUTE; Pro ASSISTS design (never decides). NEVER
+   pause the loop to ask — decide + report. Ask ONLY a genuine user-only call (new hardware · external publish · venue).
+2. **DOMAIN LOCK.** 刷分 = Aerial VLN; datasets LOCKED to `VLA/aerial-vln-inventory-2026-07-05.md`. Outside the
+   inventory / a far-domain jump = STOP-to-ask. Innovation = the MECHANISM on a local bench, NOT dataset-hopping.
+3. **LIVE STATE.** `tree_view(run_name=aerial-vln)` FIRST at start + every 验收 — the Arbor tree is the CANONICAL
+   current-node state. Update the tree FIRST at 验收, then RUNLOG. (Head/atlas = `openbuild/aerial/`.)
+4. **COMPUTE.** 2×4090D. SINGLE-RUN TRAIN ≤4h target / 6h HARD cap (Monitor-kill; ETA>4h ⇒ CUT COST, don't run).
+   Method = WHATEVER fits (frozen VLM ≤32B-4bit · LoRA), NOT pretraining. SCOPE-EXPAND {bigger VLM · LoRA base} =
+   DECIDE, never ask.
+5. **PIPELINE.** research-os v1.1: `/prospect → /forge → /prereg → run → /exp-verify → /adversary → /autopsy`.
+   Each command's PROCESS (MoA-chain · operator-retrieval · self-attack · region-close) is ENFORCED IN its SKILL,
+   loaded when it runs — NOT in this doc. RUN the pipeline; the skills carry the how.
+6. **VALUE BAR / ANTI-RETREAT.** A BIG, honest, falsifiable Δ on a HARD, field-open problem. Occupancy RE-PRICES
+   ("done" ⇒ BEAT it), never vetoes. NEVER incremental / certificate / retreat.
+7. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS; `/prereg` seals claim-runs; proposer self-grants DOWN only;
+   CLAIM_STANDS = independent substrate (the Codex hook); contribution = human.
+8. **HARD STOP.** STOP_AND_REPORT ONLY for a user-only call. refuted ⇒ a cheap_probe auto-ROUTES
+   problemshift-vs-lateral (never ask). REGION-CLOSE ONLY when ≥2 mechanisms hit the SAME root ⇒ genuine lateral
+   (atlas epitaph), not a neighbor.
 
-AUTONOMY: research-os v1.1 — RUN it. ENTRY = /prospect (ATLAS Mine 0 = 精读 SOTA pdfs→txt FIRST) WITHIN Aerial VLN (OpenFly+AerialVLN) for a bench w/ HEADROOM → /forge (aim the taste武器库 at the metric-gap; method from arXiv-精读) → /prereg → run → /exp-verify → /adversary (TUNED baseline; ≥3 seeds, paired) → /autopsy (pulse + atlas). Human seeds + redirects.
+**ACTIVE SURFACES — where the process is ENFORCED (the goal only points here):** skills `/prospect·/forge·/prereg·
+/exp-verify·/adversary·/autopsy` (each loaded at invocation) · MoA `moa/moa_chain.sh` + `moa/router-protocol.md`
+(5-Q chain · self-attack · reversibility tiering) · the Arbor tree (`aerial-vln`, node state) · `openbuild/aerial/atlas/`
+(failure atlas + operator bank) · CLAUDE.md rules 6-10 (standing reference, weakest — do not rely on it alone).
 
-REALITY: 2×4090D. ★ BINDING CONSTRAINT = SINGLE-RUN TRAINING ≤4h target / 6h HARD cap (Monitor-enforced kill; ETA>4h ⇒ CUT COST, don't run — efficiency-first). Method = WHATEVER fits under the cap (frozen VLM ≤32B-4bit · LoRA · …), NOT pretraining/from-scratch. ★ SCOPE-EXPAND {bigger frozen VLM · LoRA base} = DECIDE, NEVER STOP-to-ask (only new hardware/external = ask; §0). 刷分 = Aerial VLN; datasets LOCKED to VLA/aerial-vln-inventory-2026-07-05.md; OUTSIDE = STOP-to-ask. 2-GPU (§5.5): pipeline DEFAULT; SPLIT GPU0/GPU1 for two targets. CLOSED: VLA cross-stream/fusion (2×); DSpark + dLLM.
-
-ENGINES (§1): Pro/DeepResearch/arXiv-精读 ENRICH atlas (NOT direction; keep `Pro 扩展` ALIVE — closed browser blocks the pipeline) · Opus OPERATES · Codex CHECKS (hook) · Arbor STORES (eval_run=artifact-score; `tree_view(aerial-vln)` FIRST at start+验收) · CORAL optional (CLI TODO).
-
-★ 刷分 = OPUS DIRECT + AUTONOMOUS (executor subagents; 一区 bar; NEVER ask). ★ MoA FIRES BEFORE any MECHANISM that EATS A TRAINING RUN + on failure/fork — NOT once, rely on the ENVIRONMENT: after 逆向溯因 DECOMPOSE into a ~5-Q CHAIN (root·mechanism·rival·self-attack·probe) → `moa/moa_chain.sh` (depth) / `moa_panel.sh --per-lane` (breadth: Gemini·GPT-5.5·DeepSeek·MiMo·Opus4.6, each DISTINCT operator+frame+school+dropout); route HARD rounds to DR/Pro; Opus DECOMPOSES+RECONCILES (consensus/conflict/unique/blind-spot), NOT solo. TACTICAL tweaks (LR·batch·aug) = Opus-solo. DEV = Sonnet4.6+Opus4.8, Codex hook. Browser: agent-browser=arXiv · playwright=ChatGPT/Gemini. Obey CLAUDE.md rules 6-10.
-
-READ: operating-manual (§0·§1·§4.8-10·§5) + campaign docs + RUNLOG. Keys .env.
-
-RULES: name TYPE first, verify BY type; /prereg seals claim-runs; NUMBERS FROM ARTIFACTS; DOWN-only self-grant, CLAIM_STANDS independent, contribution → human.
-
-STOP: STOP_AND_REPORT ONLY for a genuine user-only call (new hardware/external/venue) — NOT scope-within-envelope. refuted ⇒ a cheap_probe auto-ROUTES problemshift-vs-LATERAL, NEVER ask. contribution clears /adversary at the 一区 bar → human · caps hit. ★ REGION-CLOSE: ≥2 mechanisms, SAME root ⇒ closed → GENUINE lateral (atlas epitaph), NOT a neighbor.
-
-WAIT (§4.9): Monitor/Bash bg-wait (wait = design next node), NEVER ScheduleWakeup poll; Pro poll 15-min.
+WAIT: Monitor / Bash bg-wait (wait = design the next node), never ScheduleWakeup-poll; Pro poll 15-min. Keys `.env`.
