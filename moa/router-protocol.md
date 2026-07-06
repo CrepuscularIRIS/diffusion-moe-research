@@ -16,8 +16,12 @@
 5. **Per-advisor prompt** = `{problem core, full or blinded}` + `{your operator: <name + one_sentence_core_move>}`
    + `{frame it as: <frame>}` + `{your school lens: <soul-question>}` + the **output contract**:
    > "Output EXACTLY: MECHANISM (1–2 sentences) | DIFFERENTIAL PREDICTION (an observable the incumbent does NOT
-   > predict) | CHEAP PROBE (test before training). ≤110 words. Answer from your OWN knowledge — do NOT use web
+   > predict) | CHEAP PROBE (test before training) | BIGGEST SELF-ATTACK (of {data-leakage · under-tuned baseline
+   > · metric-gaming · seed-luck · tuning-budget artifact · doesn't-scale}, which MOST threatens this mechanism's
+   > claimed gain — and how the cheap probe defends). ≤140 words. Answer from your OWN knowledge — do NOT use web
    > search or any tools. Be concrete and independent; do not hedge or survey."
+   > *(BIGGEST SELF-ATTACK = spark.md Battery 2, applied in advance — pressure-test the number BEFORE it eats a
+   > training run, not after. See `plan/Audit/pipeline-audit-2026-07-05.md`.)*
 6. Write to `<dir>/<lane>.txt`, then `moa/moa_panel.sh --per-lane <dir>`.
 
 ## Tool discipline per lane — HONEST (only the gateway is structurally tool-free)
@@ -34,10 +38,29 @@
 | mimo    | op₄ | frame₄ (non-incumbent) | school₄ | **blinded** |
 | opus46  | op₅ | frame₅ | school₅ | full (agentic) |
 
+## 连续询问 (DEPTH axis — the 5-question CHAIN; complements the breadth panel above)
+**Do NOT ask MoA once. After 逆向溯因, Opus DECOMPOSES the problem into ~5 CONSECUTIVE questions and drills them —
+query count = rounds × advisors, far more diverse. Opus DECOMPOSES + RECONCILES; it does NOT solo-answer.** Default drill:
+1. **ROOT (溯因)** — what MOVE generated the SOTA / what is the TRUE load-bearing bottleneck?
+2. **MECHANISM** — the sharpest attack on that root under the ≤4h envelope.
+3. **RIVAL / OFF-FRAME** — what a DIFFERENT school/frame would do instead (force divergence).
+4. **SELF-ATTACK** — the biggest failure reason (leakage·baseline·metric·seed·budget·scale; = Battery 2).
+5. **CHEAP PROBE** — the fastest pre-GPU test that decides GO/KILL.
+- **INFORMED chain:** run round-by-round — reconcile each, write the next round's prompts from the prior answers
+  (q2 uses q1's root · q4 attacks q2 · q5 probes q4). Fire with `moa/moa_chain.sh <chain-dir>` (q1/ … q5/).
+- **Route the HARDER rounds (q1 root · q2 design) to DR / GPT-5.5 Pro** — deep design + literature-grounded root is
+  the external brain's job, not the fast panel's. Rely on the ENVIRONMENT (panel + DR + Pro), not Opus-solo.
+
 ## 后面验收 (reconcile — the judge)
 Opus 4.8 reconciles via the dispute-map (consensus / conflict / **unique-insight** / **blind-spot**), discounting
-Claude-family correlation (opus46). The synthesis flows into `/prereg → /adversary`; CLAIM_STANDS stays independent.
+Claude-family correlation (opus46). **SELECT by the uncertainty-first battery, NOT "which sounds best":** pick the
+candidate whose CHEAP PROBE kills the BIGGEST unknown fastest (info-gain); if a candidate's `BIGGEST SELF-ATTACK`
+is unaddressed → it stays a HYPOTHESIS, not a pick. Any panel-surfaced CONFUSION (an unexplained result / disputed
+premise) = HALT → resolve BEFORE dispatch. Synthesis flows into `/prereg → /adversary`; CLAIM_STANDS stays independent.
 
-## Tiering
-Full differentiated panel fires on **high-value forks only** (mechanism design · direction selection · hard
-problem-finding) — NOT every routine 刷分 iteration (it costs ~1min + N models). Routine = solo Opus; medium = Opus + 1.
+## Tiering — by REVERSIBILITY (CLAUDE.md rule 10), not vibes
+Full differentiated panel fires on **IRREVERSIBLE forks**: mechanism design that will EAT a training run · direction
+/ region-close / pivot · anything hard to undo. REVERSIBLE tweaks (LR · aug · which-smoke) = solo Opus, instant —
+never panel them (costs ~1min + N models). Medium = Opus + 1.
+> The panel IS the environment that produces the judgment a single model can't self-generate (taste = panel + gates
+> + atlas, not weights). That's why irreversible forks route here. See `plan/Audit/pipeline-audit-2026-07-05.md`.
