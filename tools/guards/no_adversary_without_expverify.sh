@@ -17,7 +17,7 @@ campaign="${1:?usage: $0 <campaign> <node_id>}"
 node_id="${2:?usage: $0 <campaign> <node_id>}"
 
 case "$node_id" in
-  */*) echo "ERROR: node-id must not contain '/': $node_id" >&2; exit 2 ;;
+  */*) echo "ERROR: node_id must not contain '/': $node_id" >&2; exit 2 ;;
 esac
 
 marker="$REPO_ROOT/openbuild/$campaign/exp_verify/${node_id}.VERIFIED"
