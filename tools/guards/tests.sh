@@ -21,27 +21,9 @@ fail() {
   FAIL_COUNT=$((FAIL_COUNT + 1))
 }
 
-assert_exit() {
-  local desc="$1" expected="$2"; shift 2
-  local actual
-  actual=0; "$@" >/dev/null 2>&1 || actual=$?
-  if [ "$actual" -eq "$expected" ]; then ok "$desc (exit $expected)"; else fail "$desc: expected exit $expected, got $actual"; fi
-}
-
-assert_exit_with_output() {
-  local desc="$1" expected_exit="$2" expected_pattern="$3"; shift 3
-  local out; out=$("$@" 2>&1) || true
-  local actual_exit=0; "$@" >/dev/null 2>&1 || actual_exit=$?
-  if [ "$actual_exit" -ne "$expected_exit" ]; then
-    fail "$desc: expected exit $expected_exit, got $actual_exit"
-    return
-  fi
-  if echo "$out" | grep -q "$expected_pattern"; then ok "$desc"; else fail "$desc: pattern '$expected_pattern' not found in output"; fi
-}
-
 # ── Setup sandbox ────────────────────────────────────────────────────────────
 SANDBOX=$(mktemp -d)
-trap 'rm -rf "$SANDBOX"' EXIT
+trap 'rm -rf "$SANDBOX" "$REPO_ROOT/openbuild/test_campaign"' EXIT
 
 echo "=== Task 1 guard + marker tests (sandbox: $SANDBOX) ==="
 
@@ -161,6 +143,8 @@ out=$(OPENBUILD_ROOT="$SANDBOX" "$GUARDS/claim_preflight.sh" camp testsubstrate 
 if [ "$ec" -eq 1 ]; then ok "9a: BLOCKs with incomplete preflight"; else fail "9a: expected BLOCK (exit 1), got $ec"; fi
 if echo "$out" | grep -q "OCCUPANCY"; then ok "9b: lists OCCUPANCY as missing"; else fail "9b: OCCUPANCY not listed"; fi
 if echo "$out" | grep -q "RECONSTRUCTION"; then ok "9c: lists RECONSTRUCTION as missing"; else fail "9c: RECONSTRUCTION not listed"; fi
+if echo "$out" | grep -q "RAW-FAILURES-READ"; then ok "9d: lists RAW-FAILURES-READ as missing"; else fail "9d: RAW-FAILURES-READ not listed"; fi
+if echo "$out" | grep -q "TYPICAL-PUBLISHED-DELTA"; then ok "9e: lists TYPICAL-PUBLISHED-DELTA as missing"; else fail "9e: TYPICAL-PUBLISHED-DELTA not listed"; fi
 
 # ── 10. claim_preflight.sh: PASS on complete fixture ─────────────────────────
 echo ""
