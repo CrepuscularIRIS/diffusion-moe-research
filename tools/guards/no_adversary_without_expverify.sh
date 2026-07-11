@@ -27,7 +27,7 @@ if [ -f "$marker" ]; then
   exit 0
 fi
 
-echo "BLOCK: no /exp-verify VERIFIED artifact for '$node_id'"
-echo "  expected: $marker"
-echo "  -> run /exp-verify first; it must write the VERIFIED marker after an anti-no-op pass."
+echo "BLOCK: no /exp-verify VERIFIED artifact for '$node_id'" >&2
+echo "  expected: $marker" >&2
+echo "  -> run /exp-verify first; it must write the VERIFIED marker after an anti-no-op pass." >&2
 exit 1
