@@ -1,0 +1,9 @@
+# Stale terms that must not appear in the live doc set.
+# One term per line; lines starting with # are comments.
+# These reflect retired capabilities/names as of 2026-07-09 audit.
+codex:rescue
+Pro 扩展
+GPT-5.5 Pro
+DeepResearch
+SubagentStop
+mcp__agentmemory
