@@ -109,6 +109,20 @@
   mint a standalone index/object. L10 guards against undefined constructs, not against algorithm-path
   work; do not let the index demand force every candidate into an object-production narrative.
 
+
+- **L11 · THE BRACKET MUST BE AT THE FULL DECISION HORIZON — a truncated oracle-ceiling hides incumbent
+  self-correction.** The decision-leverage intervention (world-model-v3 node 1.6) passed a large per-state
+  action-regret (KF1: 26% of local scale) and a 20-STEP-truncated oracle-ceiling (12.84 vs frozen 9.14,
+  +3.70 "headroom"), then FAILED at the closed-loop conversion: on a clean harness the frozen planner
+  reaches ~SOTA (965/1000) over the full 500-step episode — it SELF-CORRECTS, so the exploitable
+  EPISODE-level headroom is ~0 and no correction scale beats it (α-sweep: inert→harmful→collapse).
+  → For any closed-loop intervention on a competent controller, the /prereg BRACKET (ORACLE-CEILING) and
+  the /admit kill-first MUST measure headroom at the FULL decision horizon, not a truncated/per-step
+  regret. Per-state regret ≠ closed-loop headroom when the incumbent self-corrects (the L2 mechanism at
+  the intervention level). COROLLARY (harness): validate the BASELINE reproduces its KNOWN number (SOTA)
+  before trusting any comparison — the executor's eval harness reported frozen=180 vs true 965 (5× env-leak
+  under-measure); the clean α-sweep (frozen=965) caught the false-negative harness. (v3 node 1.6, A1 Brier 0.11.)
+
 ## Calibration summary (recomputed from resolved rows — never from memory)
 
 | basis | n resolved | mean Brier | bias direction |

@@ -1,0 +1,2432 @@
+- generic [ref=f27e1]:
+  - link "跳至内容" [ref=f27e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f27e6]:
+    - generic [ref=f27e8]:
+      - navigation "侧边栏":
+        - generic:
+          - generic:
+            - generic:
+              - button "打开边栏":
+                - img
+        - generic:
+          - generic:
+            - link "新聊天":
+              - /url: /
+              - generic:
+                - img
+              - generic: 新聊天
+          - generic:
+            - button "搜索聊天":
+              - generic:
+                - img
+              - generic: 搜索聊天
+          - generic:
+            - button "最近聊天":
+              - generic:
+                - img
+              - generic: 最近聊天
+        - generic:
+          - generic:
+            - button "打开“个人资料”菜单":
+              - generic:
+                - generic:
+                  - img "个人资料图片"
+      - generic [ref=f27e9]:
+        - heading "历史聊天记录" [level=2] [ref=f27e10]
+        - generic [ref=f27e11]:
+          - navigation "历史聊天记录" [ref=f27e12]:
+            - generic [ref=f27e15]:
+              - link "主页" [ref=f27e16] [cursor=pointer]:
+                - /url: /
+                - generic [ref=f27e17]: ChatGPT
+              - button "关闭边栏" [expanded] [ref=f27e19]:
+                - img [ref=f27e20]
+            - list [ref=f27e23]:
+              - listitem [ref=f27e24]:
+                - link "新聊天 控制 Shift O" [ref=f27e25] [cursor=pointer]:
+                  - /url: /
+                  - generic [ref=f27e26]:
+                    - img [ref=f27e28]
+                    - generic [ref=f27e31]: 新聊天
+                  - generic [ref=f27e33]:
+                    - generic "控制" [ref=f27e34]:
+                      - generic [ref=f27e35]: Ctrl
+                      - text: +
+                    - generic "Shift" [ref=f27e36]:
+                      - generic [ref=f27e37]: Shift
+                      - text: +
+                    - generic [ref=f27e39]: O
+              - listitem
+              - listitem [ref=f27e40]:
+                - button "搜索聊天 控制 K" [ref=f27e456] [cursor=pointer]:
+                  - generic [ref=f27e42]:
+                    - img [ref=f27e458]
+                    - generic [ref=f27e461]: 搜索聊天
+                  - generic [ref=f27e462]:
+                    - generic "控制" [ref=f27e463]:
+                      - generic [ref=f27e464]: Ctrl
+                      - text: +
+                    - generic [ref=f27e466]: K
+            - link "文件库" [ref=f27e47] [cursor=pointer]:
+              - /url: /library
+              - img [ref=f27e49]
+              - generic [ref=f27e52]: 文件库
+            - link "项目 新项目" [ref=f27e53] [cursor=pointer]:
+              - /url: /projects
+              - generic [ref=f27e54]:
+                - img [ref=f27e56]
+                - generic [ref=f27e59]: 项目
+              - button "新项目" [ref=f27e61]:
+                - img [ref=f27e63]
+            - link "已安排" [ref=f27e65] [cursor=pointer]:
+              - /url: /scheduled
+              - img [ref=f27e67]
+              - generic [ref=f27e70]: 已安排
+            - link "应用" [ref=f27e71] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=f27e73]
+              - generic [ref=f27e76]: 应用
+            - generic [ref=f27e78] [cursor=pointer]:
+              - img [ref=f27e80]
+              - generic [ref=f27e83]: 更多
+            - generic [ref=f27e84]:
+              - generic [ref=f27e85]:
+                - button "最近" [expanded] [ref=f27e86] [cursor=pointer]:
+                  - heading "最近" [level=2] [ref=f27e87]
+                - generic [ref=f27e89]:
+                  - link "新聊天" [ref=f27e90] [cursor=pointer]:
+                    - /url: /
+                    - img [ref=f27e92]
+                  - button "整理聊天" [ref=f27e94] [cursor=pointer]:
+                    - img [ref=f27e96]
+              - list [ref=f27e99]:
+                - listitem [ref=f27e679]:
+                  - link "Designing a Research Study" [ref=f27e680] [cursor=pointer]:
+                    - /url: /c/6a4752d9-ab64-83ea-a9ec-b0fda42b8e08
+                    - generic [ref=f27e682]: Designing a Research Study
+                    - generic [ref=f27e684]:
+                      - button "置顶 Designing a Research Study" [ref=f27e685]:
+                        - img [ref=f27e687]
+                      - button "打开“Designing a Research Study”的对话选项" [ref=f27e689]:
+                        - img [ref=f27e691]
+                - listitem [ref=f27e110]:
+                  - link "/goal 函数适配性" [ref=f27e111] [cursor=pointer]:
+                    - /url: /c/6a45cf85-7ed4-83ea-82da-767a8e661628
+                    - generic [ref=f27e113]: /goal 函数适配性
+                    - generic [ref=f27e115]:
+                      - button "置顶 /goal 函数适配性" [ref=f27e116]:
+                        - img [ref=f27e118]
+                      - button "打开“/goal 函数适配性”的对话选项" [ref=f27e467]:
+                        - img [ref=f27e469]
+                - listitem [ref=f27e100]:
+                  - link "实验分析严谨性方向" [ref=f27e101] [cursor=pointer]:
+                    - /url: /c/6a47440b-60b0-83ea-bd08-4dea891d6280
+                    - generic [ref=f27e103]: 实验分析严谨性方向
+                    - generic [ref=f27e105]:
+                      - button "置顶 实验分析严谨性方向" [ref=f27e106]:
+                        - img [ref=f27e108]
+                      - button "打开“实验分析严谨性方向”的对话选项" [ref=f27e471]:
+                        - img [ref=f27e473]
+                - listitem [ref=f27e120]:
+                  - link "Research Direction Reframe（未读）" [ref=f27e121] [cursor=pointer]:
+                    - /url: /c/6a4735b5-3fb8-83ea-85f9-268839a57e13?messageId=finalAgentTurnStart
+                    - generic [ref=f27e123]: Research Direction Reframe
+                    - generic [ref=f27e126]:
+                      - button "置顶 Research Direction Reframe" [ref=f27e127]:
+                        - img [ref=f27e129]
+                      - button "打开“Research Direction Reframe”的对话选项" [ref=f27e475]:
+                        - img [ref=f27e477]
+                - listitem [ref=f27e133]:
+                  - link "OpenCode OMOA 安装与分配" [ref=f27e134] [cursor=pointer]:
+                    - /url: /c/6a470bb6-3dc8-83ea-ae82-37cc4a1167d9
+                    - generic [ref=f27e136]: OpenCode OMOA 安装与分配
+                    - generic [ref=f27e138]:
+                      - button "置顶 OpenCode OMOA 安装与分配" [ref=f27e139]:
+                        - img [ref=f27e141]
+                      - button "打开“OpenCode OMOA 安装与分配”的对话选项" [ref=f27e479]:
+                        - img [ref=f27e481]
+                - listitem [ref=f27e143]:
+                  - link "Design for VLA Robustness" [ref=f27e144] [cursor=pointer]:
+                    - /url: /c/6a46f27a-ca34-83ea-b71a-e076a855e480
+                    - generic [ref=f27e146]: Design for VLA Robustness
+                    - generic [ref=f27e148]:
+                      - button "置顶 Design for VLA Robustness" [ref=f27e149]:
+                        - img [ref=f27e151]
+                      - button "打开“Design for VLA Robustness”的对话选项" [ref=f27e483]:
+                        - img [ref=f27e485]
+                - listitem [ref=f27e153]:
+                  - link "CAF-VLA Protocol Design（未读）" [ref=f27e154] [cursor=pointer]:
+                    - /url: /c/6a46b677-a9a8-83ea-96ca-f7e0d6f5418e?messageId=finalAgentTurnStart
+                    - generic [ref=f27e156]: CAF-VLA Protocol Design
+                    - generic [ref=f27e159]:
+                      - button "置顶 CAF-VLA Protocol Design" [ref=f27e160]:
+                        - img [ref=f27e162]
+                      - button "打开“CAF-VLA Protocol Design”的对话选项" [ref=f27e487]:
+                        - img [ref=f27e489]
+                - listitem [ref=f27e166]:
+                  - link "Modeling-Taste Atlas" [ref=f27e167] [cursor=pointer]:
+                    - /url: /c/6a46aa73-4c98-83ea-a1b3-ebab2cc15e3f
+                    - generic [ref=f27e169]: Modeling-Taste Atlas
+                    - generic [ref=f27e171]:
+                      - button "置顶 Modeling-Taste Atlas" [ref=f27e172]:
+                        - img [ref=f27e174]
+                      - button "打开“Modeling-Taste Atlas”的对话选项" [ref=f27e491]:
+                        - img [ref=f27e493]
+                - listitem [ref=f27e176]:
+                  - link "DeepResearch Prompt 设计" [ref=f27e177] [cursor=pointer]:
+                    - /url: /c/6a467476-08a8-83ea-9425-498070be070f
+                    - generic [ref=f27e179]: DeepResearch Prompt 设计
+                    - generic [ref=f27e181]:
+                      - button "置顶 DeepResearch Prompt 设计" [ref=f27e182]:
+                        - img [ref=f27e184]
+                      - button "打开“DeepResearch Prompt 设计”的对话选项" [ref=f27e495]:
+                        - img [ref=f27e497]
+                - listitem [ref=f27e186]:
+                  - link "Modeling Taste Operators Extraction" [ref=f27e187] [cursor=pointer]:
+                    - /url: /c/6a468590-e0ec-83ea-b95c-0ea92f375f89
+                    - generic "Modeling Taste Operators Extraction" [ref=f27e189]
+                    - generic [ref=f27e191]:
+                      - button "置顶 Modeling Taste Operators Extraction" [ref=f27e192]:
+                        - img [ref=f27e194]
+                      - button "打开“Modeling Taste Operators Extraction”的对话选项" [ref=f27e499]:
+                        - img [ref=f27e501]
+                - listitem [ref=f27e196]:
+                  - link "Modeling Object Transfer in Robotics" [ref=f27e197] [cursor=pointer]:
+                    - /url: /c/6a467564-91f0-83ea-9728-1dc1d2e3d16a
+                    - generic "Modeling Object Transfer in Robotics" [ref=f27e199]
+                    - generic [ref=f27e201]:
+                      - button "置顶 Modeling Object Transfer in Robotics" [ref=f27e202]:
+                        - img [ref=f27e204]
+                      - button "打开“Modeling Object Transfer in Robotics”的对话选项" [ref=f27e503]:
+                        - img [ref=f27e505]
+                - listitem [ref=f27e206]:
+                  - link "建模对象转移研究" [ref=f27e207] [cursor=pointer]:
+                    - /url: /c/6a46755a-8950-83ea-ad9f-c62ab0783648
+                    - generic [ref=f27e209]: 建模对象转移研究
+                    - generic [ref=f27e211]:
+                      - button "置顶 建模对象转移研究" [ref=f27e212]:
+                        - img [ref=f27e214]
+                      - button "打开“建模对象转移研究”的对话选项" [ref=f27e507]:
+                        - img [ref=f27e509]
+                - listitem [ref=f27e216]:
+                  - link "VLA robustness next move" [ref=f27e217] [cursor=pointer]:
+                    - /url: /c/6a4677f2-c6b8-83ea-9839-35c1a677ad58
+                    - generic [ref=f27e219]: VLA robustness next move
+                    - generic [ref=f27e221]:
+                      - button "置顶 VLA robustness next move" [ref=f27e222]:
+                        - img [ref=f27e224]
+                      - button "打开“VLA robustness next move”的对话选项" [ref=f27e511]:
+                        - img [ref=f27e513]
+                - listitem [ref=f27e226]:
+                  - link "AI/ML 建模对象转移" [ref=f27e227] [cursor=pointer]:
+                    - /url: /c/6a467550-5944-83ea-af85-09b43a728721
+                    - generic [ref=f27e229]: AI/ML 建模对象转移
+                    - generic [ref=f27e231]:
+                      - button "置顶 AI/ML 建模对象转移" [ref=f27e232]:
+                        - img [ref=f27e234]
+                      - button "打开“AI/ML 建模对象转移”的对话选项" [ref=f27e515]:
+                        - img [ref=f27e517]
+                - listitem [ref=f27e236]:
+                  - link "建模Taste库构建" [ref=f27e237] [cursor=pointer]:
+                    - /url: /c/6a46664c-6cc4-83ea-b457-b8845d8835dd
+                    - generic [ref=f27e239]: 建模Taste库构建
+                    - generic [ref=f27e241]:
+                      - button "置顶 建模Taste库构建" [ref=f27e242]:
+                        - img [ref=f27e244]
+                      - button "打开“建模Taste库构建”的对话选项" [ref=f27e519]:
+                        - img [ref=f27e521]
+                - listitem [ref=f27e246]:
+                  - link "VLA L与语义关系" [ref=f27e247] [cursor=pointer]:
+                    - /url: /c/6a4665cc-7724-83ea-8a02-d5d93fb842c3
+                    - generic [ref=f27e249]: VLA L与语义关系
+                    - generic [ref=f27e251]:
+                      - button "置顶 VLA L与语义关系" [ref=f27e252]:
+                        - img [ref=f27e254]
+                      - button "打开“VLA L与语义关系”的对话选项" [ref=f27e523]:
+                        - img [ref=f27e525]
+                - listitem [ref=f27e256]:
+                  - link "VLA Dynamic Fusion Audit" [ref=f27e257] [cursor=pointer]:
+                    - /url: /c/6a466176-1f24-83ea-a5be-40a9c134859d
+                    - generic [ref=f27e259]: VLA Dynamic Fusion Audit
+                    - generic [ref=f27e261]:
+                      - button "置顶 VLA Dynamic Fusion Audit" [ref=f27e262]:
+                        - img [ref=f27e264]
+                      - button "打开“VLA Dynamic Fusion Audit”的对话选项" [ref=f27e527]:
+                        - img [ref=f27e529]
+                - listitem [ref=f27e266]:
+                  - link "Sequential Correction Head Design" [ref=f27e267] [cursor=pointer]:
+                    - /url: /c/6a45d9b0-878c-83ea-825a-c946529ba84f
+                    - generic "Sequential Correction Head Design" [ref=f27e269]
+                    - generic [ref=f27e271]:
+                      - button "置顶 Sequential Correction Head Design" [ref=f27e272]:
+                        - img [ref=f27e274]
+                      - button "打开“Sequential Correction Head Design”的对话选项" [ref=f27e531]:
+                        - img [ref=f27e533]
+                - listitem [ref=f27e276]:
+                  - link "研究选题建议" [ref=f27e277] [cursor=pointer]:
+                    - /url: /c/6a44a61c-b8f4-83ea-8bae-47e3213dba7f
+                    - generic [ref=f27e279]: 研究选题建议
+                    - generic [ref=f27e281]:
+                      - button "置顶 研究选题建议" [ref=f27e282]:
+                        - img [ref=f27e284]
+                      - button "打开“研究选题建议”的对话选项" [ref=f27e535]:
+                        - img [ref=f27e537]
+                - listitem [ref=f27e286]:
+                  - link "VLA研究方向建议" [ref=f27e287] [cursor=pointer]:
+                    - /url: /c/6a44a130-2574-83ea-84ca-c8f4c9c25e7d
+                    - generic [ref=f27e289]: VLA研究方向建议
+                    - generic [ref=f27e291]:
+                      - button "置顶 VLA研究方向建议" [ref=f27e292]:
+                        - img [ref=f27e294]
+                      - button "打开“VLA研究方向建议”的对话选项" [ref=f27e539]:
+                        - img [ref=f27e541]
+                - listitem [ref=f27e296]:
+                  - link "Fable5 学术认知与Taste" [ref=f27e297] [cursor=pointer]:
+                    - /url: /c/6a45b4ab-0c98-83ea-833b-5e7aab2664d8
+                    - generic [ref=f27e299]: Fable5 学术认知与Taste
+                    - generic [ref=f27e301]:
+                      - button "置顶 Fable5 学术认知与Taste" [ref=f27e302]:
+                        - img [ref=f27e304]
+                      - button "打开“Fable5 学术认知与Taste”的对话选项" [ref=f27e543]:
+                        - img [ref=f27e545]
+                - listitem [ref=f27e306]:
+                  - link "科研建模与瓶颈分析" [ref=f27e307] [cursor=pointer]:
+                    - /url: /c/6a45a151-a0c0-83ea-85b7-d0e81ef0593d
+                    - generic [ref=f27e309]: 科研建模与瓶颈分析
+                    - generic [ref=f27e311]:
+                      - button "置顶 科研建模与瓶颈分析" [ref=f27e312]:
+                        - img [ref=f27e314]
+                      - button "打开“科研建模与瓶颈分析”的对话选项" [ref=f27e547]:
+                        - img [ref=f27e549]
+                - listitem [ref=f27e316]:
+                  - link "Higher-order Sequential Head Design" [ref=f27e317] [cursor=pointer]:
+                    - /url: /c/6a44fcb9-1fd8-83ea-b324-cb4b75c7baa5
+                    - generic "Higher-order Sequential Head Design" [ref=f27e319]
+                    - generic [ref=f27e321]:
+                      - button "置顶 Higher-order Sequential Head Design" [ref=f27e322]:
+                        - img [ref=f27e324]
+                      - button "打开“Higher-order Sequential Head Design”的对话选项" [ref=f27e551]:
+                        - img [ref=f27e553]
+                - listitem [ref=f27e326]:
+                  - link "Research-OS 重构与验证" [ref=f27e327] [cursor=pointer]:
+                    - /url: /c/6a44905a-f3bc-83ea-a7fd-008aa3209b5e
+                    - generic [ref=f27e329]: Research-OS 重构与验证
+                    - generic [ref=f27e331]:
+                      - button "置顶 Research-OS 重构与验证" [ref=f27e332]:
+                        - img [ref=f27e334]
+                      - button "打开“Research-OS 重构与验证”的对话选项" [ref=f27e555]:
+                        - img [ref=f27e557]
+                - listitem [ref=f27e336]:
+                  - link "Training dLLM for Parallel Reasoning" [ref=f27e337] [cursor=pointer]:
+                    - /url: /c/6a44cb4d-2654-83ea-9c7b-9d7686b8e4b5
+                    - generic "Training dLLM for Parallel Reasoning" [ref=f27e339]
+                    - generic [ref=f27e341]:
+                      - button "置顶 Training dLLM for Parallel Reasoning" [ref=f27e342]:
+                        - img [ref=f27e344]
+                      - button "打开“Training dLLM for Parallel Reasoning”的对话选项" [ref=f27e559]:
+                        - img [ref=f27e561]
+                - listitem [ref=f27e346]:
+                  - link "Research design improvement" [ref=f27e347] [cursor=pointer]:
+                    - /url: /c/6a44a91a-4240-83ea-a180-521c47402138
+                    - generic [ref=f27e349]: Research design improvement
+                    - generic [ref=f27e351]:
+                      - button "置顶 Research design improvement" [ref=f27e352]:
+                        - img [ref=f27e354]
+                      - button "打开“Research design improvement”的对话选项" [ref=f27e563]:
+                        - img [ref=f27e565]
+                - listitem [ref=f27e356]:
+                  - link "科研切入领域" [ref=f27e357] [cursor=pointer]:
+                    - /url: /c/6a435ff2-aef0-83ea-aab7-b2f6c1e3dfcb
+                    - generic [ref=f27e359]: 科研切入领域
+                    - generic [ref=f27e361]:
+                      - button "置顶 科研切入领域" [ref=f27e362]:
+                        - img [ref=f27e364]
+                      - button "打开“科研切入领域”的对话选项" [ref=f27e567]:
+                        - img [ref=f27e569]
+                - listitem [ref=f27e366]:
+                  - link "模型分工与优化方案" [ref=f27e367] [cursor=pointer]:
+                    - /url: /c/6a44859b-4d6c-83ea-acaa-5cd07fe28a9a
+                    - generic [ref=f27e369]: 模型分工与优化方案
+                    - generic [ref=f27e371]:
+                      - button "置顶 模型分工与优化方案" [ref=f27e372]:
+                        - img [ref=f27e374]
+                      - button "打开“模型分工与优化方案”的对话选项" [ref=f27e571]:
+                        - img [ref=f27e573]
+          - button "xufeng ling 个人帐户，打开“个人资料”菜单" [ref=f27e579] [cursor=pointer]:
+            - generic [ref=f27e389]:
+              - img "个人资料图片" [ref=f27e580]
+              - generic [ref=f27e392]:
+                - generic [ref=f27e394]: xufeng ling
+                - generic [ref=f27e397]: 个人帐户
+            - button "下载应用" [ref=f27e400]:
+              - img [ref=f27e402]
+    - generic [ref=f27e406]:
+      - generic [ref=f27e407]:
+        - banner:
+          - generic [ref=f27e410]:
+            - button "分享" [ref=f27e693] [cursor=pointer]:
+              - generic [ref=f27e694]:
+                - img [ref=f27e695]
+                - text: 分享
+            - button "打开对话选项" [ref=f27e698] [cursor=pointer]:
+              - img [ref=f27e699]
+      - main [ref=f27e417]:
+        - generic [ref=f27e418]:
+          - generic [ref=f27e702]:
+            - generic [ref=f27e704]:
+              - heading "你说：" [level=4] [ref=f27e705]
+              - generic [ref=f27e707]:
+                - generic [ref=f27e713]:
+                  - generic [ref=f27e715]: "You are GPT-5.5 Pro acting as the design brain for a research programme. This is a /forge (lateral) hand-off. Your job: (1) JUDGE the best lateral home for the engine below, then (2) DESIGN the chosen study to a preregisterable spec. Take your time (1h+ ok). ## The ONE goal Produce ONE genuine 一区 contribution (Information Fusion / ESWA tier), an honestly-named research TYPE, defensible + falsifiable. Compute = 2×4090D (frozen encoders + LoRA/adapter + heavy evaluation; NO pretraining, NO from-scratch, NO SOTA race). MODE = FAST (a cheap probe SIZES the prize before any big run; kill fast). ANTI-RETREAT: the deliverable must be a real BUILD that predicts a NEW fact — never an evaluation certificate / diagnosis paper. ## The transferable ASSET (the whole reason for this lateral) A validated inference-only causal screen — N/G/U — that predicts which repair works BEFORE you build it: - N (necessity): clean-task performance drop when a stream is masked/removed (is the stream load-bearing?). - G (gate-recoverability): does suppressing/down-weighting a corrupted stream recover performance? (the reliability-GATING paradigm's core assumption). - U (clean-replace upper bound): does replacing the corrupted stream with a clean version recover it in principle? Across a full VLA robustness campaign this screen made a contrarian, repeatedly-confirmed prediction: when a stream is NECESSARY (high N) and corruption destroys its content, GATING HURTS (G<0) — the stream is necessary, not untrustworthy; down-weighting it destroys signal. This REFUTES the reliability-gating paradigm that dominates multimodal-fusion robustness. The screen also correctly predicted two flagship VLA repairs would fail before we trained them (a predict-before-build capability). ## Why VLA is now CLOSED for this idea (two structural caps — so you don't send me back) On frozen StarVLA (Qwen2.5-VL-3B + FAST + LoRA) + LIBERO-Plus, with controls: 1. Cross-stream region CLOSED. Reliability-GATING killed (G<0 everywhere) AND cross-stream RESTORATION killed (a same-arch intra denoiser ties it; mismatched siblings recover MORE → confounded). Shared root cause: NO cross-stream redundancy — every stream necessary (N≫0.15), non-substitutable. 2. Acquisition-repair CAPPED (a probe I ran this week). LIBERO-Plus corruptions: 3/5 sensor-noise families are stochastic (motion/fog/glass) but RESAMPLABLE ≠ RECOVERABLE — averaging K=4 independent re-renders recovers only −1% / +5% / +2% of the pixel error toward clean (the corruption is a biased info-destroying operator; averaging cancels only its zero-mean part). And conceptually, \"acquire another observation\" on a fixed sim scene = re-sampling the SAME corruption = test-time augmentation (known/occupied/thin), NOT fetching new world-information. Conclusion (mine, for you to pressure-test): the frozen-VLA + LIBERO-Plus platform structurally cannot host the \"necessity-triggered acquisition / predict-before-build repair-selection\" contribution at a 一区 bar. The engine (N/G/U + the \"necessity→acquire, don't gate\" thesis) is sound and designed for a domain with REAL acquisition actions (fetch new evidence) and possible redundancy — which VLA/LIBERO-Plus lacks. ## The two candidate laterals (rank/replace as you see fit) Card 5 — Causal Evidence Acquisition for Multimodal Fact-Checking. For each claim, intervene on {claim-text, evidence-image, OCR, context} to compute an N/G/U analogue → a tiny frozen-encoder LoRA router picks ONE evidence action under budget {text-retrieval, OCR-expand, CLIP-nearest visual, reverse-image proxy, abstain}, vs baselines {always-fuse, always-retrieve-all, confidence-gating}. Data = Factify-2 / MOCHEG (public). Squarely Information-Fusion (一区). Autonomously executable (no credentialing wall). New fact (the A2 transplant): dropping a \"necessary-but-unreliable\" stream HURTS; targeted acquisition wins with fewer calls — and fact-checking may have enough redundancy that gating sometimes works, unlike VLA (a publishable boundary either way). Card 6 — Clinical Modality Acquisition (EHR + CXR test-ordering). N/G/U decides request/use/defer a modality vs impute/dynamic-fuse. Data = EHRXQA / MIMIC — higher stakes but a credentialing wall (PhysioNet DUA) = an autonomy blocker for an unattended loop. ## Constraints on your design 2×4090D, frozen encoders + tiny LoRA/router + heavy eval. No pretraining/SOTA-race. A cheap surprise-symmetric FIRST probe that sizes the prize before any training (e.g., does the N/G/U analogue even SEPARATE which evidence action wins, measured on frozen embeddings before the router exists?). Off-frame candidate mandatory (a non-incumbent mathematics — POMDP value-of-information / sequential experimental design — with a differential prediction the fusion-weight incumbent can't make). The deliverable is a BUILD (the router + measured Δ vs baselines under equal budget), not a diagnosis. ## The ask 1. JUDGE: Card 5 vs Card 6 vs a better lateral you see for THIS exact engine. Weigh 一区-fit (Information Fusion), autonomy/data-access, and where the \"necessity→acquire not gate\" new-fact has the most teeth. One clear recommendation + why. 2. DESIGN the chosen study to a preregisterable spec: the object, the N/G/U analogue (exact interventions on this modality set), the router + its budget, the baselines (incl. the gating baseline to REFUTE + the strongest opposing baseline optimized to win), the primary metric + the cheapest kill-probe, the falsifier, ≥3-seed plan, and the off-frame differential prediction. A page is fine."
+                  - button "展开" [ref=f27e716] [cursor=pointer]:
+                    - generic [ref=f27e717]: 展开
+                    - img [ref=f27e719]
+                - generic [ref=f27e721]:
+                  - group "你的消息操作":
+                    - button "复制消息":
+                      - generic:
+                        - img
+                    - button "编辑消息":
+                      - generic:
+                        - img
+            - generic [ref=f27e724]:
+              - heading "ChatGPT 说：" [level=4] [ref=f27e725]
+              - generic [ref=f27e727]:
+                - generic [ref=f27e728]:
+                  - paragraph [ref=f27e746]: 我会先核查数据可得性、场景是否真有取证动作以及一区适配度，再选定一个方向；随后把它收束成带廉价杀停探针、反证条件和等预算基线的可预注册构建方案。
+                  - paragraph [ref=f27e750]: 初步判断已明显偏向 Card 5：事实核查同时具备公开多模态数据和真实外部取证动作，而临床方向虽有应用吸引力，却被 MIMIC/EHRXQA 的 credentialing、DUA 等访问门槛削弱了 FAST 自主闭环。
+                  - button "已思考 9m 19s" [ref=f27e758] [cursor=pointer]:
+                    - text: 已思考 9m 19s
+                    - img [ref=f27e759]
+                  - generic [ref=f27e763]:
+                    - heading "1. JUDGE" [level=2] [ref=f27e764]
+                    - paragraph [ref=f27e765]:
+                      - strong [ref=f27e766]: "Recommendation: choose Card 5, but frame it as “causal active evidence acquisition for multimodal fact verification,” not as another fusion model."
+                    - paragraph [ref=f27e767]:
+                      - text: "Card 5 is the best lateral home for this engine. It has the three things VLA/LIBERO lacked: real acquisition actions, plausible cross-source redundancy, and public-enough data for an autonomous loop. It also sits directly inside the"
+                      - emphasis [ref=f27e768]: Information Fusion
+                      - text: "scope: multi-source fusion, active/passive sensor suites, sensor/source management, incomplete/imperfect environments, and computational-resource optimization are explicitly in scope."
+                      - link "科学直通车" [ref=f27e771] [cursor=pointer]:
+                        - /url: https://www.sciencedirect.com/journal/information-fusion
+                        - generic [ref=f27e776]: 科学直通车
+                      - text: ESWA is also viable if the paper is written as an intelligent decision-support system with a tested implementation rather than a benchmark paper.
+                      - link "科学直通车" [ref=f27e779] [cursor=pointer]:
+                        - /url: https://www.sciencedirect.com/journal/expert-systems-with-applications
+                        - generic [ref=f27e784]: 科学直通车
+                    - paragraph [ref=f27e785]:
+                      - strong [ref=f27e786]: Card 6 is scientifically tempting but operationally wrong for this programme.
+                      - text: EHRXQA is a strong multimodal EHR+CXR object and explicitly requires table-image reasoning.
+                      - link "PhysioNet" [ref=f27e789] [cursor=pointer]:
+                        - /url: https://physionet.org/content/ehrxqa/
+                        - generic [ref=f27e794]: PhysioNet
+                      - text: "But the underlying MIMIC ecosystem is restricted: access requires credentialing, DUA signing, and required training."
+                      - link "PhysioNet" [ref=f27e797] [cursor=pointer]:
+                        - /url: https://physionet.org/content/mimiciv/
+                        - generic [ref=f27e802]: PhysioNet
+                      - text: That is not just an inconvenience; it blocks the “unattended fast loop” constraint and adds ethics/access friction before the core idea is even tested. It also risks turning “request a CXR” into retrospective missing-modality simulation rather than real evidence acquisition.
+                    - paragraph [ref=f27e803]:
+                      - strong [ref=f27e804]: "The better version of Card 5 is: MOCHEG-primary, Factify-2 replication."
+                      - text: MOCHEG is especially well-shaped because its task is claim verification from web evidence, including articles and images, and it has 15,601 claims with 33,880 text paragraphs and 12,112 images as evidence.
+                      - link "VTechWorks" [ref=f27e807] [cursor=pointer]:
+                        - /url: https://vtechworks.lib.vt.edu/items/d702f18a-9471-44e1-b580-6a13355df127
+                        - generic [ref=f27e812]: VTechWorks
+                      - text: Its official repository also makes the dataset available and states CC BY 4.0 licensing for data.
+                      - link "GitHub" [ref=f27e815] [cursor=pointer]:
+                        - /url: https://github.com/VT-NLP/Mocheg
+                        - generic [ref=f27e820]: GitHub
+                      - text: Factify-2 is a useful second dataset because it has 50,000 multimodal claims with 100,000 images split into train/validation/test, with labels support / not-enough-evidence / refute.
+                      - link "GitHub" [ref=f27e823] [cursor=pointer]:
+                        - /url: https://github.com/surya1701/Factify-2.0
+                        - generic [ref=f27e828]: GitHub
+                    - paragraph [ref=f27e829]: "The contribution should be honestly named:"
+                    - paragraph [ref=f27e830]:
+                      - strong [ref=f27e831]: "Type:"
+                      - text: cost-constrained causal active evidence acquisition for multimodal fact verification.
+                    - paragraph [ref=f27e832]:
+                      - strong [ref=f27e833]: "One-sentence thesis:"
+                      - text: when a source is task-necessary but currently unreliable, the correct repair is often to acquire new evidence of the same semantic role, not to down-weight the source; when the source is redundant or unnecessary, reliability-gating can be correct.
+                    - paragraph [ref=f27e834]: "That is falsifiable, not a SOTA race, and it predicts a new held-out fact: which evidence action should be taken before spending the evidence budget."
+                    - separator [ref=f27e835]
+                    - heading "2. PREREGISTERABLE STUDY SPEC" [level=2] [ref=f27e836]
+                    - heading "Working title" [level=3] [ref=f27e837]
+                    - paragraph [ref=f27e838]:
+                      - strong [ref=f27e839]: "NUGA-Fact: Necessity-Guided Acquisition for Cost-Constrained Multimodal Fact Verification"
+                    - paragraph [ref=f27e840]: “NUGA” = Necessity / Upper-bound / Gate-recoverability Acquisition. The name is acceptable because the method is not claiming universal causality; it is a causal-screened acquisition router.
+                    - separator [ref=f27e841]
+                    - heading "Object" [level=2] [ref=f27e842]
+                    - paragraph [ref=f27e843]: "Each instance is a claim-verification state:"
+                    - generic [ref=f27e845]:
+                      - math [ref=f27e847]:
+                        - generic [ref=f27e849]:
+                          - generic [ref=f27e850]: x
+                          - generic [ref=f27e851]: =
+                          - generic [ref=f27e852]: (
+                          - generic [ref=f27e853]: c
+                          - generic [ref=f27e854]: ","
+                          - generic [ref=f27e855]: t
+                          - generic [ref=f27e856]: ","
+                          - generic [ref=f27e857]: v
+                          - generic [ref=f27e858]: ","
+                          - generic [ref=f27e859]: o
+                          - generic [ref=f27e860]: ","
+                          - generic [ref=f27e861]: m
+                          - generic [ref=f27e862]: )
+                      - generic [ref=f27e863]:
+                        - generic [ref=f27e864]: x =
+                        - generic [ref=f27e865]: (c, t, v, o, m)
+                    - paragraph [ref=f27e866]: "where:"
+                    - list [ref=f27e867]:
+                      - listitem [ref=f27e868]:
+                        - paragraph [ref=f27e869]:
+                          - generic [ref=f27e870]:
+                            - math [ref=f27e872]:
+                              - generic [ref=f27e875]: c
+                            - generic [ref=f27e877]: c
+                          - text: ": claim text."
+                      - listitem [ref=f27e878]:
+                        - paragraph [ref=f27e879]:
+                          - generic [ref=f27e880]:
+                            - math [ref=f27e882]:
+                              - generic [ref=f27e885]: t
+                            - generic [ref=f27e887]: t
+                          - text: ": retrieved or provided textual evidence/context."
+                      - listitem [ref=f27e888]:
+                        - paragraph [ref=f27e889]:
+                          - generic [ref=f27e890]:
+                            - math [ref=f27e892]:
+                              - generic [ref=f27e895]: v
+                            - generic [ref=f27e897]: v
+                          - text: ": evidence image."
+                      - listitem [ref=f27e898]:
+                        - paragraph [ref=f27e899]:
+                          - generic [ref=f27e900]:
+                            - math [ref=f27e902]:
+                              - generic [ref=f27e905]: o
+                            - generic [ref=f27e907]: o
+                          - text: ": OCR text extracted from image or screenshot-like evidence."
+                      - listitem [ref=f27e908]:
+                        - paragraph [ref=f27e909]:
+                          - generic [ref=f27e910]:
+                            - math [ref=f27e912]:
+                              - generic [ref=f27e915]: m
+                            - generic [ref=f27e917]: m
+                          - text: ": light metadata/caption/entity context when available."
+                    - paragraph [ref=f27e918]: "Target:"
+                    - generic [ref=f27e920]:
+                      - math [ref=f27e922]:
+                        - generic [ref=f27e924]:
+                          - generic [ref=f27e925]: "y"
+                          - generic [ref=f27e926]: ∈
+                          - generic [ref=f27e927]: "{"
+                          - generic [ref=f27e928]: support
+                          - generic [ref=f27e929]: ","
+                          - generic [ref=f27e930]: refute
+                          - generic [ref=f27e931]: ","
+                          - generic [ref=f27e932]: not-enough-evidence
+                          - generic [ref=f27e933]: "}"
+                      - generic [ref=f27e934]:
+                        - generic [ref=f27e935]: y ∈
+                        - generic [ref=f27e936]:
+                          - text: "{"
+                          - generic [ref=f27e937]: support
+                          - text: ","
+                          - generic [ref=f27e938]: refute
+                          - text: ","
+                          - generic [ref=f27e939]: not-enough-evidence
+                          - text: "}"
+                    - paragraph [ref=f27e940]:
+                      - text: "Primary dataset:"
+                      - strong [ref=f27e941]: MOCHEG
+                      - text: .
+                      - text: "External replication:"
+                      - strong [ref=f27e942]: Factify-2
+                      - text: .
+                    - paragraph [ref=f27e943]:
+                      - text: The system must output a verdict after either using the initial evidence or taking
+                      - strong [ref=f27e944]: one evidence action
+                      - text: .
+                    - separator [ref=f27e945]
+                    - heading "Core claim" [level=2] [ref=f27e946]
+                    - paragraph [ref=f27e947]: The paper’s real claim is not “our fusion is better.”
+                    - paragraph [ref=f27e948]: "It is:"
+                    - generic [ref=f27e950]:
+                      - math [ref=f27e952]:
+                        - generic [ref=f27e954]:
+                          - generic [ref=f27e955]: necessity
+                          - generic [ref=f27e956]: ×
+                          - generic [ref=f27e957]: unreliability
+                          - generic [ref=f27e958]: ⇒
+                          - generic [ref=f27e959]:
+                            - generic [ref=f27e960]: acquire,
+                            - generic [ref=f27e961]: not
+                            - generic [ref=f27e962]: gate
+                      - generic [ref=f27e963]:
+                        - generic [ref=f27e964]:
+                          - generic [ref=f27e965]: necessity
+                          - text: ×
+                        - generic [ref=f27e966]:
+                          - generic [ref=f27e967]: unreliability
+                          - text: ⇒
+                        - generic [ref=f27e969]: acquire, not gate
+                    - paragraph [ref=f27e970]: "More exactly:"
+                    - blockquote [ref=f27e971]:
+                      - paragraph [ref=f27e972]: For examples where a modality/source is decision-necessary and corruption or unreliability damages its content, suppressing that source should underperform acquiring new evidence targeted at the same semantic role. For low-necessity or redundant sources, gating/no-action may be optimal.
+                    - paragraph [ref=f27e973]:
+                      - text: "This preserves the VLA insight but makes it more general:"
+                      - strong [ref=f27e974]: reliability is not a sufficient reason to gate; reliability must be conditioned on task necessity and substitutability.
+                    - separator [ref=f27e975]
+                    - heading "Frozen base system" [level=2] [ref=f27e976]
+                    - paragraph [ref=f27e977]: "Use frozen encoders and a small verifier:"
+                    - generic [ref=f27e979]:
+                      - math [ref=f27e981]:
+                        - generic [ref=f27e983]:
+                          - generic [ref=f27e984]:
+                            - generic [ref=f27e985]: f
+                            - generic [ref=f27e986]: θ
+                          - generic [ref=f27e987]: (
+                          - generic [ref=f27e988]: c
+                          - generic [ref=f27e989]: ","
+                          - generic [ref=f27e990]: t
+                          - generic [ref=f27e991]: ","
+                          - generic [ref=f27e992]: v
+                          - generic [ref=f27e993]: ","
+                          - generic [ref=f27e994]: o
+                          - generic [ref=f27e995]: ","
+                          - generic [ref=f27e996]: m
+                          - generic [ref=f27e997]: )
+                          - generic [ref=f27e998]: →
+                          - generic [ref=f27e999]: p
+                          - generic [ref=f27e1000]: (
+                          - generic [ref=f27e1001]: "y"
+                          - generic [ref=f27e1002]: ∣
+                          - generic [ref=f27e1003]: x
+                          - generic [ref=f27e1004]: )
+                      - generic [ref=f27e1005]:
+                        - generic [ref=f27e1006]:
+                          - generic [ref=f27e1007]:
+                            - text: f
+                            - generic [ref=f27e1012]: θ
+                          - text: (c, t, v, o, m) →
+                        - generic [ref=f27e1016]: p(y∣x)
+                    - paragraph [ref=f27e1017]: "Allowed components:"
+                    - list [ref=f27e1018]:
+                      - listitem [ref=f27e1019]:
+                        - paragraph [ref=f27e1020]: Frozen text encoder for claim/evidence/OCR.
+                      - listitem [ref=f27e1021]:
+                        - paragraph [ref=f27e1022]: Frozen image encoder for evidence images.
+                      - listitem [ref=f27e1023]:
+                        - paragraph [ref=f27e1024]: Optional frozen VLM for final verdict scoring.
+                      - listitem [ref=f27e1025]:
+                        - paragraph [ref=f27e1026]: Tiny LoRA/adapters or small MLP fusion head only.
+                      - listitem [ref=f27e1027]:
+                        - paragraph [ref=f27e1028]: No pretraining.
+                      - listitem [ref=f27e1029]:
+                        - paragraph [ref=f27e1030]: No from-scratch multimodal model.
+                      - listitem [ref=f27e1031]:
+                        - paragraph [ref=f27e1032]: No leaderboard/SOTA claim.
+                    - paragraph [ref=f27e1033]: The verifier is trained once per seed and then frozen for all intervention and routing experiments. The paper reports that the verifier is merely the measuring instrument plus final predictor, not the novelty.
+                    - separator [ref=f27e1034]
+                    - heading "N/G/U analogue" [level=1] [ref=f27e1035]
+                    - paragraph [ref=f27e1036]:
+                      - text: For each source
+                      - generic [ref=f27e1037]:
+                        - math [ref=f27e1039]:
+                          - generic [ref=f27e1041]:
+                            - generic [ref=f27e1042]: s
+                            - generic [ref=f27e1043]: ∈
+                            - generic [ref=f27e1044]: "{"
+                            - generic [ref=f27e1045]: t
+                            - generic [ref=f27e1046]: ","
+                            - generic [ref=f27e1047]: v
+                            - generic [ref=f27e1048]: ","
+                            - generic [ref=f27e1049]: o
+                            - generic [ref=f27e1050]: ","
+                            - generic [ref=f27e1051]: m
+                            - generic [ref=f27e1052]: "}"
+                        - generic [ref=f27e1053]:
+                          - generic [ref=f27e1054]: s ∈
+                          - generic [ref=f27e1055]: "{t, v, o, m}"
+                      - text: ", define interventions over the same frozen verifier."
+                    - paragraph [ref=f27e1056]:
+                      - text: Let
+                      - generic [ref=f27e1057]:
+                        - math [ref=f27e1059]:
+                          - generic [ref=f27e1061]:
+                            - generic [ref=f27e1062]:
+                              - generic [ref=f27e1063]: S
+                              - generic [ref=f27e1064]: "y"
+                            - generic [ref=f27e1065]: (
+                            - generic [ref=f27e1066]: x
+                            - generic [ref=f27e1067]: )
+                            - generic [ref=f27e1068]: =
+                            - generic [ref=f27e1069]: log
+                            - generic: ⁡
+                            - generic [ref=f27e1070]:
+                              - generic [ref=f27e1071]: p
+                              - generic [ref=f27e1072]: θ
+                            - generic [ref=f27e1073]: (
+                            - generic [ref=f27e1074]: "y"
+                            - generic [ref=f27e1075]: ∣
+                            - generic [ref=f27e1076]: x
+                            - generic [ref=f27e1077]: )
+                        - generic [ref=f27e1078]:
+                          - generic [ref=f27e1079]:
+                            - generic [ref=f27e1080]:
+                              - text: S
+                              - generic [ref=f27e1085]: "y"
+                            - text: (x) =
+                          - generic [ref=f27e1089]:
+                            - generic [ref=f27e1090]: log
+                            - generic [ref=f27e1091]:
+                              - text: p
+                              - generic [ref=f27e1096]: θ
+                            - text: (y∣x)
+                      - text: ", using the true label only for offline measurement and training-label construction. For deployed routing, use the label-free analogues based on predicted distribution shift; test-time true labels are never used."
+                    - 'heading "N: necessity" [level=3] [ref=f27e1100]'
+                    - paragraph [ref=f27e1101]:
+                      - text: Mask source
+                      - generic [ref=f27e1102]:
+                        - math [ref=f27e1104]:
+                          - generic [ref=f27e1107]: s
+                        - generic [ref=f27e1109]: s
+                      - text: ":"
+                    - generic [ref=f27e1111]:
+                      - math [ref=f27e1113]:
+                        - generic [ref=f27e1116]:
+                          - generic [ref=f27e1117]: x
+                          - generic [ref=f27e1118]:
+                            - generic [ref=f27e1119]: ∖
+                            - generic [ref=f27e1120]: s
+                      - generic [ref=f27e1123]:
+                        - text: x
+                        - generic [ref=f27e1129]: ∖s
+                    - paragraph [ref=f27e1133]: "Masking rules:"
+                    - list [ref=f27e1134]:
+                      - listitem [ref=f27e1135]:
+                        - paragraph [ref=f27e1136]:
+                          - text: Text/context
+                          - generic [ref=f27e1137]:
+                            - math [ref=f27e1139]:
+                              - generic [ref=f27e1142]: t
+                            - generic [ref=f27e1144]: t
+                          - text: ": replace with"
+                          - code [ref=f27e1145]: "[NO_TEXT_EVIDENCE]"
+                          - text: .
+                      - listitem [ref=f27e1146]:
+                        - paragraph [ref=f27e1147]:
+                          - text: Image
+                          - generic [ref=f27e1148]:
+                            - math [ref=f27e1150]:
+                              - generic [ref=f27e1153]: v
+                            - generic [ref=f27e1155]: v
+                          - text: ": replace with learned/zero image token or blank image embedding."
+                      - listitem [ref=f27e1156]:
+                        - paragraph [ref=f27e1157]:
+                          - text: OCR
+                          - generic [ref=f27e1158]:
+                            - math [ref=f27e1160]:
+                              - generic [ref=f27e1163]: o
+                            - generic [ref=f27e1165]: o
+                          - text: ": replace with"
+                          - code [ref=f27e1166]: "[NO_OCR]"
+                          - text: .
+                      - listitem [ref=f27e1167]:
+                        - paragraph [ref=f27e1168]:
+                          - text: Metadata/context
+                          - generic [ref=f27e1169]:
+                            - math [ref=f27e1171]:
+                              - generic [ref=f27e1174]: m
+                            - generic [ref=f27e1176]: m
+                          - text: ": replace with"
+                          - code [ref=f27e1177]: "[NO_CONTEXT]"
+                          - text: .
+                    - paragraph [ref=f27e1178]: "Label-aware offline score:"
+                    - generic [ref=f27e1180]:
+                      - math [ref=f27e1182]:
+                        - generic [ref=f27e1184]:
+                          - generic [ref=f27e1185]:
+                            - generic [ref=f27e1186]: "N"
+                            - generic [ref=f27e1187]: s
+                          - generic [ref=f27e1188]: (
+                          - generic [ref=f27e1189]: x
+                          - generic [ref=f27e1190]: )
+                          - generic [ref=f27e1191]: =
+                          - generic [ref=f27e1192]:
+                            - generic [ref=f27e1193]: S
+                            - generic [ref=f27e1194]: "y"
+                          - generic [ref=f27e1195]: (
+                          - generic [ref=f27e1196]: x
+                          - generic [ref=f27e1197]: )
+                          - generic [ref=f27e1198]: −
+                          - generic [ref=f27e1199]:
+                            - generic [ref=f27e1200]: S
+                            - generic [ref=f27e1201]: "y"
+                          - generic [ref=f27e1202]: (
+                          - generic [ref=f27e1203]:
+                            - generic [ref=f27e1204]: x
+                            - generic [ref=f27e1205]:
+                              - generic [ref=f27e1206]: ∖
+                              - generic [ref=f27e1207]: s
+                          - generic [ref=f27e1208]: )
+                      - generic [ref=f27e1209]:
+                        - generic [ref=f27e1210]:
+                          - generic [ref=f27e1211]:
+                            - text: "N"
+                            - generic [ref=f27e1216]: s
+                          - text: (x) =
+                        - generic [ref=f27e1220]:
+                          - generic [ref=f27e1221]:
+                            - text: S
+                            - generic [ref=f27e1226]: "y"
+                          - text: (x) −
+                        - generic [ref=f27e1230]:
+                          - generic [ref=f27e1231]:
+                            - text: S
+                            - generic [ref=f27e1236]: "y"
+                          - text: (
+                          - generic [ref=f27e1240]:
+                            - text: x
+                            - generic [ref=f27e1246]: ∖s
+                          - text: )
+                    - paragraph [ref=f27e1250]:
+                      - text: High
+                      - generic [ref=f27e1251]:
+                        - math [ref=f27e1253]:
+                          - generic [ref=f27e1256]:
+                            - generic [ref=f27e1257]: "N"
+                            - generic [ref=f27e1258]: s
+                        - generic [ref=f27e1261]:
+                          - text: "N"
+                          - generic [ref=f27e1266]: s
+                      - text: means removing the stream damages the verdict.
+                    - paragraph [ref=f27e1270]: "Deployable feature:"
+                    - generic [ref=f27e1272]:
+                      - math [ref=f27e1274]:
+                        - generic [ref=f27e1276]:
+                          - generic [ref=f27e1277]:
+                            - generic [ref=f27e1278]: "N"
+                            - generic [ref=f27e1279]: s
+                            - generic [ref=f27e1280]:
+                              - generic [ref=f27e1281]: K
+                              - generic [ref=f27e1282]: L
+                          - generic [ref=f27e1283]: (
+                          - generic [ref=f27e1284]: x
+                          - generic [ref=f27e1285]: )
+                          - generic [ref=f27e1286]: =
+                          - generic [ref=f27e1287]:
+                            - generic [ref=f27e1288]: D
+                            - generic [ref=f27e1289]:
+                              - generic [ref=f27e1290]: K
+                              - generic [ref=f27e1291]: L
+                          - generic [ref=f27e1292]: (
+                          - generic [ref=f27e1293]:
+                            - generic [ref=f27e1294]: p
+                            - generic [ref=f27e1295]: θ
+                          - generic [ref=f27e1296]: (
+                          - generic [ref=f27e1297]: ⋅
+                          - generic [ref=f27e1298]: ∣
+                          - generic [ref=f27e1299]: x
+                          - generic [ref=f27e1300]: )
+                          - generic [ref=f27e1301]: ∥
+                          - generic [ref=f27e1302]:
+                            - generic [ref=f27e1303]: p
+                            - generic [ref=f27e1304]: θ
+                          - generic [ref=f27e1305]: (
+                          - generic [ref=f27e1306]: ⋅
+                          - generic [ref=f27e1307]: ∣
+                          - generic [ref=f27e1308]:
+                            - generic [ref=f27e1309]: x
+                            - generic [ref=f27e1310]:
+                              - generic [ref=f27e1311]: ∖
+                              - generic [ref=f27e1312]: s
+                          - generic [ref=f27e1313]: )
+                          - generic [ref=f27e1314]: )
+                      - generic [ref=f27e1315]:
+                        - generic [ref=f27e1316]:
+                          - generic [ref=f27e1317]:
+                            - text: "N"
+                            - generic [ref=f27e1321]:
+                              - generic [ref=f27e1322]: s
+                              - generic [ref=f27e1324]: KL
+                          - text: (x) =
+                        - generic [ref=f27e1328]:
+                          - generic [ref=f27e1329]:
+                            - text: D
+                            - generic [ref=f27e1335]: KL
+                          - generic [ref=f27e1339]: (
+                          - generic [ref=f27e1340]:
+                            - text: p
+                            - generic [ref=f27e1345]: θ
+                          - text: (⋅∣x)
+                          - text: ∥
+                          - generic [ref=f27e1351]:
+                            - text: p
+                            - generic [ref=f27e1356]: θ
+                          - text: (⋅∣
+                          - generic [ref=f27e1360]:
+                            - text: x
+                            - generic [ref=f27e1366]: ∖s
+                          - text: )
+                          - generic [ref=f27e1370]: )
+                    - paragraph [ref=f27e1371]:
+                      - text: High
+                      - generic [ref=f27e1372]:
+                        - math [ref=f27e1374]:
+                          - generic [ref=f27e1377]:
+                            - generic [ref=f27e1378]: "N"
+                            - generic [ref=f27e1379]:
+                              - generic [ref=f27e1380]: K
+                              - generic [ref=f27e1381]: L
+                        - generic [ref=f27e1384]:
+                          - text: "N"
+                          - generic [ref=f27e1390]: KL
+                      - text: means the model’s posterior depends on that stream.
+                    - separator [ref=f27e1391]
+                    - 'heading "G: gate-recoverability" [level=3] [ref=f27e1392]'
+                    - paragraph [ref=f27e1393]:
+                      - text: Create a corrupted version of source
+                      - generic [ref=f27e1394]:
+                        - math [ref=f27e1396]:
+                          - generic [ref=f27e1399]: s
+                        - generic [ref=f27e1401]: s
+                      - text: ":"
+                    - generic [ref=f27e1403]:
+                      - math [ref=f27e1405]:
+                        - generic [ref=f27e1408]:
+                          - generic [ref=f27e1409]: x
+                          - generic [ref=f27e1410]:
+                            - generic [ref=f27e1411]: s
+                            - generic [ref=f27e1412]: ~
+                      - generic [ref=f27e1415]:
+                        - text: x
+                        - generic [ref=f27e1425]:
+                          - generic [ref=f27e1426]: s
+                          - text: ~
+                    - paragraph [ref=f27e1430]: "Corruption families are preregistered:"
+                    - list [ref=f27e1431]:
+                      - listitem [ref=f27e1432]:
+                        - paragraph [ref=f27e1433]:
+                          - text: "Text/context corruption: replace"
+                          - generic [ref=f27e1434]:
+                            - math [ref=f27e1436]:
+                              - generic [ref=f27e1439]: t
+                            - generic [ref=f27e1441]: t
+                          - text: with a hard negative passage retrieved by BM25/dense similarity from a different claim sharing named entities but not the same gold evidence.
+                      - listitem [ref=f27e1442]:
+                        - paragraph [ref=f27e1443]:
+                          - text: "Image corruption: replace"
+                          - generic [ref=f27e1444]:
+                            - math [ref=f27e1446]:
+                              - generic [ref=f27e1449]: v
+                            - generic [ref=f27e1451]: v
+                          - text: with a CLIP-nearest image from another claim that is visually similar but not gold evidence.
+                      - listitem [ref=f27e1452]:
+                        - paragraph [ref=f27e1453]: "OCR corruption: degrade the image before OCR, then re-run OCR; also test character deletion/substitution at fixed rates."
+                      - listitem [ref=f27e1454]:
+                        - paragraph [ref=f27e1455]: "Metadata/context corruption: swap caption/entity context with same-entity or same-event distractors."
+                    - paragraph [ref=f27e1456]: "Now gate the corrupted stream:"
+                    - generic [ref=f27e1458]:
+                      - math [ref=f27e1460]:
+                        - generic [ref=f27e1462]:
+                          - generic [ref=f27e1463]:
+                            - generic [ref=f27e1464]: g
+                            - generic [ref=f27e1465]: s
+                          - generic [ref=f27e1466]: (
+                          - generic [ref=f27e1467]:
+                            - generic [ref=f27e1468]: x
+                            - generic [ref=f27e1469]:
+                              - generic [ref=f27e1470]: s
+                              - generic [ref=f27e1471]: ~
+                          - generic [ref=f27e1472]: )
+                      - generic [ref=f27e1474]:
+                        - generic [ref=f27e1475]:
+                          - text: g
+                          - generic [ref=f27e1480]: s
+                        - text: (
+                        - generic [ref=f27e1484]:
+                          - text: x
+                          - generic [ref=f27e1494]:
+                            - generic [ref=f27e1495]: s
+                            - text: ~
+                        - text: )
+                    - paragraph [ref=f27e1499]:
+                      - text: where gating means suppressing/down-weighting
+                      - generic [ref=f27e1500]:
+                        - math [ref=f27e1502]:
+                          - generic [ref=f27e1505]: s
+                        - generic [ref=f27e1507]: s
+                      - text: ", not acquiring anything."
+                    - paragraph [ref=f27e1508]: "Offline score:"
+                    - generic [ref=f27e1510]:
+                      - math [ref=f27e1512]:
+                        - generic [ref=f27e1514]:
+                          - generic [ref=f27e1515]:
+                            - generic [ref=f27e1516]: G
+                            - generic [ref=f27e1517]: s
+                          - generic [ref=f27e1518]: (
+                          - generic [ref=f27e1519]: x
+                          - generic [ref=f27e1520]: )
+                          - generic [ref=f27e1521]: =
+                          - generic [ref=f27e1522]:
+                            - generic [ref=f27e1523]: S
+                            - generic [ref=f27e1524]: "y"
+                          - generic [ref=f27e1525]: (
+                          - generic [ref=f27e1526]:
+                            - generic [ref=f27e1527]: g
+                            - generic [ref=f27e1528]: s
+                          - generic [ref=f27e1529]: (
+                          - generic [ref=f27e1530]:
+                            - generic [ref=f27e1531]: x
+                            - generic [ref=f27e1532]:
+                              - generic [ref=f27e1533]: s
+                              - generic [ref=f27e1534]: ~
+                          - generic [ref=f27e1535]: )
+                          - generic [ref=f27e1536]: )
+                          - generic [ref=f27e1537]: −
+                          - generic [ref=f27e1538]:
+                            - generic [ref=f27e1539]: S
+                            - generic [ref=f27e1540]: "y"
+                          - generic [ref=f27e1541]: (
+                          - generic [ref=f27e1542]:
+                            - generic [ref=f27e1543]: x
+                            - generic [ref=f27e1544]:
+                              - generic [ref=f27e1545]: s
+                              - generic [ref=f27e1546]: ~
+                          - generic [ref=f27e1547]: )
+                      - generic [ref=f27e1548]:
+                        - generic [ref=f27e1549]:
+                          - generic [ref=f27e1550]:
+                            - text: G
+                            - generic [ref=f27e1555]: s
+                          - text: (x) =
+                        - generic [ref=f27e1559]:
+                          - generic [ref=f27e1560]:
+                            - text: S
+                            - generic [ref=f27e1565]: "y"
+                          - text: (
+                          - generic [ref=f27e1569]:
+                            - text: g
+                            - generic [ref=f27e1574]: s
+                          - text: (
+                          - generic [ref=f27e1578]:
+                            - text: x
+                            - generic [ref=f27e1588]:
+                              - generic [ref=f27e1589]: s
+                              - text: ~
+                          - text: )) −
+                        - generic [ref=f27e1593]:
+                          - generic [ref=f27e1594]:
+                            - text: S
+                            - generic [ref=f27e1599]: "y"
+                          - text: (
+                          - generic [ref=f27e1603]:
+                            - text: x
+                            - generic [ref=f27e1613]:
+                              - generic [ref=f27e1614]: s
+                              - text: ~
+                          - text: )
+                    - list [ref=f27e1618]:
+                      - listitem [ref=f27e1619]:
+                        - paragraph [ref=f27e1620]:
+                          - generic [ref=f27e1621]:
+                            - math [ref=f27e1623]:
+                              - generic [ref=f27e1625]:
+                                - generic [ref=f27e1626]:
+                                  - generic [ref=f27e1627]: G
+                                  - generic [ref=f27e1628]: s
+                                - generic [ref=f27e1629]: ">"
+                                - generic [ref=f27e1630]: "0"
+                            - generic [ref=f27e1631]:
+                              - generic [ref=f27e1632]:
+                                - generic [ref=f27e1633]:
+                                  - text: G
+                                  - generic [ref=f27e1638]: s
+                                - text: ">"
+                              - generic [ref=f27e1642]: "0"
+                          - text: ": gating recovers."
+                      - listitem [ref=f27e1643]:
+                        - paragraph [ref=f27e1644]:
+                          - generic [ref=f27e1645]:
+                            - math [ref=f27e1647]:
+                              - generic [ref=f27e1649]:
+                                - generic [ref=f27e1650]:
+                                  - generic [ref=f27e1651]: G
+                                  - generic [ref=f27e1652]: s
+                                - generic [ref=f27e1653]: <
+                                - generic [ref=f27e1654]: "0"
+                            - generic [ref=f27e1655]:
+                              - generic [ref=f27e1656]:
+                                - generic [ref=f27e1657]:
+                                  - text: G
+                                  - generic [ref=f27e1662]: s
+                                - text: <
+                              - generic [ref=f27e1666]: "0"
+                          - text: ": gating hurts."
+                    - paragraph [ref=f27e1667]: "Deployable feature:"
+                    - generic [ref=f27e1669]:
+                      - math [ref=f27e1671]:
+                        - generic [ref=f27e1673]:
+                          - generic [ref=f27e1674]:
+                            - generic [ref=f27e1675]: G
+                            - generic [ref=f27e1676]: s
+                            - generic [ref=f27e1677]:
+                              - generic [ref=f27e1678]: K
+                              - generic [ref=f27e1679]: L
+                          - generic [ref=f27e1680]: (
+                          - generic [ref=f27e1681]: x
+                          - generic [ref=f27e1682]: )
+                          - generic [ref=f27e1683]: =
+                          - generic [ref=f27e1684]:
+                            - generic [ref=f27e1685]: D
+                            - generic [ref=f27e1686]:
+                              - generic [ref=f27e1687]: K
+                              - generic [ref=f27e1688]: L
+                          - generic [ref=f27e1689]: (
+                          - generic [ref=f27e1690]:
+                            - generic [ref=f27e1691]: p
+                            - generic [ref=f27e1692]: θ
+                          - generic [ref=f27e1693]: (
+                          - generic [ref=f27e1694]: ⋅
+                          - generic [ref=f27e1695]: ∣
+                          - generic [ref=f27e1696]: x
+                          - generic [ref=f27e1697]: )
+                          - generic [ref=f27e1698]: ∥
+                          - generic [ref=f27e1699]:
+                            - generic [ref=f27e1700]: p
+                            - generic [ref=f27e1701]: θ
+                          - generic [ref=f27e1702]: (
+                          - generic [ref=f27e1703]: ⋅
+                          - generic [ref=f27e1704]: ∣
+                          - generic [ref=f27e1705]:
+                            - generic [ref=f27e1706]: x
+                            - generic [ref=f27e1707]:
+                              - generic [ref=f27e1708]: s
+                              - generic [ref=f27e1709]: ~
+                          - generic [ref=f27e1710]: )
+                          - generic [ref=f27e1711]: )
+                          - generic [ref=f27e1712]: −
+                          - generic [ref=f27e1713]:
+                            - generic [ref=f27e1714]: D
+                            - generic [ref=f27e1715]:
+                              - generic [ref=f27e1716]: K
+                              - generic [ref=f27e1717]: L
+                          - generic [ref=f27e1718]: (
+                          - generic [ref=f27e1719]:
+                            - generic [ref=f27e1720]: p
+                            - generic [ref=f27e1721]: θ
+                          - generic [ref=f27e1722]: (
+                          - generic [ref=f27e1723]: ⋅
+                          - generic [ref=f27e1724]: ∣
+                          - generic [ref=f27e1725]: x
+                          - generic [ref=f27e1726]: )
+                          - generic [ref=f27e1727]: ∥
+                          - generic [ref=f27e1728]:
+                            - generic [ref=f27e1729]: p
+                            - generic [ref=f27e1730]: θ
+                          - generic [ref=f27e1731]: (
+                          - generic [ref=f27e1732]: ⋅
+                          - generic [ref=f27e1733]: ∣
+                          - generic [ref=f27e1734]:
+                            - generic [ref=f27e1735]: g
+                            - generic [ref=f27e1736]: s
+                          - generic [ref=f27e1737]: (
+                          - generic [ref=f27e1738]:
+                            - generic [ref=f27e1739]: x
+                            - generic [ref=f27e1740]:
+                              - generic [ref=f27e1741]: s
+                              - generic [ref=f27e1742]: ~
+                          - generic [ref=f27e1743]: )
+                          - generic [ref=f27e1744]: )
+                          - generic [ref=f27e1745]: )
+                      - generic [ref=f27e1746]:
+                        - generic [ref=f27e1747]:
+                          - generic [ref=f27e1748]:
+                            - text: G
+                            - generic [ref=f27e1752]:
+                              - generic [ref=f27e1753]: s
+                              - generic [ref=f27e1755]: KL
+                          - text: (x) =
+                        - generic [ref=f27e1759]:
+                          - generic [ref=f27e1760]:
+                            - text: D
+                            - generic [ref=f27e1766]: KL
+                          - text: (
+                          - generic [ref=f27e1770]:
+                            - text: p
+                            - generic [ref=f27e1775]: θ
+                          - text: (⋅∣x)∥
+                          - generic [ref=f27e1779]:
+                            - text: p
+                            - generic [ref=f27e1784]: θ
+                          - text: (⋅∣
+                          - generic [ref=f27e1788]:
+                            - text: x
+                            - generic [ref=f27e1798]:
+                              - generic [ref=f27e1799]: s
+                              - text: ~
+                          - text: )) −
+                        - generic [ref=f27e1803]:
+                          - generic [ref=f27e1804]:
+                            - text: D
+                            - generic [ref=f27e1810]: KL
+                          - text: (
+                          - generic [ref=f27e1814]:
+                            - text: p
+                            - generic [ref=f27e1819]: θ
+                          - text: (⋅∣x)∥
+                          - generic [ref=f27e1823]:
+                            - text: p
+                            - generic [ref=f27e1828]: θ
+                          - text: (⋅∣
+                          - generic [ref=f27e1832]:
+                            - text: g
+                            - generic [ref=f27e1837]: s
+                          - text: (
+                          - generic [ref=f27e1841]:
+                            - text: x
+                            - generic [ref=f27e1851]:
+                              - generic [ref=f27e1852]: s
+                              - text: ~
+                          - text: )))
+                    - paragraph [ref=f27e1856]: Positive means gating moves the corrupted prediction back toward the original prediction. Negative means gating moves it further away.
+                    - separator [ref=f27e1857]
+                    - 'heading "U: clean-replace upper bound" [level=3] [ref=f27e1858]'
+                    - paragraph [ref=f27e1859]: "Replace the corrupted source with the clean source:"
+                    - generic [ref=f27e1861]:
+                      - math [ref=f27e1863]:
+                        - generic [ref=f27e1865]:
+                          - generic [ref=f27e1866]:
+                            - generic [ref=f27e1867]: r
+                            - generic [ref=f27e1868]: s
+                          - generic [ref=f27e1869]: (
+                          - generic [ref=f27e1870]:
+                            - generic [ref=f27e1871]: x
+                            - generic [ref=f27e1872]:
+                              - generic [ref=f27e1873]: s
+                              - generic [ref=f27e1874]: ~
+                          - generic [ref=f27e1875]: )
+                          - generic [ref=f27e1876]: =
+                          - generic [ref=f27e1877]: x
+                      - generic [ref=f27e1878]:
+                        - generic [ref=f27e1879]:
+                          - generic [ref=f27e1880]:
+                            - text: r
+                            - generic [ref=f27e1885]: s
+                          - text: (
+                          - generic [ref=f27e1889]:
+                            - text: x
+                            - generic [ref=f27e1899]:
+                              - generic [ref=f27e1900]: s
+                              - text: ~
+                          - text: ) =
+                        - generic [ref=f27e1904]: x
+                    - paragraph [ref=f27e1905]: "Offline score:"
+                    - generic [ref=f27e1907]:
+                      - math [ref=f27e1909]:
+                        - generic [ref=f27e1911]:
+                          - generic [ref=f27e1912]:
+                            - generic [ref=f27e1913]: U
+                            - generic [ref=f27e1914]: s
+                          - generic [ref=f27e1915]: (
+                          - generic [ref=f27e1916]: x
+                          - generic [ref=f27e1917]: )
+                          - generic [ref=f27e1918]: =
+                          - generic [ref=f27e1919]:
+                            - generic [ref=f27e1920]: S
+                            - generic [ref=f27e1921]: "y"
+                          - generic [ref=f27e1922]: (
+                          - generic [ref=f27e1923]:
+                            - generic [ref=f27e1924]: r
+                            - generic [ref=f27e1925]: s
+                          - generic [ref=f27e1926]: (
+                          - generic [ref=f27e1927]:
+                            - generic [ref=f27e1928]: x
+                            - generic [ref=f27e1929]:
+                              - generic [ref=f27e1930]: s
+                              - generic [ref=f27e1931]: ~
+                          - generic [ref=f27e1932]: )
+                          - generic [ref=f27e1933]: )
+                          - generic [ref=f27e1934]: −
+                          - generic [ref=f27e1935]:
+                            - generic [ref=f27e1936]: S
+                            - generic [ref=f27e1937]: "y"
+                          - generic [ref=f27e1938]: (
+                          - generic [ref=f27e1939]:
+                            - generic [ref=f27e1940]: x
+                            - generic [ref=f27e1941]:
+                              - generic [ref=f27e1942]: s
+                              - generic [ref=f27e1943]: ~
+                          - generic [ref=f27e1944]: )
+                      - generic [ref=f27e1945]:
+                        - generic [ref=f27e1946]:
+                          - generic [ref=f27e1947]:
+                            - text: U
+                            - generic [ref=f27e1952]: s
+                          - text: (x) =
+                        - generic [ref=f27e1956]:
+                          - generic [ref=f27e1957]:
+                            - text: S
+                            - generic [ref=f27e1962]: "y"
+                          - text: (
+                          - generic [ref=f27e1966]:
+                            - text: r
+                            - generic [ref=f27e1971]: s
+                          - text: (
+                          - generic [ref=f27e1975]:
+                            - text: x
+                            - generic [ref=f27e1985]:
+                              - generic [ref=f27e1986]: s
+                              - text: ~
+                          - text: )) −
+                        - generic [ref=f27e1990]:
+                          - generic [ref=f27e1991]:
+                            - text: S
+                            - generic [ref=f27e1996]: "y"
+                          - text: (
+                          - generic [ref=f27e2000]:
+                            - text: x
+                            - generic [ref=f27e2010]:
+                              - generic [ref=f27e2011]: s
+                              - text: ~
+                          - text: )
+                    - paragraph [ref=f27e2015]:
+                      - text: High
+                      - generic [ref=f27e2016]:
+                        - math [ref=f27e2018]:
+                          - generic [ref=f27e2021]:
+                            - generic [ref=f27e2022]: U
+                            - generic [ref=f27e2023]: s
+                        - generic [ref=f27e2026]:
+                          - text: U
+                          - generic [ref=f27e2031]: s
+                      - text: means that if clean evidence of this semantic role could be acquired, recovery is possible.
+                    - paragraph [ref=f27e2035]: "Important preregistration guard:"
+                    - paragraph [ref=f27e2036]:
+                      - strong [ref=f27e2037]:
+                        - text: "True"
+                        - generic [ref=f27e2038]:
+                          - math [ref=f27e2040]:
+                            - generic [ref=f27e2043]:
+                              - generic [ref=f27e2044]: U
+                              - generic [ref=f27e2045]: s
+                          - generic [ref=f27e2048]:
+                            - text: U
+                            - generic [ref=f27e2053]: s
+                        - text: is never used as a test-time router input.
+                      - text: It is used only for the cheap probe, training-target construction, and post-hoc mechanism validation. The deployed router may use
+                      - generic [ref=f27e2057]:
+                        - math [ref=f27e2059]:
+                          - generic [ref=f27e2062]:
+                            - generic [ref=f27e2063]:
+                              - generic [ref=f27e2064]: U
+                              - generic [ref=f27e2065]: ^
+                            - generic [ref=f27e2066]: s
+                        - generic [ref=f27e2069]:
+                          - generic [ref=f27e2073]:
+                            - generic [ref=f27e2074]: U
+                            - text: ^
+                          - generic [ref=f27e2079]: s
+                      - text: ", a small predictor trained from pre-action features on the training split."
+                    - separator [ref=f27e2083]
+                    - heading "Evidence actions" [level=2] [ref=f27e2084]
+                    - paragraph [ref=f27e2085]: "The router chooses one action:"
+                    - generic [ref=f27e2087]:
+                      - math [ref=f27e2089]:
+                        - generic [ref=f27e2091]:
+                          - generic [ref=f27e2092]: a
+                          - generic [ref=f27e2093]: ∈
+                          - generic [ref=f27e2094]: "{"
+                          - generic [ref=f27e2095]: none
+                          - generic [ref=f27e2096]: ","
+                          - generic [ref=f27e2097]:
+                            - generic [ref=f27e2098]: A
+                            - generic [ref=f27e2099]: T
+                          - generic [ref=f27e2100]: ","
+                          - generic [ref=f27e2101]:
+                            - generic [ref=f27e2102]: A
+                            - generic [ref=f27e2103]: O
+                          - generic [ref=f27e2104]: ","
+                          - generic [ref=f27e2105]:
+                            - generic [ref=f27e2106]: A
+                            - generic [ref=f27e2107]: V
+                          - generic [ref=f27e2108]: ","
+                          - generic [ref=f27e2109]:
+                            - generic [ref=f27e2110]: A
+                            - generic [ref=f27e2111]: R
+                          - generic [ref=f27e2112]: ","
+                          - generic [ref=f27e2113]: abstain
+                          - generic [ref=f27e2114]: "}"
+                      - generic [ref=f27e2115]:
+                        - generic [ref=f27e2116]: a ∈
+                        - generic [ref=f27e2117]:
+                          - text: "{"
+                          - generic [ref=f27e2118]: none
+                          - text: ","
+                          - generic [ref=f27e2119]:
+                            - text: A
+                            - generic [ref=f27e2124]: T
+                          - text: ","
+                          - generic [ref=f27e2128]:
+                            - text: A
+                            - generic [ref=f27e2133]: O
+                          - text: ","
+                          - generic [ref=f27e2137]:
+                            - text: A
+                            - generic [ref=f27e2142]: V
+                          - text: ","
+                          - generic [ref=f27e2146]:
+                            - text: A
+                            - generic [ref=f27e2151]: R
+                          - text: ","
+                          - generic [ref=f27e2155]: abstain
+                          - text: "}"
+                    - paragraph [ref=f27e2156]: "Budget:"
+                    - generic [ref=f27e2158]:
+                      - math [ref=f27e2160]:
+                        - generic [ref=f27e2162]:
+                          - generic [ref=f27e2163]: B
+                          - generic [ref=f27e2164]: =
+                          - generic [ref=f27e2165]: "1"
+                      - generic [ref=f27e2166]:
+                        - generic [ref=f27e2167]: B =
+                        - generic [ref=f27e2168]: "1"
+                    - paragraph [ref=f27e2169]:
+                      - text: Each action costs one unit except
+                      - code [ref=f27e2170]: none
+                      - text: and
+                      - code [ref=f27e2171]: abstain
+                      - text: ", which cost zero."
+                    - paragraph [ref=f27e2172]: "Actions:"
+                    - list [ref=f27e2173]:
+                      - listitem [ref=f27e2174]:
+                        - paragraph [ref=f27e2175]:
+                          - strong [ref=f27e2176]: "None:"
+                          - text: use current evidence.
+                      - listitem [ref=f27e2177]:
+                        - paragraph [ref=f27e2178]:
+                          - strong [ref=f27e2179]:
+                            - text: Text retrieval
+                            - generic [ref=f27e2180]:
+                              - math [ref=f27e2182]:
+                                - generic [ref=f27e2185]:
+                                  - generic [ref=f27e2186]: A
+                                  - generic [ref=f27e2187]: T
+                              - generic [ref=f27e2190]:
+                                - text: A
+                                - generic [ref=f27e2195]: T
+                            - text: ":"
+                          - text: retrieve top-
+                          - generic [ref=f27e2199]:
+                            - math [ref=f27e2201]:
+                              - generic [ref=f27e2204]: k
+                            - generic [ref=f27e2206]: k
+                          - text: textual evidence passages from the MOCHEG/Factify evidence corpus using fixed BM25+dense retrieval. No web API.
+                      - listitem [ref=f27e2207]:
+                        - paragraph [ref=f27e2208]:
+                          - strong [ref=f27e2209]:
+                            - text: OCR-expand
+                            - generic [ref=f27e2210]:
+                              - math [ref=f27e2212]:
+                                - generic [ref=f27e2215]:
+                                  - generic [ref=f27e2216]: A
+                                  - generic [ref=f27e2217]: O
+                              - generic [ref=f27e2220]:
+                                - text: A
+                                - generic [ref=f27e2225]: O
+                            - text: ":"
+                          - text: re-run local OCR with high-resolution preprocessing, crop/threshold variants, and keep top OCR strings by confidence.
+                      - listitem [ref=f27e2229]:
+                        - paragraph [ref=f27e2230]:
+                          - strong [ref=f27e2231]:
+                            - text: Visual-nearest
+                            - generic [ref=f27e2232]:
+                              - math [ref=f27e2234]:
+                                - generic [ref=f27e2237]:
+                                  - generic [ref=f27e2238]: A
+                                  - generic [ref=f27e2239]: V
+                              - generic [ref=f27e2242]:
+                                - text: A
+                                - generic [ref=f27e2247]: V
+                            - text: ":"
+                          - text: retrieve top-
+                          - generic [ref=f27e2251]:
+                            - math [ref=f27e2253]:
+                              - generic [ref=f27e2256]: k
+                            - generic [ref=f27e2258]: k
+                          - text: visually similar images from the evidence corpus using frozen image embeddings.
+                      - listitem [ref=f27e2259]:
+                        - paragraph [ref=f27e2260]:
+                          - strong [ref=f27e2261]:
+                            - text: Reverse-image proxy
+                            - generic [ref=f27e2262]:
+                              - math [ref=f27e2264]:
+                                - generic [ref=f27e2267]:
+                                  - generic [ref=f27e2268]: A
+                                  - generic [ref=f27e2269]: R
+                              - generic [ref=f27e2272]:
+                                - text: A
+                                - generic [ref=f27e2277]: R
+                            - text: ":"
+                          - text: retrieve near-duplicate or same-event image clusters using image embedding + caption/context similarity. This is a dataset-local proxy, not a live reverse-image-search API.
+                      - listitem [ref=f27e2281]:
+                        - paragraph [ref=f27e2282]:
+                          - strong [ref=f27e2283]: "Abstain:"
+                          - text: emit no verdict; counted as incorrect for primary macro-F1, reported separately on risk-coverage curves.
+                    - paragraph [ref=f27e2284]: The action set is deliberately cheap and reproducible. No live web search, no proprietary API, no manual fact-checker.
+                    - separator [ref=f27e2285]
+                    - heading "Router" [level=2] [ref=f27e2286]
+                    - paragraph [ref=f27e2287]: "Router:"
+                    - generic [ref=f27e2289]:
+                      - math [ref=f27e2291]:
+                        - generic [ref=f27e2293]:
+                          - generic [ref=f27e2294]:
+                            - generic [ref=f27e2295]: π
+                            - generic [ref=f27e2296]: ϕ
+                          - generic [ref=f27e2297]: (
+                          - generic [ref=f27e2298]: a
+                          - generic [ref=f27e2299]: ∣
+                          - generic [ref=f27e2300]: x
+                          - generic [ref=f27e2301]: )
+                      - generic [ref=f27e2303]:
+                        - generic [ref=f27e2304]:
+                          - text: π
+                          - generic [ref=f27e2309]: ϕ
+                        - text: (a∣x)
+                    - paragraph [ref=f27e2313]: "A tiny MLP or adapter over frozen features:"
+                    - generic [ref=f27e2315]:
+                      - math [ref=f27e2317]:
+                        - generic [ref=f27e2319]:
+                          - generic [ref=f27e2320]: ϕ
+                          - generic [ref=f27e2321]: (
+                          - generic [ref=f27e2322]: x
+                          - generic [ref=f27e2323]: )
+                          - generic [ref=f27e2324]: =
+                          - generic [ref=f27e2325]: "["
+                          - generic [ref=f27e2326]:
+                            - generic [ref=f27e2327]: "N"
+                            - generic [ref=f27e2328]: s
+                            - generic [ref=f27e2329]:
+                              - generic [ref=f27e2330]: K
+                              - generic [ref=f27e2331]: L
+                          - generic [ref=f27e2332]: ","
+                          - generic [ref=f27e2333]:
+                            - generic [ref=f27e2334]: G
+                            - generic [ref=f27e2335]: s
+                            - generic [ref=f27e2336]:
+                              - generic [ref=f27e2337]: K
+                              - generic [ref=f27e2338]: L
+                          - generic [ref=f27e2339]: ","
+                          - generic [ref=f27e2340]:
+                            - generic [ref=f27e2341]:
+                              - generic [ref=f27e2342]: U
+                              - generic [ref=f27e2343]: ^
+                            - generic [ref=f27e2344]: s
+                          - generic [ref=f27e2345]: ","
+                          - generic [ref=f27e2346]: stream quality
+                          - generic [ref=f27e2347]: ","
+                          - generic [ref=f27e2348]: retrieval density
+                          - generic [ref=f27e2349]: ","
+                          - generic [ref=f27e2350]: OCR confidence
+                          - generic [ref=f27e2351]: ","
+                          - generic [ref=f27e2352]: image-text agreement
+                          - generic [ref=f27e2353]: ","
+                          - generic [ref=f27e2354]: verifier entropy
+                          - generic [ref=f27e2355]: ","
+                          - generic [ref=f27e2356]: claim/evidence contradiction scores
+                          - generic [ref=f27e2357]: "]"
+                      - generic [ref=f27e2358]:
+                        - generic [ref=f27e2359]: ϕ(x) =
+                        - generic [ref=f27e2360]:
+                          - text: "["
+                          - generic [ref=f27e2361]:
+                            - text: "N"
+                            - generic [ref=f27e2365]:
+                              - generic [ref=f27e2366]: s
+                              - generic [ref=f27e2368]: KL
+                          - text: ","
+                          - generic [ref=f27e2373]:
+                            - text: G
+                            - generic [ref=f27e2377]:
+                              - generic [ref=f27e2378]: s
+                              - generic [ref=f27e2380]: KL
+                          - text: ","
+                          - generic [ref=f27e2385]:
+                            - generic [ref=f27e2389]:
+                              - generic [ref=f27e2390]: U
+                              - text: ^
+                            - generic [ref=f27e2395]: s
+                          - text: ","
+                          - generic [ref=f27e2400]: stream quality
+                          - text: ","
+                          - generic [ref=f27e2402]: retrieval density
+                          - text: ","
+                          - generic [ref=f27e2404]: OCR confidence
+                          - text: ","
+                          - generic [ref=f27e2406]: image-text agreement
+                          - text: ","
+                          - generic [ref=f27e2408]: verifier entropy
+                          - text: ","
+                          - generic [ref=f27e2410]: claim/evidence contradiction scores
+                          - text: "]"
+                    - paragraph [ref=f27e2411]: "Training target:"
+                    - paragraph [ref=f27e2412]: "For each training example, run all candidate actions offline and compute:"
+                    - generic [ref=f27e2414]:
+                      - math [ref=f27e2416]:
+                        - generic [ref=f27e2418]:
+                          - generic [ref=f27e2419]: R
+                          - generic [ref=f27e2420]: (
+                          - generic [ref=f27e2421]: a
+                          - generic [ref=f27e2422]: ","
+                          - generic [ref=f27e2423]: x
+                          - generic [ref=f27e2424]: )
+                          - generic [ref=f27e2425]: =
+                          - generic [ref=f27e2426]:
+                            - generic [ref=f27e2427]: S
+                            - generic [ref=f27e2428]: "y"
+                          - generic [ref=f27e2429]: (
+                          - generic [ref=f27e2430]:
+                            - generic [ref=f27e2431]: f
+                            - generic [ref=f27e2432]: θ
+                          - generic [ref=f27e2433]: (
+                          - generic [ref=f27e2434]: Apply
+                          - generic [ref=f27e2435]: (
+                          - generic [ref=f27e2436]: a
+                          - generic [ref=f27e2437]: ","
+                          - generic [ref=f27e2438]: x
+                          - generic [ref=f27e2439]: )
+                          - generic [ref=f27e2440]: )
+                          - generic [ref=f27e2441]: )
+                          - generic [ref=f27e2442]: −
+                          - generic [ref=f27e2443]: λ
+                          - generic [ref=f27e2444]: ⋅
+                          - generic [ref=f27e2445]: cost
+                          - generic [ref=f27e2446]: (
+                          - generic [ref=f27e2447]: a
+                          - generic [ref=f27e2448]: )
+                      - generic [ref=f27e2449]:
+                        - generic [ref=f27e2450]: R(a, x) =
+                        - generic [ref=f27e2451]:
+                          - generic [ref=f27e2452]:
+                            - text: S
+                            - generic [ref=f27e2457]: "y"
+                          - text: (
+                          - generic [ref=f27e2461]:
+                            - text: f
+                            - generic [ref=f27e2466]: θ
+                          - text: (
+                          - generic [ref=f27e2470]: Apply
+                          - text: (a, x))) −
+                        - generic [ref=f27e2471]: λ ⋅
+                        - generic [ref=f27e2472]:
+                          - generic [ref=f27e2473]: cost
+                          - text: (a)
+                    - paragraph [ref=f27e2474]: "Then:"
+                    - generic [ref=f27e2476]:
+                      - math [ref=f27e2478]:
+                        - generic [ref=f27e2480]:
+                          - generic [ref=f27e2481]:
+                            - generic [ref=f27e2482]: a
+                            - generic [ref=f27e2483]: ∗
+                          - generic [ref=f27e2484]: (
+                          - generic [ref=f27e2485]: x
+                          - generic [ref=f27e2486]: )
+                          - generic [ref=f27e2487]: =
+                          - generic [ref=f27e2488]: arg
+                          - generic: ⁡
+                          - generic [ref=f27e2489]:
+                            - generic [ref=f27e2490]:
+                              - generic [ref=f27e2491]: max
+                              - generic: ⁡
+                            - generic [ref=f27e2492]: a
+                          - generic [ref=f27e2493]: R
+                          - generic [ref=f27e2494]: (
+                          - generic [ref=f27e2495]: a
+                          - generic [ref=f27e2496]: ","
+                          - generic [ref=f27e2497]: x
+                          - generic [ref=f27e2498]: )
+                      - generic [ref=f27e2499]:
+                        - generic [ref=f27e2500]:
+                          - generic [ref=f27e2501]:
+                            - text: a
+                            - generic [ref=f27e2506]: ∗
+                          - text: (x) =
+                        - generic [ref=f27e2507]:
+                          - generic [ref=f27e2508]: arg
+                          - generic [ref=f27e2512]:
+                            - generic [ref=f27e2513]: a
+                            - generic [ref=f27e2514]: max
+                          - text: R(a, x)
+                    - paragraph [ref=f27e2518]:
+                      - text: The router is trained to predict
+                      - generic [ref=f27e2519]:
+                        - math [ref=f27e2521]:
+                          - generic [ref=f27e2523]:
+                            - generic [ref=f27e2524]:
+                              - generic [ref=f27e2525]: a
+                              - generic [ref=f27e2526]: ∗
+                            - generic [ref=f27e2527]: (
+                            - generic [ref=f27e2528]: x
+                            - generic [ref=f27e2529]: )
+                        - generic [ref=f27e2531]:
+                          - generic [ref=f27e2532]:
+                            - text: a
+                            - generic [ref=f27e2537]: ∗
+                          - text: (x)
+                      - text: ", with label smoothing because multiple actions may be near-ties."
+                    - paragraph [ref=f27e2538]: "Hard rule:"
+                    - paragraph [ref=f27e2539]:
+                      - strong [ref=f27e2540]: At test time, the router sees only pre-action features.
+                      - text: It does not get the true label, post-action outcome, or true clean-replace
+                      - generic [ref=f27e2541]:
+                        - math [ref=f27e2543]:
+                          - generic [ref=f27e2546]: U
+                        - generic [ref=f27e2548]: U
+                      - text: .
+                    - separator [ref=f27e2549]
+                    - heading "Baselines" [level=1] [ref=f27e2550]
+                    - 'heading "Incumbent to refute: reliability-gating" [level=3] [ref=f27e2551]'
+                    - paragraph [ref=f27e2552]: A trained confidence/reliability gate estimates stream reliability and down-weights unreliable sources. It has access to the same frozen encoders and the same reliability features as the router but cannot acquire new evidence.
+                    - paragraph [ref=f27e2553]: "Variants:"
+                    - list [ref=f27e2554]:
+                      - listitem [ref=f27e2555]:
+                        - paragraph [ref=f27e2556]:
+                          - strong [ref=f27e2557]: "Scalar reliability gate:"
+                          - text: learned weight per source.
+                      - listitem [ref=f27e2558]:
+                        - paragraph [ref=f27e2559]:
+                          - strong [ref=f27e2560]: "Confidence gate:"
+                          - text: suppress source if OCR confidence, retrieval score, image-text agreement, or verifier consistency falls below tuned thresholds.
+                      - listitem [ref=f27e2561]:
+                        - paragraph [ref=f27e2562]:
+                          - strong [ref=f27e2563]: "Best tuned gate:"
+                          - text: validation-optimized version allowed to choose thresholds to maximize macro-F1.
+                    - paragraph [ref=f27e2564]: This is the central baseline because the thesis predicts it fails specifically in high-necessity / low-reliability / high-recoverability regimes.
+                    - separator [ref=f27e2565]
+                    - heading "Standard baselines" [level=3] [ref=f27e2566]
+                    - list [ref=f27e2567]:
+                      - listitem [ref=f27e2568]:
+                        - paragraph [ref=f27e2569]:
+                          - strong [ref=f27e2570]: "Always-fuse:"
+                          - text: use all initially available evidence.
+                      - listitem [ref=f27e2571]:
+                        - paragraph [ref=f27e2572]:
+                          - strong [ref=f27e2573]: Text-only.
+                      - listitem [ref=f27e2574]:
+                        - paragraph [ref=f27e2575]:
+                          - strong [ref=f27e2576]: Image-only.
+                      - listitem [ref=f27e2577]:
+                        - paragraph [ref=f27e2578]:
+                          - strong [ref=f27e2579]: OCR-only.
+                      - listitem [ref=f27e2580]:
+                        - paragraph [ref=f27e2581]:
+                          - strong [ref=f27e2582]: No-action verifier.
+                      - listitem [ref=f27e2583]:
+                        - paragraph [ref=f27e2584]:
+                          - strong [ref=f27e2585]: Random single action.
+                      - listitem [ref=f27e2586]:
+                        - paragraph [ref=f27e2587]:
+                          - strong [ref=f27e2588]: Always text-retrieve.
+                      - listitem [ref=f27e2589]:
+                        - paragraph [ref=f27e2590]:
+                          - strong [ref=f27e2591]: Always OCR-expand.
+                      - listitem [ref=f27e2592]:
+                        - paragraph [ref=f27e2593]:
+                          - strong [ref=f27e2594]: Always visual-nearest.
+                      - listitem [ref=f27e2595]:
+                        - paragraph [ref=f27e2596]:
+                          - strong [ref=f27e2597]: Always reverse-image-proxy.
+                    - separator [ref=f27e2598]
+                    - heading "Expensive anchor" [level=3] [ref=f27e2599]
+                    - list [ref=f27e2600]:
+                      - listitem [ref=f27e2601]:
+                        - paragraph [ref=f27e2602]:
+                          - strong [ref=f27e2603]: "Always retrieve all:"
+                          - text: run
+                          - generic [ref=f27e2604]:
+                            - math [ref=f27e2606]:
+                              - generic [ref=f27e2608]:
+                                - generic [ref=f27e2609]:
+                                  - generic [ref=f27e2610]: A
+                                  - generic [ref=f27e2611]: T
+                                - generic [ref=f27e2612]: +
+                                - generic [ref=f27e2613]:
+                                  - generic [ref=f27e2614]: A
+                                  - generic [ref=f27e2615]: O
+                                - generic [ref=f27e2616]: +
+                                - generic [ref=f27e2617]:
+                                  - generic [ref=f27e2618]: A
+                                  - generic [ref=f27e2619]: V
+                                - generic [ref=f27e2620]: +
+                                - generic [ref=f27e2621]:
+                                  - generic [ref=f27e2622]: A
+                                  - generic [ref=f27e2623]: R
+                            - generic [ref=f27e2624]:
+                              - generic [ref=f27e2625]:
+                                - generic [ref=f27e2626]:
+                                  - text: A
+                                  - generic [ref=f27e2631]: T
+                                - text: +
+                              - generic [ref=f27e2635]:
+                                - generic [ref=f27e2636]:
+                                  - text: A
+                                  - generic [ref=f27e2641]: O
+                                - text: +
+                              - generic [ref=f27e2645]:
+                                - generic [ref=f27e2646]:
+                                  - text: A
+                                  - generic [ref=f27e2651]: V
+                                - text: +
+                              - generic [ref=f27e2656]:
+                                - text: A
+                                - generic [ref=f27e2661]: R
+                          - text: .
+                    - paragraph [ref=f27e2665]:
+                      - text: This is reported at cost
+                      - generic [ref=f27e2666]:
+                        - math [ref=f27e2668]:
+                          - generic [ref=f27e2670]:
+                            - generic [ref=f27e2671]: B
+                            - generic [ref=f27e2672]: =
+                            - generic [ref=f27e2673]: "4"
+                        - generic [ref=f27e2674]:
+                          - generic [ref=f27e2675]: B =
+                          - generic [ref=f27e2676]: "4"
+                      - text: ", not treated as the primary fair baseline. It appears on the cost-performance curve."
+                    - separator [ref=f27e2677]
+                    - heading "Strongest opposing baseline, optimized to win" [level=3] [ref=f27e2678]
+                    - paragraph [ref=f27e2679]:
+                      - strong [ref=f27e2680]: Noncausal supervised action router.
+                    - paragraph [ref=f27e2681]:
+                      - text: Same architecture size, same frozen encoders, same training labels
+                      - generic [ref=f27e2682]:
+                        - math [ref=f27e2684]:
+                          - generic [ref=f27e2687]:
+                            - generic [ref=f27e2688]: a
+                            - generic [ref=f27e2689]: ∗
+                        - generic [ref=f27e2692]:
+                          - text: a
+                          - generic [ref=f27e2697]: ∗
+                      - text: ", same budget"
+                      - generic [ref=f27e2698]:
+                        - math [ref=f27e2700]:
+                          - generic [ref=f27e2702]:
+                            - generic [ref=f27e2703]: B
+                            - generic [ref=f27e2704]: =
+                            - generic [ref=f27e2705]: "1"
+                        - generic [ref=f27e2706]:
+                          - generic [ref=f27e2707]: B =
+                          - generic [ref=f27e2708]: "1"
+                      - text: ", but"
+                      - strong [ref=f27e2709]: no N/G/U features
+                      - text: ". It gets only conventional features:"
+                    - list [ref=f27e2710]:
+                      - listitem [ref=f27e2711]:
+                        - paragraph [ref=f27e2712]: verifier entropy,
+                      - listitem [ref=f27e2713]:
+                        - paragraph [ref=f27e2714]: confidence,
+                      - listitem [ref=f27e2715]:
+                        - paragraph [ref=f27e2716]: OCR quality,
+                      - listitem [ref=f27e2717]:
+                        - paragraph [ref=f27e2718]: retrieval scores,
+                      - listitem [ref=f27e2719]:
+                        - paragraph [ref=f27e2720]: image-text similarity,
+                      - listitem [ref=f27e2721]:
+                        - paragraph [ref=f27e2722]: source missingness,
+                      - listitem [ref=f27e2723]:
+                        - paragraph [ref=f27e2724]: source reliability estimates.
+                    - paragraph [ref=f27e2725]: This is the serious opponent. If NUGA only beats fixed policies but not this router, the paper becomes “active retrieval works,” not “causal necessity matters.”
+                    - separator [ref=f27e2726]
+                    - heading "Oracle ceilings, not deployable" [level=3] [ref=f27e2727]
+                    - list [ref=f27e2728]:
+                      - listitem [ref=f27e2729]:
+                        - paragraph [ref=f27e2730]:
+                          - strong [ref=f27e2731]:
+                            - text: Per-instance action oracle
+                            - generic [ref=f27e2732]:
+                              - math [ref=f27e2734]:
+                                - generic [ref=f27e2736]:
+                                  - generic [ref=f27e2737]: B
+                                  - generic [ref=f27e2738]: =
+                                  - generic [ref=f27e2739]: "1"
+                              - generic [ref=f27e2740]:
+                                - generic [ref=f27e2741]: B =
+                                - generic [ref=f27e2742]: "1"
+                            - text: ":"
+                          - text: picks the best single action using the true label.
+                      - listitem [ref=f27e2743]:
+                        - paragraph [ref=f27e2744]:
+                          - strong [ref=f27e2745]:
+                            - text: Full-evidence oracle
+                            - generic [ref=f27e2746]:
+                              - math [ref=f27e2748]:
+                                - generic [ref=f27e2750]:
+                                  - generic [ref=f27e2751]: B
+                                  - generic [ref=f27e2752]: =
+                                  - generic [ref=f27e2753]: "4"
+                              - generic [ref=f27e2754]:
+                                - generic [ref=f27e2755]: B =
+                                - generic [ref=f27e2756]: "4"
+                            - text: ":"
+                          - text: all actions.
+                    - paragraph [ref=f27e2757]: These quantify headroom only.
+                    - separator [ref=f27e2758]
+                    - heading "Primary metric" [level=1] [ref=f27e2759]
+                    - paragraph [ref=f27e2760]: "Primary endpoint:"
+                    - generic [ref=f27e2762]:
+                      - math [ref=f27e2764]:
+                        - generic [ref=f27e2766]:
+                          - generic [ref=f27e2767]: Δ
+                          - generic [ref=f27e2768]:
+                            - generic [ref=f27e2769]: Macro-F1
+                            - generic [ref=f27e2770]:
+                              - generic [ref=f27e2771]: B
+                              - generic [ref=f27e2772]: =
+                              - generic [ref=f27e2773]: "1"
+                      - generic [ref=f27e2775]:
+                        - text: Δ
+                        - generic [ref=f27e2776]:
+                          - generic [ref=f27e2777]: Macro-F1
+                          - generic [ref=f27e2783]: B=1
+                    - paragraph [ref=f27e2787]:
+                      - text: on held-out MOCHEG test claims, comparing NUGA-Fact against the
+                      - strong [ref=f27e2788]: best equal-budget opposing baseline
+                      - text: ", including the noncausal supervised router."
+                    - paragraph [ref=f27e2789]: Abstentions are scored as incorrect in primary macro-F1.
+                    - paragraph [ref=f27e2790]: "Secondary metrics:"
+                    - list [ref=f27e2791]:
+                      - listitem [ref=f27e2792]:
+                        - paragraph [ref=f27e2793]:
+                          - text: Cost-performance area under curve for
+                          - generic [ref=f27e2794]:
+                            - math [ref=f27e2796]:
+                              - generic [ref=f27e2798]:
+                                - generic [ref=f27e2799]: B
+                                - generic [ref=f27e2800]: ∈
+                                - generic [ref=f27e2801]: "{"
+                                - generic [ref=f27e2802]: "0"
+                                - generic [ref=f27e2803]: ","
+                                - generic [ref=f27e2804]: "1"
+                                - generic [ref=f27e2805]: ","
+                                - generic [ref=f27e2806]: "2"
+                                - generic [ref=f27e2807]: ","
+                                - generic [ref=f27e2808]: "4"
+                                - generic [ref=f27e2809]: "}"
+                            - generic [ref=f27e2810]:
+                              - generic [ref=f27e2811]: B ∈
+                              - generic [ref=f27e2812]: "{0, 1, 2, 4}"
+                          - text: .
+                      - listitem [ref=f27e2813]:
+                        - paragraph [ref=f27e2814]: Accuracy / macro-F1 by class.
+                      - listitem [ref=f27e2815]:
+                        - paragraph [ref=f27e2816]: Expected calibration error.
+                      - listitem [ref=f27e2817]:
+                        - paragraph [ref=f27e2818]: Selective risk-coverage for abstention.
+                      - listitem [ref=f27e2819]:
+                        - paragraph [ref=f27e2820]: "Per-bin results for:"
+                        - list [ref=f27e2821]:
+                          - listitem [ref=f27e2822]:
+                            - paragraph [ref=f27e2823]:
+                              - text: high
+                              - generic [ref=f27e2824]:
+                                - math [ref=f27e2826]:
+                                  - generic [ref=f27e2829]: "N"
+                                - generic [ref=f27e2831]: "N"
+                              - text: ", negative"
+                              - generic [ref=f27e2832]:
+                                - math [ref=f27e2834]:
+                                  - generic [ref=f27e2837]: G
+                                - generic [ref=f27e2839]: G
+                              - text: ", high"
+                              - generic [ref=f27e2840]:
+                                - math [ref=f27e2842]:
+                                  - generic [ref=f27e2845]: U
+                                - generic [ref=f27e2847]: U
+                              - text: ;
+                          - listitem [ref=f27e2848]:
+                            - paragraph [ref=f27e2849]:
+                              - text: high
+                              - generic [ref=f27e2850]:
+                                - math [ref=f27e2852]:
+                                  - generic [ref=f27e2855]: "N"
+                                - generic [ref=f27e2857]: "N"
+                              - text: ", positive"
+                              - generic [ref=f27e2858]:
+                                - math [ref=f27e2860]:
+                                  - generic [ref=f27e2863]: G
+                                - generic [ref=f27e2865]: G
+                              - text: ;
+                          - listitem [ref=f27e2866]:
+                            - paragraph [ref=f27e2867]:
+                              - text: low
+                              - generic [ref=f27e2868]:
+                                - math [ref=f27e2870]:
+                                  - generic [ref=f27e2873]: "N"
+                                - generic [ref=f27e2875]: "N"
+                              - text: ", positive"
+                              - generic [ref=f27e2876]:
+                                - math [ref=f27e2878]:
+                                  - generic [ref=f27e2881]: G
+                                - generic [ref=f27e2883]: G
+                              - text: ;
+                          - listitem [ref=f27e2884]:
+                            - paragraph [ref=f27e2885]:
+                              - text: low
+                              - generic [ref=f27e2886]:
+                                - math [ref=f27e2888]:
+                                  - generic [ref=f27e2891]: "N"
+                                - generic [ref=f27e2893]: "N"
+                              - text: ", low"
+                              - generic [ref=f27e2894]:
+                                - math [ref=f27e2896]:
+                                  - generic [ref=f27e2899]: U
+                                - generic [ref=f27e2901]: U
+                              - text: .
+                    - paragraph [ref=f27e2902]: "Statistical test:"
+                    - list [ref=f27e2903]:
+                      - listitem [ref=f27e2904]:
+                        - paragraph [ref=f27e2905]: Paired bootstrap over claims.
+                      - listitem [ref=f27e2906]:
+                        - paragraph [ref=f27e2907]:
+                          - text: Report 95% CI for
+                          - generic [ref=f27e2908]:
+                            - math [ref=f27e2910]:
+                              - generic [ref=f27e2913]: Δ
+                            - generic [ref=f27e2915]: Δ
+                          - text: macro-F1.
+                      - listitem [ref=f27e2916]:
+                        - paragraph [ref=f27e2917]:
+                          - text: Preregister success as lower CI
+                          - generic [ref=f27e2918]:
+                            - math [ref=f27e2920]:
+                              - generic [ref=f27e2922]:
+                                - generic [ref=f27e2923]: ">"
+                                - generic [ref=f27e2924]: "0"
+                            - generic [ref=f27e2925]:
+                              - generic [ref=f27e2926]: ">"
+                              - generic [ref=f27e2927]: "0"
+                          - text: and point estimate
+                          - generic [ref=f27e2928]:
+                            - math [ref=f27e2930]:
+                              - generic [ref=f27e2932]:
+                                - generic [ref=f27e2933]: ≥
+                                - generic [ref=f27e2934]: "2.0"
+                            - generic [ref=f27e2935]:
+                              - generic [ref=f27e2936]: ≥
+                              - generic [ref=f27e2937]: "2.0"
+                          - text: macro-F1 over the strongest equal-budget baseline.
+                    - separator [ref=f27e2938]
+                    - heading "Cheapest kill-probe" [level=1] [ref=f27e2939]
+                    - paragraph [ref=f27e2940]: "Before any router training or LoRA/adapters:"
+                    - list [ref=f27e2941]:
+                      - listitem [ref=f27e2942]:
+                        - paragraph [ref=f27e2943]: Sample 512 validation claims from MOCHEG, stratified by label.
+                      - listitem [ref=f27e2944]:
+                        - paragraph [ref=f27e2945]: Use frozen encoders and a frozen zero-shot/fixed verifier score.
+                      - listitem [ref=f27e2946]:
+                        - paragraph [ref=f27e2947]: Run all four acquisition actions offline.
+                      - listitem [ref=f27e2948]:
+                        - paragraph [ref=f27e2949]: Compute per-action reward deltas.
+                      - listitem [ref=f27e2950]:
+                        - paragraph [ref=f27e2951]: Compute N/G/U screen scores from interventions.
+                      - listitem [ref=f27e2952]:
+                        - paragraph [ref=f27e2953]: "Ask two questions:"
+                    - 'heading "Probe Q1: Is there action headroom?" [level=3] [ref=f27e2954]'
+                    - generic [ref=f27e2956]:
+                      - math [ref=f27e2958]:
+                        - generic [ref=f27e2960]:
+                          - generic [ref=f27e2961]:
+                            - generic [ref=f27e2962]: OracleBest
+                            - generic [ref=f27e2963]:
+                              - generic [ref=f27e2964]: B
+                              - generic [ref=f27e2965]: =
+                              - generic [ref=f27e2966]: "1"
+                          - generic [ref=f27e2967]: −
+                          - generic [ref=f27e2968]: NoAction
+                      - generic [ref=f27e2969]:
+                        - generic [ref=f27e2970]:
+                          - generic [ref=f27e2971]:
+                            - generic [ref=f27e2972]: OracleBest
+                            - generic [ref=f27e2978]: B=1
+                          - text: −
+                        - generic [ref=f27e2983]: NoAction
+                    - paragraph [ref=f27e2984]:
+                      - text: Kill if the oracle best single action improves less than
+                      - strong [ref=f27e2985]: 2 macro-F1
+                      - text: or less than
+                      - strong [ref=f27e2986]: 0.03 mean true-label log-prob
+                      - text: .
+                    - 'heading "Probe Q2: Does N/G/U separate acquisition winners?" [level=3] [ref=f27e2987]'
+                    - paragraph [ref=f27e2988]: "Define the preregistered acquisition index:"
+                    - generic [ref=f27e2990]:
+                      - math [ref=f27e2992]:
+                        - generic [ref=f27e2994]:
+                          - generic [ref=f27e2995]: A
+                          - generic [ref=f27e2996]:
+                            - generic [ref=f27e2997]: I
+                            - generic [ref=f27e2998]: s
+                          - generic [ref=f27e2999]: =
+                          - generic [ref=f27e3000]: z
+                          - generic [ref=f27e3001]: (
+                          - generic [ref=f27e3002]:
+                            - generic [ref=f27e3003]: "N"
+                            - generic [ref=f27e3004]: s
+                          - generic [ref=f27e3005]: )
+                          - generic [ref=f27e3006]: +
+                          - generic [ref=f27e3007]: z
+                          - generic [ref=f27e3008]: (
+                          - generic [ref=f27e3009]:
+                            - generic [ref=f27e3010]: U
+                            - generic [ref=f27e3011]: s
+                          - generic [ref=f27e3012]: )
+                          - generic [ref=f27e3013]: −
+                          - generic [ref=f27e3014]: z
+                          - generic [ref=f27e3015]: (
+                          - generic [ref=f27e3016]:
+                            - generic [ref=f27e3017]: G
+                            - generic [ref=f27e3018]: s
+                          - generic [ref=f27e3019]: )
+                      - generic [ref=f27e3020]:
+                        - generic [ref=f27e3021]:
+                          - text: A
+                          - generic [ref=f27e3022]:
+                            - text: I
+                            - generic [ref=f27e3027]: s
+                          - text: =
+                        - generic [ref=f27e3031]:
+                          - text: z(
+                          - generic [ref=f27e3032]:
+                            - text: "N"
+                            - generic [ref=f27e3037]: s
+                          - text: ) +
+                        - generic [ref=f27e3041]:
+                          - text: z(
+                          - generic [ref=f27e3042]:
+                            - text: U
+                            - generic [ref=f27e3047]: s
+                          - text: ) −
+                        - generic [ref=f27e3051]:
+                          - text: z(
+                          - generic [ref=f27e3052]:
+                            - text: G
+                            - generic [ref=f27e3057]: s
+                          - text: )
+                    - paragraph [ref=f27e3061]:
+                      - text: where high
+                      - generic [ref=f27e3062]:
+                        - math [ref=f27e3064]:
+                          - generic [ref=f27e3067]: "N"
+                        - generic [ref=f27e3069]: "N"
+                      - text: ", high"
+                      - generic [ref=f27e3070]:
+                        - math [ref=f27e3072]:
+                          - generic [ref=f27e3075]: U
+                        - generic [ref=f27e3077]: U
+                      - text: ", and negative"
+                      - generic [ref=f27e3078]:
+                        - math [ref=f27e3080]:
+                          - generic [ref=f27e3083]: G
+                        - generic [ref=f27e3085]: G
+                      - text: predict acquisition.
+                    - paragraph [ref=f27e3086]: "Kill if:"
+                    - list [ref=f27e3087]:
+                      - listitem [ref=f27e3088]:
+                        - paragraph [ref=f27e3089]:
+                          - text: action-winner top-1 prediction is not at least
+                          - strong [ref=f27e3090]: 5 points above best fixed-action policy
+                          - text: ", or"
+                      - listitem [ref=f27e3091]:
+                        - paragraph [ref=f27e3092]:
+                          - text: acquisition-vs-gate AUC
+                          - generic [ref=f27e3093]:
+                            - math [ref=f27e3095]:
+                              - generic [ref=f27e3097]:
+                                - generic [ref=f27e3098]: <
+                                - generic [ref=f27e3099]: "0.60"
+                            - generic [ref=f27e3100]:
+                              - generic [ref=f27e3101]: <
+                              - generic [ref=f27e3102]: "0.60"
+                          - text: ", or"
+                      - listitem [ref=f27e3103]:
+                        - paragraph [ref=f27e3104]:
+                          - text: the high-
+                          - generic [ref=f27e3105]:
+                            - math [ref=f27e3107]:
+                              - generic [ref=f27e3110]: "N"
+                            - generic [ref=f27e3112]: "N"
+                          - text: ", negative-"
+                          - generic [ref=f27e3113]:
+                            - math [ref=f27e3115]:
+                              - generic [ref=f27e3118]: G
+                            - generic [ref=f27e3120]: G
+                          - text: ", high-"
+                          - generic [ref=f27e3121]:
+                            - math [ref=f27e3123]:
+                              - generic [ref=f27e3126]: U
+                            - generic [ref=f27e3128]: U
+                          - text: bin does not show positive acquisition advantage over gating.
+                    - paragraph [ref=f27e3129]: "This probe is surprise-symmetric: it can show that gating works, that acquisition has no headroom, or that the causal screen has no predictive value. Any of those kills or redirects before training."
+                    - separator [ref=f27e3130]
+                    - heading "Main hypotheses" [level=1] [ref=f27e3131]
+                    - 'heading "H1: necessity-conditioned acquisition beats reliability gating" [level=3] [ref=f27e3132]'
+                    - paragraph [ref=f27e3133]:
+                      - text: In the high-
+                      - generic [ref=f27e3134]:
+                        - math [ref=f27e3136]:
+                          - generic [ref=f27e3139]: "N"
+                        - generic [ref=f27e3141]: "N"
+                      - text: ", negative-"
+                      - generic [ref=f27e3142]:
+                        - math [ref=f27e3144]:
+                          - generic [ref=f27e3147]: G
+                        - generic [ref=f27e3149]: G
+                      - text: ", high-"
+                      - generic [ref=f27e3150]:
+                        - math [ref=f27e3152]:
+                          - generic [ref=f27e3155]: U
+                        - generic [ref=f27e3157]: U
+                      - text: "bin:"
+                    - generic [ref=f27e3159]:
+                      - math [ref=f27e3161]:
+                        - generic [ref=f27e3163]:
+                          - generic [ref=f27e3164]: Acquisition
+                          - generic [ref=f27e3165]: ">"
+                          - generic [ref=f27e3166]: Reliability-gating
+                      - generic [ref=f27e3167]:
+                        - generic [ref=f27e3168]:
+                          - generic [ref=f27e3169]: Acquisition
+                          - text: ">"
+                        - generic [ref=f27e3171]: Reliability-gating
+                    - paragraph [ref=f27e3172]:
+                      - text: "Preregistered effect: at least"
+                      - strong [ref=f27e3173]: 3 macro-F1
+                      - text: or statistically positive paired log-score improvement.
+                    - 'heading "H2: N/G/U features improve the router" [level=3] [ref=f27e3174]'
+                    - paragraph [ref=f27e3175]:
+                      - text: NUGA-Fact beats the noncausal supervised action router at
+                      - generic [ref=f27e3176]:
+                        - math [ref=f27e3178]:
+                          - generic [ref=f27e3180]:
+                            - generic [ref=f27e3181]: B
+                            - generic [ref=f27e3182]: =
+                            - generic [ref=f27e3183]: "1"
+                        - generic [ref=f27e3184]:
+                          - generic [ref=f27e3185]: B =
+                          - generic [ref=f27e3186]: "1"
+                      - text: .
+                    - paragraph [ref=f27e3187]:
+                      - text: "Preregistered effect: at least"
+                      - strong [ref=f27e3188]: 2 macro-F1
+                      - text: ", lower bootstrap CI"
+                      - generic [ref=f27e3189]:
+                        - math [ref=f27e3191]:
+                          - generic [ref=f27e3193]:
+                            - generic [ref=f27e3194]: ">"
+                            - generic [ref=f27e3195]: "0"
+                        - generic [ref=f27e3196]:
+                          - generic [ref=f27e3197]: ">"
+                          - generic [ref=f27e3198]: "0"
+                      - text: .
+                    - 'heading "H3: gating is allowed to win where theory says it should" [level=3] [ref=f27e3199]'
+                    - paragraph [ref=f27e3200]:
+                      - text: In low-
+                      - generic [ref=f27e3201]:
+                        - math [ref=f27e3203]:
+                          - generic [ref=f27e3206]: "N"
+                        - generic [ref=f27e3208]: "N"
+                      - text: or high-redundancy bins, reliability gating/no-action may match or beat acquisition. This is not a failure; it is the boundary condition.
+                    - separator [ref=f27e3209]
+                    - heading "Falsifiers" [level=1] [ref=f27e3210]
+                    - paragraph [ref=f27e3211]: "The study is falsified if any of these happen:"
+                    - list [ref=f27e3212]:
+                      - listitem [ref=f27e3213]:
+                        - paragraph [ref=f27e3214]:
+                          - strong [ref=f27e3215]: "No acquisition headroom:"
+                          - text: oracle single-action acquisition barely improves over no-action.
+                      - listitem [ref=f27e3216]:
+                        - paragraph [ref=f27e3217]:
+                          - strong [ref=f27e3218]: "Gating wins in the target bin:"
+                          - text: reliability-gating beats acquisition for high-
+                          - generic [ref=f27e3219]:
+                            - math [ref=f27e3221]:
+                              - generic [ref=f27e3224]: "N"
+                            - generic [ref=f27e3226]: "N"
+                          - text: ", negative-"
+                          - generic [ref=f27e3227]:
+                            - math [ref=f27e3229]:
+                              - generic [ref=f27e3232]: G
+                            - generic [ref=f27e3234]: G
+                          - text: ", high-"
+                          - generic [ref=f27e3235]:
+                            - math [ref=f27e3237]:
+                              - generic [ref=f27e3240]: U
+                            - generic [ref=f27e3242]: U
+                          - text: examples.
+                      - listitem [ref=f27e3243]:
+                        - paragraph [ref=f27e3244]:
+                          - strong [ref=f27e3245]: "Causal features add nothing:"
+                          - text: NUGA does not beat the noncausal supervised router.
+                      - listitem [ref=f27e3246]:
+                        - paragraph [ref=f27e3247]:
+                          - strong [ref=f27e3248]: "Cost unfairness explains gains:"
+                          - text: NUGA only wins when allowed more calls.
+                      - listitem [ref=f27e3249]:
+                        - paragraph [ref=f27e3250]:
+                          - strong [ref=f27e3251]: "Dataset overfit:"
+                          - text: effect appears on MOCHEG but fails directionally on Factify-2.
+                      - listitem [ref=f27e3252]:
+                        - paragraph [ref=f27e3253]:
+                          - strong [ref=f27e3254]: "Abstention gaming:"
+                          - text: gains disappear when abstentions are counted as incorrect.
+                    - separator [ref=f27e3255]
+                    - heading "Seed plan" [level=1] [ref=f27e3256]
+                    - paragraph [ref=f27e3257]: "Minimum:"
+                    - list [ref=f27e3258]:
+                      - listitem [ref=f27e3259]:
+                        - paragraph [ref=f27e3260]: 3 random seeds for verifier adapter/head.
+                      - listitem [ref=f27e3261]:
+                        - paragraph [ref=f27e3262]: 3 random seeds for router.
+                      - listitem [ref=f27e3263]:
+                        - paragraph [ref=f27e3264]: Same data splits and retrieved corpora across methods.
+                      - listitem [ref=f27e3265]:
+                        - paragraph [ref=f27e3266]: Report mean ± standard deviation across the 3 paired runs.
+                      - listitem [ref=f27e3267]:
+                        - paragraph [ref=f27e3268]: Bootstrap CIs computed within each seed and pooled by seed-level paired deltas.
+                    - paragraph [ref=f27e3269]: "Preferred if compute allows:"
+                    - list [ref=f27e3270]:
+                      - listitem [ref=f27e3271]:
+                        - paragraph [ref=f27e3272]: 5 router seeds after the kill-probe passes.
+                      - listitem [ref=f27e3273]:
+                        - paragraph [ref=f27e3274]: One external replication on Factify-2 with frozen hyperparameters selected on MOCHEG only.
+                    - separator [ref=f27e3275]
+                    - 'heading "Off-frame mathematics: POMDP / value-of-information" [level=1] [ref=f27e3276]'
+                    - paragraph [ref=f27e3277]: "The non-incumbent frame is not “learn better fusion weights.” It is:"
+                    - generic [ref=f27e3279]:
+                      - math [ref=f27e3281]:
+                        - generic [ref=f27e3283]:
+                          - generic [ref=f27e3284]: partially
+                          - generic [ref=f27e3285]: observable
+                          - generic [ref=f27e3286]: decision-making
+                          - generic [ref=f27e3287]: with
+                          - generic [ref=f27e3288]: costly
+                          - generic [ref=f27e3289]: observations
+                      - generic [ref=f27e3292]: partially observable decision-making with costly observations
+                    - paragraph [ref=f27e3293]: "The hidden state is claim truth. Current evidence streams are noisy observations. Evidence actions are costly observation actions. The correct decision is not “trust or distrust the current stream,” but:"
+                    - generic [ref=f27e3295]:
+                      - math [ref=f27e3297]:
+                        - generic [ref=f27e3299]:
+                          - generic [ref=f27e3300]:
+                            - generic [ref=f27e3301]: a
+                            - generic [ref=f27e3302]: ∗
+                          - generic [ref=f27e3303]: =
+                          - generic [ref=f27e3304]: arg
+                          - generic: ⁡
+                          - generic [ref=f27e3305]:
+                            - generic [ref=f27e3306]:
+                              - generic [ref=f27e3307]: max
+                              - generic: ⁡
+                            - generic [ref=f27e3308]: a
+                          - generic [ref=f27e3309]: E
+                          - generic [ref=f27e3310]: "["
+                          - generic [ref=f27e3311]: posterior decision utility after observation
+                          - generic [ref=f27e3312]: a
+                          - generic [ref=f27e3313]: "]"
+                          - generic [ref=f27e3314]: −
+                          - generic [ref=f27e3315]: cost
+                          - generic [ref=f27e3316]: (
+                          - generic [ref=f27e3317]: a
+                          - generic [ref=f27e3318]: )
+                      - generic [ref=f27e3319]:
+                        - generic [ref=f27e3320]:
+                          - generic [ref=f27e3321]:
+                            - text: a
+                            - generic [ref=f27e3326]: ∗
+                          - text: =
+                        - generic [ref=f27e3327]:
+                          - generic [ref=f27e3328]: arg
+                          - generic [ref=f27e3332]:
+                            - generic [ref=f27e3333]: a
+                            - generic [ref=f27e3334]: max
+                          - text: E[
+                          - generic [ref=f27e3338]: posterior decision utility after observation
+                          - text: a] −
+                        - generic [ref=f27e3339]:
+                          - generic [ref=f27e3340]: cost
+                          - text: (a)
+                    - paragraph [ref=f27e3341]:
+                      - text: POMDP/VoI work explicitly treats partially observed systems, costly observations, and actions that gather information before a decision.
+                      - link "科学直通车" [ref=f27e3344] [cursor=pointer]:
+                        - /url: https://www.sciencedirect.com/science/article/abs/pii/S0951832016300771
+                        - generic [ref=f27e3349]: 科学直通车
+                    - paragraph [ref=f27e3350]: "This gives a differential prediction the fusion-weight incumbent cannot make:"
+                    - list [ref=f27e3351]:
+                      - listitem [ref=f27e3352]:
+                        - paragraph [ref=f27e3353]:
+                          - strong [ref=f27e3354]: "Reliability-gating prediction:"
+                          - text: if a stream is unreliable, down-weight it.
+                      - listitem [ref=f27e3355]:
+                        - paragraph [ref=f27e3356]:
+                          - strong [ref=f27e3357]: "VoI prediction:"
+                          - text: if a stream is unreliable
+                          - strong [ref=f27e3358]: and necessary
+                          - text: ", acquire a better observation of that semantic variable; do not merely suppress it."
+                      - listitem [ref=f27e3359]:
+                        - paragraph [ref=f27e3360]:
+                          - strong [ref=f27e3361]: "Boundary prediction:"
+                          - text: if the stream is unreliable but redundant or unnecessary, gating/no-action can be optimal.
+                      - listitem [ref=f27e3362]:
+                        - paragraph [ref=f27e3363]:
+                          - strong [ref=f27e3364]: "Anti-overretrieval prediction:"
+                          - text: if uncertainty is high but
+                          - generic [ref=f27e3365]:
+                            - math [ref=f27e3367]:
+                              - generic [ref=f27e3370]: U
+                            - generic [ref=f27e3372]: U
+                          - text: is low, do not retrieve; abstain or keep current evidence.
+                    - paragraph [ref=f27e3373]: That last point is important. A confidence-based retrieval system tends to spend budget whenever it is uncertain. NUGA should spend budget only when the causal screen says the uncertainty is information-resolvable.
+                    - separator [ref=f27e3374]
+                    - heading "Paper-shaped contribution" [level=2] [ref=f27e3375]
+                    - paragraph [ref=f27e3376]: "The paper should make exactly one claim:"
+                    - blockquote [ref=f27e3377]:
+                      - paragraph [ref=f27e3378]: A causal necessity/gate/recoverability screen can be turned into a cost-constrained evidence-acquisition router that predicts when to acquire text, OCR, or visual evidence for multimodal fact verification, and it beats reliability-gating under equal evidence budget specifically in necessary-but-unreliable regimes.
+                    - paragraph [ref=f27e3379]: "That is the 一区-shaped version: active information fusion under imperfect sources, with a real build, a cost budget, a refutable incumbent, and a clean boundary condition."
+                - group "回复操作" [ref=f27e3381]:
+                  - button "复制回复" [ref=f27e3382] [cursor=pointer]:
+                    - img [ref=f27e3384]
+                  - button "喜欢" [ref=f27e3386] [cursor=pointer]:
+                    - img [ref=f27e3388]
+                  - button "不喜欢" [ref=f27e3390] [cursor=pointer]:
+                    - img [ref=f27e3392]
+                  - button "Pro 反馈" [ref=f27e3394] [cursor=pointer]:
+                    - img [ref=f27e3395]
+                  - button "分享" [ref=f27e3397] [cursor=pointer]:
+                    - img [ref=f27e3399]
+                  - button "切换模型" [ref=f27e3402] [cursor=pointer]:
+                    - img [ref=f27e3404]
+                  - button "更多操作" [ref=f27e3406] [cursor=pointer]:
+                    - img [ref=f27e3407]
+                  - button "来源" [ref=f27e3409] [cursor=pointer]:
+                    - generic [ref=f27e3417]: 来源
+          - generic [ref=f27e428]:
+            - button [ref=f27e3418] [cursor=pointer]:
+              - img [ref=f27e3419]
+            - generic [ref=f27e434]:
+              - generic [ref=f27e438]:
+                - button "添加文件等" [ref=f27e441] [cursor=pointer]:
+                  - img
+                - textbox "与 ChatGPT 聊天" [active] [ref=f27e444]:
+                  - paragraph [ref=f27e733]: 有问题，尽管问
+                - generic [ref=f27e446]:
+                  - button "Pro 扩展" [ref=f27e655] [cursor=pointer]:
+                    - generic [ref=f27e586]: Pro 扩展
+                    - img
+                  - generic [ref=f27e447]:
+                    - button "开始听写" [ref=f27e587] [cursor=pointer]:
+                      - img
+                    - button "启动语音功能" [ref=f27e3427] [cursor=pointer]:
+                      - img [ref=f27e3428]
+              - button [ref=f27e452]
+              - button [ref=f27e453]
+            - generic [ref=f27e742]: ChatGPT 也可能会犯错。请核查重要信息。
+  - alert [ref=f27e454]
+  - status [ref=f27e455]

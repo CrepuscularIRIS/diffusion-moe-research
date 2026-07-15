@@ -1,0 +1,405 @@
+- generic [ref=f32e1]:
+  - link "跳至内容" [ref=f32e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f32e6]:
+    - generic [ref=f32e8]:
+      - navigation "侧边栏":
+        - generic:
+          - generic:
+            - generic:
+              - button "打开边栏":
+                - img
+        - generic:
+          - generic:
+            - link "新聊天":
+              - /url: /
+              - generic:
+                - img
+              - generic: 新聊天
+          - generic:
+            - button "搜索聊天":
+              - generic:
+                - img
+              - generic: 搜索聊天
+          - generic:
+            - button "最近聊天":
+              - generic:
+                - img
+              - generic: 最近聊天
+        - generic:
+          - generic:
+            - button "打开“个人资料”菜单":
+              - generic:
+                - generic:
+                  - img "个人资料图片"
+      - generic [ref=f32e9]:
+        - heading "历史聊天记录" [level=2] [ref=f32e10]
+        - generic [ref=f32e11]:
+          - navigation "历史聊天记录" [ref=f32e12]:
+            - generic [ref=f32e15]:
+              - link "主页" [ref=f32e16] [cursor=pointer]:
+                - /url: /
+                - generic [ref=f32e17]: ChatGPT
+              - button "关闭边栏" [expanded] [ref=f32e19]:
+                - img [ref=f32e20]
+            - list [ref=f32e23]:
+              - listitem [ref=f32e24]:
+                - link "新聊天 控制 Shift O" [ref=f32e25] [cursor=pointer]:
+                  - /url: /
+                  - generic [ref=f32e26]:
+                    - img [ref=f32e28]
+                    - generic [ref=f32e31]: 新聊天
+                  - generic [ref=f32e33]:
+                    - generic "控制" [ref=f32e34]:
+                      - generic [ref=f32e35]: Ctrl
+                      - text: +
+                    - generic "Shift" [ref=f32e36]:
+                      - generic [ref=f32e37]: Shift
+                      - text: +
+                    - generic [ref=f32e39]: O
+              - listitem
+              - listitem [ref=f32e40]:
+                - button "搜索聊天 控制 K" [ref=f32e455] [cursor=pointer]:
+                  - generic [ref=f32e42]:
+                    - img [ref=f32e457]
+                    - generic [ref=f32e460]: 搜索聊天
+                  - generic [ref=f32e461]:
+                    - generic "控制" [ref=f32e462]:
+                      - generic [ref=f32e463]: Ctrl
+                      - text: +
+                    - generic [ref=f32e465]: K
+            - link "文件库" [ref=f32e47] [cursor=pointer]:
+              - /url: /library
+              - img [ref=f32e49]
+              - generic [ref=f32e52]: 文件库
+            - link "项目 新项目" [ref=f32e53] [cursor=pointer]:
+              - /url: /projects
+              - generic [ref=f32e54]:
+                - img [ref=f32e56]
+                - generic [ref=f32e59]: 项目
+              - button "新项目" [ref=f32e61]:
+                - img [ref=f32e63]
+            - link "已安排" [ref=f32e65] [cursor=pointer]:
+              - /url: /scheduled
+              - img [ref=f32e67]
+              - generic [ref=f32e70]: 已安排
+            - link "应用" [ref=f32e71] [cursor=pointer]:
+              - /url: /apps
+              - img [ref=f32e73]
+              - generic [ref=f32e76]: 应用
+            - generic [ref=f32e78] [cursor=pointer]:
+              - img [ref=f32e80]
+              - generic [ref=f32e83]: 更多
+            - generic [ref=f32e84]:
+              - generic [ref=f32e85]:
+                - button "最近" [expanded] [ref=f32e86] [cursor=pointer]:
+                  - heading "最近" [level=2] [ref=f32e87]
+                - generic [ref=f32e89]:
+                  - link "新聊天" [ref=f32e90] [cursor=pointer]:
+                    - /url: /
+                    - img [ref=f32e92]
+                  - button "整理聊天" [ref=f32e94] [cursor=pointer]:
+                    - img [ref=f32e96]
+              - list [ref=f32e99]:
+                - listitem [ref=f32e130]:
+                  - link "/goal 函数适配性" [ref=f32e131] [cursor=pointer]:
+                    - /url: /c/6a45cf85-7ed4-83ea-82da-767a8e661628
+                    - generic [ref=f32e133]: /goal 函数适配性
+                    - generic [ref=f32e135]:
+                      - button "置顶 /goal 函数适配性" [ref=f32e136]:
+                        - img [ref=f32e138]
+                      - button "打开“/goal 函数适配性”的对话选项" [ref=f32e466]:
+                        - img [ref=f32e468]
+                - listitem [ref=f32e100]:
+                  - link "Headroom Repo 使用方法" [ref=f32e101] [cursor=pointer]:
+                    - /url: /c/6a476034-578c-83ea-a02e-52a121224e86
+                    - generic [ref=f32e103]: Headroom Repo 使用方法
+                    - generic [ref=f32e105]:
+                      - button "置顶 Headroom Repo 使用方法" [ref=f32e106]:
+                        - img [ref=f32e108]
+                      - button "打开“Headroom Repo 使用方法”的对话选项" [ref=f32e470]:
+                        - img [ref=f32e472]
+                - listitem [ref=f32e110]:
+                  - link "Headroom Repo链接和使用（未读）" [ref=f32e474] [cursor=pointer]:
+                    - /url: /c/6a476030-3ca8-83ea-83a7-37c7c8fd3067?messageId=finalAgentTurnStart
+                    - generic [ref=f32e113]: Headroom Repo链接和使用
+                    - generic [ref=f32e475]:
+                      - button "置顶 Headroom Repo链接和使用" [ref=f32e476]:
+                        - img [ref=f32e478]
+                      - button "打开“Headroom Repo链接和使用”的对话选项" [ref=f32e480]:
+                        - img [ref=f32e482]
+                - listitem [ref=f32e120]:
+                  - link "Designing a Research Study" [ref=f32e121] [cursor=pointer]:
+                    - /url: /c/6a4752d9-ab64-83ea-a9ec-b0fda42b8e08
+                    - generic [ref=f32e123]: Designing a Research Study
+                    - generic [ref=f32e125]:
+                      - button "置顶 Designing a Research Study" [ref=f32e126]:
+                        - img [ref=f32e128]
+                      - button "打开“Designing a Research Study”的对话选项" [ref=f32e486]:
+                        - img [ref=f32e488]
+                - listitem [ref=f32e140]:
+                  - link "实验分析严谨性方向" [ref=f32e141] [cursor=pointer]:
+                    - /url: /c/6a47440b-60b0-83ea-bd08-4dea891d6280
+                    - generic [ref=f32e143]: 实验分析严谨性方向
+                    - generic [ref=f32e145]:
+                      - button "置顶 实验分析严谨性方向" [ref=f32e146]:
+                        - img [ref=f32e148]
+                      - button "打开“实验分析严谨性方向”的对话选项" [ref=f32e490]:
+                        - img [ref=f32e492]
+                - listitem [ref=f32e150]:
+                  - link "Research Direction Reframe" [ref=f32e151] [cursor=pointer]:
+                    - /url: /c/6a4735b5-3fb8-83ea-85f9-268839a57e13
+                    - generic [ref=f32e153]: Research Direction Reframe
+                    - generic [ref=f32e155]:
+                      - button "置顶 Research Direction Reframe" [ref=f32e156]:
+                        - img [ref=f32e158]
+                      - button "打开“Research Direction Reframe”的对话选项" [ref=f32e494]:
+                        - img [ref=f32e496]
+                - listitem [ref=f32e160]:
+                  - link "OpenCode OMOA 安装与分配" [ref=f32e161] [cursor=pointer]:
+                    - /url: /c/6a470bb6-3dc8-83ea-ae82-37cc4a1167d9
+                    - generic [ref=f32e163]: OpenCode OMOA 安装与分配
+                    - generic [ref=f32e165]:
+                      - button "置顶 OpenCode OMOA 安装与分配" [ref=f32e166]:
+                        - img [ref=f32e168]
+                      - button "打开“OpenCode OMOA 安装与分配”的对话选项" [ref=f32e498]:
+                        - img [ref=f32e500]
+                - listitem [ref=f32e170]:
+                  - link "Design for VLA Robustness" [ref=f32e171] [cursor=pointer]:
+                    - /url: /c/6a46f27a-ca34-83ea-b71a-e076a855e480
+                    - generic [ref=f32e173]: Design for VLA Robustness
+                    - generic [ref=f32e175]:
+                      - button "置顶 Design for VLA Robustness" [ref=f32e176]:
+                        - img [ref=f32e178]
+                      - button "打开“Design for VLA Robustness”的对话选项" [ref=f32e502]:
+                        - img [ref=f32e504]
+                - listitem [ref=f32e180]:
+                  - link "CAF-VLA Protocol Design（未读）" [ref=f32e181] [cursor=pointer]:
+                    - /url: /c/6a46b677-a9a8-83ea-96ca-f7e0d6f5418e?messageId=finalAgentTurnStart
+                    - generic [ref=f32e183]: CAF-VLA Protocol Design
+                    - generic [ref=f32e186]:
+                      - button "置顶 CAF-VLA Protocol Design" [ref=f32e187]:
+                        - img [ref=f32e189]
+                      - button "打开“CAF-VLA Protocol Design”的对话选项" [ref=f32e506]:
+                        - img [ref=f32e508]
+                - listitem [ref=f32e193]:
+                  - link "Modeling-Taste Atlas" [ref=f32e194] [cursor=pointer]:
+                    - /url: /c/6a46aa73-4c98-83ea-a1b3-ebab2cc15e3f
+                    - generic [ref=f32e196]: Modeling-Taste Atlas
+                    - generic [ref=f32e198]:
+                      - button "置顶 Modeling-Taste Atlas" [ref=f32e199]:
+                        - img [ref=f32e201]
+                      - button "打开“Modeling-Taste Atlas”的对话选项" [ref=f32e510]:
+                        - img [ref=f32e512]
+                - listitem [ref=f32e203]:
+                  - link "DeepResearch Prompt 设计" [ref=f32e204] [cursor=pointer]:
+                    - /url: /c/6a467476-08a8-83ea-9425-498070be070f
+                    - generic [ref=f32e206]: DeepResearch Prompt 设计
+                    - generic [ref=f32e208]:
+                      - button "置顶 DeepResearch Prompt 设计" [ref=f32e209]:
+                        - img [ref=f32e211]
+                      - button "打开“DeepResearch Prompt 设计”的对话选项" [ref=f32e514]:
+                        - img [ref=f32e516]
+                - listitem [ref=f32e213]:
+                  - link "Modeling Taste Operators Extraction" [ref=f32e214] [cursor=pointer]:
+                    - /url: /c/6a468590-e0ec-83ea-b95c-0ea92f375f89
+                    - generic "Modeling Taste Operators Extraction" [ref=f32e216]
+                    - generic [ref=f32e218]:
+                      - button "置顶 Modeling Taste Operators Extraction" [ref=f32e219]:
+                        - img [ref=f32e221]
+                      - button "打开“Modeling Taste Operators Extraction”的对话选项" [ref=f32e518]:
+                        - img [ref=f32e520]
+                - listitem [ref=f32e223]:
+                  - link "Modeling Object Transfer in Robotics" [ref=f32e224] [cursor=pointer]:
+                    - /url: /c/6a467564-91f0-83ea-9728-1dc1d2e3d16a
+                    - generic "Modeling Object Transfer in Robotics" [ref=f32e226]
+                    - generic [ref=f32e228]:
+                      - button "置顶 Modeling Object Transfer in Robotics" [ref=f32e229]:
+                        - img [ref=f32e231]
+                      - button "打开“Modeling Object Transfer in Robotics”的对话选项" [ref=f32e522]:
+                        - img [ref=f32e524]
+                - listitem [ref=f32e233]:
+                  - link "建模对象转移研究" [ref=f32e234] [cursor=pointer]:
+                    - /url: /c/6a46755a-8950-83ea-ad9f-c62ab0783648
+                    - generic [ref=f32e236]: 建模对象转移研究
+                    - generic [ref=f32e238]:
+                      - button "置顶 建模对象转移研究" [ref=f32e239]:
+                        - img [ref=f32e241]
+                      - button "打开“建模对象转移研究”的对话选项" [ref=f32e526]:
+                        - img [ref=f32e528]
+                - listitem [ref=f32e243]:
+                  - link "VLA robustness next move" [ref=f32e244] [cursor=pointer]:
+                    - /url: /c/6a4677f2-c6b8-83ea-9839-35c1a677ad58
+                    - generic [ref=f32e246]: VLA robustness next move
+                    - generic [ref=f32e248]:
+                      - button "置顶 VLA robustness next move" [ref=f32e249]:
+                        - img [ref=f32e251]
+                      - button "打开“VLA robustness next move”的对话选项" [ref=f32e530]:
+                        - img [ref=f32e532]
+                - listitem [ref=f32e253]:
+                  - link "AI/ML 建模对象转移" [ref=f32e254] [cursor=pointer]:
+                    - /url: /c/6a467550-5944-83ea-af85-09b43a728721
+                    - generic [ref=f32e256]: AI/ML 建模对象转移
+                    - generic [ref=f32e258]:
+                      - button "置顶 AI/ML 建模对象转移" [ref=f32e259]:
+                        - img [ref=f32e261]
+                      - button "打开“AI/ML 建模对象转移”的对话选项" [ref=f32e534]:
+                        - img [ref=f32e536]
+                - listitem [ref=f32e263]:
+                  - link "建模Taste库构建" [ref=f32e264] [cursor=pointer]:
+                    - /url: /c/6a46664c-6cc4-83ea-b457-b8845d8835dd
+                    - generic [ref=f32e266]: 建模Taste库构建
+                    - generic [ref=f32e268]:
+                      - button "置顶 建模Taste库构建" [ref=f32e269]:
+                        - img [ref=f32e271]
+                      - button "打开“建模Taste库构建”的对话选项" [ref=f32e538]:
+                        - img [ref=f32e540]
+                - listitem [ref=f32e273]:
+                  - link "VLA L与语义关系" [ref=f32e274] [cursor=pointer]:
+                    - /url: /c/6a4665cc-7724-83ea-8a02-d5d93fb842c3
+                    - generic [ref=f32e276]: VLA L与语义关系
+                    - generic [ref=f32e278]:
+                      - button "置顶 VLA L与语义关系" [ref=f32e279]:
+                        - img [ref=f32e281]
+                      - button "打开“VLA L与语义关系”的对话选项" [ref=f32e542]:
+                        - img [ref=f32e544]
+                - listitem [ref=f32e283]:
+                  - link "VLA Dynamic Fusion Audit" [ref=f32e284] [cursor=pointer]:
+                    - /url: /c/6a466176-1f24-83ea-a5be-40a9c134859d
+                    - generic [ref=f32e286]: VLA Dynamic Fusion Audit
+                    - generic [ref=f32e288]:
+                      - button "置顶 VLA Dynamic Fusion Audit" [ref=f32e289]:
+                        - img [ref=f32e291]
+                      - button "打开“VLA Dynamic Fusion Audit”的对话选项" [ref=f32e546]:
+                        - img [ref=f32e548]
+                - listitem [ref=f32e293]:
+                  - link "Sequential Correction Head Design" [ref=f32e294] [cursor=pointer]:
+                    - /url: /c/6a45d9b0-878c-83ea-825a-c946529ba84f
+                    - generic "Sequential Correction Head Design" [ref=f32e296]
+                    - generic [ref=f32e298]:
+                      - button "置顶 Sequential Correction Head Design" [ref=f32e299]:
+                        - img [ref=f32e301]
+                      - button "打开“Sequential Correction Head Design”的对话选项" [ref=f32e550]:
+                        - img [ref=f32e552]
+                - listitem [ref=f32e303]:
+                  - link "研究选题建议" [ref=f32e304] [cursor=pointer]:
+                    - /url: /c/6a44a61c-b8f4-83ea-8bae-47e3213dba7f
+                    - generic [ref=f32e306]: 研究选题建议
+                    - generic [ref=f32e308]:
+                      - button "置顶 研究选题建议" [ref=f32e309]:
+                        - img [ref=f32e311]
+                      - button "打开“研究选题建议”的对话选项" [ref=f32e554]:
+                        - img [ref=f32e556]
+                - listitem [ref=f32e313]:
+                  - link "VLA研究方向建议" [ref=f32e314] [cursor=pointer]:
+                    - /url: /c/6a44a130-2574-83ea-84ca-c8f4c9c25e7d
+                    - generic [ref=f32e316]: VLA研究方向建议
+                    - generic [ref=f32e318]:
+                      - button "置顶 VLA研究方向建议" [ref=f32e319]:
+                        - img [ref=f32e321]
+                      - button "打开“VLA研究方向建议”的对话选项" [ref=f32e558]:
+                        - img [ref=f32e560]
+                - listitem [ref=f32e323]:
+                  - link "Fable5 学术认知与Taste" [ref=f32e324] [cursor=pointer]:
+                    - /url: /c/6a45b4ab-0c98-83ea-833b-5e7aab2664d8
+                    - generic [ref=f32e326]: Fable5 学术认知与Taste
+                    - generic [ref=f32e328]:
+                      - button "置顶 Fable5 学术认知与Taste" [ref=f32e329]:
+                        - img [ref=f32e331]
+                      - button "打开“Fable5 学术认知与Taste”的对话选项" [ref=f32e562]:
+                        - img [ref=f32e564]
+                - listitem [ref=f32e333]:
+                  - link "科研建模与瓶颈分析" [ref=f32e334] [cursor=pointer]:
+                    - /url: /c/6a45a151-a0c0-83ea-85b7-d0e81ef0593d
+                    - generic [ref=f32e336]: 科研建模与瓶颈分析
+                    - generic [ref=f32e338]:
+                      - button "置顶 科研建模与瓶颈分析" [ref=f32e339]:
+                        - img [ref=f32e341]
+                      - button "打开“科研建模与瓶颈分析”的对话选项" [ref=f32e566]:
+                        - img [ref=f32e568]
+                - listitem [ref=f32e343]:
+                  - link "Higher-order Sequential Head Design" [ref=f32e344] [cursor=pointer]:
+                    - /url: /c/6a44fcb9-1fd8-83ea-b324-cb4b75c7baa5
+                    - generic "Higher-order Sequential Head Design" [ref=f32e346]
+                    - generic [ref=f32e348]:
+                      - button "置顶 Higher-order Sequential Head Design" [ref=f32e349]:
+                        - img [ref=f32e351]
+                      - button "打开“Higher-order Sequential Head Design”的对话选项" [ref=f32e570]:
+                        - img [ref=f32e572]
+                - listitem [ref=f32e353]:
+                  - link "Research-OS 重构与验证" [ref=f32e354] [cursor=pointer]:
+                    - /url: /c/6a44905a-f3bc-83ea-a7fd-008aa3209b5e
+                    - generic [ref=f32e356]: Research-OS 重构与验证
+                    - generic [ref=f32e358]:
+                      - button "置顶 Research-OS 重构与验证" [ref=f32e359]:
+                        - img [ref=f32e361]
+                      - button "打开“Research-OS 重构与验证”的对话选项" [ref=f32e574]:
+                        - img [ref=f32e576]
+                - listitem [ref=f32e363]:
+                  - link "Training dLLM for Parallel Reasoning" [ref=f32e364] [cursor=pointer]:
+                    - /url: /c/6a44cb4d-2654-83ea-9c7b-9d7686b8e4b5
+                    - generic "Training dLLM for Parallel Reasoning" [ref=f32e366]
+                    - generic [ref=f32e368]:
+                      - button "置顶 Training dLLM for Parallel Reasoning" [ref=f32e369]:
+                        - img [ref=f32e371]
+                      - button "打开“Training dLLM for Parallel Reasoning”的对话选项" [ref=f32e578]:
+                        - img [ref=f32e580]
+                - listitem [ref=f32e373]:
+                  - link "Research design improvement" [ref=f32e374] [cursor=pointer]:
+                    - /url: /c/6a44a91a-4240-83ea-a180-521c47402138
+                    - generic [ref=f32e376]: Research design improvement
+                    - generic [ref=f32e378]:
+                      - button "置顶 Research design improvement" [ref=f32e379]:
+                        - img [ref=f32e381]
+                      - button "打开“Research design improvement”的对话选项" [ref=f32e582]:
+                        - img [ref=f32e584]
+          - button "xufeng ling 个人帐户，打开“个人资料”菜单" [ref=f32e586] [cursor=pointer]:
+            - generic [ref=f32e386]:
+              - img "个人资料图片" [ref=f32e587]
+              - generic [ref=f32e389]:
+                - generic [ref=f32e391]: xufeng ling
+                - generic [ref=f32e394]: 个人帐户
+            - button "下载应用" [ref=f32e397]:
+              - img [ref=f32e399]
+    - generic [ref=f32e403]:
+      - generic [ref=f32e404]:
+        - banner:
+          - button "开启临时聊天" [ref=f32e410] [cursor=pointer]:
+            - img [ref=f32e411]
+      - main [ref=f32e414]:
+        - generic [ref=f32e415]:
+          - heading "我能帮什么忙吗， CrepuscularIRIS ？" [level=1] [ref=f32e423]:
+            - generic [ref=f32e424]:
+              - text: 我能帮什么忙吗，
+              - button "CrepuscularIRIS" [ref=f32e426] [cursor=pointer]
+              - text: ？
+          - generic [ref=f32e427]:
+            - generic [ref=f32e433]:
+              - generic [ref=f32e437]:
+                - button "添加文件等" [ref=f32e440] [cursor=pointer]:
+                  - img
+                - textbox "与 ChatGPT 聊天" [active] [ref=f32e443]:
+                  - paragraph [ref=f32e444]: 有问题，尽管问
+                - generic [ref=f32e445]:
+                  - button "超高" [ref=f32e590] [cursor=pointer]:
+                    - generic [ref=f32e593]: 超高
+                    - img
+                  - generic [ref=f32e446]:
+                    - button "开始听写" [ref=f32e594] [cursor=pointer]:
+                      - img
+                    - button "启动语音功能" [ref=f32e597] [cursor=pointer]:
+                      - img [ref=f32e598]
+              - button [ref=f32e451]
+              - button [ref=f32e452]
+            - generic [ref=f32e604]:
+              - button "生成图片" [ref=f32e606] [cursor=pointer]:
+                - img [ref=f32e608]
+                - generic [ref=f32e611]: 生成图片
+              - button "撰写或编辑" [ref=f32e613] [cursor=pointer]:
+                - img [ref=f32e615]
+                - generic [ref=f32e618]: 撰写或编辑
+              - button "查找资料" [ref=f32e620] [cursor=pointer]:
+                - img [ref=f32e622]
+                - generic [ref=f32e625]: 查找资料
+  - alert [ref=f32e453]
+  - status [ref=f32e454]

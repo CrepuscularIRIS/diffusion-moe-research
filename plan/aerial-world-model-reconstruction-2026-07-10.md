@@ -1,10 +1,16 @@
 # Aerial Multimodal Navigation → Data-Assimilation Reconstruction (2026-07-10)
 
-**STATUS: PARKED (2026-07-10). REOPEN-IF: the user adopts this direction via `/goal`, OR the optical-SAR campaign region-closes. Until then no compute; the kill-probe below is the reopen entry point.**
+**STATUS: KILLED at STEP ZERO (2026-07-11) — the reconstruction premise is FALSE, no training spent.** The cheap
+kill-probe ran on banked AVDN features: Gate 1 P(multimodal | off-screen) = 0.000 (frozen base≡LoRA features do
+NOT localize the off-screen goal; the conditional posterior ≈ the marginal prior — broad irreducible uncertainty,
+not recoverable multimodality). The independent-review-demanded TEMPORAL shrinkage probe = SHRINKAGE-KILL (fused
+belief concentrates but CONFIDENTLY WRONG — truth-containment collapses 0.64→0.05; the belief-level analog of the
+dead-reckon SR 29→9.5 collapse). ⇒ DA does NOT escape the aerial region-close; aerial-VLN method space is
+EXHAUSTED in-envelope. Evidence: `openbuild/aerial/probes/da_killprobe/` + `openbuild/aerial/pro/da-killprobe-*`.
 
-> Banked per user request ("document this for now"). PRIMARY effort = the pipeline redesign (why the
-> Reconstruction step is suppressed — see `plan/reconstruction-step-pipeline-redesign-2026-07-10.md`).
-> This file preserves the reconstruction itself + the 3 candidate abstractions so they are not lost.
+> Retained as the reconstruction record (the DA abstraction + 3 candidate lenses) and the failure evidence.
+> The methodological idea is sound; the aerial substrate lacks the information the reconstruction needs.
+> `plan/reconstruction-step-pipeline-redesign-2026-07-10.md` explains why the Reconstruction step was suppressed.
 
 ## The reframe (Information Fusion framing, per user)
 NOT "a small non-video world model" — incremental; latent/short-horizon/non-video aerial world-action models

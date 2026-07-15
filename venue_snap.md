@@ -1,0 +1,221 @@
+- generic [ref=f7e1]:
+  - link "Skip to content" [ref=f7e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f7e6]:
+    - generic [ref=f7e8]:
+      - navigation "Sidebar":
+        - generic:
+          - generic:
+            - generic:
+              - button "Open sidebar"
+        - generic:
+          - generic:
+            - link "New chat":
+              - /url: /
+          - generic:
+            - button "Search"
+          - generic:
+            - button "Recents"
+          - generic:
+            - link "Library":
+              - /url: /library
+        - generic: Invite team members
+        - generic:
+          - generic:
+            - button "Open profile menu"
+      - generic [ref=f7e9]:
+        - heading "Chat history" [level=2] [ref=f7e10]
+        - generic [ref=f7e11]:
+          - navigation "Chat history" [ref=f7e12]:
+            - generic [ref=f7e15]:
+              - link "Home" [ref=f7e16] [cursor=pointer]:
+                - /url: /
+                - generic [ref=f7e17]: ChatGPT
+              - button "Close sidebar" [expanded] [ref=f7e19]
+            - list [ref=f7e23]:
+              - listitem [ref=f7e24]:
+                - link "New chat Control Shift O" [ref=f7e138] [cursor=pointer]:
+                  - /url: /
+                  - generic [ref=f7e26]: New chat
+                  - generic [ref=f7e144]:
+                    - generic "Control" [ref=f7e145]
+                    - generic "Shift" [ref=f7e147]: +
+                    - generic [ref=f7e149]: O
+              - listitem
+              - listitem [ref=f7e32]:
+                - button "Search Control K" [ref=f7e151] [cursor=pointer]:
+                  - generic [ref=f7e34]: Search
+                  - generic [ref=f7e157]:
+                    - generic "Control" [ref=f7e158]
+                    - generic [ref=f7e160]: K
+            - link "Projects New project" [ref=f7e162] [cursor=pointer]:
+              - /url: /projects
+              - generic [ref=f7e163]: Projects
+              - button "New project" [ref=f7e171]
+            - link "Scheduled" [ref=f7e39] [cursor=pointer]:
+              - /url: /scheduled
+            - link "Library" [ref=f7e46] [cursor=pointer]:
+              - /url: /library
+            - generic [ref=f7e53]:
+              - link "Plugins" [ref=f7e54] [cursor=pointer]:
+                - /url: /plugins
+              - link "Agents" [ref=f7e175] [cursor=pointer]:
+                - /url: /agents
+              - link "GPTs" [ref=f7e182] [cursor=pointer]:
+                - /url: /gpts
+            - generic [ref=f7e188]:
+              - generic [ref=f7e189]:
+                - button "Recents" [expanded] [ref=f7e190] [cursor=pointer]:
+                  - heading "Recents" [level=2] [ref=f7e191]
+                - generic [ref=f7e192]:
+                  - button "Organize chats" [ref=f7e193] [cursor=pointer]
+                  - link "New chat" [ref=f7e197] [cursor=pointer]:
+                    - /url: /
+              - list [ref=f7e202]:
+                - listitem [ref=f7e203]:
+                  - link "RL Planner Critique" [ref=f7e204] [cursor=pointer]:
+                    - /url: /c/6a5695b3-48a4-83ea-a3a9-77e4ace7926b
+                    - generic [ref=f7e208]
+                - listitem [ref=f7e217]:
+                  - link "OpenCode 2.0 Beta 安装" [ref=f7e218] [cursor=pointer]:
+                    - /url: /c/6a565c48-4904-83ea-9307-409fbbff814b
+                    - generic [ref=f7e222]
+                - listitem [ref=f7e231]:
+                  - link "AI Peer Review Repo" [ref=f7e232] [cursor=pointer]:
+                    - /url: /c/6a564599-2194-83ea-826c-a08d6936977a
+                    - generic [ref=f7e236]
+                - listitem [ref=f7e245]:
+                  - link "Claude 中国用户检测" [ref=f7e246] [cursor=pointer]:
+                    - /url: /c/6a568382-fe98-83ea-819f-d33ee8cb1e1f
+                    - generic [ref=f7e250]
+                - listitem [ref=f7e259]:
+                  - link "Fable 5 额度说明" [ref=f7e260] [cursor=pointer]:
+                    - /url: /c/6a5676ea-ba34-83ea-afa4-b00b618e8288
+                    - generic [ref=f7e264]
+                - listitem [ref=f7e273]:
+                  - link "Fable 5 使用情况" [ref=f7e274] [cursor=pointer]:
+                    - /url: /c/6a5676df-c998-83ea-8e2a-0ef9ace28094
+                    - generic [ref=f7e278]
+                - listitem [ref=f7e287]:
+                  - link "翻译学术论文问题" [ref=f7e288] [cursor=pointer]:
+                    - /url: /c/6a5647cb-9018-83ea-a8d9-fcde3ac74172
+                    - generic [ref=f7e292]
+                - listitem [ref=f7e301]:
+                  - link "自动化科研缺口分析" [ref=f7e302] [cursor=pointer]:
+                    - /url: /c/6a5649e9-a4c8-83ea-9949-9f2c8d45dc6c
+                    - generic [ref=f7e306]
+                - listitem [ref=f7e315]:
+                  - link "科研论文改进建议, unread" [ref=f7e316] [cursor=pointer]:
+                    - /url: /c/6a564747-f35c-83ea-8f12-49fca36fb7f9?messageId=finalAgentTurnStart
+                    - generic [ref=f7e317]: 科研论文改进建议
+                    - generic [ref=f7e321]
+                - listitem [ref=f7e332]:
+                  - link "草稿评审与改进建议" [ref=f7e333] [cursor=pointer]:
+                    - /url: /c/6a56446e-bd6c-83ea-96bb-13cc0411173b
+                    - generic [ref=f7e337]
+                - listitem [ref=f7e346]:
+                  - link "草稿审查与一致性分析" [ref=f7e347] [cursor=pointer]:
+                    - /url: /c/6a5643e3-9960-83ea-91a8-e371aece0a6d
+                    - generic [ref=f7e351]
+                - listitem [ref=f7e360]:
+                  - link "代码更新与修复总结" [ref=f7e361] [cursor=pointer]:
+                    - /url: /c/6a564234-6fe0-83ea-9d8f-9aebcdf85b2d
+                    - generic [ref=f7e365]
+                - listitem [ref=f7e374]:
+                  - link "插件触发与技能提升" [ref=f7e375] [cursor=pointer]:
+                    - /url: /c/6a54bce7-5a38-83ea-b89a-efadfb362721
+                    - generic [ref=f7e379]
+                - listitem [ref=f7e388]:
+                  - link "Connectivity check request" [ref=f7e389] [cursor=pointer]:
+                    - /url: /c/6a56382a-7c3c-83ea-b90f-1f2d960515ab
+                    - generic [ref=f7e393]
+                - listitem [ref=f7e402]:
+                  - link "Loop-SCI 架构决策" [ref=f7e403] [cursor=pointer]:
+                    - /url: /c/6a55b9ae-7fcc-83ea-9275-878d41d72363
+                    - generic [ref=f7e407]
+                - listitem [ref=f7e416]:
+                  - link "VISReg论文解析" [ref=f7e417] [cursor=pointer]:
+                    - /url: /c/6a5600ad-3de0-83ea-a26f-82117ebe1495
+                    - generic [ref=f7e421]
+                - listitem [ref=f7e430]:
+                  - link "开发Arbor CLI工具" [ref=f7e431] [cursor=pointer]:
+                    - /url: /c/6a55adc3-096c-83ea-b4a0-96d80b18a28b
+                    - generic [ref=f7e435]
+                - listitem [ref=f7e444]:
+                  - link "神经科学与天文学选题" [ref=f7e445] [cursor=pointer]:
+                    - /url: /c/6a55c3ae-2610-83ea-bc14-08e1edff1745
+                    - generic [ref=f7e449]
+                - listitem [ref=f7e458]:
+                  - link "设计与实现更新" [ref=f7e459] [cursor=pointer]:
+                    - /url: /c/6a55b0e3-1a80-83ea-8724-6836407e697d
+                    - generic [ref=f7e463]
+                - listitem [ref=f7e472]:
+                  - link "OpenMythos 实现逻辑" [ref=f7e473] [cursor=pointer]:
+                    - /url: /c/6a54dd5f-8dc8-83ea-9715-f6ca79d7ef59
+                    - generic [ref=f7e477]
+                - listitem [ref=f7e486]:
+                  - link "版本3.7更新总结" [ref=f7e487] [cursor=pointer]:
+                    - /url: /c/6a54c068-6a28-83ea-ba2a-82bd4a87b5d0
+                    - generic [ref=f7e491]
+                - listitem [ref=f7e500]:
+                  - link "Test-time adaptation paradox" [ref=f7e501] [cursor=pointer]:
+                    - /url: /c/6a55286e-7a60-83ea-8640-cfdf518eb699
+                    - generic [ref=f7e505]
+                - listitem [ref=f7e514]:
+                  - link "WM Decision Loss Analysis" [ref=f7e515] [cursor=pointer]:
+                    - /url: /c/6a5504b1-c0e8-83ea-98c7-7a2ea4e0c4c4
+                    - generic [ref=f7e519]
+                - listitem [ref=f7e528]:
+                  - link "GPU训练进展查询" [ref=f7e529] [cursor=pointer]:
+                    - /url: /c/6a5428ab-bc60-83ea-b170-30ca757f5923
+                    - generic [ref=f7e533]
+                - listitem [ref=f7e542]:
+                  - link "科研方法论解读" [ref=f7e543] [cursor=pointer]:
+                    - /url: /c/6a54b602-d7a4-83ea-99f0-4fb5bdef1939
+                    - generic [ref=f7e547]
+                - listitem [ref=f7e556]:
+                  - link "Grok插件安装指导" [ref=f7e557] [cursor=pointer]:
+                    - /url: /c/6a54795e-1dec-83ea-90cc-a4e61e1dbfbb
+                    - generic [ref=f7e561]
+                - listitem [ref=f7e570]:
+                  - link "Anthropic解决跨上下文问题" [ref=f7e571] [cursor=pointer]:
+                    - /url: /c/6a54455c-2814-83ea-919d-a75051b47a46
+                    - generic [ref=f7e575]
+                - listitem [ref=f7e584]:
+                  - link "Translation Request" [ref=f7e585] [cursor=pointer]:
+                    - /url: /c/6a530370-2a1c-83ea-a453-388d85af1bed
+                    - generic [ref=f7e589]
+          - generic [ref=f7e63]:
+            - button "xufeng ling's Workspace Business, open profile menu" [ref=f7e598] [cursor=pointer]:
+              - generic [ref=f7e68]:
+                - generic [ref=f7e69]: xufeng ling's Workspace
+                - generic [ref=f7e71]: Business
+              - button "Download apps" [ref=f7e76]
+            - button "Invite team members" [ref=f7e81] [cursor=pointer]
+    - generic [ref=f7e87]:
+      - generic [ref=f7e88]:
+        - banner:
+          - group "Select chat surface" [ref=f7e604] [cursor=pointer]:
+            - generic [ref=f7e606]:
+              - radio "Chat" [checked] [ref=f7e608]
+              - radio "Work" [ref=f7e610]
+          - button "Turn on temporary chat" [ref=f7e94] [cursor=pointer]
+      - main [ref=f7e98]:
+        - generic [ref=f7e99]:
+          - heading "Where should we begin?" [level=1] [ref=f7e107]
+          - generic [ref=f7e109]:
+            - generic [ref=f7e115]:
+              - generic [ref=f7e119]:
+                - button "Add files and more" [ref=f7e122] [cursor=pointer]
+                - textbox "Chat with ChatGPT" [active] [ref=f7e612]:
+                  - paragraph [ref=f7e613]: Ask ChatGPT
+                - generic [ref=f7e126]:
+                  - button "High" [ref=f7e616] [cursor=pointer]
+                  - generic [ref=f7e127]:
+                    - button "Start dictation" [ref=f7e620] [cursor=pointer]
+                    - button "Start Voice" [ref=f7e623] [cursor=pointer]
+              - button [ref=f7e132]
+              - button [ref=f7e133]
+            - generic [ref=f7e134]: ChatGPT can make mistakes. Workspace data isn't used to train models.
+  - alert [ref=f7e136]
+  - status [ref=f7e137]

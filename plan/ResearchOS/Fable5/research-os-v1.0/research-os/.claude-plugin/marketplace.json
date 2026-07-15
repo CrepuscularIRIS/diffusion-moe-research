@@ -1,0 +1,20 @@
+{
+  "name": "research-os",
+  "owner": {
+    "name": "CrepuscularIRIS",
+    "url": "https://github.com/CrepuscularIRIS"
+  },
+  "metadata": {
+    "description": "Taste-first Research Operating System — 3 generator + 3 discipline commands, four generative axes (schools · types · frames · operators), one asymmetric-authority invariant, an anti-accretion rule, and the Arbor idea tree.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "research-os",
+      "source": "./",
+      "description": "6 research commands: the generator (/prospect, /forge, /autopsy) and the discipline moments (/prereg seals the evidence contract, /exp-verify checks the run is real, /adversary adjudicates the claim). Four generative axes de-monoculture the generator; one invariant (proposer = DOWN verdicts only; CLAIM_STANDS = independent; contribution = human) keeps it honest; a fixed parts budget keeps it converged. Installs commands + skills + the bundled arbor mcp idea tree.",
+      "version": "1.0.0",
+      "author": { "name": "arbor-research" }
+    }
+  ]
+}

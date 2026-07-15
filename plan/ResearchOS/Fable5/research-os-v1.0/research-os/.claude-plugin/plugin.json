@@ -1,0 +1,18 @@
+{
+  "name": "research-os",
+  "version": "1.0.0",
+  "description": "A taste-first Research Operating System for Claude Code. Six commands — three generate (/prospect problem-hunting, /forge four-axis approach-forging with a regenerating backlog, /autopsy negative-metabolism + programme pulse), three discipline (/prereg evidence contract, /exp-verify real-run check, /adversary the single claim-boundary gate). One invariant everywhere: a verdict that helps the proposer if gamed is never granted by the proposer — DOWN verdicts self-administrable, CLAIM_STANDS independent-substrate only, contribution promotion human-only. Four generative axes: schools (how to think) · types (what output) · frames (which mathematics) · operators (which modeling move). Anti-accretion rule: fixed parts budget, one-in-one-out. Bundles the Arbor MCP idea-tree.",
+  "author": {
+    "name": "arbor-research",
+    "url": "https://github.com/CrepuscularIRIS"
+  },
+  "homepage": "https://github.com/CrepuscularIRIS/research-os",
+  "license": "MIT",
+  "keywords": [
+    "research", "taste", "anti-goodhart", "falsification", "research-methodology",
+    "problem-finding", "lakatos", "arbor", "claude-code", "plugin", "taste-operators"
+  ],
+  "mcpServers": {
+    "arbor": { "command": "arbor", "args": ["mcp"] }
+  }
+}
