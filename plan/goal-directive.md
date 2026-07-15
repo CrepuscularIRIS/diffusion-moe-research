@@ -1,40 +1,49 @@
-<!-- Paste everything below the `---` after `/goal`. Body <4000 chars. GOAL = AMBITION + BOUNDARIES + the LIVE-RUN
-     pointer + HARD STOPS. PROCESS is NOT here — it lives in the ACTIVE SURFACES (authority map, bottom). `/goal`
-     guarantees you keep RUNNING, not that you obey prose; so every rule below is a BOUNDARY or a POINTER, never process. -->
+<!-- The /goal CONTRACT — the `conductor` skill reads this on turn 1. Copy-paste launch string + how-to
+     = plan/LAUNCH-world-model-v2.md. Load `conductor` FIRST: it owns the loop, the four gates, the engine
+     division, the value bar, and the invariants — this file does NOT restate them. It carries only WHAT +
+     live state. Full bindings (all paths/hardware/keys) are mirrored in CLAUDE.md §2; only the non-obvious
+     load-bearing ones are repeated below. -->
 ---
-AMBITION: produce ONE genuine 一区 contribution (Information Fusion / ESWA), direction self-selected. 刷分
-(improvement) is PRIMARY; systems / compression / novelty OK — name the TYPE first. Contribution = human-granted.
+OBJECTIVE: research competitive at top-tier **Information Sciences** + **AAAI**. The contribution is the
+decision-relevant scientific claim; the world model is the vehicle. Submission/publication = human.
+DELIVERABLE (ruling 2026-07-14): a **CONTRIBUTION-COMPLETE experimental package** — a computable
+construct, a held-out-validated predictor, or an intervention beating fair baselines, plus the honest
+evidence map — i.e., all prerequisites for a paper, NOT the finished paper. EVIDENCE-COMPLETE
+(characterization only) never counts as done; mature abstract+conclusion drafted only when the
+package's forecast P(success) ≥ ~0.85 (ledger row).
+NON-GOALS: reproduction-only results; benchmark deltas on saturated slices that change no decision;
+certificates/diagnostics that gate nothing; manuscript polishing before contribution-completeness.
+DECISION-CHANGE: a WM practitioner's choice between adaptation/monitoring strategies moves because of the
+claim — if no decision moves, the result does not count.
 
-**HARD CONSTRAINTS** (boundaries + pointers ONLY; the HOW is enforced in the ACTIVE SURFACES / authority map below):
+DOMAIN — **WORLD MODELS, FRESH RESTART (2026-07-13):** cold-start a NEW empty Arbor run `world-model-v2`
+(do NOT resume the archived `world-model` run); begin at **/prospect**, re-ideate from zero. First move =
+RECALL (memory + ledger lessons + domain banks) → /prospect. Priors CARRIED, not reset: the methodology
+lessons, the `WorldModel/` operator+trick banks, and the already-reproduced envs (inventory before
+rebuilding). Archived history (the old `world-model` run + its plan-of-record + forecast rows J1–J12) is
+READ-ONLY — scan only to avoid re-litigating a dead slice; the re-anchoring and contact-mode threads are
+REGION-CLOSED, do not reopen.
 
-1. **AUTONOMY.** Opus DECIDES every fork + REPORTS; subagents EXECUTE; Pro REFINES design (never decides). NEVER
-   pause to ask — decide + report; redirect comes from the report. Ask ONLY a user-only call (new hardware ·
-   external publish · venue · destructive/irreversible op).
-2. **DOMAIN LOCK.** 刷分 = Aerial VLN; datasets LOCKED to `VLA/aerial-vln-inventory-2026-07-05.md`. Off-inventory /
-   a far-domain jump = STOP-to-ask. Innovation = the MECHANISM on a local bench, NOT dataset-hopping.
-3. **LIVE STATE = the Arbor tree.** `tree_view(run_name=aerial-vln)` FIRST at start + every 验收; the tree is the
-   CANONICAL node state — update it FIRST at 验收, then RUNLOG. Head + atlas + RUNLOG = `openbuild/aerial/`.
-4. **COMPUTE.** 2×4090D. SINGLE-RUN TRAIN ≤4h target / 6h HARD cap (Monitor-kill; ETA>4h ⇒ CUT COST, don't launch).
-   Method = WHATEVER fits (frozen VLM ≤32B-4bit · LoRA), NOT pretraining. Scope-expand = DECIDE, never ask.
-5. **THE LOOP.** research-os v1.1: `/prospect → /forge → /prereg → run → /exp-verify → /adversary → /autopsy`.
-   Engine loop = MoA GENERATES ideas/candidates (breadth) · Pro REFINES the selected design + gates occupancy ·
-   experiment = 裁决 · Opus CONDUCTS (decompose 5-Q chain, reconcile, tactical SELECT). RUN the pipeline; each
-   command's PROCESS is enforced IN its SKILL — do NOT re-implement it here.
-6. **GATES = `/prereg` hard fields (the ONE authority).** Every claim-bearing / training-eating run SEALS at
-   `/prereg` — no required field ⇒ no seal: `PHASE` (KNOWN_RUNG vs CONTRIBUTION) · `OCCUPANCY-GATE` (CONTRIBUTION:
-   Pro answer + local 精读/atlas row) · `MoA-GATE` (training-eating: the 5-Q chain output). Do NOT re-describe the
-   gate anywhere else — it lives here.
-7. **VALUE BAR / ANTI-RETREAT.** A BIG, honest, falsifiable Δ on a HARD, field-open problem. Occupancy RE-PRICES
-   ("done" ⇒ BEAT it), never vetoes. After a refutation = a PROGRESSIVE problemshift, NEVER a retreat to the
-   safest publishable thing.
-8. **THE ONE INVARIANT.** NUMBERS FROM ARTIFACTS. Proposer self-grants DOWN only; CLAIM_STANDS = independent
-   substrate (the Codex review hook); contribution = human. NEVER re-roll a failed pass.
-9. **HARD STOP.** STOP_AND_REPORT ONLY for a user-only call. refuted ⇒ a cheap_probe auto-ROUTES
-   problemshift-vs-lateral (never ask). REGION-CLOSE ONLY when ≥2 mechanisms hit the SAME root (atlas epitaph).
+BINDINGS (full set = CLAUDE.md §2; only the non-obvious load-bearing ones here):
+- env `/data/projects/world-model-lab/` — USER-MANAGED, holds it ALL: `papers/` (精读 source) ·
+  `datasets/` · `checkpoints/` + `logs/step0/*/latest.pt` (the frozen reproduced R2-Dreamer · TD-MPC2 ·
+  DreamerV3 ckpts). Inventory FIRST; REUSE the frozen `.pt`, never re-reproduce or rebuild what exists;
+  new large datasets/checkpoints need approval.
+- hardware 2×4090D 48GB (GPU1 preferred, both concurrent); compute priced, never hard-capped.
+- engines: conductor=Opus · executors=Sonnet (worktrees) · external brain=GPT-5.6 browser (review +
+  arXiv search) · reviewer=Grok (claims + implementation-level code review) · MoA panel = 5 families
+  multi-instance (`moa/router-protocol.md`; codex = forensic lane for autopsy/abduce only). The skills
+  surface these — reach for external brain / MoA / reviewer on irreversible forks; tactical forks are
+  decided by MoA, never escalated to the human; keys in `.env` (never commit).
 
-**AUTHORITY MAP — one source per concern (do NOT duplicate; on any conflict THESE win):** engine division + the
-generate↔refine loop = `.claude/CLAUDE.md` · MoA how-to = `moa/router-protocol.md` + `moa/moa_chain.sh` · the gates
-= `/prereg` fields · 精读 / atlas / operators = `/prospect` + `openbuild/aerial/atlas/` · live node state = the
-Arbor tree. `plan/operating-manual.md` = REFERENCE / history ONLY — never a live rule source.
+SKILL INVOCATION (belt-and-suspenders with conductor §5 — a pointer manifest, NOT restated mechanics):
+the loop's mechanics live in sub-skills that must be LOADED via the Skill tool the moment their trigger
+fires, never improvised from the conductor's summary — improvising = the discipline silently never
+fires. Binding triggers→loads: `ledger` (goal-start recall · every forecast-bearing call · 验收
+resolution · pulse curation) · `abduce` (every backward inference / `/autopsy` why / latent-root) ·
+`tricks` (probe/KILL/BRACKET design, retrieved by symptom) · `operate` (every dispatch/launch/wait/kill)
+· `externalize` (re-entry after compaction · tree write-through) · the gate/loop skills `prospect` ·
+`forge` · `admit` · `prereg` · `exp-verify` · `adversary`. Mechanics stay in the skills (DRY); this line
+only guarantees they get loaded.
 
-WAIT: Monitor / Bash bg-wait (the wait = design the next node), never ScheduleWakeup-poll; Pro poll 15-min. Keys `.env`.
+CONSTRAINT: statistical floor for DMC-class benches — ≥5 seeds + paired stats (rliable-IQM).

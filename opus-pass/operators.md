@@ -3,14 +3,26 @@
 > **Reverse-inference, not survey.** A paper is observable evidence; the operator is the latent cause
 > that generated it. Each operator is DE-DOMAINED (the field-of-origin is stripped) and admitted only if it
 > has ALL THREE load-bearing fields: `core_simplification` · `differential_prediction` · `cheap_probe`.
+> **Charter widened 2026-07-14 (dual-path ruling):** the bank admits BOTH modeling-object-shift moves AND
+> **algorithm-path moves** (`old_estimator_pattern → new_estimator_pattern` — a diagnosed structural flaw
+> in an incumbent estimator/objective/update-rule + the minimal fix; Double-Q decoupling / AdamW decoupled
+> decay / control-variate shapes). Several existing cards (#3 multiscale-correction-hierarchy · #10
+> correction-field-ization · #11 path-straightening · #32 residual-ization · N4 two-part-code-ization) are
+> retro-recognizable as algorithm-path moves wearing object clothing — no re-write needed; new
+> algorithm-path candidates enter through the same corrosion gate + independent audit.
 > Every `differential_prediction` survived the DELETION TEST (strip the new vocabulary; if no prediction
 > disappears ⇒ relabeling ⇒ killed to `anti-patterns.md`).
 >
 > **Ranking:** most generative / most under-transferred (long-tail, cross-disciplinary) first; the famous
 > ML canon (score/diffusion/ResNet/MAE) is DISCOUNTED — already in every model's prior, low marginal value.
-> **★ = passes the GENERATION TEST** on a live direction — currently **VLA-robustness / 刷分
-> (LIBERO-Plus/Para)** (N4–N7 below; N8/N9 reclassified as meta); historically VLA multimodal fusion (now closed) · diffusion-LLM
-> joint-assembly · speculative-decoding sequential correction: the card generates a *killable* candidate
+> **★ = passes the GENERATION TEST** on a live or recently live direction. Current campaign = **NONE**
+> (aerial-VLN closed; optical-SAR archived 2026-07-11). **On-deck domain bank: `WorldModel/`** — a full
+> WM corrosion audit of these 45 cards (`WorldModel/wm-operator-bank-report.md`, 2026-07-11) issues
+> domain-CONDITIONAL verdicts (5 top-tier WM cards; kills incl. bits-back/chunk/graph FOR WM ONLY — this
+> general bank is NOT corroded by them; strong WM rows promote here after their generation tests run).
+> Historical generation tests include Aerial-VLN/AVDN (closed), VLA-robustness / LIBERO-Plus/Para (closed),
+> VLA multimodal fusion (closed), diffusion-LLM joint-assembly, and speculative-decoding sequential
+> correction. A star means the card generates a *killable* candidate
 > with a differential prediction + cheap probe we would not otherwise have written down. `generation_test:`
 > field shows that candidate. **Card counts: 41 → 48 → 45** (Ilya-27 pass added N4–N10; 2026-07-04 re-audit: −3 demoted [N10·#30·#31], N8/N9 reclassified as meta).
 >
